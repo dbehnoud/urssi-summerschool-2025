@@ -1,0 +1,27 @@
+project:
+  type: website
+  output-dir: docs
+
+toc: true
+
+execute: 
+  freeze: auto
+
+website:
+  title: "2025 URSSI Summer School on Research Software and Open Science"
+  sidebar:
+    style: docked
+    search: true
+    contents:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+      - documentation.ipynb
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true

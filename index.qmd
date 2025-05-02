@@ -1,0 +1,6 @@
+---
+title: "Research Software and Open Science"
+format: html
+---
+
+Welcome to the URSSI Summer School on Research Software and Open Science
