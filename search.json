@@ -1,164 +1,342 @@
 [
   {
-    "objectID": "documentation-revealjs.html#documentation",
-    "href": "documentation-revealjs.html#documentation",
-    "title": "Documentation",
-    "section": "Documentation",
-    "text": "Documentation\nProfessor Carole Goble in “Better Software, Better Research”:\n\nOne of my favorite #overlyhonestmethods tweets (a hashtag for lab scientists) is Ian Holmes’s “You can download our code from the URL supplied. Good luck downloading the only postdoc who can get it to run, though.”"
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Research Software and Open Science",
+    "section": "",
+    "text": "Welcome to the URSSI Summer School on Research Software and Open Science",
+    "crumbs": [
+      "Home"
+    ]
   },
   {
-    "objectID": "documentation-revealjs.html#value-of-documentation",
-    "href": "documentation-revealjs.html#value-of-documentation",
-    "title": "Documentation",
-    "section": "Value of documentation",
-    "text": "Value of documentation\n\nThe value and extent of your work is clearer if it can be understood by colleagues.\nDocumentation provides provenance for your scientific process, for your colleagues and yourself.\nDocumentation demonstrates your skill and professionalism."
+    "objectID": "software-revealjs.html#agenda",
+    "href": "software-revealjs.html#agenda",
+    "title": "Software Design and Modularity",
+    "section": "Agenda",
+    "text": "Agenda\n\nMotivation\nCore Ideas\nBasic Application\nCommon Patterns\nTakeaways"
   },
   {
-    "objectID": "documentation-revealjs.html#documentation-is-easier-than-you-think.",
-    "href": "documentation-revealjs.html#documentation-is-easier-than-you-think.",
-    "title": "Documentation",
-    "section": "Documentation is easier than you think.",
-    "text": "Documentation is easier than you think.\n\nDocumentation pays for itself with the time it saves in the long run.\nDocumentation requires little effort beyond writing the software itself."
+    "objectID": "software-revealjs.html#motivation",
+    "href": "software-revealjs.html#motivation",
+    "title": "Software Design and Modularity",
+    "section": "Motivation",
+    "text": "Motivation"
   },
   {
-    "objectID": "documentation-revealjs.html#types-of-documentation",
-    "href": "documentation-revealjs.html#types-of-documentation",
-    "title": "Documentation",
-    "section": "Types of documentation",
-    "text": "Types of documentation\n\nTheory manuals\nUser and developer guides\nCode comments\nSelf-documenting code\nGenerated API documentation"
+    "objectID": "software-revealjs.html#section",
+    "href": "software-revealjs.html#section",
+    "title": "Software Design and Modularity",
+    "section": "",
+    "text": "Computers do exactly what you program them to do.\n\n\nIf you aren’t getting the results you expect, look for a simpler model."
   },
   {
-    "objectID": "documentation-revealjs.html#user-and-developer-guides",
-    "href": "documentation-revealjs.html#user-and-developer-guides",
-    "title": "Documentation",
-    "section": "User and developer guides",
-    "text": "User and developer guides\n\nREADME: sits in top-level directory and contains all the necessary information for installing, getting started with, and understanding the accompanying code.\n\n\nMay be accompanied by other specific files: LICENSE, INSTALL, CITATION, ABOUT, CHANGELOG, CONTRIBUTING"
+    "objectID": "software-revealjs.html#three-targets-for-simpler-programs",
+    "href": "software-revealjs.html#three-targets-for-simpler-programs",
+    "title": "Software Design and Modularity",
+    "section": "Three Targets For Simpler Programs",
+    "text": "Three Targets For Simpler Programs\n\nMake software easier to understand by breaking it into pieces that can be understood separately\n\n\nMake it easier to collaborate with others by making your code understandable OR make it easier for yourself when you ultimately need to revisit your code after six months, a year, or more working on a different project."
   },
   {
-    "objectID": "documentation-revealjs.html#readme-example",
-    "href": "documentation-revealjs.html#readme-example",
-    "title": "Documentation",
-    "section": "README example",
-    "text": "README example\nSQUIRREL, version 1.2 released on 2026-09-20\n\n# About\n\nThe Spectral Q and U Imaging Radiation Replicating Experimental Library\n(SQUIRREL) is a library for replicating radiation sources with spectral details\nand Q and U polarizations of superman bubblegum.\n\n# Installation\n\nThe SQUIRREL library relies on other libraries:\n\n- The ACORN library www.acorn.nutz\n- The TREEBRANCH database format API\n\nInstall those before installing the SQUIRREL library. To install the SQUIRREL\nlibrary:\n\n./configure\nmake --prefix=/install/path\nmake install\n..."
+    "objectID": "software-revealjs.html#section-1",
+    "href": "software-revealjs.html#section-1",
+    "title": "Software Design and Modularity",
+    "section": "",
+    "text": "Enable the ability to maintain, reuse and extend software (or bits of software)\n\n\nBy breaking software into pieces that can be understood and operate independently, we hope they are not only easier to maintain, but portable from project to project. If your research continues to build off prior work, why doesn’t your code?"
   },
   {
-    "objectID": "documentation-revealjs.html#comments",
-    "href": "documentation-revealjs.html#comments",
-    "title": "Documentation",
-    "section": "Comments",
-    "text": "Comments\nComments provide a way to insert metainformation about code intended for people, right next to the code:\ndef the_function(var):\n    \"\"\"This is a docstring, where a function definition might live\"\"\"\n    a = 1 + var # this is a simple comment\n    return a"
+    "objectID": "software-revealjs.html#section-2",
+    "href": "software-revealjs.html#section-2",
+    "title": "Software Design and Modularity",
+    "section": "",
+    "text": "Avoid extra work from lack of forethought towards methods of engagement with software\n\n\nLess work good 👍👍"
   },
   {
-    "objectID": "documentation-revealjs.html#bad-comments",
-    "href": "documentation-revealjs.html#bad-comments",
-    "title": "Documentation",
-    "section": "Bad comments",
-    "text": "Bad comments\nAlso possible to pollute code with unnecessary cruft:\ndef decay(index, database):\n    # first, retrieve the decay constants from the database\n    mylist = database.decay_constants()\n    # next, try to access an element of the list\n    try:\n        d = mylist[index] # gets decay constant at index in the list\n    # if the index doesn't exist\n    except IndexError:\n        # throw an informative error message\n        raise Exception(\"value not found in the list\")\n    return d"
+    "objectID": "software-revealjs.html#core-ideas",
+    "href": "software-revealjs.html#core-ideas",
+    "title": "Software Design and Modularity",
+    "section": "Core Ideas",
+    "text": "Core Ideas"
   },
   {
-    "objectID": "documentation-revealjs.html#useful-comments",
-    "href": "documentation-revealjs.html#useful-comments",
-    "title": "Documentation",
-    "section": "Useful comments",
-    "text": "Useful comments\nCode written cleanly will have its own voice. Use intelligent naming to make most lines of code clear without comments, then use comments sparingly to help explain reasons or complicated sections:\ndef get_decay(index, database):\n    \"\"\"Returns decay constant at index in the database\"\"\"\n    lambdas = database.decay_constants()\n    try:\n        lambda_i = lambdas[index] # gets decay constant at index in the list\n    except IndexError:\n        raise Exception(\"value not found in the list\")\n    return lambda"
+    "objectID": "software-revealjs.html#core-ideas-1",
+    "href": "software-revealjs.html#core-ideas-1",
+    "title": "Software Design and Modularity",
+    "section": "Core Ideas",
+    "text": "Core Ideas\n\nDecomposable – can be broken down into modules to reduce complexity and allow teamwork\nComposable – enable code to be reused in many places\nUnderstandable – one module can be examined, reasoned about, developed, etc. in isolation\nContinuity – a small change in the requirements should affect a small number of modules\nIsolation – an error in one module should be as contained as possible"
   },
   {
-    "objectID": "documentation-revealjs.html#self-documenting-code",
-    "href": "documentation-revealjs.html#self-documenting-code",
-    "title": "Documentation",
-    "section": "Self-documenting code",
-    "text": "Self-documenting code\n\nNaming: a class, variable, or function name should tell you why it exists, what it does, and how it is used.\n\n\nSimple functions: functions should be small to be understandable and testable; they should only do one thing.\n\n\nConsistent style: use a consistent, standardized style; e.g., select variable and function names according to the PEP8 style guide for Python."
+    "objectID": "software-revealjs.html#section-3",
+    "href": "software-revealjs.html#section-3",
+    "title": "Software Design and Modularity",
+    "section": "",
+    "text": "Cohesion – internal consistency Generally, we want to break down our code into smaller pieces but we should have consistency in design and pattern across all of those pieces.\n\n\nFor example, how you handle errors, how you name variables, how you process data, etc. Changing your coding style from function to function can make it harder to understand and maintain your code."
   },
   {
-    "objectID": "documentation-revealjs.html#guidelines-for-naming",
-    "href": "documentation-revealjs.html#guidelines-for-naming",
-    "title": "Documentation",
-    "section": "Guidelines for naming",
-    "text": "Guidelines for naming\n# packages and modules are short and lowercase\npackages\nmodules\n\n# other objects can be long\nClassesUseCamelCase\nExceptionsAreClassesToo\nfunctions_use_snake_case\nCONSTANTS_USE_ALL_CAPS\n\n# variable scope is *suggested* by style convention\n_single_leading_underscore_ # internal to module\nsingle_trailing_underscore_ # avoids conflicts with Python keywords\n__double_leading_trailing__ # these are magic, like __init__"
+    "objectID": "software-revealjs.html#section-4",
+    "href": "software-revealjs.html#section-4",
+    "title": "Software Design and Modularity",
+    "section": "",
+    "text": "Well designed software should try to minimize the mental effort required to reason about it.\n\n\nIf there are too complex of functions, break them out to think about and develop one at a time."
   },
   {
-    "objectID": "documentation-revealjs.html#docstrings",
-    "href": "documentation-revealjs.html#docstrings",
-    "title": "Documentation",
-    "section": "Docstrings",
-    "text": "Docstrings\n\ndocstring: comment placed immediately after a function or class definition, typically enclosed by three pairs of double quotes:\n\ndef &lt;name&gt;(&lt;args&gt;):\n    \"\"\"&lt;docstring&gt;\"\"\"\n    &lt;body&gt;\n\ndocstrings are available within Python via help() and iPython’s magic command ?, and Sphinx picks them up."
+    "objectID": "software-revealjs.html#basic-applications",
+    "href": "software-revealjs.html#basic-applications",
+    "title": "Software Design and Modularity",
+    "section": "Basic Applications",
+    "text": "Basic Applications"
   },
   {
-    "objectID": "documentation-revealjs.html#docstrings-more",
-    "href": "documentation-revealjs.html#docstrings-more",
-    "title": "Documentation",
-    "section": "Docstrings (more)",
-    "text": "Docstrings (more)\n\nMake docstrings descriptive and concise; you can explain the arguments of a function, its behavior, and how you intend it to be used.\n\ndef power(base, x):\n    \"\"\"Computes base^x. Both base and x should be integers,\n    floats, or another numeric type.\n    \"\"\"\n    return base**x"
+    "objectID": "software-revealjs.html#section-5",
+    "href": "software-revealjs.html#section-5",
+    "title": "Software Design and Modularity",
+    "section": "",
+    "text": "You want to write a program to gather data from a number of sources (databases, web sites, etc.), all of this data has similar structure but may have slightly different formats."
   },
   {
-    "objectID": "documentation-revealjs.html#numpy-style-docstrings",
-    "href": "documentation-revealjs.html#numpy-style-docstrings",
-    "title": "Documentation",
-    "section": "Numpy-style docstrings",
-    "text": "Numpy-style docstrings\ndef function_with_types_in_docstring(param1, param2):\n    \"\"\"Example function with types documented in the docstring.\n\n    `PEP 484`_ type annotations are supported. If attribute, parameter, and\n    return types are annotated according to `PEP 484`_, they do not need to be\n    included in the docstring:\n\n    Parameters\n    ----------\n    param1 : int\n        The first parameter.\n    param2 : str\n        The second parameter.\n\n    Returns\n    -------\n    bool\n        True if successful, False otherwise.\n\n    .. _PEP 484:\n        https://www.python.org/dev/peps/pep-0484/\n\n    \"\"\""
+    "objectID": "software-revealjs.html#section-6",
+    "href": "software-revealjs.html#section-6",
+    "title": "Software Design and Modularity",
+    "section": "",
+    "text": "Following our “separate code into small pieces” idea, our first thought might be to write a single function that can gather data from any our sources – at the very least, you have separated out the data gathering from the data processing."
   },
   {
-    "objectID": "documentation-revealjs.html#google-style-docstrings",
-    "href": "documentation-revealjs.html#google-style-docstrings",
-    "title": "Documentation",
-    "section": "Google-style docstrings",
-    "text": "Google-style docstrings\ndef function_with_types_in_docstring(param1, param2):\n    \"\"\"Example function with types documented in the docstring.\n\n    `PEP 484`_ type annotations are supported. If attribute, parameter, and\n    return types are annotated according to `PEP 484`_, they do not need to be\n    included in the docstring:\n\n    Args:\n        param1 (int): The first parameter.\n        param2 (str): The second parameter.\n\n    Returns:\n        bool: The return value. True for success, False otherwise.\n\n    .. _PEP 484:\n        https://www.python.org/dev/peps/pep-0484/\n\n    \"\"\""
+    "objectID": "software-revealjs.html#section-7",
+    "href": "software-revealjs.html#section-7",
+    "title": "Software Design and Modularity",
+    "section": "",
+    "text": "A single function separated out is already an improvement! But, if you have many sources of data, you may want to define and structure your code in a way that makes it easy to add new sources of data. In Python, one way to do this is via “AbstractBaseClasses” (ABCs)."
   },
   {
-    "objectID": "documentation-revealjs.html#getting-started-with-sphinx",
-    "href": "documentation-revealjs.html#getting-started-with-sphinx",
-    "title": "Documentation",
-    "section": "Getting started with Sphinx",
-    "text": "Getting started with Sphinx\n\npip install sphinx myst-parser\nmkdir docs\ncd docs\nsphinx-quickstart (accept defaults if unsure; answer “yes” for question about autodoc)\nsource directory holds .rst and .md files for user guides, theory manuals, etc., separate from the autogenerated API documentation"
+    "objectID": "software-revealjs.html#section-8",
+    "href": "software-revealjs.html#section-8",
+    "title": "Software Design and Modularity",
+    "section": "",
+    "text": "Lets start with a toy example where you want to pull price data for a number of items from a number of sellers.\n\nfrom abc import ABC, abstractmethod\n\nimport pandas as pd\n\n\nclass DataSource(ABC):\n    @abstractmethod\n    def pull_data(self) -&gt; pd.DataFrame:\n        pass\n\n    @staticmethod\n    def validate_data(data: pd.DataFrame) -&gt; None:\n        # Check that all the columns we need are present\n        if any(\n            feature not in data.columns\n            for feature in [\"name\", \"description\", \"price\", \"category\"]\n        ):\n            raise ValueError(\"The dataset does not contain all the necessary columns\")\n\n        # Check that the price is non-negative\n        if (data[\"price\"] &lt; 0).any():\n            raise ValueError(\"The price cannot be negative\")\n\n        # etc. etc.\nclass AmazonDataSource(DataSource):\n    def pull_data(self) -&gt; pd.DataFrame:\n        # You likely going to pull data from their API or service\n        # keep that contained here\n        # ...\n        # before you return the data, validate it\n        DataSource.validate_data(data)\n        return data\n\n\nclass TargetDataSource(DataSource):\n    def pull_data(self) -&gt; pd.DataFrame:\n        # You likely going to pull data from their API or service\n        # keep that contained here\n        # ...\n        # before you return the data, validate it\n        DataSource.validate_data(data)\n        return data"
   },
   {
-    "objectID": "documentation-revealjs.html#add-content-for-sphinx",
-    "href": "documentation-revealjs.html#add-content-for-sphinx",
-    "title": "Documentation",
-    "section": "Add content for Sphinx",
-    "text": "Add content for Sphinx\n\nIn the docs\\source directory, add an installation.md file (for example)\nAdd 'myst_parser' to extensions in conf.py\nTry building with make html\nDid sphinx find and automatically build docs for your modules? Look for .md files for each module."
+    "objectID": "software-revealjs.html#section-9",
+    "href": "software-revealjs.html#section-9",
+    "title": "Software Design and Modularity",
+    "section": "",
+    "text": "Abstract Base Classes ABCs are great! They allow you to define a common interface for a group of classes. As well as enforce that the classes that inherit from the ABC implement the methods you define.\n\n\nAs with validate_data you can also attach utility functions that each sub-class may want to use to keep everything together.\n\n\nBut, there are lots of other ways to structure code and other design patterns."
   },
   {
-    "objectID": "documentation-revealjs.html#configuration-conf.py",
-    "href": "documentation-revealjs.html#configuration-conf.py",
-    "title": "Documentation",
-    "section": "Configuration (conf.py)",
-    "text": "Configuration (conf.py)\n\nAdd 'sphinx.ext.autodoc' to extensions\nIn extensions, add sphinx.ext.napoleon (for Google/NumPy-style docstring reading) and sphinx.ext.mathjax (if you want LaTeX-based equations), and sphinx.ext.intersphinx for connections to other docs\nSet napoleon_numpy_docstring and napoleon_google_docstring to True/False depending on your docstring style.\nAdd an intersphinx_mapping dict to connect to other docs"
+    "objectID": "software-revealjs.html#common-patterns",
+    "href": "software-revealjs.html#common-patterns",
+    "title": "Software Design and Modularity",
+    "section": "Common Patterns",
+    "text": "Common Patterns"
   },
   {
-    "objectID": "documentation-revealjs.html#configuration",
-    "href": "documentation-revealjs.html#configuration",
-    "title": "Documentation",
-    "section": "Configuration",
-    "text": "Configuration\n\nIn conf.py, add autodoc_default_options = {'members': True} and autoclass_content = 'class'\nFor each Python module, create a corresponding [modulename].rst file in the docs\\source directory. Add .. automodule:: [packagename].[modulename]\nIn index.rst, add [modulename] inside the toctree (table of contents)"
+    "objectID": "software-revealjs.html#section-10",
+    "href": "software-revealjs.html#section-10",
+    "title": "Software Design and Modularity",
+    "section": "",
+    "text": "For the next ten minutes, with a partner, look through:\nhttps://github.com/faif/python-patterns\nThink about how any of these patterns might be useful to a problem you recently encountered.\nA first one to look at might be the factory which is very useful when trying to have a standard interface to create different objects or functions using a parameter.\nEx: you are processing a bunch of different image file formats and you need to find the appropriate file reader for each\nAs you are doing this, make note of patterns you find interesting or particularly useful and why. Or take note of patterns you have never seen before"
   },
   {
-    "objectID": "documentation-revealjs.html#intersphinx_mapping",
-    "href": "documentation-revealjs.html#intersphinx_mapping",
-    "title": "Documentation",
-    "section": "intersphinx_mapping",
-    "text": "intersphinx_mapping\nintersphinx_mapping = {\n  'python': ('https://docs.python.org/3.11', None),\n  'pandas': ('http://pandas.pydata.org/pandas-docs/stable/', None),\n  'numpy': ('https://docs.scipy.org/doc/numpy/', None),\n}"
+    "objectID": "software-revealjs.html#takeaways",
+    "href": "software-revealjs.html#takeaways",
+    "title": "Software Design and Modularity",
+    "section": "Takeaways",
+    "text": "Takeaways"
   },
   {
-    "objectID": "documentation-revealjs.html#other-sphinx-goodness",
-    "href": "documentation-revealjs.html#other-sphinx-goodness",
-    "title": "Documentation",
-    "section": "Other Sphinx goodness:",
-    "text": "Other Sphinx goodness:\n\nYou can configure it to generate a LaTeX-based PDF (i.e., a single user manual)\nYou can have versioned documentation, and also simultaneously have “devel” docs for unreleased changes."
+    "objectID": "software-revealjs.html#section-11",
+    "href": "software-revealjs.html#section-11",
+    "title": "Software Design and Modularity",
+    "section": "",
+    "text": "Three Targets For Simpler Programs\n\nMake software easier to understand by breaking it into pieces that can be understood separately\nEnable the ability to maintain, reuse and extend software (or bits of software)\nAvoid extra work from lack of forethought towards methods of engagement with software"
   },
   {
-    "objectID": "documentation-revealjs.html#github-actions-to-automate-sphinx",
-    "href": "documentation-revealjs.html#github-actions-to-automate-sphinx",
-    "title": "Documentation",
-    "section": "GitHub Actions to automate Sphinx",
-    "text": "GitHub Actions to automate Sphinx\nname: \"Sphinx: Render docs\"\n\non: push\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    permissions:\n      contents: write\n    steps:\n    - uses: actions/checkout@v4\n      with:\n        persist-credentials: false\n    - name: install depedendices\n      run : |\n        python -m pip install --upgrade pip\n        pip install .\n        pip install sphinx myst-parser\n    - name: Build HTML\n      run: |\n        cd docs\n        make html\n    - name: Upload artifacts\n      uses: actions/upload-artifact@v4\n      with:\n        name: html-docs\n        path: docs/build/html/\n    - name: Deploy\n      uses: peaceiris/actions-gh-pages@v4\n      if: github.ref == 'refs/heads/main'\n      with:\n        github_token: ${{ secrets.GITHUB_TOKEN }}\n        publish_dir: docs/build/html"
+    "objectID": "software-revealjs.html#section-12",
+    "href": "software-revealjs.html#section-12",
+    "title": "Software Design and Modularity",
+    "section": "",
+    "text": "Well designed software should try to minimize the mental effort required to reason about it.\nIf there are too complex of functions, break them out to think about and develop one at a time. If there is too much coupling between functions or modules, try to reduce coupling."
   },
   {
-    "objectID": "documentation-revealjs.html#github-actions-setup",
-    "href": "documentation-revealjs.html#github-actions-setup",
-    "title": "Documentation",
-    "section": "GitHub Actions setup",
-    "text": "GitHub Actions setup\n\nAdd sphinx.ext.githubpages to extensions in conf.py\nAdd a docs/requirements.txt file for any dependencies (e.g., myst-parser)\nOn GitHub, Settings -&gt; Pages -&gt; select gh-pages branch in the “Source” dropdown\n\n\nMore on Sphinx - GitHub Actions here: https://www.sphinx-doc.org/en/master/tutorial/deploying.html"
+    "objectID": "software-revealjs.html#section-13",
+    "href": "software-revealjs.html#section-13",
+    "title": "Software Design and Modularity",
+    "section": "",
+    "text": "Learn and apply coding patterns. There are many resources to look up common patterns.\nA good way to learn them is to use the example code commonly given and change, add, or remove values and see what happens."
+  },
+  {
+    "objectID": "software-revealjs.html#section-14",
+    "href": "software-revealjs.html#section-14",
+    "title": "Software Design and Modularity",
+    "section": "",
+    "text": "Credit\nMuch of the content of this talk comes from:\n\nUW CSE 331 Lecture 1\nPrevious URSSI Winter School\nSoftware Design for Research Software"
+  },
+  {
+    "objectID": "software_design.html",
+    "href": "software_design.html",
+    "title": "Software Design and Modularity",
+    "section": "",
+    "text": "Motivation\nCore Ideas\nBasic Application\nCommon Patterns\nTakeaways"
+  },
+  {
+    "objectID": "software_design.html#agenda",
+    "href": "software_design.html#agenda",
+    "title": "Software Design and Modularity",
+    "section": "",
+    "text": "Motivation\nCore Ideas\nBasic Application\nCommon Patterns\nTakeaways"
+  },
+  {
+    "objectID": "software_design.html#motivation",
+    "href": "software_design.html#motivation",
+    "title": "Software Design and Modularity",
+    "section": "Motivation",
+    "text": "Motivation"
+  },
+  {
+    "objectID": "software_design.html#section",
+    "href": "software_design.html#section",
+    "title": "Software Design and Modularity",
+    "section": "",
+    "text": "Computers do exactly what you program them to do.\n\n\nIf you aren’t getting the results you expect, look for a simpler model."
+  },
+  {
+    "objectID": "software_design.html#three-targets-for-simpler-programs",
+    "href": "software_design.html#three-targets-for-simpler-programs",
+    "title": "Software Design and Modularity",
+    "section": "Three Targets For Simpler Programs",
+    "text": "Three Targets For Simpler Programs\n\nMake software easier to understand by breaking it into pieces that can be understood separately\n\n\nMake it easier to collaborate with others by making your code understandable OR make it easier for yourself when you ultimately need to revisit your code after six months, a year, or more working on a different project."
+  },
+  {
+    "objectID": "software_design.html#section-1",
+    "href": "software_design.html#section-1",
+    "title": "Software Design and Modularity",
+    "section": "",
+    "text": "Enable the ability to maintain, reuse and extend software (or bits of software)\n\n\nBy breaking software into pieces that can be understood and operate independently, we hope they are not only easier to maintain, but portable from project to project. If your research continues to build off prior work, why doesn’t your code?"
+  },
+  {
+    "objectID": "software_design.html#section-2",
+    "href": "software_design.html#section-2",
+    "title": "Software Design and Modularity",
+    "section": "",
+    "text": "Avoid extra work from lack of forethought towards methods of engagement with software\n\n\nLess work good 👍👍"
+  },
+  {
+    "objectID": "software_design.html#core-ideas",
+    "href": "software_design.html#core-ideas",
+    "title": "Software Design and Modularity",
+    "section": "Core Ideas",
+    "text": "Core Ideas"
+  },
+  {
+    "objectID": "software_design.html#core-ideas-1",
+    "href": "software_design.html#core-ideas-1",
+    "title": "Software Design and Modularity",
+    "section": "Core Ideas",
+    "text": "Core Ideas\n\nDecomposable – can be broken down into modules to reduce complexity and allow teamwork\nComposable – enable code to be reused in many places\nUnderstandable – one module can be examined, reasoned about, developed, etc. in isolation\nContinuity – a small change in the requirements should affect a small number of modules\nIsolation – an error in one module should be as contained as possible"
+  },
+  {
+    "objectID": "software_design.html#section-3",
+    "href": "software_design.html#section-3",
+    "title": "Software Design and Modularity",
+    "section": "",
+    "text": "Cohesion – internal consistency Generally, we want to break down our code into smaller pieces but we should have consistency in design and pattern across all of those pieces.\n\n\nFor example, how you handle errors, how you name variables, how you process data, etc. Changing your coding style from function to function can make it harder to understand and maintain your code."
+  },
+  {
+    "objectID": "software_design.html#section-4",
+    "href": "software_design.html#section-4",
+    "title": "Software Design and Modularity",
+    "section": "",
+    "text": "Well designed software should try to minimize the mental effort required to reason about it.\n\n\nIf there are too complex of functions, break them out to think about and develop one at a time."
+  },
+  {
+    "objectID": "software_design.html#basic-applications",
+    "href": "software_design.html#basic-applications",
+    "title": "Software Design and Modularity",
+    "section": "Basic Applications",
+    "text": "Basic Applications"
+  },
+  {
+    "objectID": "software_design.html#section-5",
+    "href": "software_design.html#section-5",
+    "title": "Software Design and Modularity",
+    "section": "",
+    "text": "You want to write a program to gather data from a number of sources (databases, web sites, etc.), all of this data has similar structure but may have slightly different formats."
+  },
+  {
+    "objectID": "software_design.html#section-6",
+    "href": "software_design.html#section-6",
+    "title": "Software Design and Modularity",
+    "section": "",
+    "text": "Following our “separate code into small pieces” idea, our first thought might be to write a single function that can gather data from any our sources – at the very least, you have separated out the data gathering from the data processing."
+  },
+  {
+    "objectID": "software_design.html#section-7",
+    "href": "software_design.html#section-7",
+    "title": "Software Design and Modularity",
+    "section": "",
+    "text": "A single function separated out is already an improvement! But, if you have many sources of data, you may want to define and structure your code in a way that makes it easy to add new sources of data. In Python, one way to do this is via “AbstractBaseClasses” (ABCs)."
+  },
+  {
+    "objectID": "software_design.html#section-8",
+    "href": "software_design.html#section-8",
+    "title": "Software Design and Modularity",
+    "section": "",
+    "text": "Lets start with a toy example where you want to pull price data for a number of items from a number of sellers.\n\nfrom abc import ABC, abstractmethod\n\nimport pandas as pd\n\n\nclass DataSource(ABC):\n    @abstractmethod\n    def pull_data(self) -&gt; pd.DataFrame:\n        pass\n\n    @staticmethod\n    def validate_data(data: pd.DataFrame) -&gt; None:\n        # Check that all the columns we need are present\n        if any(\n            feature not in data.columns\n            for feature in [\"name\", \"description\", \"price\", \"category\"]\n        ):\n            raise ValueError(\"The dataset does not contain all the necessary columns\")\n\n        # Check that the price is non-negative\n        if (data[\"price\"] &lt; 0).any():\n            raise ValueError(\"The price cannot be negative\")\n\n        # etc. etc.\nclass AmazonDataSource(DataSource):\n    def pull_data(self) -&gt; pd.DataFrame:\n        # You likely going to pull data from their API or service\n        # keep that contained here\n        # ...\n        # before you return the data, validate it\n        DataSource.validate_data(data)\n        return data\n\n\nclass TargetDataSource(DataSource):\n    def pull_data(self) -&gt; pd.DataFrame:\n        # You likely going to pull data from their API or service\n        # keep that contained here\n        # ...\n        # before you return the data, validate it\n        DataSource.validate_data(data)\n        return data"
+  },
+  {
+    "objectID": "software_design.html#section-9",
+    "href": "software_design.html#section-9",
+    "title": "Software Design and Modularity",
+    "section": "",
+    "text": "Abstract Base Classes ABCs are great! They allow you to define a common interface for a group of classes. As well as enforce that the classes that inherit from the ABC implement the methods you define.\n\n\nAs with validate_data you can also attach utility functions that each sub-class may want to use to keep everything together.\n\n\nBut, there are lots of other ways to structure code and other design patterns."
+  },
+  {
+    "objectID": "software_design.html#common-patterns",
+    "href": "software_design.html#common-patterns",
+    "title": "Software Design and Modularity",
+    "section": "Common Patterns",
+    "text": "Common Patterns"
+  },
+  {
+    "objectID": "software_design.html#section-10",
+    "href": "software_design.html#section-10",
+    "title": "Software Design and Modularity",
+    "section": "",
+    "text": "For the next ten minutes, with a partner, look through:\nhttps://github.com/faif/python-patterns\nThink about how any of these patterns might be useful to a problem you recently encountered.\nA first one to look at might be the factory which is very useful when trying to have a standard interface to create different objects or functions using a parameter.\nEx: you are processing a bunch of different image file formats and you need to find the appropriate file reader for each\nAs you are doing this, make note of patterns you find interesting or particularly useful and why. Or take note of patterns you have never seen before"
+  },
+  {
+    "objectID": "software_design.html#takeaways",
+    "href": "software_design.html#takeaways",
+    "title": "Software Design and Modularity",
+    "section": "Takeaways",
+    "text": "Takeaways"
+  },
+  {
+    "objectID": "software_design.html#section-11",
+    "href": "software_design.html#section-11",
+    "title": "Software Design and Modularity",
+    "section": "",
+    "text": "Three Targets For Simpler Programs\n\nMake software easier to understand by breaking it into pieces that can be understood separately\nEnable the ability to maintain, reuse and extend software (or bits of software)\nAvoid extra work from lack of forethought towards methods of engagement with software"
+  },
+  {
+    "objectID": "software_design.html#section-12",
+    "href": "software_design.html#section-12",
+    "title": "Software Design and Modularity",
+    "section": "",
+    "text": "Well designed software should try to minimize the mental effort required to reason about it.\nIf there are too complex of functions, break them out to think about and develop one at a time. If there is too much coupling between functions or modules, try to reduce coupling."
+  },
+  {
+    "objectID": "software_design.html#section-13",
+    "href": "software_design.html#section-13",
+    "title": "Software Design and Modularity",
+    "section": "",
+    "text": "Learn and apply coding patterns. There are many resources to look up common patterns.\nA good way to learn them is to use the example code commonly given and change, add, or remove values and see what happens."
+  },
+  {
+    "objectID": "software_design.html#section-14",
+    "href": "software_design.html#section-14",
+    "title": "Software Design and Modularity",
+    "section": "",
+    "text": "Credit\nMuch of the content of this talk comes from:\n\nUW CSE 331 Lecture 1\nPrevious URSSI Winter School\nSoftware Design for Research Software"
   },
   {
     "objectID": "documentation.html",
@@ -401,13 +579,164 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Research Software and Open Science",
-    "section": "",
-    "text": "Welcome to the URSSI Summer School on Research Software and Open Science",
-    "crumbs": [
-      "Home"
-    ]
+    "objectID": "documentation-revealjs.html#documentation",
+    "href": "documentation-revealjs.html#documentation",
+    "title": "Documentation",
+    "section": "Documentation",
+    "text": "Documentation\nProfessor Carole Goble in “Better Software, Better Research”:\n\nOne of my favorite #overlyhonestmethods tweets (a hashtag for lab scientists) is Ian Holmes’s “You can download our code from the URL supplied. Good luck downloading the only postdoc who can get it to run, though.”"
+  },
+  {
+    "objectID": "documentation-revealjs.html#value-of-documentation",
+    "href": "documentation-revealjs.html#value-of-documentation",
+    "title": "Documentation",
+    "section": "Value of documentation",
+    "text": "Value of documentation\n\nThe value and extent of your work is clearer if it can be understood by colleagues.\nDocumentation provides provenance for your scientific process, for your colleagues and yourself.\nDocumentation demonstrates your skill and professionalism."
+  },
+  {
+    "objectID": "documentation-revealjs.html#documentation-is-easier-than-you-think.",
+    "href": "documentation-revealjs.html#documentation-is-easier-than-you-think.",
+    "title": "Documentation",
+    "section": "Documentation is easier than you think.",
+    "text": "Documentation is easier than you think.\n\nDocumentation pays for itself with the time it saves in the long run.\nDocumentation requires little effort beyond writing the software itself."
+  },
+  {
+    "objectID": "documentation-revealjs.html#types-of-documentation",
+    "href": "documentation-revealjs.html#types-of-documentation",
+    "title": "Documentation",
+    "section": "Types of documentation",
+    "text": "Types of documentation\n\nTheory manuals\nUser and developer guides\nCode comments\nSelf-documenting code\nGenerated API documentation"
+  },
+  {
+    "objectID": "documentation-revealjs.html#user-and-developer-guides",
+    "href": "documentation-revealjs.html#user-and-developer-guides",
+    "title": "Documentation",
+    "section": "User and developer guides",
+    "text": "User and developer guides\n\nREADME: sits in top-level directory and contains all the necessary information for installing, getting started with, and understanding the accompanying code.\n\n\nMay be accompanied by other specific files: LICENSE, INSTALL, CITATION, ABOUT, CHANGELOG, CONTRIBUTING"
+  },
+  {
+    "objectID": "documentation-revealjs.html#readme-example",
+    "href": "documentation-revealjs.html#readme-example",
+    "title": "Documentation",
+    "section": "README example",
+    "text": "README example\nSQUIRREL, version 1.2 released on 2026-09-20\n\n# About\n\nThe Spectral Q and U Imaging Radiation Replicating Experimental Library\n(SQUIRREL) is a library for replicating radiation sources with spectral details\nand Q and U polarizations of superman bubblegum.\n\n# Installation\n\nThe SQUIRREL library relies on other libraries:\n\n- The ACORN library www.acorn.nutz\n- The TREEBRANCH database format API\n\nInstall those before installing the SQUIRREL library. To install the SQUIRREL\nlibrary:\n\n./configure\nmake --prefix=/install/path\nmake install\n..."
+  },
+  {
+    "objectID": "documentation-revealjs.html#comments",
+    "href": "documentation-revealjs.html#comments",
+    "title": "Documentation",
+    "section": "Comments",
+    "text": "Comments\nComments provide a way to insert metainformation about code intended for people, right next to the code:\ndef the_function(var):\n    \"\"\"This is a docstring, where a function definition might live\"\"\"\n    a = 1 + var # this is a simple comment\n    return a"
+  },
+  {
+    "objectID": "documentation-revealjs.html#bad-comments",
+    "href": "documentation-revealjs.html#bad-comments",
+    "title": "Documentation",
+    "section": "Bad comments",
+    "text": "Bad comments\nAlso possible to pollute code with unnecessary cruft:\ndef decay(index, database):\n    # first, retrieve the decay constants from the database\n    mylist = database.decay_constants()\n    # next, try to access an element of the list\n    try:\n        d = mylist[index] # gets decay constant at index in the list\n    # if the index doesn't exist\n    except IndexError:\n        # throw an informative error message\n        raise Exception(\"value not found in the list\")\n    return d"
+  },
+  {
+    "objectID": "documentation-revealjs.html#useful-comments",
+    "href": "documentation-revealjs.html#useful-comments",
+    "title": "Documentation",
+    "section": "Useful comments",
+    "text": "Useful comments\nCode written cleanly will have its own voice. Use intelligent naming to make most lines of code clear without comments, then use comments sparingly to help explain reasons or complicated sections:\ndef get_decay(index, database):\n    \"\"\"Returns decay constant at index in the database\"\"\"\n    lambdas = database.decay_constants()\n    try:\n        lambda_i = lambdas[index] # gets decay constant at index in the list\n    except IndexError:\n        raise Exception(\"value not found in the list\")\n    return lambda"
+  },
+  {
+    "objectID": "documentation-revealjs.html#self-documenting-code",
+    "href": "documentation-revealjs.html#self-documenting-code",
+    "title": "Documentation",
+    "section": "Self-documenting code",
+    "text": "Self-documenting code\n\nNaming: a class, variable, or function name should tell you why it exists, what it does, and how it is used.\n\n\nSimple functions: functions should be small to be understandable and testable; they should only do one thing.\n\n\nConsistent style: use a consistent, standardized style; e.g., select variable and function names according to the PEP8 style guide for Python."
+  },
+  {
+    "objectID": "documentation-revealjs.html#guidelines-for-naming",
+    "href": "documentation-revealjs.html#guidelines-for-naming",
+    "title": "Documentation",
+    "section": "Guidelines for naming",
+    "text": "Guidelines for naming\n# packages and modules are short and lowercase\npackages\nmodules\n\n# other objects can be long\nClassesUseCamelCase\nExceptionsAreClassesToo\nfunctions_use_snake_case\nCONSTANTS_USE_ALL_CAPS\n\n# variable scope is *suggested* by style convention\n_single_leading_underscore_ # internal to module\nsingle_trailing_underscore_ # avoids conflicts with Python keywords\n__double_leading_trailing__ # these are magic, like __init__"
+  },
+  {
+    "objectID": "documentation-revealjs.html#docstrings",
+    "href": "documentation-revealjs.html#docstrings",
+    "title": "Documentation",
+    "section": "Docstrings",
+    "text": "Docstrings\n\ndocstring: comment placed immediately after a function or class definition, typically enclosed by three pairs of double quotes:\n\ndef &lt;name&gt;(&lt;args&gt;):\n    \"\"\"&lt;docstring&gt;\"\"\"\n    &lt;body&gt;\n\ndocstrings are available within Python via help() and iPython’s magic command ?, and Sphinx picks them up."
+  },
+  {
+    "objectID": "documentation-revealjs.html#docstrings-more",
+    "href": "documentation-revealjs.html#docstrings-more",
+    "title": "Documentation",
+    "section": "Docstrings (more)",
+    "text": "Docstrings (more)\n\nMake docstrings descriptive and concise; you can explain the arguments of a function, its behavior, and how you intend it to be used.\n\ndef power(base, x):\n    \"\"\"Computes base^x. Both base and x should be integers,\n    floats, or another numeric type.\n    \"\"\"\n    return base**x"
+  },
+  {
+    "objectID": "documentation-revealjs.html#numpy-style-docstrings",
+    "href": "documentation-revealjs.html#numpy-style-docstrings",
+    "title": "Documentation",
+    "section": "Numpy-style docstrings",
+    "text": "Numpy-style docstrings\ndef function_with_types_in_docstring(param1, param2):\n    \"\"\"Example function with types documented in the docstring.\n\n    `PEP 484`_ type annotations are supported. If attribute, parameter, and\n    return types are annotated according to `PEP 484`_, they do not need to be\n    included in the docstring:\n\n    Parameters\n    ----------\n    param1 : int\n        The first parameter.\n    param2 : str\n        The second parameter.\n\n    Returns\n    -------\n    bool\n        True if successful, False otherwise.\n\n    .. _PEP 484:\n        https://www.python.org/dev/peps/pep-0484/\n\n    \"\"\""
+  },
+  {
+    "objectID": "documentation-revealjs.html#google-style-docstrings",
+    "href": "documentation-revealjs.html#google-style-docstrings",
+    "title": "Documentation",
+    "section": "Google-style docstrings",
+    "text": "Google-style docstrings\ndef function_with_types_in_docstring(param1, param2):\n    \"\"\"Example function with types documented in the docstring.\n\n    `PEP 484`_ type annotations are supported. If attribute, parameter, and\n    return types are annotated according to `PEP 484`_, they do not need to be\n    included in the docstring:\n\n    Args:\n        param1 (int): The first parameter.\n        param2 (str): The second parameter.\n\n    Returns:\n        bool: The return value. True for success, False otherwise.\n\n    .. _PEP 484:\n        https://www.python.org/dev/peps/pep-0484/\n\n    \"\"\""
+  },
+  {
+    "objectID": "documentation-revealjs.html#getting-started-with-sphinx",
+    "href": "documentation-revealjs.html#getting-started-with-sphinx",
+    "title": "Documentation",
+    "section": "Getting started with Sphinx",
+    "text": "Getting started with Sphinx\n\npip install sphinx myst-parser\nmkdir docs\ncd docs\nsphinx-quickstart (accept defaults if unsure; answer “yes” for question about autodoc)\nsource directory holds .rst and .md files for user guides, theory manuals, etc., separate from the autogenerated API documentation"
+  },
+  {
+    "objectID": "documentation-revealjs.html#add-content-for-sphinx",
+    "href": "documentation-revealjs.html#add-content-for-sphinx",
+    "title": "Documentation",
+    "section": "Add content for Sphinx",
+    "text": "Add content for Sphinx\n\nIn the docs\\source directory, add an installation.md file (for example)\nAdd 'myst_parser' to extensions in conf.py\nTry building with make html\nDid sphinx find and automatically build docs for your modules? Look for .md files for each module."
+  },
+  {
+    "objectID": "documentation-revealjs.html#configuration-conf.py",
+    "href": "documentation-revealjs.html#configuration-conf.py",
+    "title": "Documentation",
+    "section": "Configuration (conf.py)",
+    "text": "Configuration (conf.py)\n\nAdd 'sphinx.ext.autodoc' to extensions\nIn extensions, add sphinx.ext.napoleon (for Google/NumPy-style docstring reading) and sphinx.ext.mathjax (if you want LaTeX-based equations), and sphinx.ext.intersphinx for connections to other docs\nSet napoleon_numpy_docstring and napoleon_google_docstring to True/False depending on your docstring style.\nAdd an intersphinx_mapping dict to connect to other docs"
+  },
+  {
+    "objectID": "documentation-revealjs.html#configuration",
+    "href": "documentation-revealjs.html#configuration",
+    "title": "Documentation",
+    "section": "Configuration",
+    "text": "Configuration\n\nIn conf.py, add autodoc_default_options = {'members': True} and autoclass_content = 'class'\nFor each Python module, create a corresponding [modulename].rst file in the docs\\source directory. Add .. automodule:: [packagename].[modulename]\nIn index.rst, add [modulename] inside the toctree (table of contents)"
+  },
+  {
+    "objectID": "documentation-revealjs.html#intersphinx_mapping",
+    "href": "documentation-revealjs.html#intersphinx_mapping",
+    "title": "Documentation",
+    "section": "intersphinx_mapping",
+    "text": "intersphinx_mapping\nintersphinx_mapping = {\n  'python': ('https://docs.python.org/3.11', None),\n  'pandas': ('http://pandas.pydata.org/pandas-docs/stable/', None),\n  'numpy': ('https://docs.scipy.org/doc/numpy/', None),\n}"
+  },
+  {
+    "objectID": "documentation-revealjs.html#other-sphinx-goodness",
+    "href": "documentation-revealjs.html#other-sphinx-goodness",
+    "title": "Documentation",
+    "section": "Other Sphinx goodness:",
+    "text": "Other Sphinx goodness:\n\nYou can configure it to generate a LaTeX-based PDF (i.e., a single user manual)\nYou can have versioned documentation, and also simultaneously have “devel” docs for unreleased changes."
+  },
+  {
+    "objectID": "documentation-revealjs.html#github-actions-to-automate-sphinx",
+    "href": "documentation-revealjs.html#github-actions-to-automate-sphinx",
+    "title": "Documentation",
+    "section": "GitHub Actions to automate Sphinx",
+    "text": "GitHub Actions to automate Sphinx\nname: \"Sphinx: Render docs\"\n\non: push\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    permissions:\n      contents: write\n    steps:\n    - uses: actions/checkout@v4\n      with:\n        persist-credentials: false\n    - name: install depedendices\n      run : |\n        python -m pip install --upgrade pip\n        pip install .\n        pip install sphinx myst-parser\n    - name: Build HTML\n      run: |\n        cd docs\n        make html\n    - name: Upload artifacts\n      uses: actions/upload-artifact@v4\n      with:\n        name: html-docs\n        path: docs/build/html/\n    - name: Deploy\n      uses: peaceiris/actions-gh-pages@v4\n      if: github.ref == 'refs/heads/main'\n      with:\n        github_token: ${{ secrets.GITHUB_TOKEN }}\n        publish_dir: docs/build/html"
+  },
+  {
+    "objectID": "documentation-revealjs.html#github-actions-setup",
+    "href": "documentation-revealjs.html#github-actions-setup",
+    "title": "Documentation",
+    "section": "GitHub Actions setup",
+    "text": "GitHub Actions setup\n\nAdd sphinx.ext.githubpages to extensions in conf.py\nAdd a docs/requirements.txt file for any dependencies (e.g., myst-parser)\nOn GitHub, Settings -&gt; Pages -&gt; select gh-pages branch in the “Source” dropdown\n\n\nMore on Sphinx - GitHub Actions here: https://www.sphinx-doc.org/en/master/tutorial/deploying.html"
   }
 ]
