@@ -17,7 +17,7 @@ website:
         text: Home
       - about.qmd
       - software_design.ipynb
-      - package_structure.ipynd
+      - package_structure.ipynb
       - documentation.ipynb
 
 format:
