@@ -361,287 +361,410 @@
     "href": "package_structure.html",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "The previous versions of this module!\nPython packaging 101 tutorial from pyOpenSci: https://www.pyopensci.org/python-package-guide/tutorials/intro.html#python-packaging-101\nPython Packages: https://py-pkgs.org/\nScientific Python packaging guide: https://learn.scientific-python.org/development/tutorials/packaging/\nPython Packaging User Guide: https://packaging.python.org/en/latest/\n\n\n\n\nFirst, let’s define module\nhttps://docs.python.org/3/glossary.html#term-module\n\nModule: An object that serves an organizational unit of python code. Modules have a namespace containing arbitrary python objects. Modules are loaded into Python by the process of importing\n\n\n\n\nDeconstructing that definition:\n\nWhen I write import modulename I am loading a module\n\nBut we also talk about “importing a package”!\nThis seems to imply a package is a kind of module\n\n\n\n\nThe module can contain “arbitrary Python objects”\n\nThat could include other modules!\nIt’s almost like we need a special name for a “module that can contain other modules”!\n\n\n\n\nWhen I load the module, its name gets added to the namespace\n\nnamespace: a collection of currently defined names and the objects they reference\nSo now I can use the module name to access things inside of it with dot notation, like another module that contains a function: numpy.random.default_rng\n\n\n\n\n\n\nThe standard library\n\nPython code\nCompiled C code\n\nA local file that ends in .py\n\n(confusingly, also called a “module”)\n\nThird-party libraries that you pip install or conda install\n\ni.e., packages\n\nA local package (we’re getting to this)\n\n\n\n\nOk, now that we spent all that time defining module, we can finally define package\n“A Python module which can contain submodules or recursively, subpackages.”\nhttps://docs.python.org/3/glossary.html#term-package\n\n\n\nTwo main usages:\nhttps://packaging.python.org/en/latest/discussions/distribution-package-vs-import-package/\n\n\n\nThis is the one we already talked about\nThe thing you get when you write import packagename in your code\nWe’re going to show you how to make one of these first\n\n\n\nThe actual artifact that gets downloaded off the internet and stored on your computer somewhere\nlike when you run pip install package\nWe need to learn how to make one of these too!\n\n\n\n\n\n\nTwo common cases for research code:\n\nCode that goes with a research article\n\nmainly used to reproduce the results\nAKA a (computational) project or a research compendium\n\nA generalized tool or library that other researchers can use\n\n\n\n\n\nYou have multiple scripts that use the same function\nSo you want to be able to import that function\nIt’s sufficient for you to make an “import package” you use in scripts (e.g., in a Jupyter notebook)\n\n\n\nThis kind of package does not necessarily need all the infrastructure you will learn about in this workshop\n\nsuch as: its own rendered website with documentation\n\nIf someone uses the code for your paper, they will get a copy of the code and set it up so they can import the same way; they don’t expect to pip install paper\n\n\nFor more on projects and research compendia in general, see\n\n“Good enough practices in scientific computing”\n“How repro-packs can save your future self”\nTuring Way guide: https://book.the-turing-way.org/reproducible-research/compendia\nKarthik’s talk: https://github.com/karthik/rstudio2019\n\n\n\n\nThis is what we’re here (mostly) to learn about!\nThis is when we want to make a “distribution package” too!\n\nYou want people to be able to pip install awesometool\n\n\n\n\n\n\n\nThe simplest possible Python package\n\nA directory with a single file in it named __init__.py\n\nThe file can be empty\n\nThe __init__.py file tells Python that “this directory is a package\n\n\n\n\n\nThis is enough for me to be able to import the package\nas long as I’m in the right directory\n\nThe same is true for any module:\n(by which we mean a file that ends in .py)\nI can import it if I’m in the right directory\n\n\n\nThis is just because of how Python’s import system works:\n“First check in the current working directory if there’s a .py file or a directory with an __init__.py that has the name we’re importing”\n\n\nHow do I make it so I can\n\npip install simple\nthen import simple without being in the right directory?\n\n\nNote that this the code I have locally, we aren’t talking about distribution packages yet!\n\n\nHow do I make it so I can pip install simple and then import simple without being in the right directory?\nWe need one more file:\na pyproject.toml file\n\n\n\nThis is the bare minimum pyproject.toml file for our simple module\n\n\n\n\n\n\n“Tom’s Obvious Minimal Language”: https://toml.io/en/\n\n“A [configuration] file format for humans”\n\nUsed in other ecosystems\nNice because parsers map to native type\n\n\n\n\n\n\n\n\n\n\n\nthe spec: https://toml.io/en/v1.0.0\n\n\n\nNow just\n\nnavigate to the directory where your module lives\nactivate your virtual environment\ntype pip install .\nnow you can import it!\n\n\n\n\n\nScenario: Samspon is a computational dog scientist.\nSampson has a set of functions they are using across all their projects, so they wrap them up in a package, dogpy\n\n\n\n\n\n\nwww.rexspecs.com/blogs/news/sampson-the-lab-dog-tests-the-boundaries-of-science\n\n\nSampson’s project dogpy has the following:\n\nA src directory (for “source code”)\nThe package itself inside src, a directory named dogpy\nA pyproject.toml file\n\n\nWhat’s different here?\n\n\n\n\n\n\n\n\n\nSo you don’t accidentally import the local package when you want to run tests on the distribution package\nAesthetics: it looks better to have “src”, “docs”, “tests”\n\n\n\n\n\nWe have the dogpy dir\nIt contains one module (by which I mean a .py file): bark.py\nIt also contains another directory! The elusive sub-package. Namely, fetch.\nThe fetch sub-package contains two other modules: ball.py and bone.py\n\n\n\n\n\nIt initializes your module\nYou import modules, functions, etc., here\nso that your users can get what they need from your package’s namespace\n\n\n\n\n\n\nShort version: “flat is better than nested”\n\nYour users want to write package.function, not package.subpackage.subsubpackage.subsubsubpackage.function\nBut having one level of sub-packages can help with readability\nMost scientific Python packages have a set of sub-packages, each containing functions:\n\nnumpy.random.default_rng\nsklearn.model_selection.test_train_split\n\nYour package’s code ≠ your package’s namespace! You control the namespace with imports!\n\nLong version:\n\nhttps://benhoyt.com/writings/python-api-design/\nhttp://blog.nicholdav.info/four-tips-structuring-research-python/\n\n\n\n\n\n\n\n\nNow we need a distribution package.\nWe also need to define some more terms so that the rest of this make sense.\n\n\n\n\nIt used to be the case that all distributions were built with a setup.py file\nThere was only one tool that did this: setuptools\nNow: pure Python projects don’t need a setup.py file It’s better\n\n\nThe long version:\nhttps://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html\n\n\n\n\nTo move away from setup.py and setuptools, PEP 517 introduced the idea of “front-ends” and “back-ends”\nhttps://peps.python.org/pep-0517/\nMostly you shouldn’t have to think about this.\nBut in your pyproject.toml file you will specify a “build backend”.\nThat’s the tool that knows how to take your “source tree” and make a distribution package.\n\n\n\n“Build backends” (always) make two types of distribution packages:\na source distribution (“sdist”), and wheels\nhttps://packaging.python.org/en/latest/discussions/package-formats/\n\n\n“Sdist”\n\nLiterally your project in a compressed archive (.tar.gz)\npip uses this as a fallback if it can’t find a wheel\nDownstream package managers use the sdist to provide their own distributions, e.g. conda, homebrew\n\nWheel\n\nCan be platform specific (e.g., Windows 64 bit)\nMatters most for packages with compiled extensions\n\n\n\n\n\nTo-do list:\n\nAdd metadata to our pyproject.toml file\n\nBuild backend\nThe metadata that will show up on PyPI\n\nBuild your distribution package\nPublish the distribution package to PyPI\n\n\n\n\n“I have to write this pyproject.toml file by hand, make and virtual environments, and I don’t even know how much work it will take to build a distribution package yet…”\nGood news!\nThere are packaging tools that will do a lot of this work for you!\n\n\n\nThe not so good news: there are many different tools\nhttps://pradyunsg.me/blog/2023/01/21/thoughts-on-python-packaging/\nHere’s two options:\n\nLightweight: flit– https://flit.pypa.io/en/stable/\nSwiss army knife: hatch – https://hatch.pypa.io/\n\n\n\n\nTo build our distribution package, we need a build system.\nWe declare this in a build-system table.\n\n\n\n\n\n\nGood explainer in flit docs:\nhttps://flit.pypa.io/en/latest/ pyproject_toml.html#new-style-metadata\n\n\n\n\n\n\n\n\nYou should know about SPEC0, that specifies what versions of Python the core scientific packages work with: https://scientific-python.org/specs/spec-0000/\nUsually you don’t want to put upper bounds (&gt;3.6, &lt;4.0) on Python or your dependencies: https://iscinumpy.dev/post/bound-version-constraints/\n\n\n\n\nMost packaging tools have some sort of build command\n\n\n\n\nMost packaging tools have some sort of publish command\n\n\n\n\n\n\n\nInfrastructure:\nAll the other stuff besides code that makes it easier for\n\nyou to develop and maintain your package\nothers to use your package, give you feedback, and contribute\n\n\n\nREADME\nLICENSE\nCode of conduct\nCHANGELOG\ndocs\ntests\nissue tracker\ncontinuous integration\n\n\n\n\n\n\n\nOften the first thing people see\nGitHub shows this by default -www.makeareadme.com/\n\n\n\n\n\n\nThings you want in your README:\n\nPackage name\nBrief description that makes sense to a broad audience\nVisuals! 1 picture = 1k words\nInstallation instructions\nUsage\nHow to contribute\nCitation information\n\n\n\n\nYou are giving other people permission to use your code\n\nhttps://choosealicense.com/\nMIT and BSD are common for open source scientific software\nMore on this later!\n\n\n\n\n\nEstablishes expectations for behavior\nHelps create inclusive community\nhttps://opensource.guide/code-of-conduct/\nHighly suggest looking at other scientific Python projects: https://docs.scipy.org/doc/scipy/dev/conduct/ code_of_conduct.html#endnotes\n\n\n\n\nHuman-readable record of changes to your project\nhttps://keepachangelog.com/en/1.1.0/\n\n\n\n\n\n\n\n\n\n\n\nTo be discussed in later modules"
+    "text": "The previous versions of this module!\nPython packaging 101 tutorial from pyOpenSci: https://www.pyopensci.org/python-package-guide/tutorials/intro.html#python-packaging-101\nPython Packages: https://py-pkgs.org/\nScientific Python packaging guide: https://learn.scientific-python.org/development/tutorials/packaging/\nPython Packaging User Guide: https://packaging.python.org/en/latest/\n\n\n\n\nFirst, let’s define module\nhttps://docs.python.org/3/glossary.html#term-module\n\nModule: An object that serves an organizational unit of python code. Modules have a namespace containing arbitrary python objects. Modules are loaded into Python by the process of importing\n\n\n\n\nDeconstructing that definition:\n\nWhen I write import modulename I am loading a module\n\nBut we also talk about “importing a package”!\nThis seems to imply a package is a kind of module\n\n\n\n\nThe module can contain “arbitrary Python objects”\n\nThat could include other modules!\nIt’s almost like we need a special name for a “module that can contain other modules”!\n\n\n\n\nWhen I load the module, its name gets added to the namespace\n\nnamespace: a collection of currently defined names and the objects they reference\nSo now I can use the module name to access things inside of it with dot notation, like another module that contains a function: numpy.random.default_rng\n\n\n\n\n\n\nThe standard library\n\nPython code\nCompiled C code\n\nA local file that ends in .py\n\n(confusingly, also called a “module”)\n\nThird-party libraries that you pip install or conda install\n\ni.e., packages\n\nA local package (we’re getting to this)\n\n\n\n\nOk, now that we spent all that time defining module, we can finally define package\n“A Python module which can contain submodules or recursively, subpackages.”\nhttps://docs.python.org/3/glossary.html#term-package\n\n\n\nTwo main usages:\nhttps://packaging.python.org/en/latest/discussions/distribution-package-vs-import-package/\n\n\n\nThis is the one we already talked about\nThe thing you get when you write import packagename in your code\nWe’re going to show you how to make one of these first\n\n\n\nThe actual artifact that gets downloaded off the internet and stored on your computer somewhere\nlike when you run pip install package\nWe need to learn how to make one of these too!\n\n\n\n\n\n\nTwo common cases for research code:\n\nCode that goes with a research article\n\nmainly used to reproduce the results\nAKA a (computational) project or a research compendium\n\nA generalized tool or library that other researchers can use\n\n\n\n\n\nYou have multiple scripts that use the same function\nSo you want to be able to import that function\nIt’s sufficient for you to make an “import package” you use in scripts (e.g., in a Jupyter notebook)\n\n\n\nThis kind of package does not necessarily need all the infrastructure you will learn about in this workshop\n\nsuch as: its own rendered website with documentation\n\nIf someone uses the code for your paper, they will get a copy of the code and set it up so they can import the same way; they don’t expect to pip install paper\n\n\nFor more on projects and research compendia in general, see\n\n“Good enough practices in scientific computing”\n“How repro-packs can save your future self”\nTuring Way guide: https://book.the-turing-way.org/reproducible-research/compendia\nKarthik’s talk: https://github.com/karthik/rstudio2019\n\n\n\n\nThis is what we’re here (mostly) to learn about!\nThis is when we want to make a “distribution package” too!\n\nYou want people to be able to pip install awesometool\n\n\n\n\n\n\n\nThe simplest possible Python package\n\nA directory with a single file in it named __init__.py\n\nThe file can be empty\n\nThe __init__.py file tells Python that “this directory is a package\n\n\n\n\n\nThis is enough for me to be able to import the package\nas long as I’m in the right directory\n\nThe same is true for any module:\n(by which we mean a file that ends in .py)\nI can import it if I’m in the right directory\n\n\n\nThis is just because of how Python’s import system works:\n“First check in the current working directory if there’s a .py file or a directory with an __init__.py that has the name we’re importing”\n\n\nHow do I make it so I can\n\npip install simple\nthen import simple without being in the right directory?\n\n\nNote that this the code I have locally, we aren’t talking about distribution packages yet!\n\n\nHow do I make it so I can pip install simple and then import simple without being in the right directory?\nWe need one more file:\na pyproject.toml file\n\n\n\nThis is the bare minimum pyproject.toml file for our simple module\n\n\n\n\n\n\n“Tom’s Obvious Minimal Language”: https://toml.io/en/\n\n“A [configuration] file format for humans”\n\nUsed in other ecosystems\nNice because parsers map to native type\n\n\n\n\n\n\n\n\n\n\n\nthe spec: https://toml.io/en/v1.0.0\n\n\n\nNow just\n\nnavigate to the directory where your module lives\nactivate your virtual environment\ntype pip install .\nnow you can import it!\n\n\n\n\n\nScenario: Samspon is a computational dog scientist.\nSampson has a set of functions they are using across all their projects, so they wrap them up in a package, dogpy\n\n\n\n\n\n\nwww.rexspecs.com/blogs/news/sampson-the-lab-dog-tests-the-boundaries-of-science\n\n\nSampson’s project dogpy has the following:\n\nA src directory (for “source code”)\nThe package itself inside src, a directory named dogpy\nA pyproject.toml file\n\n\nWhat’s different here?\n\n\n\n\n\n\n\n\n\nSo you don’t accidentally import the local package when you want to run tests on the distribution package\nAesthetics: it looks better to have “src”, “docs”, “tests”\n\n\n\n\n\nWe have the dogpy dir\nIt contains one module (by which I mean a .py file): bark.py\nIt also contains another directory! The elusive sub-package. Namely, fetch.\nThe fetch sub-package contains two other modules: ball.py and bone.py\n\n\n\n\n\nIt initializes your module\nYou import modules, functions, etc., here\nso that your users can get what they need from your package’s namespace\n\n\n\n\n\n\nShort version: “flat is better than nested”\n\nYour users want to write package.function, not package.subpackage.subsubpackage.subsubsubpackage.function\nBut having one level of sub-packages can help with readability\nMost scientific Python packages have a set of sub-packages, each containing functions:\n\nnumpy.random.default_rng\nsklearn.model_selection.test_train_split\n\nYour package’s code ≠ your package’s namespace! You control the namespace with imports!\n\nLong version:\n\nhttps://benhoyt.com/writings/python-api-design/\nhttp://blog.nicholdav.info/four-tips-structuring-research-python/\n\n\n\n\n\n\n\n\nNow we need a distribution package.\nWe also need to define some more terms so that the rest of this make sense.\n\n\n\n\nIt used to be the case that all distributions were built with a setup.py file\nThere was only one tool that did this: setuptools\nNow: pure Python projects don’t need a setup.py file It’s better\n\n\nThe long version:\nhttps://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html\n\n\n\n\nTo move away from setup.py and setuptools, PEP 517 introduced the idea of “front-ends” and “back-ends”\nhttps://peps.python.org/pep-0517/\nMostly you shouldn’t have to think about this.\nBut in your pyproject.toml file you will specify a “build backend”.\nThat’s the tool that knows how to take your “source tree” and make a distribution package.\n\n\n\n“Build backends” (always) make two types of distribution packages:\na source distribution (“sdist”), and wheels\nhttps://packaging.python.org/en/latest/discussions/package-formats/\n\n\n“Sdist”\n\nLiterally your project in a compressed archive (.tar.gz)\npip uses this as a fallback if it can’t find a wheel\nDownstream package managers use the sdist to provide their own distributions, e.g. conda, homebrew\n\nWheel\n\nCan be platform specific (e.g., Windows 64 bit)\nMatters most for packages with compiled extensions\n\n\n\n\n\nTo-do list:\n\nAdd metadata to our pyproject.toml file\n\nBuild backend\nThe metadata that will show up on PyPI\n\nBuild your distribution package\nPublish the distribution package to PyPI\n\n\n\n\n“I have to write this pyproject.toml file by hand, make and virtual environments, and I don’t even know how much work it will take to build a distribution package yet…”\nGood news!\nThere are packaging tools that will do a lot of this work for you!\n\n\n\nThe not so good news: there are many different tools\nhttps://pradyunsg.me/blog/2023/01/21/thoughts-on-python-packaging/\nHere’s two options:\n\nLightweight: flit– https://flit.pypa.io/en/stable/\nSwiss army knife: hatch – https://hatch.pypa.io/\n\n\n\n\nTo build our distribution package, we need a build system.\nWe declare this in a build-system table.\n\n\n\n\n\n\nGood explainer in flit docs:\nhttps://flit.pypa.io/en/latest/ pyproject_toml.html#new-style-metadata\n\n\n\n\n\n\n\n\nYou should know about SPEC0, that specifies what versions of Python the core scientific packages work with: https://scientific-python.org/specs/spec-0000/\nUsually you don’t want to put upper bounds (&gt;3.6, &lt;4.0) on Python or your dependencies: https://iscinumpy.dev/post/bound-version-constraints/\n\n\n\n\nMost packaging tools have some sort of build command\n\n\n\n\nMost packaging tools have some sort of publish command\n\n\n\n\n\n\n\nInfrastructure:\nAll the other stuff besides code that makes it easier for\n\nyou to develop and maintain your package\nothers to use your package, give you feedback, and contribute\n\n\n\nREADME\nLICENSE\nCode of conduct\nCHANGELOG\ndocs\ntests\nissue tracker\ncontinuous integration\n\n\n\n\n\n\n\nOften the first thing people see\nGitHub shows this by default -www.makeareadme.com/\n\n\n\n\n\n\nThings you want in your README:\n\nPackage name\nBrief description that makes sense to a broad audience\nVisuals! 1 picture = 1k words\nInstallation instructions\nUsage\nHow to contribute\nCitation information\n\n\n\n\nYou are giving other people permission to use your code\n\nhttps://choosealicense.com/\nMIT and BSD are common for open source scientific software\nMore on this later!\n\n\n\n\n\nEstablishes expectations for behavior\nHelps create inclusive community\nhttps://opensource.guide/code-of-conduct/\nHighly suggest looking at other scientific Python projects: https://docs.scipy.org/doc/scipy/dev/conduct/ code_of_conduct.html#endnotes\n\n\n\n\nHuman-readable record of changes to your project\nhttps://keepachangelog.com/en/1.1.0/\n\n\n\n\n\n\n\n\n\n\n\nTo be discussed in later modules",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#acknowledgements",
     "href": "package_structure.html#acknowledgements",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "The previous versions of this module!\nPython packaging 101 tutorial from pyOpenSci: https://www.pyopensci.org/python-package-guide/tutorials/intro.html#python-packaging-101\nPython Packages: https://py-pkgs.org/\nScientific Python packaging guide: https://learn.scientific-python.org/development/tutorials/packaging/\nPython Packaging User Guide: https://packaging.python.org/en/latest/"
+    "text": "The previous versions of this module!\nPython packaging 101 tutorial from pyOpenSci: https://www.pyopensci.org/python-package-guide/tutorials/intro.html#python-packaging-101\nPython Packages: https://py-pkgs.org/\nScientific Python packaging guide: https://learn.scientific-python.org/development/tutorials/packaging/\nPython Packaging User Guide: https://packaging.python.org/en/latest/",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#what-is-a-python-package",
     "href": "package_structure.html#what-is-a-python-package",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "First, let’s define module\nhttps://docs.python.org/3/glossary.html#term-module\n\nModule: An object that serves an organizational unit of python code. Modules have a namespace containing arbitrary python objects. Modules are loaded into Python by the process of importing"
+    "text": "First, let’s define module\nhttps://docs.python.org/3/glossary.html#term-module\n\nModule: An object that serves an organizational unit of python code. Modules have a namespace containing arbitrary python objects. Modules are loaded into Python by the process of importing",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#section",
     "href": "package_structure.html#section",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "Deconstructing that definition:\n\nWhen I write import modulename I am loading a module\n\nBut we also talk about “importing a package”!\nThis seems to imply a package is a kind of module\n\n\n\n\nThe module can contain “arbitrary Python objects”\n\nThat could include other modules!\nIt’s almost like we need a special name for a “module that can contain other modules”!\n\n\n\n\nWhen I load the module, its name gets added to the namespace\n\nnamespace: a collection of currently defined names and the objects they reference\nSo now I can use the module name to access things inside of it with dot notation, like another module that contains a function: numpy.random.default_rng"
+    "text": "Deconstructing that definition:\n\nWhen I write import modulename I am loading a module\n\nBut we also talk about “importing a package”!\nThis seems to imply a package is a kind of module\n\n\n\n\nThe module can contain “arbitrary Python objects”\n\nThat could include other modules!\nIt’s almost like we need a special name for a “module that can contain other modules”!\n\n\n\n\nWhen I load the module, its name gets added to the namespace\n\nnamespace: a collection of currently defined names and the objects they reference\nSo now I can use the module name to access things inside of it with dot notation, like another module that contains a function: numpy.random.default_rng",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#where-do-modules-come-from",
     "href": "package_structure.html#where-do-modules-come-from",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "The standard library\n\nPython code\nCompiled C code\n\nA local file that ends in .py\n\n(confusingly, also called a “module”)\n\nThird-party libraries that you pip install or conda install\n\ni.e., packages\n\nA local package (we’re getting to this)"
+    "text": "The standard library\n\nPython code\nCompiled C code\n\nA local file that ends in .py\n\n(confusingly, also called a “module”)\n\nThird-party libraries that you pip install or conda install\n\ni.e., packages\n\nA local package (we’re getting to this)",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#what-is-a-python-package-1",
     "href": "package_structure.html#what-is-a-python-package-1",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "Ok, now that we spent all that time defining module, we can finally define package\n“A Python module which can contain submodules or recursively, subpackages.”\nhttps://docs.python.org/3/glossary.html#term-package"
+    "text": "Ok, now that we spent all that time defining module, we can finally define package\n“A Python module which can contain submodules or recursively, subpackages.”\nhttps://docs.python.org/3/glossary.html#term-package",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#package-can-have-multiple-meanings",
     "href": "package_structure.html#package-can-have-multiple-meanings",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "Two main usages:\nhttps://packaging.python.org/en/latest/discussions/distribution-package-vs-import-package/"
+    "text": "Two main usages:\nhttps://packaging.python.org/en/latest/discussions/distribution-package-vs-import-package/",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#two-types-of-packages-import-package",
     "href": "package_structure.html#two-types-of-packages-import-package",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "This is the one we already talked about\nThe thing you get when you write import packagename in your code\nWe’re going to show you how to make one of these first"
+    "text": "This is the one we already talked about\nThe thing you get when you write import packagename in your code\nWe’re going to show you how to make one of these first",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#two-types-of-packages-distribution-package",
     "href": "package_structure.html#two-types-of-packages-distribution-package",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "The actual artifact that gets downloaded off the internet and stored on your computer somewhere\nlike when you run pip install package\nWe need to learn how to make one of these too!"
+    "text": "The actual artifact that gets downloaded off the internet and stored on your computer somewhere\nlike when you run pip install package\nWe need to learn how to make one of these too!",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#when-should-i-turn-my-code-into-a-package",
     "href": "package_structure.html#when-should-i-turn-my-code-into-a-package",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "Two common cases for research code:\n\nCode that goes with a research article\n\nmainly used to reproduce the results\nAKA a (computational) project or a research compendium\n\nA generalized tool or library that other researchers can use"
+    "text": "Two common cases for research code:\n\nCode that goes with a research article\n\nmainly used to reproduce the results\nAKA a (computational) project or a research compendium\n\nA generalized tool or library that other researchers can use",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#packaging-code-for-a-paper",
     "href": "package_structure.html#packaging-code-for-a-paper",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "You have multiple scripts that use the same function\nSo you want to be able to import that function\nIt’s sufficient for you to make an “import package” you use in scripts (e.g., in a Jupyter notebook)\n\n\n\nThis kind of package does not necessarily need all the infrastructure you will learn about in this workshop\n\nsuch as: its own rendered website with documentation\n\nIf someone uses the code for your paper, they will get a copy of the code and set it up so they can import the same way; they don’t expect to pip install paper\n\n\nFor more on projects and research compendia in general, see\n\n“Good enough practices in scientific computing”\n“How repro-packs can save your future self”\nTuring Way guide: https://book.the-turing-way.org/reproducible-research/compendia\nKarthik’s talk: https://github.com/karthik/rstudio2019"
+    "text": "You have multiple scripts that use the same function\nSo you want to be able to import that function\nIt’s sufficient for you to make an “import package” you use in scripts (e.g., in a Jupyter notebook)\n\n\n\nThis kind of package does not necessarily need all the infrastructure you will learn about in this workshop\n\nsuch as: its own rendered website with documentation\n\nIf someone uses the code for your paper, they will get a copy of the code and set it up so they can import the same way; they don’t expect to pip install paper\n\n\nFor more on projects and research compendia in general, see\n\n“Good enough practices in scientific computing”\n“How repro-packs can save your future self”\nTuring Way guide: https://book.the-turing-way.org/reproducible-research/compendia\nKarthik’s talk: https://github.com/karthik/rstudio2019",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#to-share-a-generalized-tool",
     "href": "package_structure.html#to-share-a-generalized-tool",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "This is what we’re here (mostly) to learn about!\nThis is when we want to make a “distribution package” too!\n\nYou want people to be able to pip install awesometool"
+    "text": "This is what we’re here (mostly) to learn about!\nThis is when we want to make a “distribution package” too!\n\nYou want people to be able to pip install awesometool",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#the-structure-of-a-python-package",
     "href": "package_structure.html#the-structure-of-a-python-package",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "The simplest possible Python package\n\nA directory with a single file in it named __init__.py\n\nThe file can be empty\n\nThe __init__.py file tells Python that “this directory is a package"
+    "text": "The simplest possible Python package\n\nA directory with a single file in it named __init__.py\n\nThe file can be empty\n\nThe __init__.py file tells Python that “this directory is a package",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#how-can-i-import-my-own-code",
     "href": "package_structure.html#how-can-i-import-my-own-code",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "This is enough for me to be able to import the package\nas long as I’m in the right directory\n\nThe same is true for any module:\n(by which we mean a file that ends in .py)\nI can import it if I’m in the right directory\n\n\n\nThis is just because of how Python’s import system works:\n“First check in the current working directory if there’s a .py file or a directory with an __init__.py that has the name we’re importing”\n\n\nHow do I make it so I can\n\npip install simple\nthen import simple without being in the right directory?\n\n\nNote that this the code I have locally, we aren’t talking about distribution packages yet!\n\n\nHow do I make it so I can pip install simple and then import simple without being in the right directory?\nWe need one more file:\na pyproject.toml file"
+    "text": "This is enough for me to be able to import the package\nas long as I’m in the right directory\n\nThe same is true for any module:\n(by which we mean a file that ends in .py)\nI can import it if I’m in the right directory\n\n\n\nThis is just because of how Python’s import system works:\n“First check in the current working directory if there’s a .py file or a directory with an __init__.py that has the name we’re importing”\n\n\nHow do I make it so I can\n\npip install simple\nthen import simple without being in the right directory?\n\n\nNote that this the code I have locally, we aren’t talking about distribution packages yet!\n\n\nHow do I make it so I can pip install simple and then import simple without being in the right directory?\nWe need one more file:\na pyproject.toml file",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#how-do-i-make-it-so-i-can-import-a-module",
     "href": "package_structure.html#how-do-i-make-it-so-i-can-import-a-module",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "This is the bare minimum pyproject.toml file for our simple module"
+    "text": "This is the bare minimum pyproject.toml file for our simple module",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#what-is-a-toml-file",
     "href": "package_structure.html#what-is-a-toml-file",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "“Tom’s Obvious Minimal Language”: https://toml.io/en/\n\n“A [configuration] file format for humans”\n\nUsed in other ecosystems\nNice because parsers map to native type"
+    "text": "“Tom’s Obvious Minimal Language”: https://toml.io/en/\n\n“A [configuration] file format for humans”\n\nUsed in other ecosystems\nNice because parsers map to native type",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#anatomy-of-a-toml-file",
     "href": "package_structure.html#anatomy-of-a-toml-file",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "the spec: https://toml.io/en/v1.0.0"
+    "text": "the spec: https://toml.io/en/v1.0.0",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#ok-i-have-a-pyproject.toml-file-now-what",
     "href": "package_structure.html#ok-i-have-a-pyproject.toml-file-now-what",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "Now just\n\nnavigate to the directory where your module lives\nactivate your virtual environment\ntype pip install .\nnow you can import it!"
+    "text": "Now just\n\nnavigate to the directory where your module lives\nactivate your virtual environment\ntype pip install .\nnow you can import it!",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#a-slightly-more-complicated-python-package",
     "href": "package_structure.html#a-slightly-more-complicated-python-package",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "Scenario: Samspon is a computational dog scientist.\nSampson has a set of functions they are using across all their projects, so they wrap them up in a package, dogpy\n\n\n\n\n\n\nwww.rexspecs.com/blogs/news/sampson-the-lab-dog-tests-the-boundaries-of-science\n\n\nSampson’s project dogpy has the following:\n\nA src directory (for “source code”)\nThe package itself inside src, a directory named dogpy\nA pyproject.toml file\n\n\nWhat’s different here?"
+    "text": "Scenario: Samspon is a computational dog scientist.\nSampson has a set of functions they are using across all their projects, so they wrap them up in a package, dogpy\n\n\n\n\n\n\nwww.rexspecs.com/blogs/news/sampson-the-lab-dog-tests-the-boundaries-of-science\n\n\nSampson’s project dogpy has the following:\n\nA src directory (for “source code”)\nThe package itself inside src, a directory named dogpy\nA pyproject.toml file\n\n\nWhat’s different here?",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#why-src",
     "href": "package_structure.html#why-src",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "So you don’t accidentally import the local package when you want to run tests on the distribution package\nAesthetics: it looks better to have “src”, “docs”, “tests”"
+    "text": "So you don’t accidentally import the local package when you want to run tests on the distribution package\nAesthetics: it looks better to have “src”, “docs”, “tests”",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#the-package-itself",
     "href": "package_structure.html#the-package-itself",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "We have the dogpy dir\nIt contains one module (by which I mean a .py file): bark.py\nIt also contains another directory! The elusive sub-package. Namely, fetch.\nThe fetch sub-package contains two other modules: ball.py and bone.py"
+    "text": "We have the dogpy dir\nIt contains one module (by which I mean a .py file): bark.py\nIt also contains another directory! The elusive sub-package. Namely, fetch.\nThe fetch sub-package contains two other modules: ball.py and bone.py",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#why-__init__.py-anyways",
     "href": "package_structure.html#why-__init__.py-anyways",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "It initializes your module\nYou import modules, functions, etc., here\nso that your users can get what they need from your package’s namespace"
+    "text": "It initializes your module\nYou import modules, functions, etc., here\nso that your users can get what they need from your package’s namespace",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#how-should-i-structure-my-python-package",
     "href": "package_structure.html#how-should-i-structure-my-python-package",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "Short version: “flat is better than nested”\n\nYour users want to write package.function, not package.subpackage.subsubpackage.subsubsubpackage.function\nBut having one level of sub-packages can help with readability\nMost scientific Python packages have a set of sub-packages, each containing functions:\n\nnumpy.random.default_rng\nsklearn.model_selection.test_train_split\n\nYour package’s code ≠ your package’s namespace! You control the namespace with imports!\n\nLong version:\n\nhttps://benhoyt.com/writings/python-api-design/\nhttp://blog.nicholdav.info/four-tips-structuring-research-python/"
+    "text": "Short version: “flat is better than nested”\n\nYour users want to write package.function, not package.subpackage.subsubpackage.subsubsubpackage.function\nBut having one level of sub-packages can help with readability\nMost scientific Python packages have a set of sub-packages, each containing functions:\n\nnumpy.random.default_rng\nsklearn.model_selection.test_train_split\n\nYour package’s code ≠ your package’s namespace! You control the namespace with imports!\n\nLong version:\n\nhttps://benhoyt.com/writings/python-api-design/\nhttp://blog.nicholdav.info/four-tips-structuring-research-python/",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#how-do-i-publish-my-package",
     "href": "package_structure.html#how-do-i-publish-my-package",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "Now we need a distribution package.\nWe also need to define some more terms so that the rest of this make sense."
+    "text": "Now we need a distribution package.\nWe also need to define some more terms so that the rest of this make sense.",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#what-about-setup.py",
     "href": "package_structure.html#what-about-setup.py",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "It used to be the case that all distributions were built with a setup.py file\nThere was only one tool that did this: setuptools\nNow: pure Python projects don’t need a setup.py file It’s better\n\n\nThe long version:\nhttps://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html"
+    "text": "It used to be the case that all distributions were built with a setup.py file\nThere was only one tool that did this: setuptools\nNow: pure Python projects don’t need a setup.py file It’s better\n\n\nThe long version:\nhttps://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#distribution-packages-frontends-and-backends",
     "href": "package_structure.html#distribution-packages-frontends-and-backends",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "To move away from setup.py and setuptools, PEP 517 introduced the idea of “front-ends” and “back-ends”\nhttps://peps.python.org/pep-0517/\nMostly you shouldn’t have to think about this.\nBut in your pyproject.toml file you will specify a “build backend”.\nThat’s the tool that knows how to take your “source tree” and make a distribution package."
+    "text": "To move away from setup.py and setuptools, PEP 517 introduced the idea of “front-ends” and “back-ends”\nhttps://peps.python.org/pep-0517/\nMostly you shouldn’t have to think about this.\nBut in your pyproject.toml file you will specify a “build backend”.\nThat’s the tool that knows how to take your “source tree” and make a distribution package.",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#distribution-packages-formats",
     "href": "package_structure.html#distribution-packages-formats",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "“Build backends” (always) make two types of distribution packages:\na source distribution (“sdist”), and wheels\nhttps://packaging.python.org/en/latest/discussions/package-formats/\n\n\n“Sdist”\n\nLiterally your project in a compressed archive (.tar.gz)\npip uses this as a fallback if it can’t find a wheel\nDownstream package managers use the sdist to provide their own distributions, e.g. conda, homebrew\n\nWheel\n\nCan be platform specific (e.g., Windows 64 bit)\nMatters most for packages with compiled extensions"
+    "text": "“Build backends” (always) make two types of distribution packages:\na source distribution (“sdist”), and wheels\nhttps://packaging.python.org/en/latest/discussions/package-formats/\n\n\n“Sdist”\n\nLiterally your project in a compressed archive (.tar.gz)\npip uses this as a fallback if it can’t find a wheel\nDownstream package managers use the sdist to provide their own distributions, e.g. conda, homebrew\n\nWheel\n\nCan be platform specific (e.g., Windows 64 bit)\nMatters most for packages with compiled extensions",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#how-do-i-publish-my-package-1",
     "href": "package_structure.html#how-do-i-publish-my-package-1",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "To-do list:\n\nAdd metadata to our pyproject.toml file\n\nBuild backend\nThe metadata that will show up on PyPI\n\nBuild your distribution package\nPublish the distribution package to PyPI"
+    "text": "To-do list:\n\nAdd metadata to our pyproject.toml file\n\nBuild backend\nThe metadata that will show up on PyPI\n\nBuild your distribution package\nPublish the distribution package to PyPI",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#python-packaging-feels-like-a-lot-of-work",
     "href": "package_structure.html#python-packaging-feels-like-a-lot-of-work",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "“I have to write this pyproject.toml file by hand, make and virtual environments, and I don’t even know how much work it will take to build a distribution package yet…”\nGood news!\nThere are packaging tools that will do a lot of this work for you!"
+    "text": "“I have to write this pyproject.toml file by hand, make and virtual environments, and I don’t even know how much work it will take to build a distribution package yet…”\nGood news!\nThere are packaging tools that will do a lot of this work for you!",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#python-packaging-feels-like-a-lot-of-work-1",
     "href": "package_structure.html#python-packaging-feels-like-a-lot-of-work-1",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "The not so good news: there are many different tools\nhttps://pradyunsg.me/blog/2023/01/21/thoughts-on-python-packaging/\nHere’s two options:\n\nLightweight: flit– https://flit.pypa.io/en/stable/\nSwiss army knife: hatch – https://hatch.pypa.io/"
+    "text": "The not so good news: there are many different tools\nhttps://pradyunsg.me/blog/2023/01/21/thoughts-on-python-packaging/\nHere’s two options:\n\nLightweight: flit– https://flit.pypa.io/en/stable/\nSwiss army knife: hatch – https://hatch.pypa.io/",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#pyproject.toml-metadata-build-system",
     "href": "package_structure.html#pyproject.toml-metadata-build-system",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "To build our distribution package, we need a build system.\nWe declare this in a build-system table."
+    "text": "To build our distribution package, we need a build system.\nWe declare this in a build-system table.",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#pyproject.toml-project-metadata",
     "href": "package_structure.html#pyproject.toml-project-metadata",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "Good explainer in flit docs:\nhttps://flit.pypa.io/en/latest/ pyproject_toml.html#new-style-metadata"
+    "text": "Good explainer in flit docs:\nhttps://flit.pypa.io/en/latest/ pyproject_toml.html#new-style-metadata",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#aside-python-requires-and-dependencies",
     "href": "package_structure.html#aside-python-requires-and-dependencies",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "You should know about SPEC0, that specifies what versions of Python the core scientific packages work with: https://scientific-python.org/specs/spec-0000/\nUsually you don’t want to put upper bounds (&gt;3.6, &lt;4.0) on Python or your dependencies: https://iscinumpy.dev/post/bound-version-constraints/"
+    "text": "You should know about SPEC0, that specifies what versions of Python the core scientific packages work with: https://scientific-python.org/specs/spec-0000/\nUsually you don’t want to put upper bounds (&gt;3.6, &lt;4.0) on Python or your dependencies: https://iscinumpy.dev/post/bound-version-constraints/",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#building-distribution-packages",
     "href": "package_structure.html#building-distribution-packages",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "Most packaging tools have some sort of build command"
+    "text": "Most packaging tools have some sort of build command",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#publishing-to-pypi",
     "href": "package_structure.html#publishing-to-pypi",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "Most packaging tools have some sort of publish command"
+    "text": "Most packaging tools have some sort of publish command",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#what-else-do-i-need-besides-code",
     "href": "package_structure.html#what-else-do-i-need-besides-code",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "Infrastructure:\nAll the other stuff besides code that makes it easier for\n\nyou to develop and maintain your package\nothers to use your package, give you feedback, and contribute\n\n\n\nREADME\nLICENSE\nCode of conduct\nCHANGELOG\ndocs\ntests\nissue tracker\ncontinuous integration"
+    "text": "Infrastructure:\nAll the other stuff besides code that makes it easier for\n\nyou to develop and maintain your package\nothers to use your package, give you feedback, and contribute\n\n\n\nREADME\nLICENSE\nCode of conduct\nCHANGELOG\ndocs\ntests\nissue tracker\ncontinuous integration",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#readme",
     "href": "package_structure.html#readme",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "Often the first thing people see\nGitHub shows this by default -www.makeareadme.com/\n\n\n\n\n\n\nThings you want in your README:\n\nPackage name\nBrief description that makes sense to a broad audience\nVisuals! 1 picture = 1k words\nInstallation instructions\nUsage\nHow to contribute\nCitation information"
+    "text": "Often the first thing people see\nGitHub shows this by default -www.makeareadme.com/\n\n\n\n\n\n\nThings you want in your README:\n\nPackage name\nBrief description that makes sense to a broad audience\nVisuals! 1 picture = 1k words\nInstallation instructions\nUsage\nHow to contribute\nCitation information",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#license",
     "href": "package_structure.html#license",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "You are giving other people permission to use your code\n\nhttps://choosealicense.com/\nMIT and BSD are common for open source scientific software\nMore on this later!"
+    "text": "You are giving other people permission to use your code\n\nhttps://choosealicense.com/\nMIT and BSD are common for open source scientific software\nMore on this later!",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#code-of-conduct",
     "href": "package_structure.html#code-of-conduct",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "Establishes expectations for behavior\nHelps create inclusive community\nhttps://opensource.guide/code-of-conduct/\nHighly suggest looking at other scientific Python projects: https://docs.scipy.org/doc/scipy/dev/conduct/ code_of_conduct.html#endnotes"
+    "text": "Establishes expectations for behavior\nHelps create inclusive community\nhttps://opensource.guide/code-of-conduct/\nHighly suggest looking at other scientific Python projects: https://docs.scipy.org/doc/scipy/dev/conduct/ code_of_conduct.html#endnotes",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#changelog",
     "href": "package_structure.html#changelog",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "Human-readable record of changes to your project\nhttps://keepachangelog.com/en/1.1.0/"
+    "text": "Human-readable record of changes to your project\nhttps://keepachangelog.com/en/1.1.0/",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "package_structure.html#docs-tests-etc.",
     "href": "package_structure.html#docs-tests-etc.",
     "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "To be discussed in later modules"
+    "text": "To be discussed in later modules",
+    "crumbs": [
+      "(re)introducing Python packaging"
+    ]
   },
   {
     "objectID": "software-revealjs.html#agenda",
