@@ -16,6 +16,8 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
+      - software_design.ipynb
+      - package_structure.ipynd
       - documentation.ipynb
 
 format:
