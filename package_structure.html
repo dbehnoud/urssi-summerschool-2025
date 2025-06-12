@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="David Nicholson">
+
+<title>(re)introducing Python packaging – 2025 URSSI Summer School on Research Software and Open Science</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-19a3c66a9aca0786b50e3569c3292bf3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked slimcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      2025 URSSI Summer School on Research Software and Open Science
+      </li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">2025 URSSI Summer School on Research Software and Open Science</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./software_design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Software Design and Modularity</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+ <span class="menu-text">package_structure.ipynd</span>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./documentation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Documentation</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#python-packaging" id="toc-python-packaging" class="nav-link active" data-scroll-target="#python-packaging">Python packaging</a>
+  <ul class="collapse">
+  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
+  <li><a href="#what-is-a-python-package" id="toc-what-is-a-python-package" class="nav-link" data-scroll-target="#what-is-a-python-package">What is a Python package?</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#where-do-modules-come-from" id="toc-where-do-modules-come-from" class="nav-link" data-scroll-target="#where-do-modules-come-from">Where do modules come from?</a></li>
+  <li><a href="#what-is-a-python-package-1" id="toc-what-is-a-python-package-1" class="nav-link" data-scroll-target="#what-is-a-python-package-1">What is a Python <em>package</em>?</a></li>
+  <li><a href="#package-can-have-multiple-meanings" id="toc-package-can-have-multiple-meanings" class="nav-link" data-scroll-target="#package-can-have-multiple-meanings">“Package” can have multiple meanings!</a></li>
+  <li><a href="#two-types-of-packages-import-package" id="toc-two-types-of-packages-import-package" class="nav-link" data-scroll-target="#two-types-of-packages-import-package">Two types of packages: <em>import package</em></a></li>
+  <li><a href="#two-types-of-packages-distribution-package" id="toc-two-types-of-packages-distribution-package" class="nav-link" data-scroll-target="#two-types-of-packages-distribution-package">Two types of packages: <em>distribution package</em></a></li>
+  <li><a href="#why-would-i-make-a-python-package" id="toc-why-would-i-make-a-python-package" class="nav-link" data-scroll-target="#why-would-i-make-a-python-package">Why would I make a Python package?</a></li>
+  <li><a href="#when-should-i-turn-my-code-into-a-package" id="toc-when-should-i-turn-my-code-into-a-package" class="nav-link" data-scroll-target="#when-should-i-turn-my-code-into-a-package">When should I turn my code into a package?</a></li>
+  <li><a href="#packaging-code-for-a-paper" id="toc-packaging-code-for-a-paper" class="nav-link" data-scroll-target="#packaging-code-for-a-paper">Packaging code for a paper</a></li>
+  <li><a href="#to-share-a-generalized-tool" id="toc-to-share-a-generalized-tool" class="nav-link" data-scroll-target="#to-share-a-generalized-tool">To share a generalized tool</a></li>
+  <li><a href="#how-do-i-turn-my-code-into-a-python-package-i-can-import" id="toc-how-do-i-turn-my-code-into-a-python-package-i-can-import" class="nav-link" data-scroll-target="#how-do-i-turn-my-code-into-a-python-package-i-can-import">How do I turn my code into a Python package I can <code>import</code>?</a></li>
+  <li><a href="#the-structure-of-a-python-package" id="toc-the-structure-of-a-python-package" class="nav-link" data-scroll-target="#the-structure-of-a-python-package">The structure of a Python package</a></li>
+  <li><a href="#how-can-i-import-my-own-code" id="toc-how-can-i-import-my-own-code" class="nav-link" data-scroll-target="#how-can-i-import-my-own-code">How can I <code>import</code> my own code?</a></li>
+  <li><a href="#how-do-i-make-it-so-i-can-import-a-module" id="toc-how-do-i-make-it-so-i-can-import-a-module" class="nav-link" data-scroll-target="#how-do-i-make-it-so-i-can-import-a-module">How do I make it so I can import a module?</a></li>
+  <li><a href="#what-is-a-toml-file" id="toc-what-is-a-toml-file" class="nav-link" data-scroll-target="#what-is-a-toml-file">What is a TOML file?</a></li>
+  <li><a href="#anatomy-of-a-toml-file" id="toc-anatomy-of-a-toml-file" class="nav-link" data-scroll-target="#anatomy-of-a-toml-file">Anatomy of a TOML file</a></li>
+  <li><a href="#ok-i-have-a-pyproject.toml-file-now-what" id="toc-ok-i-have-a-pyproject.toml-file-now-what" class="nav-link" data-scroll-target="#ok-i-have-a-pyproject.toml-file-now-what">Ok, I have a pyproject.toml file, now what?</a></li>
+  <li><a href="#a-slightly-more-complicated-python-package" id="toc-a-slightly-more-complicated-python-package" class="nav-link" data-scroll-target="#a-slightly-more-complicated-python-package">A (slightly) more complicated Python package</a></li>
+  <li><a href="#why-src" id="toc-why-src" class="nav-link" data-scroll-target="#why-src">Why <code>src</code>?</a></li>
+  <li><a href="#the-package-itself" id="toc-the-package-itself" class="nav-link" data-scroll-target="#the-package-itself">The package itself</a></li>
+  <li><a href="#why-__init__.py-anyways" id="toc-why-__init__.py-anyways" class="nav-link" data-scroll-target="#why-__init__.py-anyways">Why <code>__init__.py</code> anyways?</a></li>
+  <li><a href="#how-should-i-structure-my-python-package" id="toc-how-should-i-structure-my-python-package" class="nav-link" data-scroll-target="#how-should-i-structure-my-python-package">How should I structure my Python package?</a></li>
+  <li><a href="#how-do-i-publish-my-package-so-others-can-pip-install-it" id="toc-how-do-i-publish-my-package-so-others-can-pip-install-it" class="nav-link" data-scroll-target="#how-do-i-publish-my-package-so-others-can-pip-install-it">How do I publish my package so others can <code>pip install</code> it?</a></li>
+  <li><a href="#how-do-i-publish-my-package" id="toc-how-do-i-publish-my-package" class="nav-link" data-scroll-target="#how-do-i-publish-my-package">How do I publish my package?</a></li>
+  <li><a href="#what-about-setup.py" id="toc-what-about-setup.py" class="nav-link" data-scroll-target="#what-about-setup.py">What about setup.py?</a></li>
+  <li><a href="#distribution-packages-frontends-and-backends" id="toc-distribution-packages-frontends-and-backends" class="nav-link" data-scroll-target="#distribution-packages-frontends-and-backends">Distribution packages: frontends and backends</a></li>
+  <li><a href="#distribution-packages-formats" id="toc-distribution-packages-formats" class="nav-link" data-scroll-target="#distribution-packages-formats">Distribution packages: formats</a></li>
+  <li><a href="#how-do-i-publish-my-package-1" id="toc-how-do-i-publish-my-package-1" class="nav-link" data-scroll-target="#how-do-i-publish-my-package-1">How do I publish my package?</a></li>
+  <li><a href="#python-packaging-feels-like-a-lot-of-work" id="toc-python-packaging-feels-like-a-lot-of-work" class="nav-link" data-scroll-target="#python-packaging-feels-like-a-lot-of-work">Python packaging feels like a lot of work!</a></li>
+  <li><a href="#python-packaging-feels-like-a-lot-of-work-1" id="toc-python-packaging-feels-like-a-lot-of-work-1" class="nav-link" data-scroll-target="#python-packaging-feels-like-a-lot-of-work-1">Python packaging feels like a lot of work!</a></li>
+  <li><a href="#pyproject.toml-metadata-build-system" id="toc-pyproject.toml-metadata-build-system" class="nav-link" data-scroll-target="#pyproject.toml-metadata-build-system">pyproject.toml metadata: <code>[build-system]</code></a></li>
+  <li><a href="#pyproject.toml-project-metadata" id="toc-pyproject.toml-project-metadata" class="nav-link" data-scroll-target="#pyproject.toml-project-metadata">pyproject.toml <code>project</code> metadata</a></li>
+  <li><a href="#aside-python-requires-and-dependencies" id="toc-aside-python-requires-and-dependencies" class="nav-link" data-scroll-target="#aside-python-requires-and-dependencies">Aside: <code>python-requires</code> and <code>dependencies</code></a></li>
+  <li><a href="#building-distribution-packages" id="toc-building-distribution-packages" class="nav-link" data-scroll-target="#building-distribution-packages">Building distribution packages</a></li>
+  <li><a href="#publishing-to-pypi" id="toc-publishing-to-pypi" class="nav-link" data-scroll-target="#publishing-to-pypi">Publishing to PyPI</a></li>
+  <li><a href="#what-do-i-need-to-develop-and-maintain-a-python-package-besides-code" id="toc-what-do-i-need-to-develop-and-maintain-a-python-package-besides-code" class="nav-link" data-scroll-target="#what-do-i-need-to-develop-and-maintain-a-python-package-besides-code">What do I need to develop and maintain a Python package, besides code?</a></li>
+  <li><a href="#what-else-do-i-need-besides-code" id="toc-what-else-do-i-need-besides-code" class="nav-link" data-scroll-target="#what-else-do-i-need-besides-code">What else do I need besides code?</a></li>
+  <li><a href="#readme" id="toc-readme" class="nav-link" data-scroll-target="#readme">README</a></li>
+  <li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license">LICENSE</a></li>
+  <li><a href="#code-of-conduct" id="toc-code-of-conduct" class="nav-link" data-scroll-target="#code-of-conduct">Code of conduct</a></li>
+  <li><a href="#changelog" id="toc-changelog" class="nav-link" data-scroll-target="#changelog">CHANGELOG</a></li>
+  <li><a href="#issue-tracker" id="toc-issue-tracker" class="nav-link" data-scroll-target="#issue-tracker">Issue tracker</a></li>
+  <li><a href="#continuous-integration" id="toc-continuous-integration" class="nav-link" data-scroll-target="#continuous-integration">Continuous integration</a></li>
+  <li><a href="#docs-tests-etc." id="toc-docs-tests-etc." class="nav-link" data-scroll-target="#docs-tests-etc.">Docs, tests, etc.,</a></li>
+  <li><a href="#python-packaging-questions-comments" id="toc-python-packaging-questions-comments" class="nav-link" data-scroll-target="#python-packaging-questions-comments">Python packaging: Questions &amp; Comments</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="package_structure-revealjs.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">(re)introducing Python packaging</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>David Nicholson </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="python-packaging" class="level1 page-columns page-full">
+<h1>Python packaging</h1>
+<section id="acknowledgements" class="level2">
+<h2 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
+<ul>
+<li><p>The previous versions of this module!</p></li>
+<li><p>Python packaging 101 tutorial from pyOpenSci: <a href="https://www.pyopensci.org/python-package-guide/tutorials/intro.html#python-packaging-101">https://www.pyopensci.org/python-package-guide/tutorials/intro.html#python-packaging-101</a></p></li>
+<li><p>Python Packages: <a href="https://py-pkgs.org/">https://py-pkgs.org/</a></p></li>
+<li><p>Scientific Python packaging guide: <a href="https://learn.scientific-python.org/development/tutorials/packaging/">https://learn.scientific-python.org/development/tutorials/packaging/</a></p></li>
+<li><p>Python Packaging User Guide: <a href="https://packaging.python.org/en/latest/">https://packaging.python.org/en/latest/</a></p></li>
+</ul>
+</section>
+<section id="what-is-a-python-package" class="level2 center">
+<h2 class="center anchored" data-anchor-id="what-is-a-python-package">What is a Python package?</h2>
+<p>First, let’s define module</p>
+<p><a href="https://docs.python.org/3/glossary.html#term-module">https://docs.python.org/3/glossary.html#term-module</a></p>
+<blockquote class="blockquote">
+<p><strong>Module</strong>: An object that serves an organizational unit of python code. Modules have a namespace containing arbitrary python objects. Modules are loaded into Python by the process of <code>importing</code></p>
+</blockquote>
+</section>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"></h2>
+<p>Deconstructing that definition:</p>
+<ul>
+<li>When I write <code>import modulename</code> I am loading a module
+<ul>
+<li>But we also talk about “importing a package”!</li>
+<li>This seems to imply a package is a kind of module</li>
+</ul></li>
+</ul>
+<hr>
+<ul>
+<li>The module can contain “arbitrary Python objects”
+<ul>
+<li>That could include other modules!</li>
+<li>It’s almost like we need a special name for a “module that can contain other modules”!</li>
+</ul></li>
+</ul>
+<hr>
+<ul>
+<li>When I load the module, its name gets added to the namespace
+<ul>
+<li>namespace: a collection of currently defined names and the objects they reference</li>
+<li>So now I can use the module name to access things inside of it with dot notation, like another module that contains a function: <code>numpy.random.default_rng</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="where-do-modules-come-from" class="level2">
+<h2 class="anchored" data-anchor-id="where-do-modules-come-from">Where do modules come from?</h2>
+<ul>
+<li>The standard library
+<ul>
+<li>Python code</li>
+<li>Compiled C code</li>
+</ul></li>
+<li>A local file that ends in <code>.py</code>
+<ul>
+<li>(confusingly, also called a “module”)</li>
+</ul></li>
+<li>Third-party libraries that you <code>pip install</code> or <code>conda install</code>
+<ul>
+<li>i.e., packages</li>
+</ul></li>
+<li>A local package (we’re getting to this)</li>
+</ul>
+</section>
+<section id="what-is-a-python-package-1" class="level2 center">
+<h2 class="center anchored" data-anchor-id="what-is-a-python-package-1">What is a Python <em>package</em>?</h2>
+<p>Ok, now that we spent all that time defining module, we can finally define package</p>
+<p>“A Python module which can contain submodules or recursively, subpackages.”</p>
+<p><a href="https://docs.python.org/3/glossary.html#term-package">https://docs.python.org/3/glossary.html#term-package</a></p>
+</section>
+<section id="package-can-have-multiple-meanings" class="level2">
+<h2 class="anchored" data-anchor-id="package-can-have-multiple-meanings">“Package” can have multiple meanings!</h2>
+<p>Two main usages:</p>
+<p><a href="https://packaging.python.org/en/latest/discussions/distribution-package-vs-import-package/">https://packaging.python.org/en/latest/discussions/distribution-package-vs-import-package/</a></p>
+</section>
+<section id="two-types-of-packages-import-package" class="level2">
+<h2 class="anchored" data-anchor-id="two-types-of-packages-import-package">Two types of packages: <em>import package</em></h2>
+<p>This is the one we already talked about</p>
+<p>The thing you get when you write <code>import packagename</code> in your code</p>
+<p>We’re going to show you how to make one of these first</p>
+</section>
+<section id="two-types-of-packages-distribution-package" class="level2">
+<h2 class="anchored" data-anchor-id="two-types-of-packages-distribution-package">Two types of packages: <em>distribution package</em></h2>
+<p>The actual artifact that gets downloaded off the internet and stored on your computer somewhere</p>
+<p>like when you run <code>pip install</code> package</p>
+<p>We need to learn how to make one of these too!</p>
+</section>
+<section id="why-would-i-make-a-python-package" class="level2 center">
+<h2 class="center anchored" data-anchor-id="why-would-i-make-a-python-package">Why would I make a Python package?</h2>
+</section>
+<section id="when-should-i-turn-my-code-into-a-package" class="level2">
+<h2 class="anchored" data-anchor-id="when-should-i-turn-my-code-into-a-package">When should I turn my code into a package?</h2>
+<p>Two common cases for research code:</p>
+<ol type="1">
+<li><p>Code that goes with a research article</p>
+<ul>
+<li><strong>mainly</strong> used to reproduce the results</li>
+<li>AKA a (computational) <em>project</em> or a <em>research compendium</em></li>
+</ul></li>
+<li><p>A generalized tool or <em>library</em> that other researchers can use</p></li>
+</ol>
+</section>
+<section id="packaging-code-for-a-paper" class="level2 center">
+<h2 class="center anchored" data-anchor-id="packaging-code-for-a-paper">Packaging code for a paper</h2>
+<ul>
+<li>You have multiple scripts that use the same function</li>
+<li>So you want to be able to import that function</li>
+<li>It’s sufficient for you to make an “import package” you use in scripts (e.g., in a Jupyter notebook)</li>
+</ul>
+<hr>
+<ul>
+<li><p><strong>This kind of package does not necessarily need all the infrastructure you will learn about in this workshop</strong></p>
+<ul>
+<li>such as: its own rendered website with documentation</li>
+</ul></li>
+<li><p>If someone uses the code for your paper, they will get a copy of the code and set it up so they can import the same way; they don’t expect to <code>pip install paper</code></p></li>
+</ul>
+<hr>
+<p>For more on projects and research compendia in general, see</p>
+<ul>
+<li>“Good enough practices in scientific computing”</li>
+<li>“How repro-packs can save your future self”</li>
+<li>Turing Way guide: <a href="https://book.the-turing-way.org/reproducible-research/compendia">https://book.the-turing-way.org/reproducible-research/compendia</a></li>
+<li>Karthik’s talk: <a href="https://github.com/karthik/rstudio2019">https://github.com/karthik/rstudio2019</a></li>
+</ul>
+</section>
+<section id="to-share-a-generalized-tool" class="level2 center">
+<h2 class="center anchored" data-anchor-id="to-share-a-generalized-tool">To share a generalized tool</h2>
+<p>This is what we’re here (mostly) to learn about!</p>
+<p>This is when we want to make a “distribution package” too!</p>
+<ul>
+<li>You want people to be able to <code>pip install awesometool</code></li>
+</ul>
+</section>
+<section id="how-do-i-turn-my-code-into-a-python-package-i-can-import" class="level2 center">
+<h2 class="center anchored" data-anchor-id="how-do-i-turn-my-code-into-a-python-package-i-can-import">How do I turn my code into a Python package I can <code>import</code>?</h2>
+</section>
+<section id="the-structure-of-a-python-package" class="level2">
+<h2 class="anchored" data-anchor-id="the-structure-of-a-python-package">The structure of a Python package</h2>
+<p>The simplest possible Python package</p>
+<ul>
+<li>A directory with a single file in it named <code>__init__.py</code>
+<ul>
+<li>The file can be empty</li>
+</ul></li>
+<li>The <code>__init__.py</code> file tells Python that “this directory is a package</li>
+</ul>
+<p><img src="./images/simple.png" class="img-fluid" alt=""></p>
+</section>
+<section id="how-can-i-import-my-own-code" class="level2">
+<h2 class="anchored" data-anchor-id="how-can-i-import-my-own-code">How can I <code>import</code> my own code?</h2>
+<p>This is enough for me to be able to import the package</p>
+<p><strong>as long as I’m in the right directory</strong></p>
+<ul>
+<li>The same is true for any module:</li>
+<li>(by which we mean a file that ends in <code>.py</code>)</li>
+<li>I can import it if I’m in the right directory</li>
+</ul>
+<hr>
+<ul>
+<li>This is just because of how Python’s import system works:</li>
+<li>“First check in the current working directory if there’s a <code>.py</code> file or a directory with an <code>__init__.py</code> that has the name we’re importing”</li>
+</ul>
+<hr>
+<p>How do I make it so I can</p>
+<ul>
+<li><code>pip install simple</code></li>
+<li>then import simple without being in the right directory?</li>
+</ul>
+<div class="fragment">
+<p>Note that this the code I have locally, we aren’t talking about distribution packages yet!</p>
+</div>
+<hr>
+<p>How do I make it so I can pip install simple and then import simple without being in the right directory?</p>
+<p>We need one more file:</p>
+<p>a pyproject.toml file</p>
+</section>
+<section id="how-do-i-make-it-so-i-can-import-a-module" class="level2">
+<h2 class="anchored" data-anchor-id="how-do-i-make-it-so-i-can-import-a-module">How do I make it so I can import a module?</h2>
+<p>This is the bare minimum pyproject.toml file for our simple module</p>
+<p><img src="./images/project.png" class="img-fluid"></p>
+</section>
+<section id="what-is-a-toml-file" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-a-toml-file">What is a TOML file?</h2>
+<div class="column" style="width:60%;">
+<ul>
+<li>“Tom’s Obvious Minimal Language”: https://toml.io/en/
+<ul>
+<li>“A [configuration] file format for humans”</li>
+</ul></li>
+<li>Used in other ecosystems</li>
+<li>Nice because parsers map to native type</li>
+</ul>
+</div>
+<div class="column" style="width:40%;">
+<p><img src="./images/toml.png" class="absolute img-fluid" width="400"></p>
+</div>
+</section>
+<section id="anatomy-of-a-toml-file" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="anatomy-of-a-toml-file">Anatomy of a TOML file</h2>
+<p><img src="./images/anatomy.png" class="absolute img-fluid" data-right="0"></p>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>the spec: <a href="https://toml.io/en/v1.0.0">https://toml.io/en/v1.0.0</a></p>
+</div></div></section>
+<section id="ok-i-have-a-pyproject.toml-file-now-what" class="level2">
+<h2 class="anchored" data-anchor-id="ok-i-have-a-pyproject.toml-file-now-what">Ok, I have a pyproject.toml file, now what?</h2>
+<p>Now just</p>
+<ul>
+<li>navigate to the directory where your module lives</li>
+<li>activate your virtual environment</li>
+<li>type <code>pip install .</code></li>
+<li>now you can <code>import</code> it!</li>
+</ul>
+</section>
+<section id="a-slightly-more-complicated-python-package" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="a-slightly-more-complicated-python-package">A (slightly) more complicated Python package</h2>
+<div class="column" style="width:60%;">
+<p>Scenario: Samspon is a computational dog scientist.</p>
+<p>Sampson has a set of functions they are using across all their projects, so they wrap them up in a package, <code>dogpy</code></p>
+</div>
+<div class="column" style="width:40%;">
+<p><img src="./images/dog.png" class="absolute img-fluid" data-top="150" data-right="0" width="300"></p>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p><a href="https://www.rexspecs.com/blogs/news/sampson-the-lab-dog-tests-the-boundaries-of-science">www.rexspecs.com/blogs/news/sampson-the-lab-dog-tests-the-boundaries-of-science</a></p>
+</div></div><hr>
+<div class="column" style="width:60%;">
+<p>Sampson’s project <code>dogpy</code> has the following:</p>
+<ul>
+<li>A <code>src</code> directory (for “source code”)</li>
+<li>The package itself inside src, a directory named dogpy</li>
+<li>A <code>pyproject.toml</code> file</li>
+</ul>
+<div class="fragment">
+<p>What’s different here?</p>
+</div>
+</div>
+<div class="column" style="width:40%;">
+<p><img src="./images/dogpy.png" class="absolute img-fluid" data-top="150" data-right="0" width="400"></p>
+</div>
+</section>
+<section id="why-src" class="level2 center">
+<h2 class="center anchored" data-anchor-id="why-src">Why <code>src</code>?</h2>
+<ul>
+<li>So you don’t accidentally import the local package when you want to run tests on the distribution package</li>
+<li>Aesthetics: it looks better to have “src”, “docs”, “tests”</li>
+</ul>
+</section>
+<section id="the-package-itself" class="level2">
+<h2 class="anchored" data-anchor-id="the-package-itself">The package itself</h2>
+<ul>
+<li>We have the <code>dogpy</code> dir</li>
+<li>It contains one module (by which I mean a <code>.py</code> file): <code>bark.py</code></li>
+<li>It also contains another directory! The elusive sub-package. Namely, <code>fetch</code>.</li>
+<li>The <code>fetch</code> sub-package contains two other modules: <code>ball.py</code> and <code>bone.py</code></li>
+</ul>
+</section>
+<section id="why-__init__.py-anyways" class="level2">
+<h2 class="anchored" data-anchor-id="why-__init__.py-anyways">Why <code>__init__.py</code> anyways?</h2>
+<ul>
+<li>It <em>initializes</em> your module</li>
+<li>You <code>import</code> modules, functions, etc., here</li>
+<li>so that your users can get what they need from your package’s namespace</li>
+</ul>
+<p><img src="./images/init.png" class="img-fluid"></p>
+</section>
+<section id="how-should-i-structure-my-python-package" class="level2 scrollable">
+<h2 class="scrollable anchored" data-anchor-id="how-should-i-structure-my-python-package">How should I structure my Python package?</h2>
+<ul>
+<li><p>Short version: “flat is better than nested”</p>
+<ul>
+<li>Your users want to write <code>package.function</code>, not <code>package.subpackage.subsubpackage.subsubsubpackage.function</code></li>
+<li>But having one level of sub-packages can help with readability</li>
+<li>Most scientific Python packages have a set of sub-packages, each containing functions:
+<ul>
+<li><code>numpy.random.default_rng</code></li>
+<li><code>sklearn.model_selection.test_train_split</code></li>
+</ul></li>
+<li>Your package’s code ≠ your package’s namespace! You control the namespace with imports!</li>
+</ul></li>
+<li><p>Long version:</p>
+<ul>
+<li><a href="https://benhoyt.com/writings/python-api-design/">https://benhoyt.com/writings/python-api-design/</a></li>
+<li><a href="http://blog.nicholdav.info/four-tips-structuring-research-python/">http://blog.nicholdav.info/four-tips-structuring-research-python/</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="how-do-i-publish-my-package-so-others-can-pip-install-it" class="level2 center">
+<h2 class="center anchored" data-anchor-id="how-do-i-publish-my-package-so-others-can-pip-install-it">How do I publish my package so others can <code>pip install</code> it?</h2>
+</section>
+<section id="how-do-i-publish-my-package" class="level2">
+<h2 class="anchored" data-anchor-id="how-do-i-publish-my-package">How do I publish my package?</h2>
+<p>Now we need a distribution package.</p>
+<p>We also need to define some more terms so that the rest of this make sense.</p>
+</section>
+<section id="what-about-setup.py" class="level2">
+<h2 class="anchored" data-anchor-id="what-about-setup.py">What about setup.py?</h2>
+<ul>
+<li>It used to be the case that all distributions were built with a setup.py file</li>
+<li>There was only one tool that did this: <code>setuptools</code></li>
+<li>Now: pure Python projects don’t need a setup.py file It’s better</li>
+</ul>
+<div class="fragment">
+<p>The long version:</p>
+<p><a href="https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html">https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html</a></p>
+</div>
+</section>
+<section id="distribution-packages-frontends-and-backends" class="level2">
+<h2 class="anchored" data-anchor-id="distribution-packages-frontends-and-backends">Distribution packages: frontends and backends</h2>
+<p>To move away from setup.py and setuptools, PEP 517 introduced the idea of “front-ends” and “back-ends”</p>
+<p><a href="https://peps.python.org/pep-0517/">https://peps.python.org/pep-0517/</a></p>
+<p>Mostly you shouldn’t have to think about this.</p>
+<p>But in your pyproject.toml file you will specify a “build backend”.</p>
+<p>That’s the tool that knows how to take your “source tree” and make a distribution package.</p>
+</section>
+<section id="distribution-packages-formats" class="level2">
+<h2 class="anchored" data-anchor-id="distribution-packages-formats">Distribution packages: formats</h2>
+<p>“Build backends” (always) make two types of distribution packages:</p>
+<p>a source distribution (“sdist”), and wheels</p>
+<p><a href="https://packaging.python.org/en/latest/discussions/package-formats/">https://packaging.python.org/en/latest/discussions/package-formats/</a></p>
+<hr>
+<ul>
+<li>“Sdist”
+<ul>
+<li>Literally your project in a compressed archive (.tar.gz)</li>
+<li><code>pip</code> uses this as a fallback if it can’t find a wheel</li>
+<li>Downstream package managers use the sdist to provide their own distributions, e.g.&nbsp;<code>conda</code>, <code>homebrew</code></li>
+</ul></li>
+<li>Wheel
+<ul>
+<li>Can be platform specific (e.g., Windows 64 bit)</li>
+<li>Matters most for packages with compiled extensions</li>
+</ul></li>
+</ul>
+</section>
+<section id="how-do-i-publish-my-package-1" class="level2">
+<h2 class="anchored" data-anchor-id="how-do-i-publish-my-package-1">How do I publish my package?</h2>
+<p>To-do list:</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Add metadata to our pyproject.toml file</label>
+<ul>
+<li>Build backend</li>
+<li>The metadata that will show up on PyPI</li>
+</ul></li>
+<li><label><input type="checkbox">Build your distribution package</label></li>
+<li><label><input type="checkbox">Publish the distribution package to PyPI</label></li>
+</ul>
+</section>
+<section id="python-packaging-feels-like-a-lot-of-work" class="level2">
+<h2 class="anchored" data-anchor-id="python-packaging-feels-like-a-lot-of-work">Python packaging feels like a lot of work!</h2>
+<p>“I have to write this pyproject.toml file by hand, make and virtual environments, and I don’t even know how much work it will take to build a distribution package yet…”</p>
+<p>Good news!</p>
+<p>There are packaging tools that will do a lot of this work for you!</p>
+</section>
+<section id="python-packaging-feels-like-a-lot-of-work-1" class="level2">
+<h2 class="anchored" data-anchor-id="python-packaging-feels-like-a-lot-of-work-1">Python packaging feels like a lot of work!</h2>
+<p>The not so good news: there are many different tools</p>
+<p><a href="https://pradyunsg.me/blog/2023/01/21/thoughts-on-python-packaging/">https://pradyunsg.me/blog/2023/01/21/thoughts-on-python-packaging/</a></p>
+<p>Here’s two options:</p>
+<ul>
+<li>Lightweight: <code>flit</code>– <a href="https://flit.pypa.io/en/stable/">https://flit.pypa.io/en/stable/</a></li>
+<li>Swiss army knife: <code>hatch</code> – <a href="https://hatch.pypa.io/">https://hatch.pypa.io/</a></li>
+</ul>
+</section>
+<section id="pyproject.toml-metadata-build-system" class="level2">
+<h2 class="anchored" data-anchor-id="pyproject.toml-metadata-build-system">pyproject.toml metadata: <code>[build-system]</code></h2>
+<p>To build our distribution package, we need a <em>build</em> system.</p>
+<p>We declare this in a <code>build-system</code> table.</p>
+<p><img src="./images/build.png" class="img-fluid"></p>
+</section>
+<section id="pyproject.toml-project-metadata" class="level2">
+<h2 class="anchored" data-anchor-id="pyproject.toml-project-metadata">pyproject.toml <code>project</code> metadata</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Good explainer in <code>flit</code> docs:</p>
+<p><a href="https://flit.pypa.io/en/latest/pyproject_toml.html#new-style-metadata">https://flit.pypa.io/en/latest/ pyproject_toml.html#new-style-metadata</a></p>
+</div><div class="column" style="width:50%;">
+<p><img src="./images/compphys.png" class="absolute img-fluid" data-right="0" data-top="150" width="500"></p>
+</div>
+</div>
+</section>
+<section id="aside-python-requires-and-dependencies" class="level2">
+<h2 class="anchored" data-anchor-id="aside-python-requires-and-dependencies">Aside: <code>python-requires</code> and <code>dependencies</code></h2>
+<ul>
+<li><p>You should know about SPEC0, that specifies what versions of Python the core scientific packages work with: <a href="https://scientific-python.org/specs/spec-0000/">https://scientific-python.org/specs/spec-0000/</a></p></li>
+<li><p>Usually you don’t want to put upper bounds (&gt;3.6, &lt;4.0) on Python or your dependencies: <a href="https://iscinumpy.dev/post/bound-version-constraints/">https://iscinumpy.dev/post/bound-version-constraints/</a></p></li>
+</ul>
+</section>
+<section id="building-distribution-packages" class="level2">
+<h2 class="anchored" data-anchor-id="building-distribution-packages">Building distribution packages</h2>
+<p>Most packaging tools have some sort of <code>build</code> command</p>
+<p><img src="./images/command.png" class="img-fluid"></p>
+</section>
+<section id="publishing-to-pypi" class="level2">
+<h2 class="anchored" data-anchor-id="publishing-to-pypi">Publishing to PyPI</h2>
+<p>Most packaging tools have some sort of <code>publish</code> command</p>
+<p><img src="./images/publish.png" class="img-fluid"></p>
+</section>
+<section id="what-do-i-need-to-develop-and-maintain-a-python-package-besides-code" class="level2 center">
+<h2 class="center anchored" data-anchor-id="what-do-i-need-to-develop-and-maintain-a-python-package-besides-code">What do I need to develop and maintain a Python package, besides code?</h2>
+</section>
+<section id="what-else-do-i-need-besides-code" class="level2">
+<h2 class="anchored" data-anchor-id="what-else-do-i-need-besides-code">What else do I need besides code?</h2>
+<p><em>Infrastructure:</em></p>
+<p>All the other stuff besides code that makes it easier for</p>
+<ul>
+<li>you to develop and maintain your package</li>
+<li>others to use your package, give you feedback, and contribute</li>
+</ul>
+<hr>
+<ul>
+<li>README</li>
+<li>LICENSE</li>
+<li>Code of conduct</li>
+<li>CHANGELOG</li>
+<li>docs</li>
+<li>tests</li>
+<li>issue tracker</li>
+<li>continuous integration</li>
+</ul>
+</section>
+<section id="readme" class="level2">
+<h2 class="anchored" data-anchor-id="readme">README</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<ul>
+<li>Often the first thing people see</li>
+<li>GitHub shows this by default -<a href="https://www.makeareadme.com/">www.makeareadme.com/</a></li>
+</ul>
+</div><div class="column" style="width:70%;">
+<p><img src="./images/compphys.png" class="absolute img-fluid" data-top="150" data-right="0"></p>
+</div>
+</div>
+<hr>
+<p>Things you want in your README:</p>
+<ul>
+<li>Package name</li>
+<li>Brief description that makes sense to a broad audience</li>
+<li>Visuals! 1 picture = 1k words</li>
+<li>Installation instructions</li>
+<li>Usage</li>
+<li>How to contribute</li>
+<li>Citation information</li>
+</ul>
+</section>
+<section id="license" class="level2">
+<h2 class="anchored" data-anchor-id="license">LICENSE</h2>
+<p>You are giving other people permission to use your code</p>
+<ul>
+<li><a href="https://choosealicense.com/">https://choosealicense.com/</a></li>
+<li>MIT and BSD are common for open source scientific software</li>
+<li>More on this later!</li>
+</ul>
+</section>
+<section id="code-of-conduct" class="level2">
+<h2 class="anchored" data-anchor-id="code-of-conduct">Code of conduct</h2>
+<ul>
+<li>Establishes expectations for behavior</li>
+<li>Helps create inclusive community</li>
+<li><a href="https://opensource.guide/code-of-conduct/">https://opensource.guide/code-of-conduct/</a></li>
+<li>Highly suggest looking at other scientific Python projects: <a href="https://docs.scipy.org/doc/scipy/dev/conduct/%20code_of_conduct.html#endnotes">https://docs.scipy.org/doc/scipy/dev/conduct/ code_of_conduct.html#endnotes</a></li>
+</ul>
+</section>
+<section id="changelog" class="level2">
+<h2 class="anchored" data-anchor-id="changelog">CHANGELOG</h2>
+<p><strong>Human-readable</strong> record of changes to your project</p>
+<p><a href="https://keepachangelog.com/en/1.1.0/">https://keepachangelog.com/en/1.1.0/</a></p>
+</section>
+<section id="issue-tracker" class="level2">
+<h2 class="anchored" data-anchor-id="issue-tracker">Issue tracker</h2>
+<p><img src="./images/issue.png" class="img-fluid"></p>
+</section>
+<section id="continuous-integration" class="level2">
+<h2 class="anchored" data-anchor-id="continuous-integration">Continuous integration</h2>
+<p><img src="./images/integration.png" class="img-fluid"></p>
+</section>
+<section id="docs-tests-etc." class="level2">
+<h2 class="anchored" data-anchor-id="docs-tests-etc.">Docs, tests, etc.,</h2>
+<p>To be discussed in later modules</p>
+</section>
+<section id="python-packaging-questions-comments" class="level2 center">
+<h2 class="center anchored" data-anchor-id="python-packaging-questions-comments">Python packaging: Questions &amp; Comments</h2>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/dbehnoud\.github\.io\/urssi-summerschool-2025\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
