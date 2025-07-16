@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.32">
+
+  <meta name="author" content="Matthew Feickert">
+  <title>2025 URSSI Summer School on Research Software and Open Science – Distributing your Science: Turning analyses into scientific tools</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-f563837468303362081e247dddd440d0.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Distributing your Science: Turning analyses into scientific tools</h1>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Matthew Feickert 
+</div>
+        <p class="quarto-title-affiliation">
+            University of Wisconsin-Madison
+          </p>
+    </div>
+</div>
+
+</section>
+<section>
+<section id="package-distribution" class="title-slide slide level1 center">
+<h1>Package distribution</h1>
+
+</section>
+<section id="my-motivations-on-this-topic" class="slide level2">
+<h2>My motivations on this topic</h2>
+<ul>
+<li class="fragment">Research scientist in high energy physics and data science at University of Wisconsin-Madison Data Science Institute</li>
+<li class="fragment">Analysis Systems area lead for IRIS-HEP</li>
+<li class="fragment">Member of ATLAS collaboration</li>
+<li class="fragment">Administrator of Scikit-HEP community organization</li>
+<li class="fragment">Community member of the Scientific Python project</li>
+<li class="fragment">Care about <strong>reusable</strong> open science to be able to push physics forward at the <strong>community scale</strong></li>
+</ul>
+</section>
+<section id="knowledgeable-colleagues" class="slide level2">
+<h2>Knowledgeable colleagues</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="./images/schreiner.png" class="absolute img-fluid" style="top: 300px; left: 100px; width: 300px; "></p>
+<p><a href="http://iscinumpy.dev/">Henry Schreiner</a></p>
+<p>Princeton University, IRIS-HEP, PyPA, Scikit-Build</p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="./images/hollands.jpg" class="absolute img-fluid" style="top: 300px; right: 100px; width: 300px; "></p>
+<p><a href="https://github.com/agoose77">Angus Hollands</a></p>
+<p>2i2c, The Executable Books Project, MyST</p>
+</div></div>
+</section>
+<section id="hypothetical-workflow-for-the-typical-scientist" class="slide level2 smaller">
+<h2>Hypothetical workflow for the typical scientist</h2>
+<ol type="1">
+<li class="fragment">Work on idea for paper with collaborators</li>
+<li class="fragment">Do exploratory analysis in scripts and Jupyter ecosystem</li>
+<li class="fragment">As research progresses need to write more complicated functions and workflows</li>
+<li class="fragment">Code begins to sprawl across multiple directories</li>
+<li class="fragment">Software dependencies begin to become more complicated</li>
+<li class="fragment">The code “works on my machine”, but what about your collaborators?</li>
+</ol>
+<div class="fragment">
+<p><strong>People heroically press forward, but this is painful, and not reusable</strong></p>
+</div>
+</section>
+<section id="reusable-science-step-by-step" class="slide level2">
+<h2>Reusable science, step by step</h2>
+<p>In this first scenario, you will probably see a lot of <code>sys.path</code> manipulation and <code>utils.py</code></p>
+<pre class="code"><code>$ tree examples/edit_sys_path
+examples/edit_sys_path
+├── code
+│   └── utils.py  # helper functions rosen, rosen_der
+├── example.py  # want to import rosen, rosen_der
+└── jupytext.toml
+
+1 directory, 3 files</code></pre>
+</section>
+<section id="section" class="slide level2 center">
+<h2></h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># example.py</span></span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Make ./code/utils.py visible to sys.path</span></span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a><span class="co"># sys.path[1] should be after cwd and before virtual environment</span></span>
+<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a>sys.path.insert(<span class="dv">1</span>, <span class="bu">str</span>(Path(<span class="va">__file__</span>).parent <span class="op">/</span> <span class="st">"code"</span>))</span>
+<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> utils <span class="im">import</span> rosen, rosen_der</span>
+<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>x0 <span class="op">=</span> np.array([<span class="fl">1.3</span>, <span class="fl">0.7</span>, <span class="fl">0.8</span>, <span class="fl">1.9</span>, <span class="fl">1.2</span>])</span>
+<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> minimize(rosen, x0, method<span class="op">=</span><span class="st">"BFGS"</span>,</span>
+<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a>                  jac<span class="op">=</span>rosen_der, options<span class="op">=</span>{<span class="st">"disp"</span>: <span class="va">True</span>})</span>
+<span id="cb2-11"><a aria-hidden="true" tabindex="-1"></a>optimized_params <span class="op">=</span> result.x</span>
+<span id="cb2-12"><a aria-hidden="true" tabindex="-1"></a><span class="co"># array([1.00000004, 1.0000001 , 1.00000021, 1.00000044, 1.00000092])</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li class="fragment">This is already better than having everything in a single massive file</li>
+<li class="fragment">However, now things are tied to this relative path on your computer</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python fragment number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="co"># Make ./code/utils.py visible to sys.path</span></span>
+<span id="cb3-2"><a></a>sys.path.insert(<span class="dv">1</span>, <span class="bu">str</span>(Path(<span class="va">__file__</span>).parent <span class="op">/</span> <span class="st">"code"</span>))</span>
+<span id="cb3-3"><a></a><span class="im">from</span> utils <span class="im">import</span> rosen, rosen_der</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p>and are brittle to refactoring and change</p>
+<ul>
+<li class="fragment">But we can do much better!</li>
+</ul>
+</div>
+</section>
+<section id="next-steps-packaging-your-code" class="slide level2">
+<h2>Next steps: Packaging your code</h2>
+<ul>
+<li class="fragment"><p>Real emphasis is just that your code is now installable</p>
+<ul>
+<li class="fragment">Anywhere your Python virtual environment is active you can use your code</li>
+</ul></li>
+<li class="fragment"><p>So following The Zen of Python this should be very straightforward?</p></li>
+</ul>
+<div class="fragment">
+<p><code>$ python -c 'import this' | grep obvious</code></p>
+<p><code>There should be one-- and preferably only one --obvious way to do it.</code> <code>Although that way may not be obvious at first unless you're Dutch.</code></p>
+</div>
+</section>
+<section id="section-1" class="slide level2 center">
+<h2></h2>
+<p>Maybe not so much. :(</p>
+
+<img data-src="./images/cookie-backend-options.png" class="img-fluid r-stretch quarto-figure-center"><p class="caption"><a href="https://github.com/scientific-python/cookie"></a></p><p>You might be asking: Why is there more than one thing?</p>
+</section>
+<section class="slide level2">
+
+<p>The <em>good news</em>: Python packaging has improved <strong>dramatically</strong> in the last 5 years</p>
+<pre><code>- It has never been easier to just point your package manager to some code locally, or on the internet, and get working Python code installed and running on your machine regardless of operating system or architecture
+
+- This is a small miracle</code></pre>
+<p>The <em>bad news</em>: Python packaging has expanded <strong>dramatically</strong> in the last 5 years</p>
+<pre><code>- By creating standards the PyPA allowed for an ecosystem of packaging backends to be created to tackle various problems (this is good!)
+
+- This means that our The Zen of Python expectations are violated and we need to make design choices (hard for beginners)</code></pre>
+</section>
+<section class="slide level2">
+
+<p>The <em>okay news</em>: You can probably default to the simplest thing</p>
+<p>pure Python: Probably <a href="https://github.com/ofek/hatch">hatch</a> compiled extensions: Probably <a href="https://pybind11.readthedocs.io/">setuptools + pybind11</a> or <a href="https://scikit-build-core.readthedocs.io/">scikit-build-core</a> + <a href="https://github.com/pybind/pybind11">pybind11</a></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./images/pypa-packaging-tutorial.png" class="img-fluid"></p>
+<figcaption><a href="https://packaging.python.org/en/latest/tutorials/packaging-projects/">Python Packaging User Guide, Packaging Python Projects Tutorial</a></figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./images/scientific-python-packaging.png" class="img-fluid"></p>
+<figcaption><a href="https://packaging.python.org/en/latest/tutorials/packaging-projects/">Scientific Python Library Development Guide</a></figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="simple-packaging-example" class="slide level2">
+<h2>Simple packaging example</h2>
+<p>Modern <a href="https://peps.python.org/pep-0518/">PEP 518</a> compliant build backends just need a single file: <code>pyproject.toml</code></p>
+<pre class="code"><code>$ tree examples/simple_packaging
+examples/simple_packaging
+
+├── LICENSE
+├── pyproject.toml  # controls packaging and interactions with tools
+├── README.md
+├── src
+│   └── rosen
+│       ├── example.py
+│       ├── __init__.py
+│       └── _version.py
+└── tests
+    └── test_example.py
+
+3 directories, 7 files</code></pre>
+</section>
+<section id="simple-packaging-example-pyproject.toml" class="slide level2">
+<h2>Simple packaging example: <code>pyproject.toml</code></h2>
+<p>What is <code>.toml</code>?</p>
+<p>“TOML aims to be a <strong>minimal configuration file format</strong> that’s easy to read due to obvious semantics. TOML is designed to map unambiguously to a hash table. TOML should be <strong>easy to parse into data structures</strong> in a wide variety of languages.” — https://toml.io/ (emphasis mine)</p>
+<p>In recent years TOML has seen a rise in popularity for configuration files and lock files. Things that need to be easy to read (humans) and easy to parse (machines).</p>
+</section>
+<section id="section-2" class="slide level2 center">
+<h2></h2>
+<p>Defining how your project should get <strong>built</strong></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>[build<span class="op">-</span>system]</span>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>requires <span class="op">=</span> [</span>
+<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"hatchling&gt;=1.13.0"</span>,</span>
+<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"hatch-vcs&gt;=0.3.0"</span>,</span>
+<span id="cb7-5"><a aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb7-6"><a aria-hidden="true" tabindex="-1"></a>build<span class="op">-</span>backend <span class="op">=</span> <span class="st">"hatchling.build"</span></span>
+<span id="cb7-7"><a aria-hidden="true" tabindex="-1"></a>...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="slide level2">
+
+<p>Defining project <strong>metadata and requirements</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>[project]</span>
+<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"rosen"</span></span>
+<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a>dynamic <span class="op">=</span> [<span class="st">"version"</span>]</span>
+<span id="cb8-4"><a aria-hidden="true" tabindex="-1"></a>description <span class="op">=</span> <span class="st">"Example package for demonstration"</span></span>
+<span id="cb8-5"><a aria-hidden="true" tabindex="-1"></a>readme <span class="op">=</span> <span class="st">"README.md"</span></span>
+<span id="cb8-6"><a aria-hidden="true" tabindex="-1"></a>license <span class="op">=</span> { text <span class="op">=</span> <span class="st">"MIT"</span> }  <span class="co"># SPDX short identifier</span></span>
+<span id="cb8-7"><a aria-hidden="true" tabindex="-1"></a>authors <span class="op">=</span> [</span>
+<span id="cb8-8"><a aria-hidden="true" tabindex="-1"></a>  { name <span class="op">=</span> <span class="st">"Matthew Feickert"</span>, email <span class="op">=</span> <span class="st">"matthew.feickert@cern.ch"</span> },</span>
+<span id="cb8-9"><a aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb8-10"><a aria-hidden="true" tabindex="-1"></a>requires<span class="op">-</span>python <span class="op">=</span> <span class="st">"&gt;=3.8"</span></span>
+<span id="cb8-11"><a aria-hidden="true" tabindex="-1"></a>dependencies <span class="op">=</span> [</span>
+<span id="cb8-12"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"scipy&gt;=1.6.0"</span>,</span>
+<span id="cb8-13"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"numpy"</span>,  <span class="co"># compatible versions controlled through scipy</span></span>
+<span id="cb8-14"><a aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb8-15"><a aria-hidden="true" tabindex="-1"></a>...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="slide level2">
+
+<p>Configuring <strong>tooling options and interactions</strong> with other tools</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a>[tool.hatch.version]</span>
+<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a>source <span class="op">=</span> <span class="st">"vcs"</span></span>
+<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a>[tool.hatch.version.raw<span class="op">-</span>options]</span>
+<span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a>local_scheme <span class="op">=</span> <span class="st">"no-local-version"</span></span>
+<span id="cb9-5"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Need to give root as we aren't at the same level as the git repo</span></span>
+<span id="cb9-6"><a aria-hidden="true" tabindex="-1"></a>root <span class="op">=</span> <span class="st">"../.."</span></span>
+<span id="cb9-7"><a aria-hidden="true" tabindex="-1"></a>[tool.hatch.build.hooks.vcs]</span>
+<span id="cb9-8"><a aria-hidden="true" tabindex="-1"></a>version<span class="op">-</span><span class="bu">file</span> <span class="op">=</span> <span class="st">"src/rosen/_version.py"</span></span>
+<span id="cb9-9"><a aria-hidden="true" tabindex="-1"></a>...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="simple-packaging-example-installing-your-code" class="slide level2">
+<h2>Simple packaging example: Installing your code</h2>
+<p>You can now <strong>locally install</strong> your package into your Python virtual environment</p>
+<pre class="code"><code>$ cd examples/simple_packaging
+$ python -m pip install --upgrade pip wheel
+$ python -m pip install .
+Successfully built rosen
+Installing collected packages: rosen
+Successfully installed rosen-0.0.1
+$ python -m pip show rosen
+Name: rosen
+Version: 0.0.1
+Summary: Example package for demonstration
+Home-page:
+Author:
+Author-email: Matthew Feickert &lt;matthew.feickert@cern.ch&gt;
+License: MIT
+Location: ***/lib/python3.12/site-packages
+Requires: numpy, scipy
+Required-by:</code></pre>
+</section>
+<section class="slide level2">
+
+<p>and use it anywhere</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># example.py</span></span>
+<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> minimize</span>
+<span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a><span class="co"># We can now import our code</span></span>
+<span id="cb11-5"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rosen.example <span class="im">import</span> rosen, rosen_der</span>
+<span id="cb11-6"><a aria-hidden="true" tabindex="-1"></a>x0 <span class="op">=</span> np.array([<span class="fl">1.3</span>, <span class="fl">0.7</span>, <span class="fl">0.8</span>, <span class="fl">1.9</span>, <span class="fl">1.2</span>])</span>
+<span id="cb11-7"><a aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> minimize(rosen, x0, method<span class="op">=</span><span class="st">"BFGS"</span>,</span>
+<span id="cb11-8"><a aria-hidden="true" tabindex="-1"></a>                  jac<span class="op">=</span>rosen_der, options<span class="op">=</span>{<span class="st">"disp"</span>: <span class="va">True</span>})</span>
+<span id="cb11-9"><a aria-hidden="true" tabindex="-1"></a>optimized_params <span class="op">=</span> result.x</span>
+<span id="cb11-10"><a aria-hidden="true" tabindex="-1"></a><span class="co"># array([1.00000004, 1.0000001 , 1.00000021, 1.00000044, 1.00000092])</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="packaging-doesnt-slow-down-development" class="slide level2">
+<h2>Packaging doesn’t slow down development</h2>
+<p><a href="https://peps.python.org/pep-0518/">PEP 518</a> compliant build backends allow for “<a href="https://pip.pypa.io/en/latest/topics/local-project-installs/#editable-installs">editable installs</a>”</p>
+<pre class="code"><code>$ python -m pip install --upgrade --editable .
+$ python -m pip show rosen | grep --ignore-case 'location'
+Location: ***/lib/python3.12/site-packages
+Editable project location: ***/examples/simple_packaging</code></pre>
+<p>Editable installs add the files in the development directory to Python’s import path. (Only need to re-installation if you change the project metadata.)</p>
+<p>Can <strong>develop</strong> your code under src/ and have <strong>immediate</strong> access to it</p>
+</section>
+<section id="packaging-compiled-extensions" class="slide level2">
+<h2>Packaging compiled extensions</h2>
+<p>With modern packaging infrastructure, packaging compiled extensions requires small extra work</p>
+<pre class="code"><code>$ tree examples/compiled_packaging
+
+examples/compiled_packaging
+├── CMakeLists.txt  # Addition of CMake
+├── LICENSE
+├── pyproject.toml  # build backend change
+├── README.md
+├── src
+│   ├── basic_math.cpp  # C++ extension
+│   └── rosen_cpp
+│       ├── example.py
+│       └── __init__.py
+└── tests
+    └── test_example.py
+
+3 directories, 8 files</code></pre>
+</section>
+<section id="section-3" class="slide level2 center">
+<h2></h2>
+<p><code>pyproject.toml:</code></p>
+<p>Swap build system to <a href="https://scikit-build-core.readthedocs.io/">scikit-build-core</a> + <a href="https://github.com/pybind/pybind11">pybind11</a></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a>[build<span class="op">-</span>system]</span>
+<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a>requires <span class="op">=</span> [</span>
+<span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="st">"scikit-build-core"</span>,</span>
+<span id="cb14-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="st">"pybind11"</span></span>
+<span id="cb14-5"><a aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb14-6"><a aria-hidden="true" tabindex="-1"></a>build<span class="op">-</span>backend <span class="op">=</span> <span class="st">"scikit_build_core.build"</span></span>
+<span id="cb14-7"><a aria-hidden="true" tabindex="-1"></a>...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="section-4" class="slide level2 center">
+<h2></h2>
+<p><a href="https://cliutils.gitlab.io/modern-cmake/">CMakeLists.txt</a>:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Specify CMake version and project language</span></span>
+<span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a>cmake_minimum_required(VERSION <span class="fl">3.15</span>..<span class="fl">.3.30</span>)</span>
+<span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a>project(${SKBUILD_PROJECT_NAME} LANGUAGES CXX)</span>
+<span id="cb15-4"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Setup pybind11</span></span>
+<span id="cb15-5"><a aria-hidden="true" tabindex="-1"></a><span class="bu">set</span>(PYBIND11_FINDPYTHON ON)</span>
+<span id="cb15-6"><a aria-hidden="true" tabindex="-1"></a>find_package(pybind11 CONFIG REQUIRED)</span>
+<span id="cb15-7"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Add the pybind11 module to build targets</span></span>
+<span id="cb15-8"><a aria-hidden="true" tabindex="-1"></a>pybind11_add_module(basic_math MODULE src<span class="op">/</span>basic_math.cpp)</span>
+<span id="cb15-9"><a aria-hidden="true" tabindex="-1"></a>install(TARGETS basic_math DESTINATION ${SKBUILD_PROJECT_NAME})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="section-5" class="slide level2 center">
+<h2></h2>
+<p><code>src/basic_math.cpp:</code></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">#include &lt;pybind11/pybind11.h&gt;</span></span>
+<span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a><span class="bu">int</span> add(<span class="bu">int</span> i, <span class="bu">int</span> j) { <span class="cf">return</span> i <span class="op">+</span> j<span class="op">;</span> }</span>
+<span id="cb16-3"><a aria-hidden="true" tabindex="-1"></a>namespace py <span class="op">=</span> pybind11<span class="op">;</span></span>
+<span id="cb16-4"><a aria-hidden="true" tabindex="-1"></a>PYBIND11_MODULE(basic_math, m) {</span>
+<span id="cb16-5"><a aria-hidden="true" tabindex="-1"></a>  m.<span class="kw">def</span>(<span class="st">"add"</span>, <span class="op">&amp;</span>add, <span class="vs">R"pbdoc(</span></span>
+<span id="cb16-6"><a aria-hidden="true" tabindex="-1"></a><span class="er">      Add two numbers</span></span>
+<span id="cb16-7"><a aria-hidden="true" tabindex="-1"></a>  )pbdoc<span class="st">");</span></span>
+<span id="cb16-8"><a aria-hidden="true" tabindex="-1"></a><span class="er">...</span></span>
+<span id="cb16-9"><a aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="packaging-compiled-extensions-installing" class="slide level2">
+<h2>Packaging compiled extensions: Installing</h2>
+<p>Installing locally is the same as for the pure-Python example:</p>
+<pre class="code"><code>$ cd examples/simple_packaging
+$ python -m pip install --upgrade pip wheel
+$ python -m pip install .
+Successfully built rosen-cpp
+Installing collected packages: rosen-cpp
+Successfully installed rosen-cpp-0.0.1</code></pre>
+<p>Module name is that given in C++:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rosen_cpp <span class="im">import</span> basic_math</span>
+<span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a>basic_math.add(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb18-3"><a aria-hidden="true" tabindex="-1"></a><span class="co"># 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="going-further-distributing-packages" class="slide level2">
+<h2>Going further: Distributing packages</h2>
+<p>If your code is publicly available on the WWW in a Git repository, you’ve already done a version of distribution!</p>
+<pre class="code"><code># General pattern is:
+# python -m pip install "project @ git+https://example.com/repo/project.git@branch#subdirectory=path"
+$ python -m pip install \
+  "git+https://github.com/matthewfeickert-talks/talk-urssi-summer-school-2024.git#subdirectory=examples/simple_packaging"</code></pre>
+<p>(more reasonable font size, and more common, example)</p>
+<pre class="code"><code># Works for pure-Python packages
+$ python -m pip install --upgrade "git+https://github.com/scikit-hep/pyhf.git"
+# as well as packages with compiled extensions
+$ python -m pip install --upgrade "git+https://github.com/scikit-hep/iminuit.git"</code></pre>
+</section>
+<section class="slide level2">
+
+<p>Ideally we’d prefer a more organized approach: distribution through a <strong>package index</strong></p>
+<p>First we need to create <strong>distributions</strong> of our packaged code.</p>
+<p>Distributions that <code>pip</code> can install:</p>
+<ul>
+<li class="fragment"><p><strong>source distribution (sdist)</strong>: A tarfile (<code>.tar.gz</code>) of the source files of our package (subset of all the files in the repository)</p></li>
+<li class="fragment"><p><strong>wheel</strong>: A zipfile (<code>.whl</code>) of the file system structure and package metadata with any dependencies prebuilt</p>
+<ul>
+<li class="fragment">No arbitrary code execution, only decompressing and copying of files</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<p>To create these <strong>distributions</strong> from source code, rely on our package <strong>build backend</strong> (e.g.&nbsp;<a href="https://hatch.pypa.io/">hatchling</a>) and <strong>build frontend</strong> tool like <a href="https://pypa-build.readthedocs.io/en/stable/">build</a></p>
+<pre class="code"><code>$ python -m pip install --upgrade build
+$ python -m build .
+* Creating venv isolated environment...
+* Installing packages in isolated environment... (hatch-vcs&gt;=0.3.0, hatchling&gt;=1.13.0)
+* Getting build dependencies for sdist...
+* Building sdist...
+* Building wheel from sdist
+* Creating venv isolated environment...
+* Installing packages in isolated environment... (hatch-vcs&gt;=0.3.0, hatchling&gt;=1.13.0)
+* Getting build dependencies for wheel...
+* Building wheel...
+Successfully built rosen-0.0.1.tar.gz and rosen-0.0.1-py3-none-any.whl
+$ ls dist
+rosen-0.0.1-py3-none-any.whl  rosen-0.0.1.tar.gz</code></pre>
+</section>
+<section id="section-6" class="slide level2">
+<h2></h2>
+<p>Can now securely upload the distributions under <code>./dist/</code> to <em>any</em> package index that understands how to use them.</p>
+<p>The most common is the Python Package Index (PyPI) which serves as the default package index for <code>pip</code>.</p>
+
+<img data-src="./images/pypi-page.png" class="img-fluid r-stretch"></section>
+<section id="distributing-packages-conda-forge" class="slide level2">
+<h2>Distributing packages: <a href="https://conda-forge.org/">conda-forge</a></h2>
+<p>The <code>conda</code> family of package managers (<code>conda</code>, <code>mamba</code>, <code>micromamba</code>, <code>pixi</code>) take an alternative approach from <code>pip</code>.</p>
+<p>Instead of installing Python packages, they act as general purpose package managers and install <strong>all dependencies</strong> (including Python) as OS and architecture specific <strong>built binaries</strong> (<code>.conda</code> files — zipfile containing compressed <code>tar</code> files) hosted on conda-forge.</p>
+<p>Allows an additional level of runtime environment specification not possible with just <code>pip</code>, though getting environment solves right can become more complicated.</p>
+</section>
+<section class="slide level2">
+
+<p>Popular in scientific computing as arbitrary binaries can be hosted, including compilers (e.g.&nbsp;gcc, Fortran) and even the <a href="https://twitter.com/jeremyphoward/status/1697435241152127369">full NVIDIA CUDA stack!</a></p>
+<p>With the change to full binaries only this also requires that specification of the environment being installed is important.</p>
+<p>With sdists and wheels, if there is no compatible wheel available, pip will automatically <strong>fall back</strong> to trying to locally build from the sidst. Can’t do that if there is no <strong>matching <code>.conda</code> binary!</strong></p>
+</section>
+<section id="defining-the-environment-application-vs.-library" class="slide level2">
+<h2>Defining the environment: <a href="https://iscinumpy.dev/post/app-vs-library/">Application vs.&nbsp;Library</a></h2>
+<p>Have been reasonably assuming that packaged code can be used in arbitrary environments with other code that is compatible (library-like).</p>
+<p>For distributing code, this is probably the correct view, but your analysis is not a library. Your analysis is an application (a hand crafted implementation of code from libraries).</p>
+<p>While your analysis might run with arbitrary configurations of the defined libraries and runtimes (<strong>reusable</strong>) want to also have a hash-level specified version for <strong>reproduciblity</strong>: a <strong>lock file</strong></p>
+</section>
+<section id="defining-the-environment-lock-file" class="slide level2">
+<h2>Defining the environment: Lock file</h2>
+<p>Lock files are simple: A hash level record of every dependency in the environment.</p>
+<p>Allow for reproducibility by simply being an list of every file to download from the internet.</p>
+<p>Should be programmatically generated from a high level requirements file and maintained in version control with your analysis.</p>
+<ul>
+<li class="fragment"><p>For <code>pip</code>: <a href="https://pip-tools.readthedocs.io/en/latest/"><code>pip-tools</code></a>, <a href="https://pdm.fming.dev/"><code>pdm</code></a>, <a href="https://pipenv.pypa.io/"><code>pipenv</code></a>, <a href="https://python-poetry.org/"><code>poetry</code></a></p></li>
+<li class="fragment"><p>For <code>conda</code> family: <a href="https://conda.github.io/conda-lock/"><code>conda-lock</code></a>, <a href="https://prefix.dev/docs/pixi/"><code>pixi</code></a></p></li>
+</ul>
+</section>
+<section id="defining-the-environment-comparing-to-julia" class="slide level2 smaller">
+<h2>Defining the environment: Comparing to Julia</h2>
+<p>The approach of <code>pixi</code> is similar to Julia.</p>
+<ul>
+<li class="fragment"><code>Project.toml</code>: <strong>describes the project on a high level</strong></li>
+<li class="fragment"><code>Manifest.toml</code>: <strong>absolute record</strong> of the state of the packages in the environment (a lock file)</li>
+</ul>
+<div class="fragment">
+<p>Julia’s package manager <a href="https://pkgdocs.julialang.org/v1/"><code>Pkg.jl</code></a> provides users a high level interface to edit <code>Project.toml</code> and then automatically updates <code>Manifest.toml</code> in response. Reproducibility of environment by default!</p>
+</div>
+<ul>
+<li class="fragment">Library: <code>Project.toml</code> in version control</li>
+<li class="fragment">Application: <code>Project.toml</code> and <code>Manifest.toml</code> in version control</li>
+</ul>
+</section>
+<section id="areas-still-to-discuss-another-time" class="slide level2 smaller">
+<h2>Areas still to discuss another time</h2>
+<ul>
+<li class="fragment"><p>Full environment specification with Linux (Open Container Initiative (OCI)) container images (Docker, Apptainer, Podman)</p></li>
+<li class="fragment"><p>Orchestration of multiple environments inside of an analysis</p>
+<ul>
+<li class="fragment">Using workflow languages</li>
+</ul></li>
+<li class="fragment"><p>The difficult realities of long term preservation</p>
+<ul>
+<li class="fragment"><p>Assumptions of present technologies don’t translate forever into the future, infrastructure goes away</p></li>
+<li class="fragment"><p>How to store files that aren’t “code” (e.g.&nbsp;images, training data, database files) — c.f. Zenodo</p></li>
+</ul></li>
+<li class="fragment"><p>What analysis reuse looks like</p>
+<ul>
+<li class="fragment"><a href="https://arxiv.org/abs/1010.2506">RECAST</a>(particle physics)</li>
+</ul></li>
+</ul>
+</section>
+<section id="recommendations-tooling" class="slide level2">
+<h2>Recommendations: Tooling</h2>
+<p>Don’t start your next Python project from scratch! Use the Scientific Python library development Cookiecutter: <a href="https://github.com/scientific-python/cookie"><code>cookie</code></a></p>
+<pre class="code"><code>$ pipx install cookiecutter
+$ cookiecutter gh:scientific-python/cookie
+#  [1/14] The name of your project (package):
+# ...</code></pre>
+<p>cookie will setup your repository for you with templated layouts for 11 different build backends and adheres to packaging and development best practices.</p>
+</section>
+<section id="recommendations-community-guides" class="slide level2 smaller">
+<h2>Recommendations: Community Guides</h2>
+<p>Packaging standards and best practices continue to change and get better. Instead of trying to maintain your own resources follow and engage with community resources created by the teams that are building the tools and infrastructure.</p>
+
+<img data-src="./images/scientific-python-development-guide.png" class="img-fluid r-stretch quarto-figure-center"><p class="caption"><a href="https://learn.scientific-python.org/development/">Scientific Python Library Development Guide</a></p></section>
+<section id="recommendations-collaboration" class="slide level2 smaller">
+<h2>Recommendations: Collaboration</h2>
+<p>Find and start working with Research Software Engineers (RSE).</p>
+<ul>
+<li class="fragment"><p>I don’t think that most scientists care/get excited about learning packaging tools. We just want things to work. RSEs can make that easier and are SUPER knowledgeable!</p>
+<ul>
+<li class="fragment">I’m among the “not excited”. I care about packaging because I care about reusable tools for science.</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./images/rse-page.png" class="img-fluid" style="width:40.0%" data-text-align="center"></p>
+<figcaption><a href="https://society-rse.org/">Society of Research Software Engineering</a></figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="recommendations-zenodo" class="slide level2 smaller">
+<h2>Recommendations: Zenodo</h2>
+<p>Versioned archive of <strong>everything</strong>: code, documents, data products, data sets</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./images/zenodo-landing-page.png" class="img-fluid"></p>
+<figcaption>DOI for project and each version</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="./images/why_use_zenodo.png" class="absolute img-fluid" style="top: 150px; right: 100px; width: 350px; "></p>
+</div></div>
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<ul>
+<li class="fragment"><p>Whirlwind tour of lifting analysis code from version control, to packages, distributed binaries, and the rest of the world</p></li>
+<li class="fragment"><p>Not a hopeless bog of technical debt, but community infrastructure built by people who you can collaborate with</p></li>
+<li class="fragment"><p>Reusable code can be a nucleation point for communities</p></li>
+</ul>
+</section>
+<section id="references" class="slide level2">
+<h2>References</h2>
+<ul>
+<li class="fragment"><a href="https://henryiii.github.io/level-up-your-python/">Level Up Your Python</a>, Henry Schreiner</li>
+<li class="fragment"><a href="https://packaging.python.org/en/latest/tutorials/packaging-projects/">Python Packaging User Guide, Packaging Python Projects Tutorial</a>, The PyPA</li>
+<li class="fragment"><a href="https://learn.scientific-python.org/development/">Scientific Python Library Development Guide</a>, Scientific Python (originally made by Scikit-HEP)</li>
+<li class="fragment"><a href="https://github.com/scientific-python/cookie">cookie</a>, Scientific Python (originally made by Scikit-HEP)</li>
+<li class="fragment"><a href="https://intersect-training.org/packaging/">INTERSECT’s packaging tutorial</a>, INTERSECT</li>
+</ul>
+
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 5.0e-2,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
+            }
+            return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp("https:\/\/dbehnoud\.github\.io\/urssi-summerschool-2025\/");
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
