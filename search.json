@@ -413,762 +413,392 @@
     "text": "Level Up Your Python, Henry Schreiner\nPython Packaging User Guide, Packaging Python Projects Tutorial, The PyPA\nScientific Python Library Development Guide, Scientific Python (originally made by Scikit-HEP)\ncookie, Scientific Python (originally made by Scikit-HEP)\nINTERSECT’s packaging tutorial, INTERSECT"
   },
   {
-    "objectID": "documentation-revealjs.html#documentation",
-    "href": "documentation-revealjs.html#documentation",
-    "title": "Documentation",
-    "section": "Documentation",
-    "text": "Documentation\nProfessor Carole Goble in “Better Software, Better Research”:\n\nOne of my favorite #overlyhonestmethods tweets (a hashtag for lab scientists) is Ian Holmes’s “You can download our code from the URL supplied. Good luck downloading the only postdoc who can get it to run, though.”"
+    "objectID": "collaboration-revealjs.html#lesson-objectives",
+    "href": "collaboration-revealjs.html#lesson-objectives",
+    "title": "Collaboration with Git and Github",
+    "section": "Lesson Objectives",
+    "text": "Lesson Objectives\n\nReview git commands\nDescribe individual and collaborative workflows with git\nIntroduce git commands for collaborative workflows\nDemo of collaborative workflows in practice\nSee additional useful git tips/tricks"
   },
   {
-    "objectID": "documentation-revealjs.html#value-of-documentation",
-    "href": "documentation-revealjs.html#value-of-documentation",
-    "title": "Documentation",
-    "section": "Value of documentation",
-    "text": "Value of documentation\n\nThe value and extent of your work is clearer if it can be understood by colleagues.\nDocumentation provides provenance for your scientific process, for your colleagues and yourself.\nDocumentation demonstrates your skill and professionalism."
-  },
-  {
-    "objectID": "documentation-revealjs.html#documentation-is-easier-than-you-think.",
-    "href": "documentation-revealjs.html#documentation-is-easier-than-you-think.",
-    "title": "Documentation",
-    "section": "Documentation is easier than you think.",
-    "text": "Documentation is easier than you think.\n\nDocumentation pays for itself with the time it saves in the long run.\nDocumentation requires little effort beyond writing the software itself."
-  },
-  {
-    "objectID": "documentation-revealjs.html#types-of-documentation",
-    "href": "documentation-revealjs.html#types-of-documentation",
-    "title": "Documentation",
-    "section": "Types of documentation",
-    "text": "Types of documentation\n\nTheory manuals\nUser and developer guides\nCode comments\nSelf-documenting code\nGenerated API documentation"
-  },
-  {
-    "objectID": "documentation-revealjs.html#user-and-developer-guides",
-    "href": "documentation-revealjs.html#user-and-developer-guides",
-    "title": "Documentation",
-    "section": "User and developer guides",
-    "text": "User and developer guides\n\nREADME: sits in top-level directory and contains all the necessary information for installing, getting started with, and understanding the accompanying code.\n\n\nMay be accompanied by other specific files: LICENSE, INSTALL, CITATION, ABOUT, CHANGELOG, CONTRIBUTING"
-  },
-  {
-    "objectID": "documentation-revealjs.html#readme-example",
-    "href": "documentation-revealjs.html#readme-example",
-    "title": "Documentation",
-    "section": "README example",
-    "text": "README example\nSQUIRREL, version 1.2 released on 2026-09-20\n\n# About\n\nThe Spectral Q and U Imaging Radiation Replicating Experimental Library\n(SQUIRREL) is a library for replicating radiation sources with spectral details\nand Q and U polarizations of superman bubblegum.\n\n# Installation\n\nThe SQUIRREL library relies on other libraries:\n\n- The ACORN library www.acorn.nutz\n- The TREEBRANCH database format API\n\nInstall those before installing the SQUIRREL library. To install the SQUIRREL\nlibrary:\n\n./configure\nmake --prefix=/install/path\nmake install\n..."
-  },
-  {
-    "objectID": "documentation-revealjs.html#comments",
-    "href": "documentation-revealjs.html#comments",
-    "title": "Documentation",
-    "section": "Comments",
-    "text": "Comments\nComments provide a way to insert metainformation about code intended for people, right next to the code:\ndef the_function(var):\n    \"\"\"This is a docstring, where a function definition might live\"\"\"\n    a = 1 + var # this is a simple comment\n    return a"
-  },
-  {
-    "objectID": "documentation-revealjs.html#bad-comments",
-    "href": "documentation-revealjs.html#bad-comments",
-    "title": "Documentation",
-    "section": "Bad comments",
-    "text": "Bad comments\nAlso possible to pollute code with unnecessary cruft:\ndef decay(index, database):\n    # first, retrieve the decay constants from the database\n    mylist = database.decay_constants()\n    # next, try to access an element of the list\n    try:\n        d = mylist[index] # gets decay constant at index in the list\n    # if the index doesn't exist\n    except IndexError:\n        # throw an informative error message\n        raise Exception(\"value not found in the list\")\n    return d"
-  },
-  {
-    "objectID": "documentation-revealjs.html#useful-comments",
-    "href": "documentation-revealjs.html#useful-comments",
-    "title": "Documentation",
-    "section": "Useful comments",
-    "text": "Useful comments\nCode written cleanly will have its own voice. Use intelligent naming to make most lines of code clear without comments, then use comments sparingly to help explain reasons or complicated sections:\ndef get_decay(index, database):\n    \"\"\"Returns decay constant at index in the database\"\"\"\n    lambdas = database.decay_constants()\n    try:\n        lambda_i = lambdas[index] # gets decay constant at index in the list\n    except IndexError:\n        raise Exception(\"value not found in the list\")\n    return lambda"
-  },
-  {
-    "objectID": "documentation-revealjs.html#self-documenting-code",
-    "href": "documentation-revealjs.html#self-documenting-code",
-    "title": "Documentation",
-    "section": "Self-documenting code",
-    "text": "Self-documenting code\n\nNaming: a class, variable, or function name should tell you why it exists, what it does, and how it is used.\n\n\nSimple functions: functions should be small to be understandable and testable; they should only do one thing.\n\n\nConsistent style: use a consistent, standardized style; e.g., select variable and function names according to the PEP8 style guide for Python."
-  },
-  {
-    "objectID": "documentation-revealjs.html#guidelines-for-naming",
-    "href": "documentation-revealjs.html#guidelines-for-naming",
-    "title": "Documentation",
-    "section": "Guidelines for naming",
-    "text": "Guidelines for naming\n# packages and modules are short and lowercase\npackages\nmodules\n\n# other objects can be long\nClassesUseCamelCase\nExceptionsAreClassesToo\nfunctions_use_snake_case\nCONSTANTS_USE_ALL_CAPS\n\n# variable scope is *suggested* by style convention\n_single_leading_underscore_ # internal to module\nsingle_trailing_underscore_ # avoids conflicts with Python keywords\n__double_leading_trailing__ # these are magic, like __init__"
-  },
-  {
-    "objectID": "documentation-revealjs.html#docstrings",
-    "href": "documentation-revealjs.html#docstrings",
-    "title": "Documentation",
-    "section": "Docstrings",
-    "text": "Docstrings\n\ndocstring: comment placed immediately after a function or class definition, typically enclosed by three pairs of double quotes:\n\ndef &lt;name&gt;(&lt;args&gt;):\n    \"\"\"&lt;docstring&gt;\"\"\"\n    &lt;body&gt;\n\ndocstrings are available within Python via help() and iPython’s magic command ?, and Sphinx picks them up."
-  },
-  {
-    "objectID": "documentation-revealjs.html#docstrings-more",
-    "href": "documentation-revealjs.html#docstrings-more",
-    "title": "Documentation",
-    "section": "Docstrings (more)",
-    "text": "Docstrings (more)\n\nMake docstrings descriptive and concise; you can explain the arguments of a function, its behavior, and how you intend it to be used.\n\ndef power(base, x):\n    \"\"\"Computes base^x. Both base and x should be integers,\n    floats, or another numeric type.\n    \"\"\"\n    return base**x"
-  },
-  {
-    "objectID": "documentation-revealjs.html#numpy-style-docstrings",
-    "href": "documentation-revealjs.html#numpy-style-docstrings",
-    "title": "Documentation",
-    "section": "Numpy-style docstrings",
-    "text": "Numpy-style docstrings\ndef function_with_types_in_docstring(param1, param2):\n    \"\"\"Example function with types documented in the docstring.\n\n    `PEP 484`_ type annotations are supported. If attribute, parameter, and\n    return types are annotated according to `PEP 484`_, they do not need to be\n    included in the docstring:\n\n    Parameters\n    ----------\n    param1 : int\n        The first parameter.\n    param2 : str\n        The second parameter.\n\n    Returns\n    -------\n    bool\n        True if successful, False otherwise.\n\n    .. _PEP 484:\n        https://www.python.org/dev/peps/pep-0484/\n\n    \"\"\""
-  },
-  {
-    "objectID": "documentation-revealjs.html#google-style-docstrings",
-    "href": "documentation-revealjs.html#google-style-docstrings",
-    "title": "Documentation",
-    "section": "Google-style docstrings",
-    "text": "Google-style docstrings\ndef function_with_types_in_docstring(param1, param2):\n    \"\"\"Example function with types documented in the docstring.\n\n    `PEP 484`_ type annotations are supported. If attribute, parameter, and\n    return types are annotated according to `PEP 484`_, they do not need to be\n    included in the docstring:\n\n    Args:\n        param1 (int): The first parameter.\n        param2 (str): The second parameter.\n\n    Returns:\n        bool: The return value. True for success, False otherwise.\n\n    .. _PEP 484:\n        https://www.python.org/dev/peps/pep-0484/\n\n    \"\"\""
-  },
-  {
-    "objectID": "documentation-revealjs.html#getting-started-with-sphinx",
-    "href": "documentation-revealjs.html#getting-started-with-sphinx",
-    "title": "Documentation",
-    "section": "Getting started with Sphinx",
-    "text": "Getting started with Sphinx\n\npip install sphinx myst-parser\nmkdir docs\ncd docs\nsphinx-quickstart (accept defaults if unsure; answer “yes” for question about autodoc)\nsource directory holds .rst and .md files for user guides, theory manuals, etc., separate from the autogenerated API documentation"
-  },
-  {
-    "objectID": "documentation-revealjs.html#add-content-for-sphinx",
-    "href": "documentation-revealjs.html#add-content-for-sphinx",
-    "title": "Documentation",
-    "section": "Add content for Sphinx",
-    "text": "Add content for Sphinx\n\nIn the docs\\source directory, add an installation.md file (for example)\nAdd 'myst_parser' to extensions in conf.py\nTry building with make html\nDid sphinx find and automatically build docs for your modules? Look for .md files for each module."
-  },
-  {
-    "objectID": "documentation-revealjs.html#configuration-conf.py",
-    "href": "documentation-revealjs.html#configuration-conf.py",
-    "title": "Documentation",
-    "section": "Configuration (conf.py)",
-    "text": "Configuration (conf.py)\n\nAdd 'sphinx.ext.autodoc' to extensions\nIn extensions, add sphinx.ext.napoleon (for Google/NumPy-style docstring reading) and sphinx.ext.mathjax (if you want LaTeX-based equations), and sphinx.ext.intersphinx for connections to other docs\nSet napoleon_numpy_docstring and napoleon_google_docstring to True/False depending on your docstring style.\nAdd an intersphinx_mapping dict to connect to other docs"
-  },
-  {
-    "objectID": "documentation-revealjs.html#configuration",
-    "href": "documentation-revealjs.html#configuration",
-    "title": "Documentation",
-    "section": "Configuration",
-    "text": "Configuration\n\nIn conf.py, add autodoc_default_options = {'members': True} and autoclass_content = 'class'\nFor each Python module, create a corresponding [modulename].rst file in the docs\\source directory. Add .. automodule:: [packagename].[modulename]\nIn index.rst, add [modulename] inside the toctree (table of contents)"
-  },
-  {
-    "objectID": "documentation-revealjs.html#intersphinx_mapping",
-    "href": "documentation-revealjs.html#intersphinx_mapping",
-    "title": "Documentation",
-    "section": "intersphinx_mapping",
-    "text": "intersphinx_mapping\nintersphinx_mapping = {\n  'python': ('https://docs.python.org/3.11', None),\n  'pandas': ('http://pandas.pydata.org/pandas-docs/stable/', None),\n  'numpy': ('https://docs.scipy.org/doc/numpy/', None),\n}"
-  },
-  {
-    "objectID": "documentation-revealjs.html#other-sphinx-goodness",
-    "href": "documentation-revealjs.html#other-sphinx-goodness",
-    "title": "Documentation",
-    "section": "Other Sphinx goodness:",
-    "text": "Other Sphinx goodness:\n\nYou can configure it to generate a LaTeX-based PDF (i.e., a single user manual)\nYou can have versioned documentation, and also simultaneously have “devel” docs for unreleased changes."
-  },
-  {
-    "objectID": "documentation-revealjs.html#github-actions-to-automate-sphinx",
-    "href": "documentation-revealjs.html#github-actions-to-automate-sphinx",
-    "title": "Documentation",
-    "section": "GitHub Actions to automate Sphinx",
-    "text": "GitHub Actions to automate Sphinx\nname: \"Sphinx: Render docs\"\n\non: push\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    permissions:\n      contents: write\n    steps:\n    - uses: actions/checkout@v4\n      with:\n        persist-credentials: false\n    - name: install depedendices\n      run : |\n        python -m pip install --upgrade pip\n        pip install .\n        pip install sphinx myst-parser\n    - name: Build HTML\n      run: |\n        cd docs\n        make html\n    - name: Upload artifacts\n      uses: actions/upload-artifact@v4\n      with:\n        name: html-docs\n        path: docs/build/html/\n    - name: Deploy\n      uses: peaceiris/actions-gh-pages@v4\n      if: github.ref == 'refs/heads/main'\n      with:\n        github_token: ${{ secrets.GITHUB_TOKEN }}\n        publish_dir: docs/build/html"
-  },
-  {
-    "objectID": "documentation-revealjs.html#github-actions-setup",
-    "href": "documentation-revealjs.html#github-actions-setup",
-    "title": "Documentation",
-    "section": "GitHub Actions setup",
-    "text": "GitHub Actions setup\n\nAdd sphinx.ext.githubpages to extensions in conf.py\nAdd a docs/requirements.txt file for any dependencies (e.g., myst-parser)\nOn GitHub, Settings -&gt; Pages -&gt; select gh-pages branch in the “Source” dropdown\n\n\nMore on Sphinx - GitHub Actions here: https://www.sphinx-doc.org/en/master/tutorial/deploying.html"
-  },
-  {
-    "objectID": "documentation.html",
-    "href": "documentation.html",
-    "title": "Documentation",
-    "section": "",
-    "text": "Professor Carole Goble in “Better Software, Better Research”:\n\nOne of my favorite #overlyhonestmethods tweets (a hashtag for lab scientists) is Ian Holmes’s “You can download our code from the URL supplied. Good luck downloading the only postdoc who can get it to run, though.”\n\n\n\n\n\nThe value and extent of your work is clearer if it can be understood by colleagues.\nDocumentation provides provenance for your scientific process, for your colleagues and yourself.\nDocumentation demonstrates your skill and professionalism.\n\n\n\n\n\nDocumentation pays for itself with the time it saves in the long run.\nDocumentation requires little effort beyond writing the software itself.\n\n\n\n\n\nTheory manuals\nUser and developer guides\nCode comments\nSelf-documenting code\nGenerated API documentation\n\n\n\n\n\nREADME: sits in top-level directory and contains all the necessary information for installing, getting started with, and understanding the accompanying code.\n\n\nMay be accompanied by other specific files: LICENSE, INSTALL, CITATION, ABOUT, CHANGELOG, CONTRIBUTING\n\n\n\n\nSQUIRREL, version 1.2 released on 2026-09-20\n\n# About\n\nThe Spectral Q and U Imaging Radiation Replicating Experimental Library\n(SQUIRREL) is a library for replicating radiation sources with spectral details\nand Q and U polarizations of superman bubblegum.\n\n# Installation\n\nThe SQUIRREL library relies on other libraries:\n\n- The ACORN library www.acorn.nutz\n- The TREEBRANCH database format API\n\nInstall those before installing the SQUIRREL library. To install the SQUIRREL\nlibrary:\n\n./configure\nmake --prefix=/install/path\nmake install\n...\n\n\n\nComments provide a way to insert metainformation about code intended for people, right next to the code:\ndef the_function(var):\n    \"\"\"This is a docstring, where a function definition might live\"\"\"\n    a = 1 + var # this is a simple comment\n    return a\n\n\n\nAlso possible to pollute code with unnecessary cruft:\ndef decay(index, database):\n    # first, retrieve the decay constants from the database\n    mylist = database.decay_constants()\n    # next, try to access an element of the list\n    try:\n        d = mylist[index] # gets decay constant at index in the list\n    # if the index doesn't exist\n    except IndexError:\n        # throw an informative error message\n        raise Exception(\"value not found in the list\")\n    return d\n\n\n\nCode written cleanly will have its own voice. Use intelligent naming to make most lines of code clear without comments, then use comments sparingly to help explain reasons or complicated sections:\ndef get_decay(index, database):\n    \"\"\"Returns decay constant at index in the database\"\"\"\n    lambdas = database.decay_constants()\n    try:\n        lambda_i = lambdas[index] # gets decay constant at index in the list\n    except IndexError:\n        raise Exception(\"value not found in the list\")\n    return lambda\n\n\n\n\nNaming: a class, variable, or function name should tell you why it exists, what it does, and how it is used.\n\n\nSimple functions: functions should be small to be understandable and testable; they should only do one thing.\n\n\nConsistent style: use a consistent, standardized style; e.g., select variable and function names according to the PEP8 style guide for Python.\n\n\n\n\n# packages and modules are short and lowercase\npackages\nmodules\n\n# other objects can be long\nClassesUseCamelCase\nExceptionsAreClassesToo\nfunctions_use_snake_case\nCONSTANTS_USE_ALL_CAPS\n\n# variable scope is *suggested* by style convention\n_single_leading_underscore_ # internal to module\nsingle_trailing_underscore_ # avoids conflicts with Python keywords\n__double_leading_trailing__ # these are magic, like __init__\n\n\n\n\ndocstring: comment placed immediately after a function or class definition, typically enclosed by three pairs of double quotes:\n\ndef &lt;name&gt;(&lt;args&gt;):\n    \"\"\"&lt;docstring&gt;\"\"\"\n    &lt;body&gt;\n\ndocstrings are available within Python via help() and iPython’s magic command ?, and Sphinx picks them up.\n\n\n\n\n\nMake docstrings descriptive and concise; you can explain the arguments of a function, its behavior, and how you intend it to be used.\n\ndef power(base, x):\n    \"\"\"Computes base^x. Both base and x should be integers,\n    floats, or another numeric type.\n    \"\"\"\n    return base**x",
-    "crumbs": [
-      "Documentation"
-    ]
-  },
-  {
-    "objectID": "documentation.html#documentation",
-    "href": "documentation.html#documentation",
-    "title": "Documentation",
-    "section": "",
-    "text": "Professor Carole Goble in “Better Software, Better Research”:\n\nOne of my favorite #overlyhonestmethods tweets (a hashtag for lab scientists) is Ian Holmes’s “You can download our code from the URL supplied. Good luck downloading the only postdoc who can get it to run, though.”",
-    "crumbs": [
-      "Documentation"
-    ]
-  },
-  {
-    "objectID": "documentation.html#value-of-documentation",
-    "href": "documentation.html#value-of-documentation",
-    "title": "Documentation",
-    "section": "",
-    "text": "The value and extent of your work is clearer if it can be understood by colleagues.\nDocumentation provides provenance for your scientific process, for your colleagues and yourself.\nDocumentation demonstrates your skill and professionalism.",
-    "crumbs": [
-      "Documentation"
-    ]
-  },
-  {
-    "objectID": "documentation.html#documentation-is-easier-than-you-think.",
-    "href": "documentation.html#documentation-is-easier-than-you-think.",
-    "title": "Documentation",
-    "section": "",
-    "text": "Documentation pays for itself with the time it saves in the long run.\nDocumentation requires little effort beyond writing the software itself.",
-    "crumbs": [
-      "Documentation"
-    ]
-  },
-  {
-    "objectID": "documentation.html#types-of-documentation",
-    "href": "documentation.html#types-of-documentation",
-    "title": "Documentation",
-    "section": "",
-    "text": "Theory manuals\nUser and developer guides\nCode comments\nSelf-documenting code\nGenerated API documentation",
-    "crumbs": [
-      "Documentation"
-    ]
-  },
-  {
-    "objectID": "documentation.html#user-and-developer-guides",
-    "href": "documentation.html#user-and-developer-guides",
-    "title": "Documentation",
-    "section": "",
-    "text": "README: sits in top-level directory and contains all the necessary information for installing, getting started with, and understanding the accompanying code.\n\n\nMay be accompanied by other specific files: LICENSE, INSTALL, CITATION, ABOUT, CHANGELOG, CONTRIBUTING",
-    "crumbs": [
-      "Documentation"
-    ]
-  },
-  {
-    "objectID": "documentation.html#readme-example",
-    "href": "documentation.html#readme-example",
-    "title": "Documentation",
-    "section": "",
-    "text": "SQUIRREL, version 1.2 released on 2026-09-20\n\n# About\n\nThe Spectral Q and U Imaging Radiation Replicating Experimental Library\n(SQUIRREL) is a library for replicating radiation sources with spectral details\nand Q and U polarizations of superman bubblegum.\n\n# Installation\n\nThe SQUIRREL library relies on other libraries:\n\n- The ACORN library www.acorn.nutz\n- The TREEBRANCH database format API\n\nInstall those before installing the SQUIRREL library. To install the SQUIRREL\nlibrary:\n\n./configure\nmake --prefix=/install/path\nmake install\n...",
-    "crumbs": [
-      "Documentation"
-    ]
-  },
-  {
-    "objectID": "documentation.html#comments",
-    "href": "documentation.html#comments",
-    "title": "Documentation",
-    "section": "",
-    "text": "Comments provide a way to insert metainformation about code intended for people, right next to the code:\ndef the_function(var):\n    \"\"\"This is a docstring, where a function definition might live\"\"\"\n    a = 1 + var # this is a simple comment\n    return a",
-    "crumbs": [
-      "Documentation"
-    ]
-  },
-  {
-    "objectID": "documentation.html#bad-comments",
-    "href": "documentation.html#bad-comments",
-    "title": "Documentation",
-    "section": "",
-    "text": "Also possible to pollute code with unnecessary cruft:\ndef decay(index, database):\n    # first, retrieve the decay constants from the database\n    mylist = database.decay_constants()\n    # next, try to access an element of the list\n    try:\n        d = mylist[index] # gets decay constant at index in the list\n    # if the index doesn't exist\n    except IndexError:\n        # throw an informative error message\n        raise Exception(\"value not found in the list\")\n    return d",
-    "crumbs": [
-      "Documentation"
-    ]
-  },
-  {
-    "objectID": "documentation.html#useful-comments",
-    "href": "documentation.html#useful-comments",
-    "title": "Documentation",
-    "section": "",
-    "text": "Code written cleanly will have its own voice. Use intelligent naming to make most lines of code clear without comments, then use comments sparingly to help explain reasons or complicated sections:\ndef get_decay(index, database):\n    \"\"\"Returns decay constant at index in the database\"\"\"\n    lambdas = database.decay_constants()\n    try:\n        lambda_i = lambdas[index] # gets decay constant at index in the list\n    except IndexError:\n        raise Exception(\"value not found in the list\")\n    return lambda",
-    "crumbs": [
-      "Documentation"
-    ]
-  },
-  {
-    "objectID": "documentation.html#self-documenting-code",
-    "href": "documentation.html#self-documenting-code",
-    "title": "Documentation",
-    "section": "",
-    "text": "Naming: a class, variable, or function name should tell you why it exists, what it does, and how it is used.\n\n\nSimple functions: functions should be small to be understandable and testable; they should only do one thing.\n\n\nConsistent style: use a consistent, standardized style; e.g., select variable and function names according to the PEP8 style guide for Python.",
-    "crumbs": [
-      "Documentation"
-    ]
-  },
-  {
-    "objectID": "documentation.html#guidelines-for-naming",
-    "href": "documentation.html#guidelines-for-naming",
-    "title": "Documentation",
-    "section": "",
-    "text": "# packages and modules are short and lowercase\npackages\nmodules\n\n# other objects can be long\nClassesUseCamelCase\nExceptionsAreClassesToo\nfunctions_use_snake_case\nCONSTANTS_USE_ALL_CAPS\n\n# variable scope is *suggested* by style convention\n_single_leading_underscore_ # internal to module\nsingle_trailing_underscore_ # avoids conflicts with Python keywords\n__double_leading_trailing__ # these are magic, like __init__",
-    "crumbs": [
-      "Documentation"
-    ]
-  },
-  {
-    "objectID": "documentation.html#docstrings",
-    "href": "documentation.html#docstrings",
-    "title": "Documentation",
-    "section": "",
-    "text": "docstring: comment placed immediately after a function or class definition, typically enclosed by three pairs of double quotes:\n\ndef &lt;name&gt;(&lt;args&gt;):\n    \"\"\"&lt;docstring&gt;\"\"\"\n    &lt;body&gt;\n\ndocstrings are available within Python via help() and iPython’s magic command ?, and Sphinx picks them up.",
-    "crumbs": [
-      "Documentation"
-    ]
-  },
-  {
-    "objectID": "documentation.html#docstrings-more",
-    "href": "documentation.html#docstrings-more",
-    "title": "Documentation",
-    "section": "",
-    "text": "Make docstrings descriptive and concise; you can explain the arguments of a function, its behavior, and how you intend it to be used.\n\ndef power(base, x):\n    \"\"\"Computes base^x. Both base and x should be integers,\n    floats, or another numeric type.\n    \"\"\"\n    return base**x",
-    "crumbs": [
-      "Documentation"
-    ]
-  },
-  {
-    "objectID": "documentation.html#numpy-style-docstrings",
-    "href": "documentation.html#numpy-style-docstrings",
-    "title": "Documentation",
-    "section": "Numpy-style docstrings",
-    "text": "Numpy-style docstrings\ndef function_with_types_in_docstring(param1, param2):\n    \"\"\"Example function with types documented in the docstring.\n\n    `PEP 484`_ type annotations are supported. If attribute, parameter, and\n    return types are annotated according to `PEP 484`_, they do not need to be\n    included in the docstring:\n\n    Parameters\n    ----------\n    param1 : int\n        The first parameter.\n    param2 : str\n        The second parameter.\n\n    Returns\n    -------\n    bool\n        True if successful, False otherwise.\n\n    .. _PEP 484:\n        https://www.python.org/dev/peps/pep-0484/\n\n    \"\"\"",
-    "crumbs": [
-      "Documentation"
-    ]
-  },
-  {
-    "objectID": "documentation.html#google-style-docstrings",
-    "href": "documentation.html#google-style-docstrings",
-    "title": "Documentation",
-    "section": "Google-style docstrings",
-    "text": "Google-style docstrings\ndef function_with_types_in_docstring(param1, param2):\n    \"\"\"Example function with types documented in the docstring.\n\n    `PEP 484`_ type annotations are supported. If attribute, parameter, and\n    return types are annotated according to `PEP 484`_, they do not need to be\n    included in the docstring:\n\n    Args:\n        param1 (int): The first parameter.\n        param2 (str): The second parameter.\n\n    Returns:\n        bool: The return value. True for success, False otherwise.\n\n    .. _PEP 484:\n        https://www.python.org/dev/peps/pep-0484/\n\n    \"\"\"",
-    "crumbs": [
-      "Documentation"
-    ]
-  },
-  {
-    "objectID": "documentation.html#getting-started-with-sphinx",
-    "href": "documentation.html#getting-started-with-sphinx",
-    "title": "Documentation",
-    "section": "Getting started with Sphinx",
-    "text": "Getting started with Sphinx\n\npip install sphinx myst-parser\nmkdir docs\ncd docs\nsphinx-quickstart (accept defaults if unsure; answer “yes” for question about autodoc)\nsource directory holds .rst and .md files for user guides, theory manuals, etc., separate from the autogenerated API documentation",
-    "crumbs": [
-      "Documentation"
-    ]
-  },
-  {
-    "objectID": "documentation.html#add-content-for-sphinx",
-    "href": "documentation.html#add-content-for-sphinx",
-    "title": "Documentation",
-    "section": "Add content for Sphinx",
-    "text": "Add content for Sphinx\n\nIn the docs\\source directory, add an installation.md file (for example)\nAdd 'myst_parser' to extensions in conf.py\nTry building with make html\nDid sphinx find and automatically build docs for your modules? Look for .md files for each module.",
-    "crumbs": [
-      "Documentation"
-    ]
-  },
-  {
-    "objectID": "documentation.html#configuration-conf.py",
-    "href": "documentation.html#configuration-conf.py",
-    "title": "Documentation",
-    "section": "Configuration (conf.py)",
-    "text": "Configuration (conf.py)\n\nAdd 'sphinx.ext.autodoc' to extensions\nIn extensions, add sphinx.ext.napoleon (for Google/NumPy-style docstring reading) and sphinx.ext.mathjax (if you want LaTeX-based equations), and sphinx.ext.intersphinx for connections to other docs\nSet napoleon_numpy_docstring and napoleon_google_docstring to True/False depending on your docstring style.\nAdd an intersphinx_mapping dict to connect to other docs",
-    "crumbs": [
-      "Documentation"
-    ]
-  },
-  {
-    "objectID": "documentation.html#configuration",
-    "href": "documentation.html#configuration",
-    "title": "Documentation",
-    "section": "Configuration",
-    "text": "Configuration\n\nIn conf.py, add autodoc_default_options = {'members': True} and autoclass_content = 'class'\nFor each Python module, create a corresponding [modulename].rst file in the docs\\source directory. Add .. automodule:: [packagename].[modulename]\nIn index.rst, add [modulename] inside the toctree (table of contents)",
-    "crumbs": [
-      "Documentation"
-    ]
-  },
-  {
-    "objectID": "documentation.html#intersphinx_mapping",
-    "href": "documentation.html#intersphinx_mapping",
-    "title": "Documentation",
-    "section": "intersphinx_mapping",
-    "text": "intersphinx_mapping\nintersphinx_mapping = {\n  'python': ('https://docs.python.org/3.11', None),\n  'pandas': ('http://pandas.pydata.org/pandas-docs/stable/', None),\n  'numpy': ('https://docs.scipy.org/doc/numpy/', None),\n}",
-    "crumbs": [
-      "Documentation"
-    ]
-  },
-  {
-    "objectID": "documentation.html#other-sphinx-goodness",
-    "href": "documentation.html#other-sphinx-goodness",
-    "title": "Documentation",
-    "section": "Other Sphinx goodness:",
-    "text": "Other Sphinx goodness:\n\nYou can configure it to generate a LaTeX-based PDF (i.e., a single user manual)\nYou can have versioned documentation, and also simultaneously have “devel” docs for unreleased changes.",
-    "crumbs": [
-      "Documentation"
-    ]
-  },
-  {
-    "objectID": "documentation.html#github-actions-to-automate-sphinx",
-    "href": "documentation.html#github-actions-to-automate-sphinx",
-    "title": "Documentation",
-    "section": "GitHub Actions to automate Sphinx",
-    "text": "GitHub Actions to automate Sphinx\nname: \"Sphinx: Render docs\"\n\non: push\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    permissions:\n      contents: write\n    steps:\n    - uses: actions/checkout@v4\n      with:\n        persist-credentials: false\n    - name: install depedendices\n      run : |\n        python -m pip install --upgrade pip\n        pip install .\n        pip install sphinx myst-parser\n    - name: Build HTML\n      run: |\n        cd docs\n        make html\n    - name: Upload artifacts\n      uses: actions/upload-artifact@v4\n      with:\n        name: html-docs\n        path: docs/build/html/\n    - name: Deploy\n      uses: peaceiris/actions-gh-pages@v4\n      if: github.ref == 'refs/heads/main'\n      with:\n        github_token: ${{ secrets.GITHUB_TOKEN }}\n        publish_dir: docs/build/html",
-    "crumbs": [
-      "Documentation"
-    ]
-  },
-  {
-    "objectID": "documentation.html#github-actions-setup",
-    "href": "documentation.html#github-actions-setup",
-    "title": "Documentation",
-    "section": "GitHub Actions setup",
-    "text": "GitHub Actions setup\n\nAdd sphinx.ext.githubpages to extensions in conf.py\nAdd a docs/requirements.txt file for any dependencies (e.g., myst-parser)\nOn GitHub, Settings -&gt; Pages -&gt; select gh-pages branch in the “Source” dropdown\n\n\nMore on Sphinx - GitHub Actions here: https://www.sphinx-doc.org/en/master/tutorial/deploying.html",
-    "crumbs": [
-      "Documentation"
-    ]
-  },
-  {
-    "objectID": "package_structure-revealjs.html#who-am-i",
-    "href": "package_structure-revealjs.html#who-am-i",
-    "title": "(re)introducing Python packaging",
-    "section": "Who am I?",
-    "text": "Who am I?\n\nPhD: neuro + behavior, post-doc: cognition\nopen source scientific software dev: http://www.vocalpy.org/\ntrained Carpentries instructor\npyOpenSci (2018-present; Editor in Chief - ~2022-2024)\nparticipant in URSSI 2019 Winter School!\nChair, SciPy conference (2020-present)\nActive in US Research Software Engineer Association"
-  },
-  {
-    "objectID": "package_structure-revealjs.html#acknowledgements",
-    "href": "package_structure-revealjs.html#acknowledgements",
-    "title": "(re)introducing Python packaging",
+    "objectID": "collaboration-revealjs.html#acknowledgements",
+    "href": "collaboration-revealjs.html#acknowledgements",
+    "title": "Collaboration with Git and Github",
     "section": "Acknowledgements",
-    "text": "Acknowledgements\n\nThe previous versions of this module!\nPython packaging 101 tutorial from pyOpenSci: https://www.pyopensci.org/python-package-guide/tutorials/intro.html#python-packaging-101\nPython Packages: https://py-pkgs.org/\nScientific Python packaging guide: https://learn.scientific-python.org/development/tutorials/packaging/\nPython Packaging User Guide: https://packaging.python.org/en/latest/"
+    "text": "Acknowledgements\nThis material is heavily influenced by the previous works of Madicken Munk, Karthik Ram and James Howison from the previous summer and winter schools.\nOther helpful/fun resources for git\nhttps://git-school.github.io/visualizing-git/ https://pcottle.github.io/learnGitBranching/?NODEMO https://allisonhorst.com/git-github https://jvns.ca/blog/2023/11/23/branches-intuition-reality/ https://git-scm.com/docs https://swcarpentry.github.io/git-novice/"
   },
   {
-    "objectID": "package_structure-revealjs.html#outline-questions",
-    "href": "package_structure-revealjs.html#outline-questions",
-    "title": "(re)introducing Python packaging",
-    "section": "Outline / Questions",
-    "text": "Outline / Questions\n(The answers come later)\n\nWhat is a Python package?\nWhy would I make a Python package?\nHow do I turn my code into a Python package that I can import?\nHow do I publish my Python package so others can pip install it?\nWhat do I need to develop and maintain a Python package, besides code?"
+    "objectID": "collaboration-revealjs.html#workflows-with-git-an-individual-workflow-without-a-remote",
+    "href": "collaboration-revealjs.html#workflows-with-git-an-individual-workflow-without-a-remote",
+    "title": "Collaboration with Git and Github",
+    "section": "Workflows with Git: An Individual Workflow (without a remote)",
+    "text": "Workflows with Git: An Individual Workflow (without a remote)\ncommit, commit, commit …..\ndanikamacdonell@computer: ~/Git$ mkdir research-code ; cd research-code\ndanikamacdonell@computer: ~/Git/research-code$ git init\nInitialized empty Git repository in /Users/danikamacdonell/Git/research-code/.git/\ndanikamacdonell@computer: ~/Git/research-code$ git branch -M main\ndanikamacdonell@computer: ~/Git/research-code$ touch README.md ; open README.md\ndanikamacdonell@computer: ~/Git/research-code$ git add README.md\ndanikamacdonell@computer: ~/Git/research-code$ git commit -m 'add README with code description'\n[main (root-commit) 49c9e77] add README with code description\n 1 file changed, 0 insertions(+), 0 deletions(-)\n     create mode 100644 README.md\ndanikamacdonell@computer: ~/Git/research-code$ git log\nAuthor: Danika MacDonell &lt;danikamacdonell@computer&gt;\n    Add a README with code description"
   },
   {
-    "objectID": "package_structure-revealjs.html#what-is-a-python-package",
-    "href": "package_structure-revealjs.html#what-is-a-python-package",
-    "title": "(re)introducing Python packaging",
-    "section": "What is a Python package?",
-    "text": "What is a Python package?\nFirst, let’s define module\nhttps://docs.python.org/3/glossary.html#term-module\n\nModule: An object that serves an organizational unit of python code. Modules have a namespace containing arbitrary python objects. Modules are loaded into Python by the process of importing"
+    "objectID": "collaboration-revealjs.html#an-individual-workflow-with-a-remote",
+    "href": "collaboration-revealjs.html#an-individual-workflow-with-a-remote",
+    "title": "Collaboration with Git and Github",
+    "section": "An Individual Workflow (with a remote)",
+    "text": "An Individual Workflow (with a remote)"
   },
   {
-    "objectID": "package_structure-revealjs.html#section",
-    "href": "package_structure-revealjs.html#section",
-    "title": "(re)introducing Python packaging",
+    "objectID": "collaboration-revealjs.html#but-what-about-working-with-others",
+    "href": "collaboration-revealjs.html#but-what-about-working-with-others",
+    "title": "Collaboration with Git and Github",
+    "section": "… But what about working with others?",
+    "text": "… But what about working with others?"
+  },
+  {
+    "objectID": "collaboration-revealjs.html#centralized-workflow",
+    "href": "collaboration-revealjs.html#centralized-workflow",
+    "title": "Collaboration with Git and Github",
+    "section": "Centralized Workflow",
+    "text": "Centralized Workflow\nAll members work on the same repository\ngit pull before starting work\nEveryone commits to main\ngit push\nIf there is no merge conflict, 🙌\nOtherwise fix merge conflict, then push"
+  },
+  {
+    "objectID": "collaboration-revealjs.html#feature-branching-workflow",
+    "href": "collaboration-revealjs.html#feature-branching-workflow",
+    "title": "Collaboration with Git and Github",
+    "section": "Feature Branching Workflow",
+    "text": "Feature Branching Workflow\nMembers work on the same repository but use individual branches to do feature development"
+  },
+  {
+    "objectID": "collaboration-revealjs.html#section",
+    "href": "collaboration-revealjs.html#section",
+    "title": "Collaboration with Git and Github",
     "section": "",
-    "text": "Deconstructing that definition:\n\nWhen I write import modulename I am loading a module\n\nBut we also talk about “importing a package”!\nThis seems to imply a package is a kind of module"
+    "text": "Create and switch to a branch\nAdd commits\nPush feature branch to GitHub\nStart a pull request\nDiscuss, add more commits, merge"
   },
   {
-    "objectID": "package_structure-revealjs.html#aside-why-does-python-have-modules",
-    "href": "package_structure-revealjs.html#aside-why-does-python-have-modules",
-    "title": "(re)introducing Python packaging",
-    "section": "Aside: why does Python have modules?",
-    "text": "Aside: why does Python have modules?\nBecause it’s good for your code to be modular.\n\nImage credit: https://realpython.com/python-modules-packages/"
-  },
-  {
-    "objectID": "package_structure-revealjs.html#where-do-modules-come-from",
-    "href": "package_structure-revealjs.html#where-do-modules-come-from",
-    "title": "(re)introducing Python packaging",
-    "section": "Where do modules come from?",
-    "text": "Where do modules come from?\n\nThe standard library\n\nPython code\nCompiled C code\n\nA local file that ends in .py\n\n(confusingly, also called a “module”)\n\nThird-party libraries that you pip install or conda install\n\ni.e., packages\n\nA local package (we’re getting to this)"
-  },
-  {
-    "objectID": "package_structure-revealjs.html#what-is-a-python-package-1",
-    "href": "package_structure-revealjs.html#what-is-a-python-package-1",
-    "title": "(re)introducing Python packaging",
-    "section": "What is a Python package?",
-    "text": "What is a Python package?\nOk, now that we spent all that time defining module, we can finally define package\n“A Python module which can contain submodules or recursively, subpackages.”\nhttps://docs.python.org/3/glossary.html#term-package"
-  },
-  {
-    "objectID": "package_structure-revealjs.html#package-can-have-multiple-meanings",
-    "href": "package_structure-revealjs.html#package-can-have-multiple-meanings",
-    "title": "(re)introducing Python packaging",
-    "section": "“Package” can have multiple meanings!",
-    "text": "“Package” can have multiple meanings!\nTwo main usages:\nhttps://packaging.python.org/en/latest/discussions/distribution-package-vs-import-package/"
-  },
-  {
-    "objectID": "package_structure-revealjs.html#two-types-of-packages-import-package",
-    "href": "package_structure-revealjs.html#two-types-of-packages-import-package",
-    "title": "(re)introducing Python packaging",
-    "section": "Two types of packages: import package",
-    "text": "Two types of packages: import package\nThis is the one we already talked about\nThe thing you get when you write import packagename in your code\nWe’re going to show you how to make one of these first"
-  },
-  {
-    "objectID": "package_structure-revealjs.html#two-types-of-packages-distribution-package",
-    "href": "package_structure-revealjs.html#two-types-of-packages-distribution-package",
-    "title": "(re)introducing Python packaging",
-    "section": "Two types of packages: distribution package",
-    "text": "Two types of packages: distribution package\nThe actual artifact that gets downloaded off the internet and stored on your computer somewhere\nlike when you run pip install package\nWe need to learn how to make one of these too!"
-  },
-  {
-    "objectID": "package_structure-revealjs.html#why-would-i-make-a-python-package",
-    "href": "package_structure-revealjs.html#why-would-i-make-a-python-package",
-    "title": "(re)introducing Python packaging",
-    "section": "Why would I make a Python package?",
-    "text": "Why would I make a Python package?"
-  },
-  {
-    "objectID": "package_structure-revealjs.html#section-1",
-    "href": "package_structure-revealjs.html#section-1",
-    "title": "(re)introducing Python packaging",
+    "objectID": "collaboration-revealjs.html#section-1",
+    "href": "collaboration-revealjs.html#section-1",
+    "title": "Collaboration with Git and Github",
     "section": "",
-    "text": "Fame, glory\n$$$\nPor amor al arte"
+    "text": "Some important commands for this workflow:\n\ngit branch\ngit checkout -b &lt;branchname&gt;\ngit push -u origin &lt;branchname&gt;\n\n\n.. add some more commits, then git push and open a pull request"
   },
   {
-    "objectID": "package_structure-revealjs.html#when-should-i-turn-my-code-into-a-package",
-    "href": "package_structure-revealjs.html#when-should-i-turn-my-code-into-a-package",
-    "title": "(re)introducing Python packaging",
-    "section": "When should I turn my code into a package?",
-    "text": "When should I turn my code into a package?\nTwo common cases for research code:\n\nCode that goes with a research article\n\nmainly used to reproduce the results\nAKA a (computational) project or a research compendium\n\nA generalized tool or library that other researchers can use"
+    "objectID": "collaboration-revealjs.html#pull-requests",
+    "href": "collaboration-revealjs.html#pull-requests",
+    "title": "Collaboration with Git and Github",
+    "section": "Pull Requests",
+    "text": "Pull Requests\nPull requests are an excellent tool for fostering code review. If you’re using Github for team projects,you should be using these extensively."
   },
   {
-    "objectID": "package_structure-revealjs.html#packaging-code-for-a-paper",
-    "href": "package_structure-revealjs.html#packaging-code-for-a-paper",
-    "title": "(re)introducing Python packaging",
-    "section": "Packaging code for a paper",
-    "text": "Packaging code for a paper\n\nYou have multiple scripts that use the same function\nSo you want to be able to import that function\nIt’s sufficient for you to make an “import package” you use in scripts (e.g., in a Jupyter notebook)"
+    "objectID": "collaboration-revealjs.html#pull-request-best-practices",
+    "href": "collaboration-revealjs.html#pull-request-best-practices",
+    "title": "Collaboration with Git and Github",
+    "section": "Pull request best practices:",
+    "text": "Pull request best practices:\n\nTry to make frequent, targeted pull requests that add a specific feature or set of features\n\n✅ “Adds a new click feature for area layers in the geospatial mapping tool”\n❌ “Adds the last 3 years of my thesis work”\n\nItemize each major addition.\n\n\nA good practice is for someone else to merge your code into main, after being approved by at least one colleague. Sometimes a reviewer may not have merge rights; in these cases the requirement may be an approving review must be given before the feature is merged."
   },
   {
-    "objectID": "package_structure-revealjs.html#to-share-a-generalized-tool",
-    "href": "package_structure-revealjs.html#to-share-a-generalized-tool",
-    "title": "(re)introducing Python packaging",
-    "section": "To share a generalized tool",
-    "text": "To share a generalized tool\nThis is what we’re here (mostly) to learn about!\nThis is when we want to make a “distribution package” too!\n\nYou want people to be able to pip install awesometool"
+    "objectID": "collaboration-revealjs.html#pull-request-tip",
+    "href": "collaboration-revealjs.html#pull-request-tip",
+    "title": "Collaboration with Git and Github",
+    "section": "Pull request tip:",
+    "text": "Pull request tip:\nUsing the github interface, you can change the target of a pull request. The default is to the main branch, but it could be another feature branch. This can be used if you want to help develop a feature branch outside of main with a collaborator.\n⛔️ Never send a large pull request without notice 🙅"
   },
   {
-    "objectID": "package_structure-revealjs.html#how-do-i-turn-my-code-into-a-python-package-i-can-import",
-    "href": "package_structure-revealjs.html#how-do-i-turn-my-code-into-a-python-package-i-can-import",
-    "title": "(re)introducing Python packaging",
-    "section": "How do I turn my code into a Python package I can import?",
-    "text": "How do I turn my code into a Python package I can import?"
+    "objectID": "collaboration-revealjs.html#demo-update-summerschool-july2024-link-to-issue",
+    "href": "collaboration-revealjs.html#demo-update-summerschool-july2024-link-to-issue",
+    "title": "Collaboration with Git and Github",
+    "section": "Demo: Update summerschool-July2024 (link to issue)",
+    "text": "Demo: Update summerschool-July2024 (link to issue)\n[...]: ~/Git/research-code$ cd ../summerschool-July2024\n[...]: ~/Git/summerschool-July2024$ git checkout -b update-git-lesson\n[...]: ~/Git/summerschool-July2024$ open README.md\n[...]: ~/Git/summerschool-July2024$ git add README.md\n[...]: ~/Git/summerschool-July2024$ git commit -m \"Updating the Git/GitHub lesson.\"\n[...]: ~/Git/summerschool-July2024$ git push -u origin add-git-lesson\nClose the issue!"
   },
   {
-    "objectID": "package_structure-revealjs.html#the-structure-of-a-python-package",
-    "href": "package_structure-revealjs.html#the-structure-of-a-python-package",
-    "title": "(re)introducing Python packaging",
-    "section": "The structure of a Python package",
-    "text": "The structure of a Python package\nThe simplest possible Python package\n\nA directory with a single file in it named __init__.py\n\nThe file can be empty\n\nThe __init__.py file tells Python that “this directory is a package"
+    "objectID": "collaboration-revealjs.html#practice",
+    "href": "collaboration-revealjs.html#practice",
+    "title": "Collaboration with Git and Github",
+    "section": "Practice",
+    "text": "Practice\ncd ../research-code\nUsing the feature branching workflow:\n\nUse at least two commits to:\n\nCreate a python script in the source directory called PrintMessage.py that prints a simple message.\nAdd a new section to the README to document the new script.\n\nMake a pull request!"
   },
   {
-    "objectID": "package_structure-revealjs.html#how-can-i-import-my-own-code",
-    "href": "package_structure-revealjs.html#how-can-i-import-my-own-code",
-    "title": "(re)introducing Python packaging",
-    "section": "How can I import my own code?",
-    "text": "How can I import my own code?\nThis is enough for me to be able to import the package\nas long as I’m in the right directory\n\nThe same is true for any module:\n(by which we mean a file that ends in .py)\nI can import it if I’m in the right directory"
+    "objectID": "collaboration-revealjs.html#forking-workflow",
+    "href": "collaboration-revealjs.html#forking-workflow",
+    "title": "Collaboration with Git and Github",
+    "section": "Forking Workflow",
+    "text": "Forking Workflow\nIn this workflow each collaborator “forks” a copy of the centralized repository. These forks represent individual remote repositories for each collaborator. Collaborators submit pull requests from their forks to the centralized repository.\n\nWhen do I need to fork?\n\n\nIf you don’t have write access and want to suggest changes, forking makes sense.\nIf you’re an active project collaborator with write access, use the branching workflow."
   },
   {
-    "objectID": "package_structure-revealjs.html#how-do-i-make-it-so-i-can-import-a-module",
-    "href": "package_structure-revealjs.html#how-do-i-make-it-so-i-can-import-a-module",
-    "title": "(re)introducing Python packaging",
-    "section": "How do I make it so I can import a module?",
-    "text": "How do I make it so I can import a module?\nThis is the bare minimum pyproject.toml file for our simple module"
+    "objectID": "collaboration-revealjs.html#forking-workflow-guidelines",
+    "href": "collaboration-revealjs.html#forking-workflow-guidelines",
+    "title": "Collaboration with Git and Github",
+    "section": "Forking Workflow Guidelines",
+    "text": "Forking Workflow Guidelines\nEveryone has a fork of a “central” repository\nAdd commits to feature branches\nPush feature branches to individual forks\nSend pull-request from feature branch on fork to central repository"
   },
   {
-    "objectID": "package_structure-revealjs.html#what-is-a-toml-file",
-    "href": "package_structure-revealjs.html#what-is-a-toml-file",
-    "title": "(re)introducing Python packaging",
-    "section": "What is a TOML file?",
-    "text": "What is a TOML file?\n\n\n“Tom’s Obvious Minimal Language”: https://toml.io/en/\n\n“A [configuration] file format for humans”\n\nUsed in other ecosystems\nNice because parsers map to native type"
+    "objectID": "collaboration-revealjs.html#extra-tips",
+    "href": "collaboration-revealjs.html#extra-tips",
+    "title": "Collaboration with Git and Github",
+    "section": "Extra Tips:",
+    "text": "Extra Tips:\n\nTip #1: Always git pull before you start new work\nTip #2: Keep branch names descriptive\nTip #3: Generously use branches (but delete them when they’re merged or stale)\nTip #4: Use github command line tool (gh) to simplify your workflow"
   },
   {
-    "objectID": "package_structure-revealjs.html#anatomy-of-a-toml-file",
-    "href": "package_structure-revealjs.html#anatomy-of-a-toml-file",
-    "title": "(re)introducing Python packaging",
-    "section": "Anatomy of a TOML file",
-    "text": "Anatomy of a TOML file\n\n\n\nthe spec: https://toml.io/en/v1.0.0"
+    "objectID": "collaboration-revealjs.html#practice-1",
+    "href": "collaboration-revealjs.html#practice-1",
+    "title": "Collaboration with Git and Github",
+    "section": "Practice",
+    "text": "Practice\nMake a fork of https://github.com/mcsc-impact-climate/urssi-research-code and Using the forking workflow, update the script source/PrintMessage.py to instead print out your name (or something similarly personalized).\n\ndanikamacdonell@computer: ~/Git/research-code$ cd ..\ndanikamacdonell@computer: ~/Git$ git clone git@github.com:danikam/urssi-research-code.git\ndanikamacdonell@computer: ~/Git$ cd urssi-research-code\ndanikamacdonell@computer: ~/Git$ git remote add upstream git@github.com:mcsc-impact-climate/urssi-research-code.git\ndanikamacdonell@computer: ~/Git$ git checkout -b personalize-message\nAdd your new file(s), push and open a pull request"
   },
   {
-    "objectID": "package_structure-revealjs.html#ok-i-have-a-pyproject.toml-file-now-what",
-    "href": "package_structure-revealjs.html#ok-i-have-a-pyproject.toml-file-now-what",
-    "title": "(re)introducing Python packaging",
-    "section": "Ok, I have a pyproject.toml file, now what?",
-    "text": "Ok, I have a pyproject.toml file, now what?\nNow just\n\nnavigate to the directory where your module lives\nactivate your virtual environment\ntype pip install .\nnow you can import it!"
+    "objectID": "collaboration-revealjs.html#more-useful-git-commands",
+    "href": "collaboration-revealjs.html#more-useful-git-commands",
+    "title": "Collaboration with Git and Github",
+    "section": "More useful git commands",
+    "text": "More useful git commands\nRebasing\nRebasing lets you pull new commits from the parent branch or upstream repo (if you’re on a fork).\nFrom parent branch:\ngit fetch origin\ngit rebase origin/&lt;parent-branch&gt;\nFrom upstream forked repo:\ngit remote add upstream https://github.com/original-owner/repo.git\ngit fetch upstream\ngit rebase upstream/&lt;parent-branch&gt;"
   },
   {
-    "objectID": "package_structure-revealjs.html#a-slightly-more-complicated-python-package",
-    "href": "package_structure-revealjs.html#a-slightly-more-complicated-python-package",
-    "title": "(re)introducing Python packaging",
-    "section": "A (slightly) more complicated Python package",
-    "text": "A (slightly) more complicated Python package\n\nScenario: Samspon is a computational dog scientist.\nSampson has a set of functions they are using across all their projects, so they wrap them up in a package, dogpy\n\n\n\nwww.rexspecs.com/blogs/news/sampson-the-lab-dog-tests-the-boundaries-of-science"
+    "objectID": "collaboration-revealjs.html#section-2",
+    "href": "collaboration-revealjs.html#section-2",
+    "title": "Collaboration with Git and Github",
+    "section": "",
+    "text": "tagging commits\nbranches are special labels that track a series of commits, but what if you want a special name for a particular commit (like when you released a new version of your code)? you can “tag” these\n\ngit tag -a &lt;tagname&gt; &lt;hash&gt; – useful for tagging a particular commit farther back in history\ngit tag -a &lt;tagname&gt; -m \"tag message\" – this should tag the current commit with a descriptive message\ngit push origin &lt;tagname&gt; – push a particular tag up to your remote\ngit push origin --tags – push all of your tags up to your remote"
   },
   {
-    "objectID": "package_structure-revealjs.html#why-src",
-    "href": "package_structure-revealjs.html#why-src",
-    "title": "(re)introducing Python packaging",
-    "section": "Why src?",
-    "text": "Why src?\n\nSo you don’t accidentally import the local package when you want to run tests on the distribution package\nAesthetics: it looks better to have “src”, “docs”, “tests”"
+    "objectID": "collaboration-revealjs.html#section-3",
+    "href": "collaboration-revealjs.html#section-3",
+    "title": "Collaboration with Git and Github",
+    "section": "",
+    "text": "amending a commit\nOh no! I made a typo in my commit message!\ngit commit --amend is useful for both fixing commit messages and for adding in files that were supposed to be committed and werent"
   },
   {
-    "objectID": "package_structure-revealjs.html#the-package-itself",
-    "href": "package_structure-revealjs.html#the-package-itself",
-    "title": "(re)introducing Python packaging",
-    "section": "The package itself",
-    "text": "The package itself\n\nWe have the dogpy dir\nIt contains one module (by which I mean a .py file): bark.py\nIt also contains another directory! The elusive sub-package. Namely, fetch.\nThe fetch sub-package contains two other modules: ball.py and bone.py"
+    "objectID": "collaboration-revealjs.html#section-4",
+    "href": "collaboration-revealjs.html#section-4",
+    "title": "Collaboration with Git and Github",
+    "section": "",
+    "text": "cherry picking\nWhat if you have a commit that really belongs on a different branch? Or in development you fixed a bug that you think should be in its own PR? You can “cherry pick” that commit to a new branch.\ngit cherry-pick &lt;hash&gt;"
   },
   {
-    "objectID": "package_structure-revealjs.html#why-__init__.py-anyways",
-    "href": "package_structure-revealjs.html#why-__init__.py-anyways",
-    "title": "(re)introducing Python packaging",
-    "section": "Why __init__.py anyways?",
-    "text": "Why __init__.py anyways?\n\nIt initializes your module\nYou import modules, functions, etc., here\nso that your users can get what they need from your package’s namespace"
+    "objectID": "collaboration-revealjs.html#section-5",
+    "href": "collaboration-revealjs.html#section-5",
+    "title": "Collaboration with Git and Github",
+    "section": "",
+    "text": "undoing changes\nReverting vs. Restoring\ngit revert &lt;commit hash&gt;\ngit restore &lt;filename&gt;"
   },
   {
-    "objectID": "package_structure-revealjs.html#how-should-i-structure-my-python-package",
-    "href": "package_structure-revealjs.html#how-should-i-structure-my-python-package",
-    "title": "(re)introducing Python packaging",
-    "section": "How should I structure my Python package?",
-    "text": "How should I structure my Python package?\n\nShort version: “flat is better than nested”\n\nYour users want to write package.function, not package.subpackage.subsubpackage.subsubsubpackage.function\nBut having one level of sub-packages can help with readability\nMost scientific Python packages have a set of sub-packages, each containing functions:\n\nnumpy.random.default_rng\nsklearn.model_selection.test_train_split\n\nYour package’s code ≠ your package’s namespace! You control the namespace with imports!\n\nLong version:\n\nhttps://benhoyt.com/writings/python-api-design/\nhttp://blog.nicholdav.info/four-tips-structuring-research-python/"
+    "objectID": "collaboration-revealjs.html#section-6",
+    "href": "collaboration-revealjs.html#section-6",
+    "title": "Collaboration with Git and Github",
+    "section": "",
+    "text": "stashing changes\noh no! I started making changes but I’m not on the feature branch I thought I was!\ngit stash can be used to hide the changes in your working tree and then bring them back out with git stash apply when you’re on the appropriate branch"
   },
   {
-    "objectID": "package_structure-revealjs.html#how-do-i-publish-my-package-so-others-can-pip-install-it",
-    "href": "package_structure-revealjs.html#how-do-i-publish-my-package-so-others-can-pip-install-it",
-    "title": "(re)introducing Python packaging",
-    "section": "How do I publish my package so others can pip install it?",
-    "text": "How do I publish my package so others can pip install it?"
+    "objectID": "collaboration-revealjs.html#section-7",
+    "href": "collaboration-revealjs.html#section-7",
+    "title": "Collaboration with Git and Github",
+    "section": "",
+    "text": "co-authoring changes\nHave you pair programmed with a friend and come up with a solution together? How do you deal with attribution?\nCo-authored-by: NAME &lt;EMAIL&gt; can add multiple authors to a commit."
   },
   {
-    "objectID": "package_structure-revealjs.html#how-do-i-publish-my-package",
-    "href": "package_structure-revealjs.html#how-do-i-publish-my-package",
-    "title": "(re)introducing Python packaging",
-    "section": "How do I publish my package?",
-    "text": "How do I publish my package?\nNow we need a distribution package.\nWe also need to define some more terms so that the rest of this make sense."
+    "objectID": "collaboration-revealjs.html#more-resources",
+    "href": "collaboration-revealjs.html#more-resources",
+    "title": "Collaboration with Git and Github",
+    "section": "More resources",
+    "text": "More resources\n\nGitHub Issues help you share code issues or feature requests with collaborators\nDo you need to version control large files? git lfs and git annex are tools designed to help with this\nHow to undo almost anything with git link\nRemove sensitive data (like private keys) from a repository link"
   },
   {
-    "objectID": "package_structure-revealjs.html#what-about-setup.py",
-    "href": "package_structure-revealjs.html#what-about-setup.py",
-    "title": "(re)introducing Python packaging",
-    "section": "What about setup.py?",
-    "text": "What about setup.py?\n\nIt used to be the case that all distributions were built with a setup.py file\nThere was only one tool that did this: setuptools\nNow: pure Python projects don’t need a setup.py file It’s better\n\n\nThe long version:\nhttps://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html"
+    "objectID": "collaboration-revealjs.html#exercises",
+    "href": "collaboration-revealjs.html#exercises",
+    "title": "Collaboration with Git and Github",
+    "section": "Exercises",
+    "text": "Exercises\nChoose one of the following:\n\nIf you brought a project to work on: open an issue on your repository for something you’d like to improve that’s a beginner friendly issue. Describe the issue thoroughly. Then, working in groups at your tables, have a partner fork your project and submit a pull request fixing that issue. Do not merge the pull request today.\nMake a feature branch on your project and add a simple new feature to your project (could even just be some new info in the README). Submit a pull request on your project using that branch. Do not merge the pull request today."
   },
   {
-    "objectID": "package_structure-revealjs.html#distribution-packages-frontends-and-backends",
-    "href": "package_structure-revealjs.html#distribution-packages-frontends-and-backends",
-    "title": "(re)introducing Python packaging",
-    "section": "Distribution packages: frontends and backends",
-    "text": "Distribution packages: frontends and backends\nTo move away from setup.py and setuptools, PEP 517 introduced the idea of “front-ends” and “back-ends”\nhttps://peps.python.org/pep-0517/\nMostly you shouldn’t have to think about this.\nBut in your pyproject.toml file you will specify a “build backend”.\nThat’s the tool that knows how to take your “source tree” and make a distribution package."
+    "objectID": "collaboration.html",
+    "href": "collaboration.html",
+    "title": "Collaboration with Git and Github",
+    "section": "",
+    "text": "Review git commands\nDescribe individual and collaborative workflows with git\nIntroduce git commands for collaborative workflows\nDemo of collaborative workflows in practice\nSee additional useful git tips/tricks\n\n\n\n\nThis material is heavily influenced by the previous works of Madicken Munk, Karthik Ram and James Howison from the previous summer and winter schools.\nOther helpful/fun resources for git\nhttps://git-school.github.io/visualizing-git/ https://pcottle.github.io/learnGitBranching/?NODEMO https://allisonhorst.com/git-github https://jvns.ca/blog/2023/11/23/branches-intuition-reality/ https://git-scm.com/docs https://swcarpentry.github.io/git-novice/\n\n\n\ncommit, commit, commit …..\ndanikamacdonell@computer: ~/Git$ mkdir research-code ; cd research-code\ndanikamacdonell@computer: ~/Git/research-code$ git init\nInitialized empty Git repository in /Users/danikamacdonell/Git/research-code/.git/\ndanikamacdonell@computer: ~/Git/research-code$ git branch -M main\ndanikamacdonell@computer: ~/Git/research-code$ touch README.md ; open README.md\ndanikamacdonell@computer: ~/Git/research-code$ git add README.md\ndanikamacdonell@computer: ~/Git/research-code$ git commit -m 'add README with code description'\n[main (root-commit) 49c9e77] add README with code description\n 1 file changed, 0 insertions(+), 0 deletions(-)\n     create mode 100644 README.md\ndanikamacdonell@computer: ~/Git/research-code$ git log\nAuthor: Danika MacDonell &lt;danikamacdonell@computer&gt;\n    Add a README with code description\n\n\n\n\n\ncommit push, commit commit push, commit push …..\ndanikamacdonell@computer: ~/Git/research-code$ git remote add origin git@github.com:danikam/research-code.git\ndanikamacdonell@computer: ~/Git/research-code$ git push -u origin main\nEnumerating objects: 3, done.\n[...]\nTo github.com:danikam/research-code.git\n * [new branch]      main -&gt; main\nbranch 'main' set up to track 'origin/main'.\nWith your code on a remote (like GitHub, GitLab, or an internal server for your lab), your work is easily accessed by peers!\n💡GitLab and other Git platforms will have slightly different interfaces and features from GitHub, but the basic actions are generally pretty similar.\n\n\n\n\n\n\nAll members work on the same repository\ngit pull before starting work\nEveryone commits to main\ngit push\nIf there is no merge conflict, 🙌\nOtherwise fix merge conflict, then push\n\n\n\nMembers work on the same repository but use individual branches to do feature development\n\n\n\nCreate and switch to a branch\nAdd commits\nPush feature branch to GitHub\nStart a pull request\nDiscuss, add more commits, merge\n\n\n\nSome important commands for this workflow:\n\ngit branch\ngit checkout -b &lt;branchname&gt;\ngit push -u origin &lt;branchname&gt;\n\n\n.. add some more commits, then git push and open a pull request\n\n\n\n\nPull requests are an excellent tool for fostering code review. If you’re using Github for team projects,you should be using these extensively.\n\n\n\n\nTry to make frequent, targeted pull requests that add a specific feature or set of features\n\n✅ “Adds a new click feature for area layers in the geospatial mapping tool”\n❌ “Adds the last 3 years of my thesis work”\n\nItemize each major addition.\n\n\nA good practice is for someone else to merge your code into main, after being approved by at least one colleague. Sometimes a reviewer may not have merge rights; in these cases the requirement may be an approving review must be given before the feature is merged.\n\n\n\n\nUsing the github interface, you can change the target of a pull request. The default is to the main branch, but it could be another feature branch. This can be used if you want to help develop a feature branch outside of main with a collaborator.\n⛔️ Never send a large pull request without notice 🙅\n\n\n\n[...]: ~/Git/research-code$ cd ../summerschool-July2024\n[...]: ~/Git/summerschool-July2024$ git checkout -b update-git-lesson\n[...]: ~/Git/summerschool-July2024$ open README.md\n[...]: ~/Git/summerschool-July2024$ git add README.md\n[...]: ~/Git/summerschool-July2024$ git commit -m \"Updating the Git/GitHub lesson.\"\n[...]: ~/Git/summerschool-July2024$ git push -u origin add-git-lesson\nClose the issue!\n\n\n\ncd ../research-code\nUsing the feature branching workflow:\n\nUse at least two commits to:\n\nCreate a python script in the source directory called PrintMessage.py that prints a simple message.\nAdd a new section to the README to document the new script.\n\nMake a pull request!\n\n\n\n\nIn this workflow each collaborator “forks” a copy of the centralized repository. These forks represent individual remote repositories for each collaborator. Collaborators submit pull requests from their forks to the centralized repository.\n\nWhen do I need to fork?\n\n\nIf you don’t have write access and want to suggest changes, forking makes sense.\nIf you’re an active project collaborator with write access, use the branching workflow.\n\n\n\n\nEveryone has a fork of a “central” repository\nAdd commits to feature branches\nPush feature branches to individual forks\nSend pull-request from feature branch on fork to central repository\n\n\n\n\nTip #1: Always git pull before you start new work\nTip #2: Keep branch names descriptive\nTip #3: Generously use branches (but delete them when they’re merged or stale)\nTip #4: Use github command line tool (gh) to simplify your workflow\n\n\n\n\nMake a fork of https://github.com/mcsc-impact-climate/urssi-research-code and Using the forking workflow, update the script source/PrintMessage.py to instead print out your name (or something similarly personalized).\n\ndanikamacdonell@computer: ~/Git/research-code$ cd ..\ndanikamacdonell@computer: ~/Git$ git clone git@github.com:danikam/urssi-research-code.git\ndanikamacdonell@computer: ~/Git$ cd urssi-research-code\ndanikamacdonell@computer: ~/Git$ git remote add upstream git@github.com:mcsc-impact-climate/urssi-research-code.git\ndanikamacdonell@computer: ~/Git$ git checkout -b personalize-message\nAdd your new file(s), push and open a pull request\n\n\n\n\nRebasing\nRebasing lets you pull new commits from the parent branch or upstream repo (if you’re on a fork).\nFrom parent branch:\ngit fetch origin\ngit rebase origin/&lt;parent-branch&gt;\nFrom upstream forked repo:\ngit remote add upstream https://github.com/original-owner/repo.git\ngit fetch upstream\ngit rebase upstream/&lt;parent-branch&gt;\n\n\n\ntagging commits\nbranches are special labels that track a series of commits, but what if you want a special name for a particular commit (like when you released a new version of your code)? you can “tag” these\n\ngit tag -a &lt;tagname&gt; &lt;hash&gt; – useful for tagging a particular commit farther back in history\ngit tag -a &lt;tagname&gt; -m \"tag message\" – this should tag the current commit with a descriptive message\ngit push origin &lt;tagname&gt; – push a particular tag up to your remote\ngit push origin --tags – push all of your tags up to your remote\n\n\n\n\namending a commit\nOh no! I made a typo in my commit message!\ngit commit --amend is useful for both fixing commit messages and for adding in files that were supposed to be committed and werent\n\n\n\ncherry picking\nWhat if you have a commit that really belongs on a different branch? Or in development you fixed a bug that you think should be in its own PR? You can “cherry pick” that commit to a new branch.\ngit cherry-pick &lt;hash&gt;\n\n\n\nundoing changes\nReverting vs. Restoring\ngit revert &lt;commit hash&gt;\ngit restore &lt;filename&gt;\n\n\n\nstashing changes\noh no! I started making changes but I’m not on the feature branch I thought I was!\ngit stash can be used to hide the changes in your working tree and then bring them back out with git stash apply when you’re on the appropriate branch\n\n\n\nco-authoring changes\nHave you pair programmed with a friend and come up with a solution together? How do you deal with attribution?\nCo-authored-by: NAME &lt;EMAIL&gt; can add multiple authors to a commit.\n\n\n\n\nGitHub Issues help you share code issues or feature requests with collaborators\nDo you need to version control large files? git lfs and git annex are tools designed to help with this\nHow to undo almost anything with git link\nRemove sensitive data (like private keys) from a repository link\n\n\n\n\nChoose one of the following:\n\nIf you brought a project to work on: open an issue on your repository for something you’d like to improve that’s a beginner friendly issue. Describe the issue thoroughly. Then, working in groups at your tables, have a partner fork your project and submit a pull request fixing that issue. Do not merge the pull request today.\nMake a feature branch on your project and add a simple new feature to your project (could even just be some new info in the README). Submit a pull request on your project using that branch. Do not merge the pull request today."
   },
   {
-    "objectID": "package_structure-revealjs.html#distribution-packages-formats",
-    "href": "package_structure-revealjs.html#distribution-packages-formats",
-    "title": "(re)introducing Python packaging",
-    "section": "Distribution packages: formats",
-    "text": "Distribution packages: formats\n“Build backends” (always) make two types of distribution packages:\na source distribution (“sdist”), and wheels\nhttps://packaging.python.org/en/latest/discussions/package-formats/"
+    "objectID": "collaboration.html#lesson-objectives",
+    "href": "collaboration.html#lesson-objectives",
+    "title": "Collaboration with Git and Github",
+    "section": "",
+    "text": "Review git commands\nDescribe individual and collaborative workflows with git\nIntroduce git commands for collaborative workflows\nDemo of collaborative workflows in practice\nSee additional useful git tips/tricks"
   },
   {
-    "objectID": "package_structure-revealjs.html#how-do-i-publish-my-package-1",
-    "href": "package_structure-revealjs.html#how-do-i-publish-my-package-1",
-    "title": "(re)introducing Python packaging",
-    "section": "How do I publish my package?",
-    "text": "How do I publish my package?\nTo-do list:\n\nAdd metadata to our pyproject.toml file\n\nBuild backend\nThe metadata that will show up on PyPI\n\nBuild your distribution package\nPublish the distribution package to PyPI"
+    "objectID": "collaboration.html#acknowledgements",
+    "href": "collaboration.html#acknowledgements",
+    "title": "Collaboration with Git and Github",
+    "section": "",
+    "text": "This material is heavily influenced by the previous works of Madicken Munk, Karthik Ram and James Howison from the previous summer and winter schools.\nOther helpful/fun resources for git\nhttps://git-school.github.io/visualizing-git/ https://pcottle.github.io/learnGitBranching/?NODEMO https://allisonhorst.com/git-github https://jvns.ca/blog/2023/11/23/branches-intuition-reality/ https://git-scm.com/docs https://swcarpentry.github.io/git-novice/"
   },
   {
-    "objectID": "package_structure-revealjs.html#python-packaging-feels-like-a-lot-of-work",
-    "href": "package_structure-revealjs.html#python-packaging-feels-like-a-lot-of-work",
-    "title": "(re)introducing Python packaging",
-    "section": "Python packaging feels like a lot of work!",
-    "text": "Python packaging feels like a lot of work!\n“I have to write this pyproject.toml file by hand, make and virtual environments, and I don’t even know how much work it will take to build a distribution package yet…”\nGood news!\nThere are packaging tools that will do a lot of this work for you!"
+    "objectID": "collaboration.html#workflows-with-git-an-individual-workflow-without-a-remote",
+    "href": "collaboration.html#workflows-with-git-an-individual-workflow-without-a-remote",
+    "title": "Collaboration with Git and Github",
+    "section": "",
+    "text": "commit, commit, commit …..\ndanikamacdonell@computer: ~/Git$ mkdir research-code ; cd research-code\ndanikamacdonell@computer: ~/Git/research-code$ git init\nInitialized empty Git repository in /Users/danikamacdonell/Git/research-code/.git/\ndanikamacdonell@computer: ~/Git/research-code$ git branch -M main\ndanikamacdonell@computer: ~/Git/research-code$ touch README.md ; open README.md\ndanikamacdonell@computer: ~/Git/research-code$ git add README.md\ndanikamacdonell@computer: ~/Git/research-code$ git commit -m 'add README with code description'\n[main (root-commit) 49c9e77] add README with code description\n 1 file changed, 0 insertions(+), 0 deletions(-)\n     create mode 100644 README.md\ndanikamacdonell@computer: ~/Git/research-code$ git log\nAuthor: Danika MacDonell &lt;danikamacdonell@computer&gt;\n    Add a README with code description"
   },
   {
-    "objectID": "package_structure-revealjs.html#python-packaging-feels-like-a-lot-of-work-1",
-    "href": "package_structure-revealjs.html#python-packaging-feels-like-a-lot-of-work-1",
-    "title": "(re)introducing Python packaging",
-    "section": "Python packaging feels like a lot of work!",
-    "text": "Python packaging feels like a lot of work!\nThe not so good news: there are many different tools\nhttps://pradyunsg.me/blog/2023/01/21/thoughts-on-python-packaging/\nHere’s two options:\n\nLightweight: flit– https://flit.pypa.io/en/stable/\nSwiss army knife: hatch – https://hatch.pypa.io/"
+    "objectID": "collaboration.html#an-individual-workflow-with-a-remote",
+    "href": "collaboration.html#an-individual-workflow-with-a-remote",
+    "title": "Collaboration with Git and Github",
+    "section": "",
+    "text": "commit push, commit commit push, commit push …..\ndanikamacdonell@computer: ~/Git/research-code$ git remote add origin git@github.com:danikam/research-code.git\ndanikamacdonell@computer: ~/Git/research-code$ git push -u origin main\nEnumerating objects: 3, done.\n[...]\nTo github.com:danikam/research-code.git\n * [new branch]      main -&gt; main\nbranch 'main' set up to track 'origin/main'.\nWith your code on a remote (like GitHub, GitLab, or an internal server for your lab), your work is easily accessed by peers!\n💡GitLab and other Git platforms will have slightly different interfaces and features from GitHub, but the basic actions are generally pretty similar."
   },
   {
-    "objectID": "package_structure-revealjs.html#pyproject.toml-metadata-build-system",
-    "href": "package_structure-revealjs.html#pyproject.toml-metadata-build-system",
-    "title": "(re)introducing Python packaging",
-    "section": "pyproject.toml metadata: [build-system]",
-    "text": "pyproject.toml metadata: [build-system]\nTo build our distribution package, we need a build system.\nWe declare this in a build-system table."
+    "objectID": "collaboration.html#centralized-workflow",
+    "href": "collaboration.html#centralized-workflow",
+    "title": "Collaboration with Git and Github",
+    "section": "",
+    "text": "All members work on the same repository\ngit pull before starting work\nEveryone commits to main\ngit push\nIf there is no merge conflict, 🙌\nOtherwise fix merge conflict, then push"
   },
   {
-    "objectID": "package_structure-revealjs.html#pyproject.toml-project-metadata",
-    "href": "package_structure-revealjs.html#pyproject.toml-project-metadata",
-    "title": "(re)introducing Python packaging",
-    "section": "pyproject.toml project metadata",
-    "text": "pyproject.toml project metadata\n\n\nGood explainer in flit docs:\nhttps://flit.pypa.io/en/latest/ pyproject_toml.html#new-style-metadata"
+    "objectID": "collaboration.html#feature-branching-workflow",
+    "href": "collaboration.html#feature-branching-workflow",
+    "title": "Collaboration with Git and Github",
+    "section": "",
+    "text": "Members work on the same repository but use individual branches to do feature development"
   },
   {
-    "objectID": "package_structure-revealjs.html#aside-python-requires-and-dependencies",
-    "href": "package_structure-revealjs.html#aside-python-requires-and-dependencies",
-    "title": "(re)introducing Python packaging",
-    "section": "Aside: python-requires and dependencies",
-    "text": "Aside: python-requires and dependencies\n\nYou should know about SPEC0, that specifies what versions of Python the core scientific packages work with: https://scientific-python.org/specs/spec-0000/\nUsually you don’t want to put upper bounds (&gt;3.6, &lt;4.0) on Python or your dependencies: https://iscinumpy.dev/post/bound-version-constraints/"
+    "objectID": "collaboration.html#section",
+    "href": "collaboration.html#section",
+    "title": "Collaboration with Git and Github",
+    "section": "",
+    "text": "Create and switch to a branch\nAdd commits\nPush feature branch to GitHub\nStart a pull request\nDiscuss, add more commits, merge"
   },
   {
-    "objectID": "package_structure-revealjs.html#building-distribution-packages",
-    "href": "package_structure-revealjs.html#building-distribution-packages",
-    "title": "(re)introducing Python packaging",
-    "section": "Building distribution packages",
-    "text": "Building distribution packages\nMost packaging tools have some sort of build command"
+    "objectID": "collaboration.html#section-1",
+    "href": "collaboration.html#section-1",
+    "title": "Collaboration with Git and Github",
+    "section": "",
+    "text": "Some important commands for this workflow:\n\ngit branch\ngit checkout -b &lt;branchname&gt;\ngit push -u origin &lt;branchname&gt;\n\n\n.. add some more commits, then git push and open a pull request"
   },
   {
-    "objectID": "package_structure-revealjs.html#publishing-to-pypi",
-    "href": "package_structure-revealjs.html#publishing-to-pypi",
-    "title": "(re)introducing Python packaging",
-    "section": "Publishing to PyPI",
-    "text": "Publishing to PyPI\nMost packaging tools have some sort of publish command"
+    "objectID": "collaboration.html#pull-requests",
+    "href": "collaboration.html#pull-requests",
+    "title": "Collaboration with Git and Github",
+    "section": "",
+    "text": "Pull requests are an excellent tool for fostering code review. If you’re using Github for team projects,you should be using these extensively."
   },
   {
-    "objectID": "package_structure-revealjs.html#what-do-i-need-to-develop-and-maintain-a-python-package-besides-code",
-    "href": "package_structure-revealjs.html#what-do-i-need-to-develop-and-maintain-a-python-package-besides-code",
-    "title": "(re)introducing Python packaging",
-    "section": "What do I need to develop and maintain a Python package, besides code?",
-    "text": "What do I need to develop and maintain a Python package, besides code?"
+    "objectID": "collaboration.html#pull-request-best-practices",
+    "href": "collaboration.html#pull-request-best-practices",
+    "title": "Collaboration with Git and Github",
+    "section": "",
+    "text": "Try to make frequent, targeted pull requests that add a specific feature or set of features\n\n✅ “Adds a new click feature for area layers in the geospatial mapping tool”\n❌ “Adds the last 3 years of my thesis work”\n\nItemize each major addition.\n\n\nA good practice is for someone else to merge your code into main, after being approved by at least one colleague. Sometimes a reviewer may not have merge rights; in these cases the requirement may be an approving review must be given before the feature is merged."
   },
   {
-    "objectID": "package_structure-revealjs.html#what-else-do-i-need-besides-code",
-    "href": "package_structure-revealjs.html#what-else-do-i-need-besides-code",
-    "title": "(re)introducing Python packaging",
-    "section": "What else do I need besides code?",
-    "text": "What else do I need besides code?\nInfrastructure:\nAll the other stuff besides code that makes it easier for\n\nyou to develop and maintain your package\nothers to use your package, give you feedback, and contribute"
+    "objectID": "collaboration.html#pull-request-tip",
+    "href": "collaboration.html#pull-request-tip",
+    "title": "Collaboration with Git and Github",
+    "section": "",
+    "text": "Using the github interface, you can change the target of a pull request. The default is to the main branch, but it could be another feature branch. This can be used if you want to help develop a feature branch outside of main with a collaborator.\n⛔️ Never send a large pull request without notice 🙅"
   },
   {
-    "objectID": "package_structure-revealjs.html#readme",
-    "href": "package_structure-revealjs.html#readme",
-    "title": "(re)introducing Python packaging",
-    "section": "README",
-    "text": "README\n\n\n\nOften the first thing people see\nGitHub shows this by default -www.makeareadme.com/"
+    "objectID": "collaboration.html#demo-update-summerschool-july2024-link-to-issue",
+    "href": "collaboration.html#demo-update-summerschool-july2024-link-to-issue",
+    "title": "Collaboration with Git and Github",
+    "section": "",
+    "text": "[...]: ~/Git/research-code$ cd ../summerschool-July2024\n[...]: ~/Git/summerschool-July2024$ git checkout -b update-git-lesson\n[...]: ~/Git/summerschool-July2024$ open README.md\n[...]: ~/Git/summerschool-July2024$ git add README.md\n[...]: ~/Git/summerschool-July2024$ git commit -m \"Updating the Git/GitHub lesson.\"\n[...]: ~/Git/summerschool-July2024$ git push -u origin add-git-lesson\nClose the issue!"
   },
   {
-    "objectID": "package_structure-revealjs.html#license",
-    "href": "package_structure-revealjs.html#license",
-    "title": "(re)introducing Python packaging",
-    "section": "LICENSE",
-    "text": "LICENSE\nYou are giving other people permission to use your code\n\nhttps://choosealicense.com/\nMIT and BSD are common for open source scientific software\nMore on this later!"
+    "objectID": "collaboration.html#practice",
+    "href": "collaboration.html#practice",
+    "title": "Collaboration with Git and Github",
+    "section": "",
+    "text": "cd ../research-code\nUsing the feature branching workflow:\n\nUse at least two commits to:\n\nCreate a python script in the source directory called PrintMessage.py that prints a simple message.\nAdd a new section to the README to document the new script.\n\nMake a pull request!"
   },
   {
-    "objectID": "package_structure-revealjs.html#code-of-conduct",
-    "href": "package_structure-revealjs.html#code-of-conduct",
-    "title": "(re)introducing Python packaging",
-    "section": "Code of conduct",
-    "text": "Code of conduct\n\nEstablishes expectations for behavior\nHelps create inclusive community\nhttps://opensource.guide/code-of-conduct/\nHighly suggest looking at other scientific Python projects: https://docs.scipy.org/doc/scipy/dev/conduct/ code_of_conduct.html#endnotes"
+    "objectID": "collaboration.html#forking-workflow",
+    "href": "collaboration.html#forking-workflow",
+    "title": "Collaboration with Git and Github",
+    "section": "",
+    "text": "In this workflow each collaborator “forks” a copy of the centralized repository. These forks represent individual remote repositories for each collaborator. Collaborators submit pull requests from their forks to the centralized repository.\n\nWhen do I need to fork?\n\n\nIf you don’t have write access and want to suggest changes, forking makes sense.\nIf you’re an active project collaborator with write access, use the branching workflow."
   },
   {
-    "objectID": "package_structure-revealjs.html#changelog",
-    "href": "package_structure-revealjs.html#changelog",
-    "title": "(re)introducing Python packaging",
-    "section": "CHANGELOG",
-    "text": "CHANGELOG\nHuman-readable record of changes to your project\nhttps://keepachangelog.com/en/1.1.0/"
+    "objectID": "collaboration.html#forking-workflow-guidelines",
+    "href": "collaboration.html#forking-workflow-guidelines",
+    "title": "Collaboration with Git and Github",
+    "section": "",
+    "text": "Everyone has a fork of a “central” repository\nAdd commits to feature branches\nPush feature branches to individual forks\nSend pull-request from feature branch on fork to central repository"
   },
   {
-    "objectID": "package_structure-revealjs.html#issue-tracker",
-    "href": "package_structure-revealjs.html#issue-tracker",
-    "title": "(re)introducing Python packaging",
-    "section": "Issue tracker",
-    "text": "Issue tracker"
+    "objectID": "collaboration.html#extra-tips",
+    "href": "collaboration.html#extra-tips",
+    "title": "Collaboration with Git and Github",
+    "section": "",
+    "text": "Tip #1: Always git pull before you start new work\nTip #2: Keep branch names descriptive\nTip #3: Generously use branches (but delete them when they’re merged or stale)\nTip #4: Use github command line tool (gh) to simplify your workflow"
   },
   {
-    "objectID": "package_structure-revealjs.html#continuous-integration",
-    "href": "package_structure-revealjs.html#continuous-integration",
-    "title": "(re)introducing Python packaging",
-    "section": "Continuous integration",
-    "text": "Continuous integration"
+    "objectID": "collaboration.html#practice-1",
+    "href": "collaboration.html#practice-1",
+    "title": "Collaboration with Git and Github",
+    "section": "",
+    "text": "Make a fork of https://github.com/mcsc-impact-climate/urssi-research-code and Using the forking workflow, update the script source/PrintMessage.py to instead print out your name (or something similarly personalized).\n\ndanikamacdonell@computer: ~/Git/research-code$ cd ..\ndanikamacdonell@computer: ~/Git$ git clone git@github.com:danikam/urssi-research-code.git\ndanikamacdonell@computer: ~/Git$ cd urssi-research-code\ndanikamacdonell@computer: ~/Git$ git remote add upstream git@github.com:mcsc-impact-climate/urssi-research-code.git\ndanikamacdonell@computer: ~/Git$ git checkout -b personalize-message\nAdd your new file(s), push and open a pull request"
   },
   {
-    "objectID": "package_structure-revealjs.html#docs-tests-etc.",
-    "href": "package_structure-revealjs.html#docs-tests-etc.",
-    "title": "(re)introducing Python packaging",
-    "section": "Docs, tests, etc.,",
-    "text": "Docs, tests, etc.,\nTo be discussed in later modules"
+    "objectID": "collaboration.html#more-useful-git-commands",
+    "href": "collaboration.html#more-useful-git-commands",
+    "title": "Collaboration with Git and Github",
+    "section": "",
+    "text": "Rebasing\nRebasing lets you pull new commits from the parent branch or upstream repo (if you’re on a fork).\nFrom parent branch:\ngit fetch origin\ngit rebase origin/&lt;parent-branch&gt;\nFrom upstream forked repo:\ngit remote add upstream https://github.com/original-owner/repo.git\ngit fetch upstream\ngit rebase upstream/&lt;parent-branch&gt;"
   },
   {
-    "objectID": "package_structure-revealjs.html#python-packaging-questions-comments",
-    "href": "package_structure-revealjs.html#python-packaging-questions-comments",
-    "title": "(re)introducing Python packaging",
-    "section": "Python packaging: Questions & Comments",
-    "text": "Python packaging: Questions & Comments"
+    "objectID": "collaboration.html#section-2",
+    "href": "collaboration.html#section-2",
+    "title": "Collaboration with Git and Github",
+    "section": "",
+    "text": "tagging commits\nbranches are special labels that track a series of commits, but what if you want a special name for a particular commit (like when you released a new version of your code)? you can “tag” these\n\ngit tag -a &lt;tagname&gt; &lt;hash&gt; – useful for tagging a particular commit farther back in history\ngit tag -a &lt;tagname&gt; -m \"tag message\" – this should tag the current commit with a descriptive message\ngit push origin &lt;tagname&gt; – push a particular tag up to your remote\ngit push origin --tags – push all of your tags up to your remote"
+  },
+  {
+    "objectID": "collaboration.html#section-3",
+    "href": "collaboration.html#section-3",
+    "title": "Collaboration with Git and Github",
+    "section": "",
+    "text": "amending a commit\nOh no! I made a typo in my commit message!\ngit commit --amend is useful for both fixing commit messages and for adding in files that were supposed to be committed and werent"
+  },
+  {
+    "objectID": "collaboration.html#section-4",
+    "href": "collaboration.html#section-4",
+    "title": "Collaboration with Git and Github",
+    "section": "",
+    "text": "cherry picking\nWhat if you have a commit that really belongs on a different branch? Or in development you fixed a bug that you think should be in its own PR? You can “cherry pick” that commit to a new branch.\ngit cherry-pick &lt;hash&gt;"
+  },
+  {
+    "objectID": "collaboration.html#section-5",
+    "href": "collaboration.html#section-5",
+    "title": "Collaboration with Git and Github",
+    "section": "",
+    "text": "undoing changes\nReverting vs. Restoring\ngit revert &lt;commit hash&gt;\ngit restore &lt;filename&gt;"
+  },
+  {
+    "objectID": "collaboration.html#section-6",
+    "href": "collaboration.html#section-6",
+    "title": "Collaboration with Git and Github",
+    "section": "",
+    "text": "stashing changes\noh no! I started making changes but I’m not on the feature branch I thought I was!\ngit stash can be used to hide the changes in your working tree and then bring them back out with git stash apply when you’re on the appropriate branch"
+  },
+  {
+    "objectID": "collaboration.html#section-7",
+    "href": "collaboration.html#section-7",
+    "title": "Collaboration with Git and Github",
+    "section": "",
+    "text": "co-authoring changes\nHave you pair programmed with a friend and come up with a solution together? How do you deal with attribution?\nCo-authored-by: NAME &lt;EMAIL&gt; can add multiple authors to a commit."
+  },
+  {
+    "objectID": "collaboration.html#more-resources",
+    "href": "collaboration.html#more-resources",
+    "title": "Collaboration with Git and Github",
+    "section": "",
+    "text": "GitHub Issues help you share code issues or feature requests with collaborators\nDo you need to version control large files? git lfs and git annex are tools designed to help with this\nHow to undo almost anything with git link\nRemove sensitive data (like private keys) from a repository link"
+  },
+  {
+    "objectID": "collaboration.html#exercises",
+    "href": "collaboration.html#exercises",
+    "title": "Collaboration with Git and Github",
+    "section": "",
+    "text": "Choose one of the following:\n\nIf you brought a project to work on: open an issue on your repository for something you’d like to improve that’s a beginner friendly issue. Describe the issue thoroughly. Then, working in groups at your tables, have a partner fork your project and submit a pull request fixing that issue. Do not merge the pull request today.\nMake a feature branch on your project and add a simple new feature to your project (could even just be some new info in the README). Submit a pull request on your project using that branch. Do not merge the pull request today."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Research Software and Open Science",
+    "section": "",
+    "text": "Welcome to the URSSI Summer School on Research Software and Open Science",
+    "crumbs": [
+      "Home"
+    ]
   },
   {
     "objectID": "package_structure.html",
@@ -1581,14 +1211,762 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Research Software and Open Science",
+    "objectID": "package_structure-revealjs.html#who-am-i",
+    "href": "package_structure-revealjs.html#who-am-i",
+    "title": "(re)introducing Python packaging",
+    "section": "Who am I?",
+    "text": "Who am I?\n\nPhD: neuro + behavior, post-doc: cognition\nopen source scientific software dev: http://www.vocalpy.org/\ntrained Carpentries instructor\npyOpenSci (2018-present; Editor in Chief - ~2022-2024)\nparticipant in URSSI 2019 Winter School!\nChair, SciPy conference (2020-present)\nActive in US Research Software Engineer Association"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#acknowledgements",
+    "href": "package_structure-revealjs.html#acknowledgements",
+    "title": "(re)introducing Python packaging",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\n\nThe previous versions of this module!\nPython packaging 101 tutorial from pyOpenSci: https://www.pyopensci.org/python-package-guide/tutorials/intro.html#python-packaging-101\nPython Packages: https://py-pkgs.org/\nScientific Python packaging guide: https://learn.scientific-python.org/development/tutorials/packaging/\nPython Packaging User Guide: https://packaging.python.org/en/latest/"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#outline-questions",
+    "href": "package_structure-revealjs.html#outline-questions",
+    "title": "(re)introducing Python packaging",
+    "section": "Outline / Questions",
+    "text": "Outline / Questions\n(The answers come later)\n\nWhat is a Python package?\nWhy would I make a Python package?\nHow do I turn my code into a Python package that I can import?\nHow do I publish my Python package so others can pip install it?\nWhat do I need to develop and maintain a Python package, besides code?"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#what-is-a-python-package",
+    "href": "package_structure-revealjs.html#what-is-a-python-package",
+    "title": "(re)introducing Python packaging",
+    "section": "What is a Python package?",
+    "text": "What is a Python package?\nFirst, let’s define module\nhttps://docs.python.org/3/glossary.html#term-module\n\nModule: An object that serves an organizational unit of python code. Modules have a namespace containing arbitrary python objects. Modules are loaded into Python by the process of importing"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#section",
+    "href": "package_structure-revealjs.html#section",
+    "title": "(re)introducing Python packaging",
     "section": "",
-    "text": "Welcome to the URSSI Summer School on Research Software and Open Science",
+    "text": "Deconstructing that definition:\n\nWhen I write import modulename I am loading a module\n\nBut we also talk about “importing a package”!\nThis seems to imply a package is a kind of module"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#aside-why-does-python-have-modules",
+    "href": "package_structure-revealjs.html#aside-why-does-python-have-modules",
+    "title": "(re)introducing Python packaging",
+    "section": "Aside: why does Python have modules?",
+    "text": "Aside: why does Python have modules?\nBecause it’s good for your code to be modular.\n\nImage credit: https://realpython.com/python-modules-packages/"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#where-do-modules-come-from",
+    "href": "package_structure-revealjs.html#where-do-modules-come-from",
+    "title": "(re)introducing Python packaging",
+    "section": "Where do modules come from?",
+    "text": "Where do modules come from?\n\nThe standard library\n\nPython code\nCompiled C code\n\nA local file that ends in .py\n\n(confusingly, also called a “module”)\n\nThird-party libraries that you pip install or conda install\n\ni.e., packages\n\nA local package (we’re getting to this)"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#what-is-a-python-package-1",
+    "href": "package_structure-revealjs.html#what-is-a-python-package-1",
+    "title": "(re)introducing Python packaging",
+    "section": "What is a Python package?",
+    "text": "What is a Python package?\nOk, now that we spent all that time defining module, we can finally define package\n“A Python module which can contain submodules or recursively, subpackages.”\nhttps://docs.python.org/3/glossary.html#term-package"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#package-can-have-multiple-meanings",
+    "href": "package_structure-revealjs.html#package-can-have-multiple-meanings",
+    "title": "(re)introducing Python packaging",
+    "section": "“Package” can have multiple meanings!",
+    "text": "“Package” can have multiple meanings!\nTwo main usages:\nhttps://packaging.python.org/en/latest/discussions/distribution-package-vs-import-package/"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#two-types-of-packages-import-package",
+    "href": "package_structure-revealjs.html#two-types-of-packages-import-package",
+    "title": "(re)introducing Python packaging",
+    "section": "Two types of packages: import package",
+    "text": "Two types of packages: import package\nThis is the one we already talked about\nThe thing you get when you write import packagename in your code\nWe’re going to show you how to make one of these first"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#two-types-of-packages-distribution-package",
+    "href": "package_structure-revealjs.html#two-types-of-packages-distribution-package",
+    "title": "(re)introducing Python packaging",
+    "section": "Two types of packages: distribution package",
+    "text": "Two types of packages: distribution package\nThe actual artifact that gets downloaded off the internet and stored on your computer somewhere\nlike when you run pip install package\nWe need to learn how to make one of these too!"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#why-would-i-make-a-python-package",
+    "href": "package_structure-revealjs.html#why-would-i-make-a-python-package",
+    "title": "(re)introducing Python packaging",
+    "section": "Why would I make a Python package?",
+    "text": "Why would I make a Python package?"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#section-1",
+    "href": "package_structure-revealjs.html#section-1",
+    "title": "(re)introducing Python packaging",
+    "section": "",
+    "text": "Fame, glory\n$$$\nPor amor al arte"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#when-should-i-turn-my-code-into-a-package",
+    "href": "package_structure-revealjs.html#when-should-i-turn-my-code-into-a-package",
+    "title": "(re)introducing Python packaging",
+    "section": "When should I turn my code into a package?",
+    "text": "When should I turn my code into a package?\nTwo common cases for research code:\n\nCode that goes with a research article\n\nmainly used to reproduce the results\nAKA a (computational) project or a research compendium\n\nA generalized tool or library that other researchers can use"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#packaging-code-for-a-paper",
+    "href": "package_structure-revealjs.html#packaging-code-for-a-paper",
+    "title": "(re)introducing Python packaging",
+    "section": "Packaging code for a paper",
+    "text": "Packaging code for a paper\n\nYou have multiple scripts that use the same function\nSo you want to be able to import that function\nIt’s sufficient for you to make an “import package” you use in scripts (e.g., in a Jupyter notebook)"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#to-share-a-generalized-tool",
+    "href": "package_structure-revealjs.html#to-share-a-generalized-tool",
+    "title": "(re)introducing Python packaging",
+    "section": "To share a generalized tool",
+    "text": "To share a generalized tool\nThis is what we’re here (mostly) to learn about!\nThis is when we want to make a “distribution package” too!\n\nYou want people to be able to pip install awesometool"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#how-do-i-turn-my-code-into-a-python-package-i-can-import",
+    "href": "package_structure-revealjs.html#how-do-i-turn-my-code-into-a-python-package-i-can-import",
+    "title": "(re)introducing Python packaging",
+    "section": "How do I turn my code into a Python package I can import?",
+    "text": "How do I turn my code into a Python package I can import?"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#the-structure-of-a-python-package",
+    "href": "package_structure-revealjs.html#the-structure-of-a-python-package",
+    "title": "(re)introducing Python packaging",
+    "section": "The structure of a Python package",
+    "text": "The structure of a Python package\nThe simplest possible Python package\n\nA directory with a single file in it named __init__.py\n\nThe file can be empty\n\nThe __init__.py file tells Python that “this directory is a package"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#how-can-i-import-my-own-code",
+    "href": "package_structure-revealjs.html#how-can-i-import-my-own-code",
+    "title": "(re)introducing Python packaging",
+    "section": "How can I import my own code?",
+    "text": "How can I import my own code?\nThis is enough for me to be able to import the package\nas long as I’m in the right directory\n\nThe same is true for any module:\n(by which we mean a file that ends in .py)\nI can import it if I’m in the right directory"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#how-do-i-make-it-so-i-can-import-a-module",
+    "href": "package_structure-revealjs.html#how-do-i-make-it-so-i-can-import-a-module",
+    "title": "(re)introducing Python packaging",
+    "section": "How do I make it so I can import a module?",
+    "text": "How do I make it so I can import a module?\nThis is the bare minimum pyproject.toml file for our simple module"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#what-is-a-toml-file",
+    "href": "package_structure-revealjs.html#what-is-a-toml-file",
+    "title": "(re)introducing Python packaging",
+    "section": "What is a TOML file?",
+    "text": "What is a TOML file?\n\n\n“Tom’s Obvious Minimal Language”: https://toml.io/en/\n\n“A [configuration] file format for humans”\n\nUsed in other ecosystems\nNice because parsers map to native type"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#anatomy-of-a-toml-file",
+    "href": "package_structure-revealjs.html#anatomy-of-a-toml-file",
+    "title": "(re)introducing Python packaging",
+    "section": "Anatomy of a TOML file",
+    "text": "Anatomy of a TOML file\n\n\n\nthe spec: https://toml.io/en/v1.0.0"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#ok-i-have-a-pyproject.toml-file-now-what",
+    "href": "package_structure-revealjs.html#ok-i-have-a-pyproject.toml-file-now-what",
+    "title": "(re)introducing Python packaging",
+    "section": "Ok, I have a pyproject.toml file, now what?",
+    "text": "Ok, I have a pyproject.toml file, now what?\nNow just\n\nnavigate to the directory where your module lives\nactivate your virtual environment\ntype pip install .\nnow you can import it!"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#a-slightly-more-complicated-python-package",
+    "href": "package_structure-revealjs.html#a-slightly-more-complicated-python-package",
+    "title": "(re)introducing Python packaging",
+    "section": "A (slightly) more complicated Python package",
+    "text": "A (slightly) more complicated Python package\n\nScenario: Samspon is a computational dog scientist.\nSampson has a set of functions they are using across all their projects, so they wrap them up in a package, dogpy\n\n\n\nwww.rexspecs.com/blogs/news/sampson-the-lab-dog-tests-the-boundaries-of-science"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#why-src",
+    "href": "package_structure-revealjs.html#why-src",
+    "title": "(re)introducing Python packaging",
+    "section": "Why src?",
+    "text": "Why src?\n\nSo you don’t accidentally import the local package when you want to run tests on the distribution package\nAesthetics: it looks better to have “src”, “docs”, “tests”"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#the-package-itself",
+    "href": "package_structure-revealjs.html#the-package-itself",
+    "title": "(re)introducing Python packaging",
+    "section": "The package itself",
+    "text": "The package itself\n\nWe have the dogpy dir\nIt contains one module (by which I mean a .py file): bark.py\nIt also contains another directory! The elusive sub-package. Namely, fetch.\nThe fetch sub-package contains two other modules: ball.py and bone.py"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#why-__init__.py-anyways",
+    "href": "package_structure-revealjs.html#why-__init__.py-anyways",
+    "title": "(re)introducing Python packaging",
+    "section": "Why __init__.py anyways?",
+    "text": "Why __init__.py anyways?\n\nIt initializes your module\nYou import modules, functions, etc., here\nso that your users can get what they need from your package’s namespace"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#how-should-i-structure-my-python-package",
+    "href": "package_structure-revealjs.html#how-should-i-structure-my-python-package",
+    "title": "(re)introducing Python packaging",
+    "section": "How should I structure my Python package?",
+    "text": "How should I structure my Python package?\n\nShort version: “flat is better than nested”\n\nYour users want to write package.function, not package.subpackage.subsubpackage.subsubsubpackage.function\nBut having one level of sub-packages can help with readability\nMost scientific Python packages have a set of sub-packages, each containing functions:\n\nnumpy.random.default_rng\nsklearn.model_selection.test_train_split\n\nYour package’s code ≠ your package’s namespace! You control the namespace with imports!\n\nLong version:\n\nhttps://benhoyt.com/writings/python-api-design/\nhttp://blog.nicholdav.info/four-tips-structuring-research-python/"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#how-do-i-publish-my-package-so-others-can-pip-install-it",
+    "href": "package_structure-revealjs.html#how-do-i-publish-my-package-so-others-can-pip-install-it",
+    "title": "(re)introducing Python packaging",
+    "section": "How do I publish my package so others can pip install it?",
+    "text": "How do I publish my package so others can pip install it?"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#how-do-i-publish-my-package",
+    "href": "package_structure-revealjs.html#how-do-i-publish-my-package",
+    "title": "(re)introducing Python packaging",
+    "section": "How do I publish my package?",
+    "text": "How do I publish my package?\nNow we need a distribution package.\nWe also need to define some more terms so that the rest of this make sense."
+  },
+  {
+    "objectID": "package_structure-revealjs.html#what-about-setup.py",
+    "href": "package_structure-revealjs.html#what-about-setup.py",
+    "title": "(re)introducing Python packaging",
+    "section": "What about setup.py?",
+    "text": "What about setup.py?\n\nIt used to be the case that all distributions were built with a setup.py file\nThere was only one tool that did this: setuptools\nNow: pure Python projects don’t need a setup.py file It’s better\n\n\nThe long version:\nhttps://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#distribution-packages-frontends-and-backends",
+    "href": "package_structure-revealjs.html#distribution-packages-frontends-and-backends",
+    "title": "(re)introducing Python packaging",
+    "section": "Distribution packages: frontends and backends",
+    "text": "Distribution packages: frontends and backends\nTo move away from setup.py and setuptools, PEP 517 introduced the idea of “front-ends” and “back-ends”\nhttps://peps.python.org/pep-0517/\nMostly you shouldn’t have to think about this.\nBut in your pyproject.toml file you will specify a “build backend”.\nThat’s the tool that knows how to take your “source tree” and make a distribution package."
+  },
+  {
+    "objectID": "package_structure-revealjs.html#distribution-packages-formats",
+    "href": "package_structure-revealjs.html#distribution-packages-formats",
+    "title": "(re)introducing Python packaging",
+    "section": "Distribution packages: formats",
+    "text": "Distribution packages: formats\n“Build backends” (always) make two types of distribution packages:\na source distribution (“sdist”), and wheels\nhttps://packaging.python.org/en/latest/discussions/package-formats/"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#how-do-i-publish-my-package-1",
+    "href": "package_structure-revealjs.html#how-do-i-publish-my-package-1",
+    "title": "(re)introducing Python packaging",
+    "section": "How do I publish my package?",
+    "text": "How do I publish my package?\nTo-do list:\n\nAdd metadata to our pyproject.toml file\n\nBuild backend\nThe metadata that will show up on PyPI\n\nBuild your distribution package\nPublish the distribution package to PyPI"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#python-packaging-feels-like-a-lot-of-work",
+    "href": "package_structure-revealjs.html#python-packaging-feels-like-a-lot-of-work",
+    "title": "(re)introducing Python packaging",
+    "section": "Python packaging feels like a lot of work!",
+    "text": "Python packaging feels like a lot of work!\n“I have to write this pyproject.toml file by hand, make and virtual environments, and I don’t even know how much work it will take to build a distribution package yet…”\nGood news!\nThere are packaging tools that will do a lot of this work for you!"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#python-packaging-feels-like-a-lot-of-work-1",
+    "href": "package_structure-revealjs.html#python-packaging-feels-like-a-lot-of-work-1",
+    "title": "(re)introducing Python packaging",
+    "section": "Python packaging feels like a lot of work!",
+    "text": "Python packaging feels like a lot of work!\nThe not so good news: there are many different tools\nhttps://pradyunsg.me/blog/2023/01/21/thoughts-on-python-packaging/\nHere’s two options:\n\nLightweight: flit– https://flit.pypa.io/en/stable/\nSwiss army knife: hatch – https://hatch.pypa.io/"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#pyproject.toml-metadata-build-system",
+    "href": "package_structure-revealjs.html#pyproject.toml-metadata-build-system",
+    "title": "(re)introducing Python packaging",
+    "section": "pyproject.toml metadata: [build-system]",
+    "text": "pyproject.toml metadata: [build-system]\nTo build our distribution package, we need a build system.\nWe declare this in a build-system table."
+  },
+  {
+    "objectID": "package_structure-revealjs.html#pyproject.toml-project-metadata",
+    "href": "package_structure-revealjs.html#pyproject.toml-project-metadata",
+    "title": "(re)introducing Python packaging",
+    "section": "pyproject.toml project metadata",
+    "text": "pyproject.toml project metadata\n\n\nGood explainer in flit docs:\nhttps://flit.pypa.io/en/latest/ pyproject_toml.html#new-style-metadata"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#aside-python-requires-and-dependencies",
+    "href": "package_structure-revealjs.html#aside-python-requires-and-dependencies",
+    "title": "(re)introducing Python packaging",
+    "section": "Aside: python-requires and dependencies",
+    "text": "Aside: python-requires and dependencies\n\nYou should know about SPEC0, that specifies what versions of Python the core scientific packages work with: https://scientific-python.org/specs/spec-0000/\nUsually you don’t want to put upper bounds (&gt;3.6, &lt;4.0) on Python or your dependencies: https://iscinumpy.dev/post/bound-version-constraints/"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#building-distribution-packages",
+    "href": "package_structure-revealjs.html#building-distribution-packages",
+    "title": "(re)introducing Python packaging",
+    "section": "Building distribution packages",
+    "text": "Building distribution packages\nMost packaging tools have some sort of build command"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#publishing-to-pypi",
+    "href": "package_structure-revealjs.html#publishing-to-pypi",
+    "title": "(re)introducing Python packaging",
+    "section": "Publishing to PyPI",
+    "text": "Publishing to PyPI\nMost packaging tools have some sort of publish command"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#what-do-i-need-to-develop-and-maintain-a-python-package-besides-code",
+    "href": "package_structure-revealjs.html#what-do-i-need-to-develop-and-maintain-a-python-package-besides-code",
+    "title": "(re)introducing Python packaging",
+    "section": "What do I need to develop and maintain a Python package, besides code?",
+    "text": "What do I need to develop and maintain a Python package, besides code?"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#what-else-do-i-need-besides-code",
+    "href": "package_structure-revealjs.html#what-else-do-i-need-besides-code",
+    "title": "(re)introducing Python packaging",
+    "section": "What else do I need besides code?",
+    "text": "What else do I need besides code?\nInfrastructure:\nAll the other stuff besides code that makes it easier for\n\nyou to develop and maintain your package\nothers to use your package, give you feedback, and contribute"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#readme",
+    "href": "package_structure-revealjs.html#readme",
+    "title": "(re)introducing Python packaging",
+    "section": "README",
+    "text": "README\n\n\n\nOften the first thing people see\nGitHub shows this by default -www.makeareadme.com/"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#license",
+    "href": "package_structure-revealjs.html#license",
+    "title": "(re)introducing Python packaging",
+    "section": "LICENSE",
+    "text": "LICENSE\nYou are giving other people permission to use your code\n\nhttps://choosealicense.com/\nMIT and BSD are common for open source scientific software\nMore on this later!"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#code-of-conduct",
+    "href": "package_structure-revealjs.html#code-of-conduct",
+    "title": "(re)introducing Python packaging",
+    "section": "Code of conduct",
+    "text": "Code of conduct\n\nEstablishes expectations for behavior\nHelps create inclusive community\nhttps://opensource.guide/code-of-conduct/\nHighly suggest looking at other scientific Python projects: https://docs.scipy.org/doc/scipy/dev/conduct/ code_of_conduct.html#endnotes"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#changelog",
+    "href": "package_structure-revealjs.html#changelog",
+    "title": "(re)introducing Python packaging",
+    "section": "CHANGELOG",
+    "text": "CHANGELOG\nHuman-readable record of changes to your project\nhttps://keepachangelog.com/en/1.1.0/"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#issue-tracker",
+    "href": "package_structure-revealjs.html#issue-tracker",
+    "title": "(re)introducing Python packaging",
+    "section": "Issue tracker",
+    "text": "Issue tracker"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#continuous-integration",
+    "href": "package_structure-revealjs.html#continuous-integration",
+    "title": "(re)introducing Python packaging",
+    "section": "Continuous integration",
+    "text": "Continuous integration"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#docs-tests-etc.",
+    "href": "package_structure-revealjs.html#docs-tests-etc.",
+    "title": "(re)introducing Python packaging",
+    "section": "Docs, tests, etc.,",
+    "text": "Docs, tests, etc.,\nTo be discussed in later modules"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#python-packaging-questions-comments",
+    "href": "package_structure-revealjs.html#python-packaging-questions-comments",
+    "title": "(re)introducing Python packaging",
+    "section": "Python packaging: Questions & Comments",
+    "text": "Python packaging: Questions & Comments"
+  },
+  {
+    "objectID": "documentation.html",
+    "href": "documentation.html",
+    "title": "Documentation",
+    "section": "",
+    "text": "Professor Carole Goble in “Better Software, Better Research”:\n\nOne of my favorite #overlyhonestmethods tweets (a hashtag for lab scientists) is Ian Holmes’s “You can download our code from the URL supplied. Good luck downloading the only postdoc who can get it to run, though.”\n\n\n\n\n\nThe value and extent of your work is clearer if it can be understood by colleagues.\nDocumentation provides provenance for your scientific process, for your colleagues and yourself.\nDocumentation demonstrates your skill and professionalism.\n\n\n\n\n\nDocumentation pays for itself with the time it saves in the long run.\nDocumentation requires little effort beyond writing the software itself.\n\n\n\n\n\nTheory manuals\nUser and developer guides\nCode comments\nSelf-documenting code\nGenerated API documentation\n\n\n\n\n\nREADME: sits in top-level directory and contains all the necessary information for installing, getting started with, and understanding the accompanying code.\n\n\nMay be accompanied by other specific files: LICENSE, INSTALL, CITATION, ABOUT, CHANGELOG, CONTRIBUTING\n\n\n\n\nSQUIRREL, version 1.2 released on 2026-09-20\n\n# About\n\nThe Spectral Q and U Imaging Radiation Replicating Experimental Library\n(SQUIRREL) is a library for replicating radiation sources with spectral details\nand Q and U polarizations of superman bubblegum.\n\n# Installation\n\nThe SQUIRREL library relies on other libraries:\n\n- The ACORN library www.acorn.nutz\n- The TREEBRANCH database format API\n\nInstall those before installing the SQUIRREL library. To install the SQUIRREL\nlibrary:\n\n./configure\nmake --prefix=/install/path\nmake install\n...\n\n\n\nComments provide a way to insert metainformation about code intended for people, right next to the code:\ndef the_function(var):\n    \"\"\"This is a docstring, where a function definition might live\"\"\"\n    a = 1 + var # this is a simple comment\n    return a\n\n\n\nAlso possible to pollute code with unnecessary cruft:\ndef decay(index, database):\n    # first, retrieve the decay constants from the database\n    mylist = database.decay_constants()\n    # next, try to access an element of the list\n    try:\n        d = mylist[index] # gets decay constant at index in the list\n    # if the index doesn't exist\n    except IndexError:\n        # throw an informative error message\n        raise Exception(\"value not found in the list\")\n    return d\n\n\n\nCode written cleanly will have its own voice. Use intelligent naming to make most lines of code clear without comments, then use comments sparingly to help explain reasons or complicated sections:\ndef get_decay(index, database):\n    \"\"\"Returns decay constant at index in the database\"\"\"\n    lambdas = database.decay_constants()\n    try:\n        lambda_i = lambdas[index] # gets decay constant at index in the list\n    except IndexError:\n        raise Exception(\"value not found in the list\")\n    return lambda\n\n\n\n\nNaming: a class, variable, or function name should tell you why it exists, what it does, and how it is used.\n\n\nSimple functions: functions should be small to be understandable and testable; they should only do one thing.\n\n\nConsistent style: use a consistent, standardized style; e.g., select variable and function names according to the PEP8 style guide for Python.\n\n\n\n\n# packages and modules are short and lowercase\npackages\nmodules\n\n# other objects can be long\nClassesUseCamelCase\nExceptionsAreClassesToo\nfunctions_use_snake_case\nCONSTANTS_USE_ALL_CAPS\n\n# variable scope is *suggested* by style convention\n_single_leading_underscore_ # internal to module\nsingle_trailing_underscore_ # avoids conflicts with Python keywords\n__double_leading_trailing__ # these are magic, like __init__\n\n\n\n\ndocstring: comment placed immediately after a function or class definition, typically enclosed by three pairs of double quotes:\n\ndef &lt;name&gt;(&lt;args&gt;):\n    \"\"\"&lt;docstring&gt;\"\"\"\n    &lt;body&gt;\n\ndocstrings are available within Python via help() and iPython’s magic command ?, and Sphinx picks them up.\n\n\n\n\n\nMake docstrings descriptive and concise; you can explain the arguments of a function, its behavior, and how you intend it to be used.\n\ndef power(base, x):\n    \"\"\"Computes base^x. Both base and x should be integers,\n    floats, or another numeric type.\n    \"\"\"\n    return base**x",
     "crumbs": [
-      "Home"
+      "Documentation"
     ]
+  },
+  {
+    "objectID": "documentation.html#documentation",
+    "href": "documentation.html#documentation",
+    "title": "Documentation",
+    "section": "",
+    "text": "Professor Carole Goble in “Better Software, Better Research”:\n\nOne of my favorite #overlyhonestmethods tweets (a hashtag for lab scientists) is Ian Holmes’s “You can download our code from the URL supplied. Good luck downloading the only postdoc who can get it to run, though.”",
+    "crumbs": [
+      "Documentation"
+    ]
+  },
+  {
+    "objectID": "documentation.html#value-of-documentation",
+    "href": "documentation.html#value-of-documentation",
+    "title": "Documentation",
+    "section": "",
+    "text": "The value and extent of your work is clearer if it can be understood by colleagues.\nDocumentation provides provenance for your scientific process, for your colleagues and yourself.\nDocumentation demonstrates your skill and professionalism.",
+    "crumbs": [
+      "Documentation"
+    ]
+  },
+  {
+    "objectID": "documentation.html#documentation-is-easier-than-you-think.",
+    "href": "documentation.html#documentation-is-easier-than-you-think.",
+    "title": "Documentation",
+    "section": "",
+    "text": "Documentation pays for itself with the time it saves in the long run.\nDocumentation requires little effort beyond writing the software itself.",
+    "crumbs": [
+      "Documentation"
+    ]
+  },
+  {
+    "objectID": "documentation.html#types-of-documentation",
+    "href": "documentation.html#types-of-documentation",
+    "title": "Documentation",
+    "section": "",
+    "text": "Theory manuals\nUser and developer guides\nCode comments\nSelf-documenting code\nGenerated API documentation",
+    "crumbs": [
+      "Documentation"
+    ]
+  },
+  {
+    "objectID": "documentation.html#user-and-developer-guides",
+    "href": "documentation.html#user-and-developer-guides",
+    "title": "Documentation",
+    "section": "",
+    "text": "README: sits in top-level directory and contains all the necessary information for installing, getting started with, and understanding the accompanying code.\n\n\nMay be accompanied by other specific files: LICENSE, INSTALL, CITATION, ABOUT, CHANGELOG, CONTRIBUTING",
+    "crumbs": [
+      "Documentation"
+    ]
+  },
+  {
+    "objectID": "documentation.html#readme-example",
+    "href": "documentation.html#readme-example",
+    "title": "Documentation",
+    "section": "",
+    "text": "SQUIRREL, version 1.2 released on 2026-09-20\n\n# About\n\nThe Spectral Q and U Imaging Radiation Replicating Experimental Library\n(SQUIRREL) is a library for replicating radiation sources with spectral details\nand Q and U polarizations of superman bubblegum.\n\n# Installation\n\nThe SQUIRREL library relies on other libraries:\n\n- The ACORN library www.acorn.nutz\n- The TREEBRANCH database format API\n\nInstall those before installing the SQUIRREL library. To install the SQUIRREL\nlibrary:\n\n./configure\nmake --prefix=/install/path\nmake install\n...",
+    "crumbs": [
+      "Documentation"
+    ]
+  },
+  {
+    "objectID": "documentation.html#comments",
+    "href": "documentation.html#comments",
+    "title": "Documentation",
+    "section": "",
+    "text": "Comments provide a way to insert metainformation about code intended for people, right next to the code:\ndef the_function(var):\n    \"\"\"This is a docstring, where a function definition might live\"\"\"\n    a = 1 + var # this is a simple comment\n    return a",
+    "crumbs": [
+      "Documentation"
+    ]
+  },
+  {
+    "objectID": "documentation.html#bad-comments",
+    "href": "documentation.html#bad-comments",
+    "title": "Documentation",
+    "section": "",
+    "text": "Also possible to pollute code with unnecessary cruft:\ndef decay(index, database):\n    # first, retrieve the decay constants from the database\n    mylist = database.decay_constants()\n    # next, try to access an element of the list\n    try:\n        d = mylist[index] # gets decay constant at index in the list\n    # if the index doesn't exist\n    except IndexError:\n        # throw an informative error message\n        raise Exception(\"value not found in the list\")\n    return d",
+    "crumbs": [
+      "Documentation"
+    ]
+  },
+  {
+    "objectID": "documentation.html#useful-comments",
+    "href": "documentation.html#useful-comments",
+    "title": "Documentation",
+    "section": "",
+    "text": "Code written cleanly will have its own voice. Use intelligent naming to make most lines of code clear without comments, then use comments sparingly to help explain reasons or complicated sections:\ndef get_decay(index, database):\n    \"\"\"Returns decay constant at index in the database\"\"\"\n    lambdas = database.decay_constants()\n    try:\n        lambda_i = lambdas[index] # gets decay constant at index in the list\n    except IndexError:\n        raise Exception(\"value not found in the list\")\n    return lambda",
+    "crumbs": [
+      "Documentation"
+    ]
+  },
+  {
+    "objectID": "documentation.html#self-documenting-code",
+    "href": "documentation.html#self-documenting-code",
+    "title": "Documentation",
+    "section": "",
+    "text": "Naming: a class, variable, or function name should tell you why it exists, what it does, and how it is used.\n\n\nSimple functions: functions should be small to be understandable and testable; they should only do one thing.\n\n\nConsistent style: use a consistent, standardized style; e.g., select variable and function names according to the PEP8 style guide for Python.",
+    "crumbs": [
+      "Documentation"
+    ]
+  },
+  {
+    "objectID": "documentation.html#guidelines-for-naming",
+    "href": "documentation.html#guidelines-for-naming",
+    "title": "Documentation",
+    "section": "",
+    "text": "# packages and modules are short and lowercase\npackages\nmodules\n\n# other objects can be long\nClassesUseCamelCase\nExceptionsAreClassesToo\nfunctions_use_snake_case\nCONSTANTS_USE_ALL_CAPS\n\n# variable scope is *suggested* by style convention\n_single_leading_underscore_ # internal to module\nsingle_trailing_underscore_ # avoids conflicts with Python keywords\n__double_leading_trailing__ # these are magic, like __init__",
+    "crumbs": [
+      "Documentation"
+    ]
+  },
+  {
+    "objectID": "documentation.html#docstrings",
+    "href": "documentation.html#docstrings",
+    "title": "Documentation",
+    "section": "",
+    "text": "docstring: comment placed immediately after a function or class definition, typically enclosed by three pairs of double quotes:\n\ndef &lt;name&gt;(&lt;args&gt;):\n    \"\"\"&lt;docstring&gt;\"\"\"\n    &lt;body&gt;\n\ndocstrings are available within Python via help() and iPython’s magic command ?, and Sphinx picks them up.",
+    "crumbs": [
+      "Documentation"
+    ]
+  },
+  {
+    "objectID": "documentation.html#docstrings-more",
+    "href": "documentation.html#docstrings-more",
+    "title": "Documentation",
+    "section": "",
+    "text": "Make docstrings descriptive and concise; you can explain the arguments of a function, its behavior, and how you intend it to be used.\n\ndef power(base, x):\n    \"\"\"Computes base^x. Both base and x should be integers,\n    floats, or another numeric type.\n    \"\"\"\n    return base**x",
+    "crumbs": [
+      "Documentation"
+    ]
+  },
+  {
+    "objectID": "documentation.html#numpy-style-docstrings",
+    "href": "documentation.html#numpy-style-docstrings",
+    "title": "Documentation",
+    "section": "Numpy-style docstrings",
+    "text": "Numpy-style docstrings\ndef function_with_types_in_docstring(param1, param2):\n    \"\"\"Example function with types documented in the docstring.\n\n    `PEP 484`_ type annotations are supported. If attribute, parameter, and\n    return types are annotated according to `PEP 484`_, they do not need to be\n    included in the docstring:\n\n    Parameters\n    ----------\n    param1 : int\n        The first parameter.\n    param2 : str\n        The second parameter.\n\n    Returns\n    -------\n    bool\n        True if successful, False otherwise.\n\n    .. _PEP 484:\n        https://www.python.org/dev/peps/pep-0484/\n\n    \"\"\"",
+    "crumbs": [
+      "Documentation"
+    ]
+  },
+  {
+    "objectID": "documentation.html#google-style-docstrings",
+    "href": "documentation.html#google-style-docstrings",
+    "title": "Documentation",
+    "section": "Google-style docstrings",
+    "text": "Google-style docstrings\ndef function_with_types_in_docstring(param1, param2):\n    \"\"\"Example function with types documented in the docstring.\n\n    `PEP 484`_ type annotations are supported. If attribute, parameter, and\n    return types are annotated according to `PEP 484`_, they do not need to be\n    included in the docstring:\n\n    Args:\n        param1 (int): The first parameter.\n        param2 (str): The second parameter.\n\n    Returns:\n        bool: The return value. True for success, False otherwise.\n\n    .. _PEP 484:\n        https://www.python.org/dev/peps/pep-0484/\n\n    \"\"\"",
+    "crumbs": [
+      "Documentation"
+    ]
+  },
+  {
+    "objectID": "documentation.html#getting-started-with-sphinx",
+    "href": "documentation.html#getting-started-with-sphinx",
+    "title": "Documentation",
+    "section": "Getting started with Sphinx",
+    "text": "Getting started with Sphinx\n\npip install sphinx myst-parser\nmkdir docs\ncd docs\nsphinx-quickstart (accept defaults if unsure; answer “yes” for question about autodoc)\nsource directory holds .rst and .md files for user guides, theory manuals, etc., separate from the autogenerated API documentation",
+    "crumbs": [
+      "Documentation"
+    ]
+  },
+  {
+    "objectID": "documentation.html#add-content-for-sphinx",
+    "href": "documentation.html#add-content-for-sphinx",
+    "title": "Documentation",
+    "section": "Add content for Sphinx",
+    "text": "Add content for Sphinx\n\nIn the docs\\source directory, add an installation.md file (for example)\nAdd 'myst_parser' to extensions in conf.py\nTry building with make html\nDid sphinx find and automatically build docs for your modules? Look for .md files for each module.",
+    "crumbs": [
+      "Documentation"
+    ]
+  },
+  {
+    "objectID": "documentation.html#configuration-conf.py",
+    "href": "documentation.html#configuration-conf.py",
+    "title": "Documentation",
+    "section": "Configuration (conf.py)",
+    "text": "Configuration (conf.py)\n\nAdd 'sphinx.ext.autodoc' to extensions\nIn extensions, add sphinx.ext.napoleon (for Google/NumPy-style docstring reading) and sphinx.ext.mathjax (if you want LaTeX-based equations), and sphinx.ext.intersphinx for connections to other docs\nSet napoleon_numpy_docstring and napoleon_google_docstring to True/False depending on your docstring style.\nAdd an intersphinx_mapping dict to connect to other docs",
+    "crumbs": [
+      "Documentation"
+    ]
+  },
+  {
+    "objectID": "documentation.html#configuration",
+    "href": "documentation.html#configuration",
+    "title": "Documentation",
+    "section": "Configuration",
+    "text": "Configuration\n\nIn conf.py, add autodoc_default_options = {'members': True} and autoclass_content = 'class'\nFor each Python module, create a corresponding [modulename].rst file in the docs\\source directory. Add .. automodule:: [packagename].[modulename]\nIn index.rst, add [modulename] inside the toctree (table of contents)",
+    "crumbs": [
+      "Documentation"
+    ]
+  },
+  {
+    "objectID": "documentation.html#intersphinx_mapping",
+    "href": "documentation.html#intersphinx_mapping",
+    "title": "Documentation",
+    "section": "intersphinx_mapping",
+    "text": "intersphinx_mapping\nintersphinx_mapping = {\n  'python': ('https://docs.python.org/3.11', None),\n  'pandas': ('http://pandas.pydata.org/pandas-docs/stable/', None),\n  'numpy': ('https://docs.scipy.org/doc/numpy/', None),\n}",
+    "crumbs": [
+      "Documentation"
+    ]
+  },
+  {
+    "objectID": "documentation.html#other-sphinx-goodness",
+    "href": "documentation.html#other-sphinx-goodness",
+    "title": "Documentation",
+    "section": "Other Sphinx goodness:",
+    "text": "Other Sphinx goodness:\n\nYou can configure it to generate a LaTeX-based PDF (i.e., a single user manual)\nYou can have versioned documentation, and also simultaneously have “devel” docs for unreleased changes.",
+    "crumbs": [
+      "Documentation"
+    ]
+  },
+  {
+    "objectID": "documentation.html#github-actions-to-automate-sphinx",
+    "href": "documentation.html#github-actions-to-automate-sphinx",
+    "title": "Documentation",
+    "section": "GitHub Actions to automate Sphinx",
+    "text": "GitHub Actions to automate Sphinx\nname: \"Sphinx: Render docs\"\n\non: push\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    permissions:\n      contents: write\n    steps:\n    - uses: actions/checkout@v4\n      with:\n        persist-credentials: false\n    - name: install depedendices\n      run : |\n        python -m pip install --upgrade pip\n        pip install .\n        pip install sphinx myst-parser\n    - name: Build HTML\n      run: |\n        cd docs\n        make html\n    - name: Upload artifacts\n      uses: actions/upload-artifact@v4\n      with:\n        name: html-docs\n        path: docs/build/html/\n    - name: Deploy\n      uses: peaceiris/actions-gh-pages@v4\n      if: github.ref == 'refs/heads/main'\n      with:\n        github_token: ${{ secrets.GITHUB_TOKEN }}\n        publish_dir: docs/build/html",
+    "crumbs": [
+      "Documentation"
+    ]
+  },
+  {
+    "objectID": "documentation.html#github-actions-setup",
+    "href": "documentation.html#github-actions-setup",
+    "title": "Documentation",
+    "section": "GitHub Actions setup",
+    "text": "GitHub Actions setup\n\nAdd sphinx.ext.githubpages to extensions in conf.py\nAdd a docs/requirements.txt file for any dependencies (e.g., myst-parser)\nOn GitHub, Settings -&gt; Pages -&gt; select gh-pages branch in the “Source” dropdown\n\n\nMore on Sphinx - GitHub Actions here: https://www.sphinx-doc.org/en/master/tutorial/deploying.html",
+    "crumbs": [
+      "Documentation"
+    ]
+  },
+  {
+    "objectID": "documentation-revealjs.html#documentation",
+    "href": "documentation-revealjs.html#documentation",
+    "title": "Documentation",
+    "section": "Documentation",
+    "text": "Documentation\nProfessor Carole Goble in “Better Software, Better Research”:\n\nOne of my favorite #overlyhonestmethods tweets (a hashtag for lab scientists) is Ian Holmes’s “You can download our code from the URL supplied. Good luck downloading the only postdoc who can get it to run, though.”"
+  },
+  {
+    "objectID": "documentation-revealjs.html#value-of-documentation",
+    "href": "documentation-revealjs.html#value-of-documentation",
+    "title": "Documentation",
+    "section": "Value of documentation",
+    "text": "Value of documentation\n\nThe value and extent of your work is clearer if it can be understood by colleagues.\nDocumentation provides provenance for your scientific process, for your colleagues and yourself.\nDocumentation demonstrates your skill and professionalism."
+  },
+  {
+    "objectID": "documentation-revealjs.html#documentation-is-easier-than-you-think.",
+    "href": "documentation-revealjs.html#documentation-is-easier-than-you-think.",
+    "title": "Documentation",
+    "section": "Documentation is easier than you think.",
+    "text": "Documentation is easier than you think.\n\nDocumentation pays for itself with the time it saves in the long run.\nDocumentation requires little effort beyond writing the software itself."
+  },
+  {
+    "objectID": "documentation-revealjs.html#types-of-documentation",
+    "href": "documentation-revealjs.html#types-of-documentation",
+    "title": "Documentation",
+    "section": "Types of documentation",
+    "text": "Types of documentation\n\nTheory manuals\nUser and developer guides\nCode comments\nSelf-documenting code\nGenerated API documentation"
+  },
+  {
+    "objectID": "documentation-revealjs.html#user-and-developer-guides",
+    "href": "documentation-revealjs.html#user-and-developer-guides",
+    "title": "Documentation",
+    "section": "User and developer guides",
+    "text": "User and developer guides\n\nREADME: sits in top-level directory and contains all the necessary information for installing, getting started with, and understanding the accompanying code.\n\n\nMay be accompanied by other specific files: LICENSE, INSTALL, CITATION, ABOUT, CHANGELOG, CONTRIBUTING"
+  },
+  {
+    "objectID": "documentation-revealjs.html#readme-example",
+    "href": "documentation-revealjs.html#readme-example",
+    "title": "Documentation",
+    "section": "README example",
+    "text": "README example\nSQUIRREL, version 1.2 released on 2026-09-20\n\n# About\n\nThe Spectral Q and U Imaging Radiation Replicating Experimental Library\n(SQUIRREL) is a library for replicating radiation sources with spectral details\nand Q and U polarizations of superman bubblegum.\n\n# Installation\n\nThe SQUIRREL library relies on other libraries:\n\n- The ACORN library www.acorn.nutz\n- The TREEBRANCH database format API\n\nInstall those before installing the SQUIRREL library. To install the SQUIRREL\nlibrary:\n\n./configure\nmake --prefix=/install/path\nmake install\n..."
+  },
+  {
+    "objectID": "documentation-revealjs.html#comments",
+    "href": "documentation-revealjs.html#comments",
+    "title": "Documentation",
+    "section": "Comments",
+    "text": "Comments\nComments provide a way to insert metainformation about code intended for people, right next to the code:\ndef the_function(var):\n    \"\"\"This is a docstring, where a function definition might live\"\"\"\n    a = 1 + var # this is a simple comment\n    return a"
+  },
+  {
+    "objectID": "documentation-revealjs.html#bad-comments",
+    "href": "documentation-revealjs.html#bad-comments",
+    "title": "Documentation",
+    "section": "Bad comments",
+    "text": "Bad comments\nAlso possible to pollute code with unnecessary cruft:\ndef decay(index, database):\n    # first, retrieve the decay constants from the database\n    mylist = database.decay_constants()\n    # next, try to access an element of the list\n    try:\n        d = mylist[index] # gets decay constant at index in the list\n    # if the index doesn't exist\n    except IndexError:\n        # throw an informative error message\n        raise Exception(\"value not found in the list\")\n    return d"
+  },
+  {
+    "objectID": "documentation-revealjs.html#useful-comments",
+    "href": "documentation-revealjs.html#useful-comments",
+    "title": "Documentation",
+    "section": "Useful comments",
+    "text": "Useful comments\nCode written cleanly will have its own voice. Use intelligent naming to make most lines of code clear without comments, then use comments sparingly to help explain reasons or complicated sections:\ndef get_decay(index, database):\n    \"\"\"Returns decay constant at index in the database\"\"\"\n    lambdas = database.decay_constants()\n    try:\n        lambda_i = lambdas[index] # gets decay constant at index in the list\n    except IndexError:\n        raise Exception(\"value not found in the list\")\n    return lambda"
+  },
+  {
+    "objectID": "documentation-revealjs.html#self-documenting-code",
+    "href": "documentation-revealjs.html#self-documenting-code",
+    "title": "Documentation",
+    "section": "Self-documenting code",
+    "text": "Self-documenting code\n\nNaming: a class, variable, or function name should tell you why it exists, what it does, and how it is used.\n\n\nSimple functions: functions should be small to be understandable and testable; they should only do one thing.\n\n\nConsistent style: use a consistent, standardized style; e.g., select variable and function names according to the PEP8 style guide for Python."
+  },
+  {
+    "objectID": "documentation-revealjs.html#guidelines-for-naming",
+    "href": "documentation-revealjs.html#guidelines-for-naming",
+    "title": "Documentation",
+    "section": "Guidelines for naming",
+    "text": "Guidelines for naming\n# packages and modules are short and lowercase\npackages\nmodules\n\n# other objects can be long\nClassesUseCamelCase\nExceptionsAreClassesToo\nfunctions_use_snake_case\nCONSTANTS_USE_ALL_CAPS\n\n# variable scope is *suggested* by style convention\n_single_leading_underscore_ # internal to module\nsingle_trailing_underscore_ # avoids conflicts with Python keywords\n__double_leading_trailing__ # these are magic, like __init__"
+  },
+  {
+    "objectID": "documentation-revealjs.html#docstrings",
+    "href": "documentation-revealjs.html#docstrings",
+    "title": "Documentation",
+    "section": "Docstrings",
+    "text": "Docstrings\n\ndocstring: comment placed immediately after a function or class definition, typically enclosed by three pairs of double quotes:\n\ndef &lt;name&gt;(&lt;args&gt;):\n    \"\"\"&lt;docstring&gt;\"\"\"\n    &lt;body&gt;\n\ndocstrings are available within Python via help() and iPython’s magic command ?, and Sphinx picks them up."
+  },
+  {
+    "objectID": "documentation-revealjs.html#docstrings-more",
+    "href": "documentation-revealjs.html#docstrings-more",
+    "title": "Documentation",
+    "section": "Docstrings (more)",
+    "text": "Docstrings (more)\n\nMake docstrings descriptive and concise; you can explain the arguments of a function, its behavior, and how you intend it to be used.\n\ndef power(base, x):\n    \"\"\"Computes base^x. Both base and x should be integers,\n    floats, or another numeric type.\n    \"\"\"\n    return base**x"
+  },
+  {
+    "objectID": "documentation-revealjs.html#numpy-style-docstrings",
+    "href": "documentation-revealjs.html#numpy-style-docstrings",
+    "title": "Documentation",
+    "section": "Numpy-style docstrings",
+    "text": "Numpy-style docstrings\ndef function_with_types_in_docstring(param1, param2):\n    \"\"\"Example function with types documented in the docstring.\n\n    `PEP 484`_ type annotations are supported. If attribute, parameter, and\n    return types are annotated according to `PEP 484`_, they do not need to be\n    included in the docstring:\n\n    Parameters\n    ----------\n    param1 : int\n        The first parameter.\n    param2 : str\n        The second parameter.\n\n    Returns\n    -------\n    bool\n        True if successful, False otherwise.\n\n    .. _PEP 484:\n        https://www.python.org/dev/peps/pep-0484/\n\n    \"\"\""
+  },
+  {
+    "objectID": "documentation-revealjs.html#google-style-docstrings",
+    "href": "documentation-revealjs.html#google-style-docstrings",
+    "title": "Documentation",
+    "section": "Google-style docstrings",
+    "text": "Google-style docstrings\ndef function_with_types_in_docstring(param1, param2):\n    \"\"\"Example function with types documented in the docstring.\n\n    `PEP 484`_ type annotations are supported. If attribute, parameter, and\n    return types are annotated according to `PEP 484`_, they do not need to be\n    included in the docstring:\n\n    Args:\n        param1 (int): The first parameter.\n        param2 (str): The second parameter.\n\n    Returns:\n        bool: The return value. True for success, False otherwise.\n\n    .. _PEP 484:\n        https://www.python.org/dev/peps/pep-0484/\n\n    \"\"\""
+  },
+  {
+    "objectID": "documentation-revealjs.html#getting-started-with-sphinx",
+    "href": "documentation-revealjs.html#getting-started-with-sphinx",
+    "title": "Documentation",
+    "section": "Getting started with Sphinx",
+    "text": "Getting started with Sphinx\n\npip install sphinx myst-parser\nmkdir docs\ncd docs\nsphinx-quickstart (accept defaults if unsure; answer “yes” for question about autodoc)\nsource directory holds .rst and .md files for user guides, theory manuals, etc., separate from the autogenerated API documentation"
+  },
+  {
+    "objectID": "documentation-revealjs.html#add-content-for-sphinx",
+    "href": "documentation-revealjs.html#add-content-for-sphinx",
+    "title": "Documentation",
+    "section": "Add content for Sphinx",
+    "text": "Add content for Sphinx\n\nIn the docs\\source directory, add an installation.md file (for example)\nAdd 'myst_parser' to extensions in conf.py\nTry building with make html\nDid sphinx find and automatically build docs for your modules? Look for .md files for each module."
+  },
+  {
+    "objectID": "documentation-revealjs.html#configuration-conf.py",
+    "href": "documentation-revealjs.html#configuration-conf.py",
+    "title": "Documentation",
+    "section": "Configuration (conf.py)",
+    "text": "Configuration (conf.py)\n\nAdd 'sphinx.ext.autodoc' to extensions\nIn extensions, add sphinx.ext.napoleon (for Google/NumPy-style docstring reading) and sphinx.ext.mathjax (if you want LaTeX-based equations), and sphinx.ext.intersphinx for connections to other docs\nSet napoleon_numpy_docstring and napoleon_google_docstring to True/False depending on your docstring style.\nAdd an intersphinx_mapping dict to connect to other docs"
+  },
+  {
+    "objectID": "documentation-revealjs.html#configuration",
+    "href": "documentation-revealjs.html#configuration",
+    "title": "Documentation",
+    "section": "Configuration",
+    "text": "Configuration\n\nIn conf.py, add autodoc_default_options = {'members': True} and autoclass_content = 'class'\nFor each Python module, create a corresponding [modulename].rst file in the docs\\source directory. Add .. automodule:: [packagename].[modulename]\nIn index.rst, add [modulename] inside the toctree (table of contents)"
+  },
+  {
+    "objectID": "documentation-revealjs.html#intersphinx_mapping",
+    "href": "documentation-revealjs.html#intersphinx_mapping",
+    "title": "Documentation",
+    "section": "intersphinx_mapping",
+    "text": "intersphinx_mapping\nintersphinx_mapping = {\n  'python': ('https://docs.python.org/3.11', None),\n  'pandas': ('http://pandas.pydata.org/pandas-docs/stable/', None),\n  'numpy': ('https://docs.scipy.org/doc/numpy/', None),\n}"
+  },
+  {
+    "objectID": "documentation-revealjs.html#other-sphinx-goodness",
+    "href": "documentation-revealjs.html#other-sphinx-goodness",
+    "title": "Documentation",
+    "section": "Other Sphinx goodness:",
+    "text": "Other Sphinx goodness:\n\nYou can configure it to generate a LaTeX-based PDF (i.e., a single user manual)\nYou can have versioned documentation, and also simultaneously have “devel” docs for unreleased changes."
+  },
+  {
+    "objectID": "documentation-revealjs.html#github-actions-to-automate-sphinx",
+    "href": "documentation-revealjs.html#github-actions-to-automate-sphinx",
+    "title": "Documentation",
+    "section": "GitHub Actions to automate Sphinx",
+    "text": "GitHub Actions to automate Sphinx\nname: \"Sphinx: Render docs\"\n\non: push\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    permissions:\n      contents: write\n    steps:\n    - uses: actions/checkout@v4\n      with:\n        persist-credentials: false\n    - name: install depedendices\n      run : |\n        python -m pip install --upgrade pip\n        pip install .\n        pip install sphinx myst-parser\n    - name: Build HTML\n      run: |\n        cd docs\n        make html\n    - name: Upload artifacts\n      uses: actions/upload-artifact@v4\n      with:\n        name: html-docs\n        path: docs/build/html/\n    - name: Deploy\n      uses: peaceiris/actions-gh-pages@v4\n      if: github.ref == 'refs/heads/main'\n      with:\n        github_token: ${{ secrets.GITHUB_TOKEN }}\n        publish_dir: docs/build/html"
+  },
+  {
+    "objectID": "documentation-revealjs.html#github-actions-setup",
+    "href": "documentation-revealjs.html#github-actions-setup",
+    "title": "Documentation",
+    "section": "GitHub Actions setup",
+    "text": "GitHub Actions setup\n\nAdd sphinx.ext.githubpages to extensions in conf.py\nAdd a docs/requirements.txt file for any dependencies (e.g., myst-parser)\nOn GitHub, Settings -&gt; Pages -&gt; select gh-pages branch in the “Source” dropdown\n\n\nMore on Sphinx - GitHub Actions here: https://www.sphinx-doc.org/en/master/tutorial/deploying.html"
   },
   {
     "objectID": "software_design.html",

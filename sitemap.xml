@@ -2,42 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://dbehnoud.github.io/urssi-summerschool-2025/package_distribution-revealjs.html</loc>
-    <lastmod>2025-07-16T21:01:11.835Z</lastmod>
+    <lastmod>2025-07-17T05:35:18.525Z</lastmod>
   </url>
   <url>
     <loc>https://dbehnoud.github.io/urssi-summerschool-2025/package_distribution.html</loc>
-    <lastmod>2025-07-16T21:01:11.835Z</lastmod>
+    <lastmod>2025-07-17T05:35:18.525Z</lastmod>
   </url>
   <url>
-    <loc>https://dbehnoud.github.io/urssi-summerschool-2025/documentation-revealjs.html</loc>
-    <lastmod>2025-07-16T21:01:11.815Z</lastmod>
+    <loc>https://dbehnoud.github.io/urssi-summerschool-2025/collaboration-revealjs.html</loc>
+    <lastmod>2025-07-17T05:35:18.463Z</lastmod>
   </url>
   <url>
-    <loc>https://dbehnoud.github.io/urssi-summerschool-2025/documentation.html</loc>
-    <lastmod>2025-07-16T21:01:11.815Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dbehnoud.github.io/urssi-summerschool-2025/package_structure-revealjs.html</loc>
-    <lastmod>2025-07-16T21:01:11.835Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dbehnoud.github.io/urssi-summerschool-2025/package_structure.html</loc>
-    <lastmod>2025-07-16T21:01:11.835Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dbehnoud.github.io/urssi-summerschool-2025/about.html</loc>
-    <lastmod>2025-07-16T21:01:11.775Z</lastmod>
+    <loc>https://dbehnoud.github.io/urssi-summerschool-2025/collaboration.html</loc>
+    <lastmod>2025-07-17T05:35:18.463Z</lastmod>
   </url>
   <url>
     <loc>https://dbehnoud.github.io/urssi-summerschool-2025/index.html</loc>
-    <lastmod>2025-07-16T21:01:11.835Z</lastmod>
+    <lastmod>2025-07-17T05:35:18.524Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dbehnoud.github.io/urssi-summerschool-2025/about.html</loc>
+    <lastmod>2025-07-17T05:35:18.462Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dbehnoud.github.io/urssi-summerschool-2025/package_structure.html</loc>
+    <lastmod>2025-07-17T05:35:18.525Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dbehnoud.github.io/urssi-summerschool-2025/package_structure-revealjs.html</loc>
+    <lastmod>2025-07-17T05:35:18.525Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dbehnoud.github.io/urssi-summerschool-2025/documentation.html</loc>
+    <lastmod>2025-07-17T05:35:18.504Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dbehnoud.github.io/urssi-summerschool-2025/documentation-revealjs.html</loc>
+    <lastmod>2025-07-17T05:35:18.504Z</lastmod>
   </url>
   <url>
     <loc>https://dbehnoud.github.io/urssi-summerschool-2025/software_design.html</loc>
-    <lastmod>2025-07-16T21:01:11.836Z</lastmod>
+    <lastmod>2025-07-17T05:35:18.525Z</lastmod>
   </url>
   <url>
     <loc>https://dbehnoud.github.io/urssi-summerschool-2025/software-revealjs.html</loc>
-    <lastmod>2025-07-16T21:01:11.836Z</lastmod>
+    <lastmod>2025-07-17T05:35:18.525Z</lastmod>
   </url>
 </urlset>
