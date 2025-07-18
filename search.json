@@ -1087,361 +1087,221 @@
     ]
   },
   {
-    "objectID": "package_structure-revealjs.html#who-am-i",
-    "href": "package_structure-revealjs.html#who-am-i",
-    "title": "(re)introducing Python packaging",
-    "section": "Who am I?",
-    "text": "Who am I?\n\nPhD: neuro + behavior, post-doc: cognition\nopen source scientific software dev: http://www.vocalpy.org/\ntrained Carpentries instructor\npyOpenSci (2018-present; Editor in Chief - ~2022-2024)\nparticipant in URSSI 2019 Winter School!\nChair, SciPy conference (2020-present)\nActive in US Research Software Engineer Association"
+    "objectID": "peer-code-review-revealjs.html#lesson-objectives",
+    "href": "peer-code-review-revealjs.html#lesson-objectives",
+    "title": "Peer Code Review",
+    "section": "Lesson Objectives",
+    "text": "Lesson Objectives\nSummarize code review best practices\nDemonstrate code review on a pull request"
   },
   {
-    "objectID": "package_structure-revealjs.html#acknowledgements",
-    "href": "package_structure-revealjs.html#acknowledgements",
-    "title": "(re)introducing Python packaging",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\n\nThe previous versions of this module!\nPython packaging 101 tutorial from pyOpenSci: https://www.pyopensci.org/python-package-guide/tutorials/intro.html#python-packaging-101\nPython Packages: https://py-pkgs.org/\nScientific Python packaging guide: https://learn.scientific-python.org/development/tutorials/packaging/\nPython Packaging User Guide: https://packaging.python.org/en/latest/"
+    "objectID": "peer-code-review-revealjs.html#code-review-best-practices",
+    "href": "peer-code-review-revealjs.html#code-review-best-practices",
+    "title": "Peer Code Review",
+    "section": "Code review best practices",
+    "text": "Code review best practices\nCode review, like peer review, enhances the quality of the work being submitted. All involved parties are collaborating to enhance the final product of the pull request.\nWhen performing code review, you are using your expertise to weigh in on a contribution. You aren’t going to have expertise on everything, but your experience in the code and using it is important and relevant to the reivew.\nAs a person getting code reviewed, appreciate the reviewer taking time to give you feedback on your work! They are both/either invested and interested in the work you’re contributing."
   },
   {
-    "objectID": "package_structure-revealjs.html#outline-questions",
-    "href": "package_structure-revealjs.html#outline-questions",
-    "title": "(re)introducing Python packaging",
-    "section": "Outline / Questions",
-    "text": "Outline / Questions\n(The answers come later)\n\nWhat is a Python package?\nWhy would I make a Python package?\nHow do I turn my code into a Python package that I can import?\nHow do I publish my Python package so others can pip install it?\nWhat do I need to develop and maintain a Python package, besides code?"
-  },
-  {
-    "objectID": "package_structure-revealjs.html#what-is-a-python-package",
-    "href": "package_structure-revealjs.html#what-is-a-python-package",
-    "title": "(re)introducing Python packaging",
-    "section": "What is a Python package?",
-    "text": "What is a Python package?\nFirst, let’s define module\nhttps://docs.python.org/3/glossary.html#term-module\n\nModule: An object that serves an organizational unit of python code. Modules have a namespace containing arbitrary python objects. Modules are loaded into Python by the process of importing"
-  },
-  {
-    "objectID": "package_structure-revealjs.html#section",
-    "href": "package_structure-revealjs.html#section",
-    "title": "(re)introducing Python packaging",
+    "objectID": "peer-code-review-revealjs.html#section",
+    "href": "peer-code-review-revealjs.html#section",
+    "title": "Peer Code Review",
     "section": "",
-    "text": "Deconstructing that definition:\n\nWhen I write import modulename I am loading a module\n\nBut we also talk about “importing a package”!\nThis seems to imply a package is a kind of module"
+    "text": "I’m going to be talking about a few different perspectives this morning. Let’s define them.\nmaintainer – a person who keeps things running in a software project. Sometimes maintainers aren’t focused on new features but instead focus on overall project infrastructure and usability.\ncontributor – a person submitting a PR, issue, or feedback to a project. They may have never interacted with the project, or maybe they do so frequently.\nuser – people who use the code but don’t contribute upstream. I try to think about how changes in my code might affect these people since they’re often not weighing in in code review."
   },
   {
-    "objectID": "package_structure-revealjs.html#aside-why-does-python-have-modules",
-    "href": "package_structure-revealjs.html#aside-why-does-python-have-modules",
-    "title": "(re)introducing Python packaging",
-    "section": "Aside: why does Python have modules?",
-    "text": "Aside: why does Python have modules?\nBecause it’s good for your code to be modular.\n\nImage credit: https://realpython.com/python-modules-packages/"
+    "objectID": "peer-code-review-revealjs.html#what-is-code-review",
+    "href": "peer-code-review-revealjs.html#what-is-code-review",
+    "title": "Peer Code Review",
+    "section": "What is code review?",
+    "text": "What is code review?\nI like this description from gitlab."
   },
   {
-    "objectID": "package_structure-revealjs.html#where-do-modules-come-from",
-    "href": "package_structure-revealjs.html#where-do-modules-come-from",
-    "title": "(re)introducing Python packaging",
-    "section": "Where do modules come from?",
-    "text": "Where do modules come from?\n\nThe standard library\n\nPython code\nCompiled C code\n\nA local file that ends in .py\n\n(confusingly, also called a “module”)\n\nThird-party libraries that you pip install or conda install\n\ni.e., packages\n\nA local package (we’re getting to this)"
+    "objectID": "peer-code-review-revealjs.html#code-review-as-a-reviewer",
+    "href": "peer-code-review-revealjs.html#code-review-as-a-reviewer",
+    "title": "Peer Code Review",
+    "section": "Code review as a reviewer",
+    "text": "Code review as a reviewer\nMy approach in a review:\nRead the PR description. What does the author want this code to do? Is it useful/applicable to the code it’s being submitted to (is it in scope)?\nRead the documentation submitted with the code. Do I understand how to use it now? Is there anything that’s ambiguous that coould be enhanced by clarification? Are there docs missing that need to be added?\nLook through the code. Do I follow the logic of what’s being done? I ask questions if I don’t.\nCheck the tests. Have tests been added for any new features? Do they cover the scope of the new feature? Do they help me understand the code in any way?"
   },
   {
-    "objectID": "package_structure-revealjs.html#what-is-a-python-package-1",
-    "href": "package_structure-revealjs.html#what-is-a-python-package-1",
-    "title": "(re)introducing Python packaging",
-    "section": "What is a Python package?",
-    "text": "What is a Python package?\nOk, now that we spent all that time defining module, we can finally define package\n“A Python module which can contain submodules or recursively, subpackages.”\nhttps://docs.python.org/3/glossary.html#term-package"
-  },
-  {
-    "objectID": "package_structure-revealjs.html#package-can-have-multiple-meanings",
-    "href": "package_structure-revealjs.html#package-can-have-multiple-meanings",
-    "title": "(re)introducing Python packaging",
-    "section": "“Package” can have multiple meanings!",
-    "text": "“Package” can have multiple meanings!\nTwo main usages:\nhttps://packaging.python.org/en/latest/discussions/distribution-package-vs-import-package/"
-  },
-  {
-    "objectID": "package_structure-revealjs.html#two-types-of-packages-import-package",
-    "href": "package_structure-revealjs.html#two-types-of-packages-import-package",
-    "title": "(re)introducing Python packaging",
-    "section": "Two types of packages: import package",
-    "text": "Two types of packages: import package\nThis is the one we already talked about\nThe thing you get when you write import packagename in your code\nWe’re going to show you how to make one of these first"
-  },
-  {
-    "objectID": "package_structure-revealjs.html#two-types-of-packages-distribution-package",
-    "href": "package_structure-revealjs.html#two-types-of-packages-distribution-package",
-    "title": "(re)introducing Python packaging",
-    "section": "Two types of packages: distribution package",
-    "text": "Two types of packages: distribution package\nThe actual artifact that gets downloaded off the internet and stored on your computer somewhere\nlike when you run pip install package\nWe need to learn how to make one of these too!"
-  },
-  {
-    "objectID": "package_structure-revealjs.html#why-would-i-make-a-python-package",
-    "href": "package_structure-revealjs.html#why-would-i-make-a-python-package",
-    "title": "(re)introducing Python packaging",
-    "section": "Why would I make a Python package?",
-    "text": "Why would I make a Python package?"
-  },
-  {
-    "objectID": "package_structure-revealjs.html#section-1",
-    "href": "package_structure-revealjs.html#section-1",
-    "title": "(re)introducing Python packaging",
+    "objectID": "peer-code-review-revealjs.html#section-1",
+    "href": "peer-code-review-revealjs.html#section-1",
+    "title": "Peer Code Review",
     "section": "",
-    "text": "Fame, glory\n$$$\nPor amor al arte"
+    "text": "Consider the user. Is the API of the code changing from what already exists? Will it impact users significantly?\nLook through the code. Suggest constructive improvements. Do I see a lot of functionality that’s repeated that can be put into a single function? Do I see a place where a design pattern could be used? I try to add suggestions for improvement as code snippets.\nTry to use the feature. I don’t always do this, but for new features I do. Do I run into any errors when I use it? Does it make sense in my workflow?\nI also like to use a good code review checklist so I don’t forget things. Here’s the one my group uses: https://arfc.github.io/manual/guides/pull_requests"
   },
   {
-    "objectID": "package_structure-revealjs.html#when-should-i-turn-my-code-into-a-package",
-    "href": "package_structure-revealjs.html#when-should-i-turn-my-code-into-a-package",
-    "title": "(re)introducing Python packaging",
-    "section": "When should I turn my code into a package?",
-    "text": "When should I turn my code into a package?\nTwo common cases for research code:\n\nCode that goes with a research article\n\nmainly used to reproduce the results\nAKA a (computational) project or a research compendium\n\nA generalized tool or library that other researchers can use"
+    "objectID": "peer-code-review-revealjs.html#other-considerations",
+    "href": "peer-code-review-revealjs.html#other-considerations",
+    "title": "Peer Code Review",
+    "section": "Other considerations",
+    "text": "Other considerations\n\nWhen you accept the code, it’s possible the contributor will not return. If you’re the maintainer of the project, is this code you are comfortable maintaining moving forward?\nAdding dependencies should be done mindfully.\nIf you notice something that you’d like changed that isn’t directly related to the PR improvement, open an issue and suggest it as a later fix."
   },
   {
-    "objectID": "package_structure-revealjs.html#packaging-code-for-a-paper",
-    "href": "package_structure-revealjs.html#packaging-code-for-a-paper",
-    "title": "(re)introducing Python packaging",
-    "section": "Packaging code for a paper",
-    "text": "Packaging code for a paper\n\nYou have multiple scripts that use the same function\nSo you want to be able to import that function\nIt’s sufficient for you to make an “import package” you use in scripts (e.g., in a Jupyter notebook)"
+    "objectID": "peer-code-review-revealjs.html#dos-in-code-review",
+    "href": "peer-code-review-revealjs.html#dos-in-code-review",
+    "title": "Peer Code Review",
+    "section": "Dos in code review",
+    "text": "Dos in code review\n\nThank the contributor for their contribution\nState what things you particularly like about what was submitted.\nBe positive whenever possible.\nAsk questions about things you’re confused about. You’re probably not the only one.\nIf doing multiple rounds of review, try to not let things stagnate.\nUse suggestions to show your thought process in code changes."
   },
   {
-    "objectID": "package_structure-revealjs.html#to-share-a-generalized-tool",
-    "href": "package_structure-revealjs.html#to-share-a-generalized-tool",
-    "title": "(re)introducing Python packaging",
-    "section": "To share a generalized tool",
-    "text": "To share a generalized tool\nThis is what we’re here (mostly) to learn about!\nThis is when we want to make a “distribution package” too!\n\nYou want people to be able to pip install awesometool"
+    "objectID": "peer-code-review-revealjs.html#donts-in-code-review",
+    "href": "peer-code-review-revealjs.html#donts-in-code-review",
+    "title": "Peer Code Review",
+    "section": "Don’ts in code review",
+    "text": "Don’ts in code review\n\nNitpicking can really set the tone of a review. Is this small thing really important to the code or is it personal preference?\nDon’t reject code for stylistic or small changes. This is very demotivating for a contributor"
   },
   {
-    "objectID": "package_structure-revealjs.html#how-do-i-turn-my-code-into-a-python-package-i-can-import",
-    "href": "package_structure-revealjs.html#how-do-i-turn-my-code-into-a-python-package-i-can-import",
-    "title": "(re)introducing Python packaging",
-    "section": "How do I turn my code into a Python package I can import?",
-    "text": "How do I turn my code into a Python package I can import?"
+    "objectID": "peer-code-review-revealjs.html#tips-for-smoother-code-reviews-and-development-in-your-project",
+    "href": "peer-code-review-revealjs.html#tips-for-smoother-code-reviews-and-development-in-your-project",
+    "title": "Peer Code Review",
+    "section": "Tips for smoother code reviews (and development!) in your project",
+    "text": "Tips for smoother code reviews (and development!) in your project\nYour reivews are there to enhance the code that was submitted for other maintainers, developers, and users. You are collaaborating with the author.\nUsing a linter and formatter mean that reviews avoid style bikeshedding.\nHaving good test coverage and CI mean that the a new contributor gets automatic feedback on how their code fits into your project.\nThis also allows for code reviewers to focus on code readability and applicability rather than helping the author debug."
   },
   {
-    "objectID": "package_structure-revealjs.html#the-structure-of-a-python-package",
-    "href": "package_structure-revealjs.html#the-structure-of-a-python-package",
-    "title": "(re)introducing Python packaging",
-    "section": "The structure of a Python package",
-    "text": "The structure of a Python package\nThe simplest possible Python package\n\nA directory with a single file in it named __init__.py\n\nThe file can be empty\n\nThe __init__.py file tells Python that “this directory is a package"
+    "objectID": "peer-code-review-revealjs.html#section-2",
+    "href": "peer-code-review-revealjs.html#section-2",
+    "title": "Peer Code Review",
+    "section": "",
+    "text": "Having good developer documentation (what linter and formatter do your code use? What is your docs style) helps make the contributor experience a bit less iterative.\nHaving your issue tracker with clearly described issues helps people other than you understand what’s going on in the project.\nLabeling issues with things like good first issue and what type of fix the issue is (e.g. documentation, testing, or something feature-specific means that potential contributors can more easily choose a contribution they are comfortable with. This also ensures that the contribution somebody addresses from the issue tracker is relevant to the project.\nConsider having a project decription in your README. What is the purpose of your code? What is it? What is it not?"
   },
   {
-    "objectID": "package_structure-revealjs.html#how-can-i-import-my-own-code",
-    "href": "package_structure-revealjs.html#how-can-i-import-my-own-code",
-    "title": "(re)introducing Python packaging",
-    "section": "How can I import my own code?",
-    "text": "How can I import my own code?\nThis is enough for me to be able to import the package\nas long as I’m in the right directory\n\nThe same is true for any module:\n(by which we mean a file that ends in .py)\nI can import it if I’m in the right directory"
+    "objectID": "peer-code-review-revealjs.html#a-few-more-things",
+    "href": "peer-code-review-revealjs.html#a-few-more-things",
+    "title": "Peer Code Review",
+    "section": "A few more things",
+    "text": "A few more things\nIf you know the contributor and you have done a few rounds of review, consider scheduling a call or sitting down with them to try to resolve things."
   },
   {
-    "objectID": "package_structure-revealjs.html#how-do-i-make-it-so-i-can-import-a-module",
-    "href": "package_structure-revealjs.html#how-do-i-make-it-so-i-can-import-a-module",
-    "title": "(re)introducing Python packaging",
-    "section": "How do I make it so I can import a module?",
-    "text": "How do I make it so I can import a module?\nThis is the bare minimum pyproject.toml file for our simple module"
+    "objectID": "peer-code-review-revealjs.html#code-review-as-a-contributordeveloper",
+    "href": "peer-code-review-revealjs.html#code-review-as-a-contributordeveloper",
+    "title": "Peer Code Review",
+    "section": "Code review as a contributor/developer",
+    "text": "Code review as a contributor/developer\nGetting your own code reviewed can be exciting! But it can also be a little nervewracking.\nLet’s talk a bit about the process of responding to a code review."
   },
   {
-    "objectID": "package_structure-revealjs.html#what-is-a-toml-file",
-    "href": "package_structure-revealjs.html#what-is-a-toml-file",
-    "title": "(re)introducing Python packaging",
-    "section": "What is a TOML file?",
-    "text": "What is a TOML file?\n\n\n“Tom’s Obvious Minimal Language”: https://toml.io/en/\n\n“A [configuration] file format for humans”\n\nUsed in other ecosystems\nNice because parsers map to native type"
+    "objectID": "peer-code-review-revealjs.html#my-approach",
+    "href": "peer-code-review-revealjs.html#my-approach",
+    "title": "Peer Code Review",
+    "section": "My approach:",
+    "text": "My approach:\n\nRead through the reviewer’s comments. Consider their perspective as I read the comments. If I don’t understand a comment, I ask a question as a reply to the review comment.\nAnswer reviewer questions, if there are any.\nIncorporate any code suggestions the reveiwer made that I like through the github interface. This helps preserve authorship of their contributions.\nMake code changes locally and push them to my feature branch. - Address review comments in seperate commits to help split things up.\nNotify the reviewer once I’ve addressed all comments and all open discussions have been resolved."
   },
   {
-    "objectID": "package_structure-revealjs.html#anatomy-of-a-toml-file",
-    "href": "package_structure-revealjs.html#anatomy-of-a-toml-file",
-    "title": "(re)introducing Python packaging",
-    "section": "Anatomy of a TOML file",
-    "text": "Anatomy of a TOML file\n\n\n\nthe spec: https://toml.io/en/v1.0.0"
+    "objectID": "peer-code-review-revealjs.html#more-resources",
+    "href": "peer-code-review-revealjs.html#more-resources",
+    "title": "Peer Code Review",
+    "section": "More Resources:",
+    "text": "More Resources:\n\nhttps://google.github.io/eng-practices/review/reviewer/\nhttps://stackoverflow.blog/2019/09/30/how-to-make-good-code-reviews-better/\nhttps://mtlynch.io/human-code-reviews-1/\nhttps://mtlynch.io/code-review-love/\nhttps://developers.redhat.com/blog/2019/07/08/10-tips-for-reviewing-code-you-dont-like#code_review_strategies\nhttps://kickstarter.engineering/a-guide-to-mindful-communication-in-code-reviews-48aab5282e5e"
   },
   {
-    "objectID": "package_structure-revealjs.html#ok-i-have-a-pyproject.toml-file-now-what",
-    "href": "package_structure-revealjs.html#ok-i-have-a-pyproject.toml-file-now-what",
-    "title": "(re)introducing Python packaging",
-    "section": "Ok, I have a pyproject.toml file, now what?",
-    "text": "Ok, I have a pyproject.toml file, now what?\nNow just\n\nnavigate to the directory where your module lives\nactivate your virtual environment\ntype pip install .\nnow you can import it!"
+    "objectID": "peer_code_review.html",
+    "href": "peer_code_review.html",
+    "title": "Peer Code Review",
+    "section": "",
+    "text": "Summarize code review best practices\nDemonstrate code review on a pull request\n\n\n\nCode review, like peer review, enhances the quality of the work being submitted. All involved parties are collaborating to enhance the final product of the pull request.\nWhen performing code review, you are using your expertise to weigh in on a contribution. You aren’t going to have expertise on everything, but your experience in the code and using it is important and relevant to the reivew.\nAs a person getting code reviewed, appreciate the reviewer taking time to give you feedback on your work! They are both/either invested and interested in the work you’re contributing.\n\n\n\nI’m going to be talking about a few different perspectives this morning. Let’s define them.\nmaintainer – a person who keeps things running in a software project. Sometimes maintainers aren’t focused on new features but instead focus on overall project infrastructure and usability.\ncontributor – a person submitting a PR, issue, or feedback to a project. They may have never interacted with the project, or maybe they do so frequently.\nuser – people who use the code but don’t contribute upstream. I try to think about how changes in my code might affect these people since they’re often not weighing in in code review.\n\n\n\nI like this description from gitlab.\n\n\n\nMy approach in a review:\nRead the PR description. What does the author want this code to do? Is it useful/applicable to the code it’s being submitted to (is it in scope)?\nRead the documentation submitted with the code. Do I understand how to use it now? Is there anything that’s ambiguous that coould be enhanced by clarification? Are there docs missing that need to be added?\nLook through the code. Do I follow the logic of what’s being done? I ask questions if I don’t.\nCheck the tests. Have tests been added for any new features? Do they cover the scope of the new feature? Do they help me understand the code in any way?\n\n\n\nConsider the user. Is the API of the code changing from what already exists? Will it impact users significantly?\nLook through the code. Suggest constructive improvements. Do I see a lot of functionality that’s repeated that can be put into a single function? Do I see a place where a design pattern could be used? I try to add suggestions for improvement as code snippets.\nTry to use the feature. I don’t always do this, but for new features I do. Do I run into any errors when I use it? Does it make sense in my workflow?\nI also like to use a good code review checklist so I don’t forget things. Here’s the one my group uses: https://arfc.github.io/manual/guides/pull_requests\n\n\n\n\nWhen you accept the code, it’s possible the contributor will not return. If you’re the maintainer of the project, is this code you are comfortable maintaining moving forward?\nAdding dependencies should be done mindfully.\nIf you notice something that you’d like changed that isn’t directly related to the PR improvement, open an issue and suggest it as a later fix.\n\n\n\n\n\nThank the contributor for their contribution\nState what things you particularly like about what was submitted.\nBe positive whenever possible.\nAsk questions about things you’re confused about. You’re probably not the only one.\nIf doing multiple rounds of review, try to not let things stagnate.\nUse suggestions to show your thought process in code changes.\n\n\n\n\n\nNitpicking can really set the tone of a review. Is this small thing really important to the code or is it personal preference?\nDon’t reject code for stylistic or small changes. This is very demotivating for a contributor\n\n\n\n\nYour reivews are there to enhance the code that was submitted for other maintainers, developers, and users. You are collaaborating with the author.\nUsing a linter and formatter mean that reviews avoid style bikeshedding.\nHaving good test coverage and CI mean that the a new contributor gets automatic feedback on how their code fits into your project.\nThis also allows for code reviewers to focus on code readability and applicability rather than helping the author debug.\n\n\n\nHaving good developer documentation (what linter and formatter do your code use? What is your docs style) helps make the contributor experience a bit less iterative.\nHaving your issue tracker with clearly described issues helps people other than you understand what’s going on in the project.\nLabeling issues with things like good first issue and what type of fix the issue is (e.g. documentation, testing, or something feature-specific means that potential contributors can more easily choose a contribution they are comfortable with. This also ensures that the contribution somebody addresses from the issue tracker is relevant to the project.\nConsider having a project decription in your README. What is the purpose of your code? What is it? What is it not?\n\n\n\nIf you know the contributor and you have done a few rounds of review, consider scheduling a call or sitting down with them to try to resolve things.\n\n\n\nGetting your own code reviewed can be exciting! But it can also be a little nervewracking.\nLet’s talk a bit about the process of responding to a code review.\n\n\n\n\nRead through the reviewer’s comments. Consider their perspective as I read the comments. If I don’t understand a comment, I ask a question as a reply to the review comment.\nAnswer reviewer questions, if there are any.\nIncorporate any code suggestions the reveiwer made that I like through the github interface. This helps preserve authorship of their contributions.\nMake code changes locally and push them to my feature branch. - Address review comments in seperate commits to help split things up.\nNotify the reviewer once I’ve addressed all comments and all open discussions have been resolved.\n\n\n\n\n\nhttps://google.github.io/eng-practices/review/reviewer/\nhttps://stackoverflow.blog/2019/09/30/how-to-make-good-code-reviews-better/\nhttps://mtlynch.io/human-code-reviews-1/\nhttps://mtlynch.io/code-review-love/\nhttps://developers.redhat.com/blog/2019/07/08/10-tips-for-reviewing-code-you-dont-like#code_review_strategies\nhttps://kickstarter.engineering/a-guide-to-mindful-communication-in-code-reviews-48aab5282e5e"
   },
   {
-    "objectID": "package_structure-revealjs.html#a-slightly-more-complicated-python-package",
-    "href": "package_structure-revealjs.html#a-slightly-more-complicated-python-package",
-    "title": "(re)introducing Python packaging",
-    "section": "A (slightly) more complicated Python package",
-    "text": "A (slightly) more complicated Python package\n\nScenario: Samspon is a computational dog scientist.\nSampson has a set of functions they are using across all their projects, so they wrap them up in a package, dogpy\n\n\n\nwww.rexspecs.com/blogs/news/sampson-the-lab-dog-tests-the-boundaries-of-science"
+    "objectID": "peer_code_review.html#lesson-objectives",
+    "href": "peer_code_review.html#lesson-objectives",
+    "title": "Peer Code Review",
+    "section": "",
+    "text": "Summarize code review best practices\nDemonstrate code review on a pull request"
   },
   {
-    "objectID": "package_structure-revealjs.html#why-src",
-    "href": "package_structure-revealjs.html#why-src",
-    "title": "(re)introducing Python packaging",
-    "section": "Why src?",
-    "text": "Why src?\n\nSo you don’t accidentally import the local package when you want to run tests on the distribution package\nAesthetics: it looks better to have “src”, “docs”, “tests”"
+    "objectID": "peer_code_review.html#code-review-best-practices",
+    "href": "peer_code_review.html#code-review-best-practices",
+    "title": "Peer Code Review",
+    "section": "",
+    "text": "Code review, like peer review, enhances the quality of the work being submitted. All involved parties are collaborating to enhance the final product of the pull request.\nWhen performing code review, you are using your expertise to weigh in on a contribution. You aren’t going to have expertise on everything, but your experience in the code and using it is important and relevant to the reivew.\nAs a person getting code reviewed, appreciate the reviewer taking time to give you feedback on your work! They are both/either invested and interested in the work you’re contributing."
   },
   {
-    "objectID": "package_structure-revealjs.html#the-package-itself",
-    "href": "package_structure-revealjs.html#the-package-itself",
-    "title": "(re)introducing Python packaging",
-    "section": "The package itself",
-    "text": "The package itself\n\nWe have the dogpy dir\nIt contains one module (by which I mean a .py file): bark.py\nIt also contains another directory! The elusive sub-package. Namely, fetch.\nThe fetch sub-package contains two other modules: ball.py and bone.py"
+    "objectID": "peer_code_review.html#section",
+    "href": "peer_code_review.html#section",
+    "title": "Peer Code Review",
+    "section": "",
+    "text": "I’m going to be talking about a few different perspectives this morning. Let’s define them.\nmaintainer – a person who keeps things running in a software project. Sometimes maintainers aren’t focused on new features but instead focus on overall project infrastructure and usability.\ncontributor – a person submitting a PR, issue, or feedback to a project. They may have never interacted with the project, or maybe they do so frequently.\nuser – people who use the code but don’t contribute upstream. I try to think about how changes in my code might affect these people since they’re often not weighing in in code review."
   },
   {
-    "objectID": "package_structure-revealjs.html#why-__init__.py-anyways",
-    "href": "package_structure-revealjs.html#why-__init__.py-anyways",
-    "title": "(re)introducing Python packaging",
-    "section": "Why __init__.py anyways?",
-    "text": "Why __init__.py anyways?\n\nIt initializes your module\nYou import modules, functions, etc., here\nso that your users can get what they need from your package’s namespace"
+    "objectID": "peer_code_review.html#what-is-code-review",
+    "href": "peer_code_review.html#what-is-code-review",
+    "title": "Peer Code Review",
+    "section": "",
+    "text": "I like this description from gitlab."
   },
   {
-    "objectID": "package_structure-revealjs.html#how-should-i-structure-my-python-package",
-    "href": "package_structure-revealjs.html#how-should-i-structure-my-python-package",
-    "title": "(re)introducing Python packaging",
-    "section": "How should I structure my Python package?",
-    "text": "How should I structure my Python package?\n\nShort version: “flat is better than nested”\n\nYour users want to write package.function, not package.subpackage.subsubpackage.subsubsubpackage.function\nBut having one level of sub-packages can help with readability\nMost scientific Python packages have a set of sub-packages, each containing functions:\n\nnumpy.random.default_rng\nsklearn.model_selection.test_train_split\n\nYour package’s code ≠ your package’s namespace! You control the namespace with imports!\n\nLong version:\n\nhttps://benhoyt.com/writings/python-api-design/\nhttp://blog.nicholdav.info/four-tips-structuring-research-python/"
+    "objectID": "peer_code_review.html#code-review-as-a-reviewer",
+    "href": "peer_code_review.html#code-review-as-a-reviewer",
+    "title": "Peer Code Review",
+    "section": "",
+    "text": "My approach in a review:\nRead the PR description. What does the author want this code to do? Is it useful/applicable to the code it’s being submitted to (is it in scope)?\nRead the documentation submitted with the code. Do I understand how to use it now? Is there anything that’s ambiguous that coould be enhanced by clarification? Are there docs missing that need to be added?\nLook through the code. Do I follow the logic of what’s being done? I ask questions if I don’t.\nCheck the tests. Have tests been added for any new features? Do they cover the scope of the new feature? Do they help me understand the code in any way?"
   },
   {
-    "objectID": "package_structure-revealjs.html#how-do-i-publish-my-package-so-others-can-pip-install-it",
-    "href": "package_structure-revealjs.html#how-do-i-publish-my-package-so-others-can-pip-install-it",
-    "title": "(re)introducing Python packaging",
-    "section": "How do I publish my package so others can pip install it?",
-    "text": "How do I publish my package so others can pip install it?"
+    "objectID": "peer_code_review.html#section-1",
+    "href": "peer_code_review.html#section-1",
+    "title": "Peer Code Review",
+    "section": "",
+    "text": "Consider the user. Is the API of the code changing from what already exists? Will it impact users significantly?\nLook through the code. Suggest constructive improvements. Do I see a lot of functionality that’s repeated that can be put into a single function? Do I see a place where a design pattern could be used? I try to add suggestions for improvement as code snippets.\nTry to use the feature. I don’t always do this, but for new features I do. Do I run into any errors when I use it? Does it make sense in my workflow?\nI also like to use a good code review checklist so I don’t forget things. Here’s the one my group uses: https://arfc.github.io/manual/guides/pull_requests"
   },
   {
-    "objectID": "package_structure-revealjs.html#how-do-i-publish-my-package",
-    "href": "package_structure-revealjs.html#how-do-i-publish-my-package",
-    "title": "(re)introducing Python packaging",
-    "section": "How do I publish my package?",
-    "text": "How do I publish my package?\nNow we need a distribution package.\nWe also need to define some more terms so that the rest of this make sense."
+    "objectID": "peer_code_review.html#other-considerations",
+    "href": "peer_code_review.html#other-considerations",
+    "title": "Peer Code Review",
+    "section": "",
+    "text": "When you accept the code, it’s possible the contributor will not return. If you’re the maintainer of the project, is this code you are comfortable maintaining moving forward?\nAdding dependencies should be done mindfully.\nIf you notice something that you’d like changed that isn’t directly related to the PR improvement, open an issue and suggest it as a later fix."
   },
   {
-    "objectID": "package_structure-revealjs.html#what-about-setup.py",
-    "href": "package_structure-revealjs.html#what-about-setup.py",
-    "title": "(re)introducing Python packaging",
-    "section": "What about setup.py?",
-    "text": "What about setup.py?\n\nIt used to be the case that all distributions were built with a setup.py file\nThere was only one tool that did this: setuptools\nNow: pure Python projects don’t need a setup.py file It’s better\n\n\nThe long version:\nhttps://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html"
+    "objectID": "peer_code_review.html#dos-in-code-review",
+    "href": "peer_code_review.html#dos-in-code-review",
+    "title": "Peer Code Review",
+    "section": "",
+    "text": "Thank the contributor for their contribution\nState what things you particularly like about what was submitted.\nBe positive whenever possible.\nAsk questions about things you’re confused about. You’re probably not the only one.\nIf doing multiple rounds of review, try to not let things stagnate.\nUse suggestions to show your thought process in code changes."
   },
   {
-    "objectID": "package_structure-revealjs.html#distribution-packages-frontends-and-backends",
-    "href": "package_structure-revealjs.html#distribution-packages-frontends-and-backends",
-    "title": "(re)introducing Python packaging",
-    "section": "Distribution packages: frontends and backends",
-    "text": "Distribution packages: frontends and backends\nTo move away from setup.py and setuptools, PEP 517 introduced the idea of “front-ends” and “back-ends”\nhttps://peps.python.org/pep-0517/\nMostly you shouldn’t have to think about this.\nBut in your pyproject.toml file you will specify a “build backend”.\nThat’s the tool that knows how to take your “source tree” and make a distribution package."
+    "objectID": "peer_code_review.html#donts-in-code-review",
+    "href": "peer_code_review.html#donts-in-code-review",
+    "title": "Peer Code Review",
+    "section": "",
+    "text": "Nitpicking can really set the tone of a review. Is this small thing really important to the code or is it personal preference?\nDon’t reject code for stylistic or small changes. This is very demotivating for a contributor"
   },
   {
-    "objectID": "package_structure-revealjs.html#distribution-packages-formats",
-    "href": "package_structure-revealjs.html#distribution-packages-formats",
-    "title": "(re)introducing Python packaging",
-    "section": "Distribution packages: formats",
-    "text": "Distribution packages: formats\n“Build backends” (always) make two types of distribution packages:\na source distribution (“sdist”), and wheels\nhttps://packaging.python.org/en/latest/discussions/package-formats/"
+    "objectID": "peer_code_review.html#tips-for-smoother-code-reviews-and-development-in-your-project",
+    "href": "peer_code_review.html#tips-for-smoother-code-reviews-and-development-in-your-project",
+    "title": "Peer Code Review",
+    "section": "",
+    "text": "Your reivews are there to enhance the code that was submitted for other maintainers, developers, and users. You are collaaborating with the author.\nUsing a linter and formatter mean that reviews avoid style bikeshedding.\nHaving good test coverage and CI mean that the a new contributor gets automatic feedback on how their code fits into your project.\nThis also allows for code reviewers to focus on code readability and applicability rather than helping the author debug."
   },
   {
-    "objectID": "package_structure-revealjs.html#how-do-i-publish-my-package-1",
-    "href": "package_structure-revealjs.html#how-do-i-publish-my-package-1",
-    "title": "(re)introducing Python packaging",
-    "section": "How do I publish my package?",
-    "text": "How do I publish my package?\nTo-do list:\n\nAdd metadata to our pyproject.toml file\n\nBuild backend\nThe metadata that will show up on PyPI\n\nBuild your distribution package\nPublish the distribution package to PyPI"
+    "objectID": "peer_code_review.html#section-2",
+    "href": "peer_code_review.html#section-2",
+    "title": "Peer Code Review",
+    "section": "",
+    "text": "Having good developer documentation (what linter and formatter do your code use? What is your docs style) helps make the contributor experience a bit less iterative.\nHaving your issue tracker with clearly described issues helps people other than you understand what’s going on in the project.\nLabeling issues with things like good first issue and what type of fix the issue is (e.g. documentation, testing, or something feature-specific means that potential contributors can more easily choose a contribution they are comfortable with. This also ensures that the contribution somebody addresses from the issue tracker is relevant to the project.\nConsider having a project decription in your README. What is the purpose of your code? What is it? What is it not?"
   },
   {
-    "objectID": "package_structure-revealjs.html#python-packaging-feels-like-a-lot-of-work",
-    "href": "package_structure-revealjs.html#python-packaging-feels-like-a-lot-of-work",
-    "title": "(re)introducing Python packaging",
-    "section": "Python packaging feels like a lot of work!",
-    "text": "Python packaging feels like a lot of work!\n“I have to write this pyproject.toml file by hand, make and virtual environments, and I don’t even know how much work it will take to build a distribution package yet…”\nGood news!\nThere are packaging tools that will do a lot of this work for you!"
+    "objectID": "peer_code_review.html#a-few-more-things",
+    "href": "peer_code_review.html#a-few-more-things",
+    "title": "Peer Code Review",
+    "section": "",
+    "text": "If you know the contributor and you have done a few rounds of review, consider scheduling a call or sitting down with them to try to resolve things."
   },
   {
-    "objectID": "package_structure-revealjs.html#python-packaging-feels-like-a-lot-of-work-1",
-    "href": "package_structure-revealjs.html#python-packaging-feels-like-a-lot-of-work-1",
-    "title": "(re)introducing Python packaging",
-    "section": "Python packaging feels like a lot of work!",
-    "text": "Python packaging feels like a lot of work!\nThe not so good news: there are many different tools\nhttps://pradyunsg.me/blog/2023/01/21/thoughts-on-python-packaging/\nHere’s two options:\n\nLightweight: flit– https://flit.pypa.io/en/stable/\nSwiss army knife: hatch – https://hatch.pypa.io/"
+    "objectID": "peer_code_review.html#code-review-as-a-contributordeveloper",
+    "href": "peer_code_review.html#code-review-as-a-contributordeveloper",
+    "title": "Peer Code Review",
+    "section": "",
+    "text": "Getting your own code reviewed can be exciting! But it can also be a little nervewracking.\nLet’s talk a bit about the process of responding to a code review."
   },
   {
-    "objectID": "package_structure-revealjs.html#pyproject.toml-metadata-build-system",
-    "href": "package_structure-revealjs.html#pyproject.toml-metadata-build-system",
-    "title": "(re)introducing Python packaging",
-    "section": "pyproject.toml metadata: [build-system]",
-    "text": "pyproject.toml metadata: [build-system]\nTo build our distribution package, we need a build system.\nWe declare this in a build-system table."
+    "objectID": "peer_code_review.html#my-approach",
+    "href": "peer_code_review.html#my-approach",
+    "title": "Peer Code Review",
+    "section": "",
+    "text": "Read through the reviewer’s comments. Consider their perspective as I read the comments. If I don’t understand a comment, I ask a question as a reply to the review comment.\nAnswer reviewer questions, if there are any.\nIncorporate any code suggestions the reveiwer made that I like through the github interface. This helps preserve authorship of their contributions.\nMake code changes locally and push them to my feature branch. - Address review comments in seperate commits to help split things up.\nNotify the reviewer once I’ve addressed all comments and all open discussions have been resolved."
   },
   {
-    "objectID": "package_structure-revealjs.html#pyproject.toml-project-metadata",
-    "href": "package_structure-revealjs.html#pyproject.toml-project-metadata",
-    "title": "(re)introducing Python packaging",
-    "section": "pyproject.toml project metadata",
-    "text": "pyproject.toml project metadata\n\n\nGood explainer in flit docs:\nhttps://flit.pypa.io/en/latest/ pyproject_toml.html#new-style-metadata"
-  },
-  {
-    "objectID": "package_structure-revealjs.html#aside-python-requires-and-dependencies",
-    "href": "package_structure-revealjs.html#aside-python-requires-and-dependencies",
-    "title": "(re)introducing Python packaging",
-    "section": "Aside: python-requires and dependencies",
-    "text": "Aside: python-requires and dependencies\n\nYou should know about SPEC0, that specifies what versions of Python the core scientific packages work with: https://scientific-python.org/specs/spec-0000/\nUsually you don’t want to put upper bounds (&gt;3.6, &lt;4.0) on Python or your dependencies: https://iscinumpy.dev/post/bound-version-constraints/"
-  },
-  {
-    "objectID": "package_structure-revealjs.html#building-distribution-packages",
-    "href": "package_structure-revealjs.html#building-distribution-packages",
-    "title": "(re)introducing Python packaging",
-    "section": "Building distribution packages",
-    "text": "Building distribution packages\nMost packaging tools have some sort of build command"
-  },
-  {
-    "objectID": "package_structure-revealjs.html#publishing-to-pypi",
-    "href": "package_structure-revealjs.html#publishing-to-pypi",
-    "title": "(re)introducing Python packaging",
-    "section": "Publishing to PyPI",
-    "text": "Publishing to PyPI\nMost packaging tools have some sort of publish command"
-  },
-  {
-    "objectID": "package_structure-revealjs.html#what-do-i-need-to-develop-and-maintain-a-python-package-besides-code",
-    "href": "package_structure-revealjs.html#what-do-i-need-to-develop-and-maintain-a-python-package-besides-code",
-    "title": "(re)introducing Python packaging",
-    "section": "What do I need to develop and maintain a Python package, besides code?",
-    "text": "What do I need to develop and maintain a Python package, besides code?"
-  },
-  {
-    "objectID": "package_structure-revealjs.html#what-else-do-i-need-besides-code",
-    "href": "package_structure-revealjs.html#what-else-do-i-need-besides-code",
-    "title": "(re)introducing Python packaging",
-    "section": "What else do I need besides code?",
-    "text": "What else do I need besides code?\nInfrastructure:\nAll the other stuff besides code that makes it easier for\n\nyou to develop and maintain your package\nothers to use your package, give you feedback, and contribute"
-  },
-  {
-    "objectID": "package_structure-revealjs.html#readme",
-    "href": "package_structure-revealjs.html#readme",
-    "title": "(re)introducing Python packaging",
-    "section": "README",
-    "text": "README\n\n\n\nOften the first thing people see\nGitHub shows this by default -www.makeareadme.com/"
-  },
-  {
-    "objectID": "package_structure-revealjs.html#license",
-    "href": "package_structure-revealjs.html#license",
-    "title": "(re)introducing Python packaging",
-    "section": "LICENSE",
-    "text": "LICENSE\nYou are giving other people permission to use your code\n\nhttps://choosealicense.com/\nMIT and BSD are common for open source scientific software\nMore on this later!"
-  },
-  {
-    "objectID": "package_structure-revealjs.html#code-of-conduct",
-    "href": "package_structure-revealjs.html#code-of-conduct",
-    "title": "(re)introducing Python packaging",
-    "section": "Code of conduct",
-    "text": "Code of conduct\n\nEstablishes expectations for behavior\nHelps create inclusive community\nhttps://opensource.guide/code-of-conduct/\nHighly suggest looking at other scientific Python projects: https://docs.scipy.org/doc/scipy/dev/conduct/ code_of_conduct.html#endnotes"
-  },
-  {
-    "objectID": "package_structure-revealjs.html#changelog",
-    "href": "package_structure-revealjs.html#changelog",
-    "title": "(re)introducing Python packaging",
-    "section": "CHANGELOG",
-    "text": "CHANGELOG\nHuman-readable record of changes to your project\nhttps://keepachangelog.com/en/1.1.0/"
-  },
-  {
-    "objectID": "package_structure-revealjs.html#issue-tracker",
-    "href": "package_structure-revealjs.html#issue-tracker",
-    "title": "(re)introducing Python packaging",
-    "section": "Issue tracker",
-    "text": "Issue tracker"
-  },
-  {
-    "objectID": "package_structure-revealjs.html#continuous-integration",
-    "href": "package_structure-revealjs.html#continuous-integration",
-    "title": "(re)introducing Python packaging",
-    "section": "Continuous integration",
-    "text": "Continuous integration"
-  },
-  {
-    "objectID": "package_structure-revealjs.html#docs-tests-etc.",
-    "href": "package_structure-revealjs.html#docs-tests-etc.",
-    "title": "(re)introducing Python packaging",
-    "section": "Docs, tests, etc.,",
-    "text": "Docs, tests, etc.,\nTo be discussed in later modules"
-  },
-  {
-    "objectID": "package_structure-revealjs.html#python-packaging-questions-comments",
-    "href": "package_structure-revealjs.html#python-packaging-questions-comments",
-    "title": "(re)introducing Python packaging",
-    "section": "Python packaging: Questions & Comments",
-    "text": "Python packaging: Questions & Comments"
+    "objectID": "peer_code_review.html#more-resources",
+    "href": "peer_code_review.html#more-resources",
+    "title": "Peer Code Review",
+    "section": "",
+    "text": "https://google.github.io/eng-practices/review/reviewer/\nhttps://stackoverflow.blog/2019/09/30/how-to-make-good-code-reviews-better/\nhttps://mtlynch.io/human-code-reviews-1/\nhttps://mtlynch.io/code-review-love/\nhttps://developers.redhat.com/blog/2019/07/08/10-tips-for-reviewing-code-you-dont-like#code_review_strategies\nhttps://kickstarter.engineering/a-guide-to-mindful-communication-in-code-reviews-48aab5282e5e"
   },
   {
     "objectID": "package_structure.html",
@@ -1852,6 +1712,363 @@
     "crumbs": [
       "(re)introducing Python packaging"
     ]
+  },
+  {
+    "objectID": "package_structure-revealjs.html#who-am-i",
+    "href": "package_structure-revealjs.html#who-am-i",
+    "title": "(re)introducing Python packaging",
+    "section": "Who am I?",
+    "text": "Who am I?\n\nPhD: neuro + behavior, post-doc: cognition\nopen source scientific software dev: http://www.vocalpy.org/\ntrained Carpentries instructor\npyOpenSci (2018-present; Editor in Chief - ~2022-2024)\nparticipant in URSSI 2019 Winter School!\nChair, SciPy conference (2020-present)\nActive in US Research Software Engineer Association"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#acknowledgements",
+    "href": "package_structure-revealjs.html#acknowledgements",
+    "title": "(re)introducing Python packaging",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\n\nThe previous versions of this module!\nPython packaging 101 tutorial from pyOpenSci: https://www.pyopensci.org/python-package-guide/tutorials/intro.html#python-packaging-101\nPython Packages: https://py-pkgs.org/\nScientific Python packaging guide: https://learn.scientific-python.org/development/tutorials/packaging/\nPython Packaging User Guide: https://packaging.python.org/en/latest/"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#outline-questions",
+    "href": "package_structure-revealjs.html#outline-questions",
+    "title": "(re)introducing Python packaging",
+    "section": "Outline / Questions",
+    "text": "Outline / Questions\n(The answers come later)\n\nWhat is a Python package?\nWhy would I make a Python package?\nHow do I turn my code into a Python package that I can import?\nHow do I publish my Python package so others can pip install it?\nWhat do I need to develop and maintain a Python package, besides code?"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#what-is-a-python-package",
+    "href": "package_structure-revealjs.html#what-is-a-python-package",
+    "title": "(re)introducing Python packaging",
+    "section": "What is a Python package?",
+    "text": "What is a Python package?\nFirst, let’s define module\nhttps://docs.python.org/3/glossary.html#term-module\n\nModule: An object that serves an organizational unit of python code. Modules have a namespace containing arbitrary python objects. Modules are loaded into Python by the process of importing"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#section",
+    "href": "package_structure-revealjs.html#section",
+    "title": "(re)introducing Python packaging",
+    "section": "",
+    "text": "Deconstructing that definition:\n\nWhen I write import modulename I am loading a module\n\nBut we also talk about “importing a package”!\nThis seems to imply a package is a kind of module"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#aside-why-does-python-have-modules",
+    "href": "package_structure-revealjs.html#aside-why-does-python-have-modules",
+    "title": "(re)introducing Python packaging",
+    "section": "Aside: why does Python have modules?",
+    "text": "Aside: why does Python have modules?\nBecause it’s good for your code to be modular.\n\nImage credit: https://realpython.com/python-modules-packages/"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#where-do-modules-come-from",
+    "href": "package_structure-revealjs.html#where-do-modules-come-from",
+    "title": "(re)introducing Python packaging",
+    "section": "Where do modules come from?",
+    "text": "Where do modules come from?\n\nThe standard library\n\nPython code\nCompiled C code\n\nA local file that ends in .py\n\n(confusingly, also called a “module”)\n\nThird-party libraries that you pip install or conda install\n\ni.e., packages\n\nA local package (we’re getting to this)"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#what-is-a-python-package-1",
+    "href": "package_structure-revealjs.html#what-is-a-python-package-1",
+    "title": "(re)introducing Python packaging",
+    "section": "What is a Python package?",
+    "text": "What is a Python package?\nOk, now that we spent all that time defining module, we can finally define package\n“A Python module which can contain submodules or recursively, subpackages.”\nhttps://docs.python.org/3/glossary.html#term-package"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#package-can-have-multiple-meanings",
+    "href": "package_structure-revealjs.html#package-can-have-multiple-meanings",
+    "title": "(re)introducing Python packaging",
+    "section": "“Package” can have multiple meanings!",
+    "text": "“Package” can have multiple meanings!\nTwo main usages:\nhttps://packaging.python.org/en/latest/discussions/distribution-package-vs-import-package/"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#two-types-of-packages-import-package",
+    "href": "package_structure-revealjs.html#two-types-of-packages-import-package",
+    "title": "(re)introducing Python packaging",
+    "section": "Two types of packages: import package",
+    "text": "Two types of packages: import package\nThis is the one we already talked about\nThe thing you get when you write import packagename in your code\nWe’re going to show you how to make one of these first"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#two-types-of-packages-distribution-package",
+    "href": "package_structure-revealjs.html#two-types-of-packages-distribution-package",
+    "title": "(re)introducing Python packaging",
+    "section": "Two types of packages: distribution package",
+    "text": "Two types of packages: distribution package\nThe actual artifact that gets downloaded off the internet and stored on your computer somewhere\nlike when you run pip install package\nWe need to learn how to make one of these too!"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#why-would-i-make-a-python-package",
+    "href": "package_structure-revealjs.html#why-would-i-make-a-python-package",
+    "title": "(re)introducing Python packaging",
+    "section": "Why would I make a Python package?",
+    "text": "Why would I make a Python package?"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#section-1",
+    "href": "package_structure-revealjs.html#section-1",
+    "title": "(re)introducing Python packaging",
+    "section": "",
+    "text": "Fame, glory\n$$$\nPor amor al arte"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#when-should-i-turn-my-code-into-a-package",
+    "href": "package_structure-revealjs.html#when-should-i-turn-my-code-into-a-package",
+    "title": "(re)introducing Python packaging",
+    "section": "When should I turn my code into a package?",
+    "text": "When should I turn my code into a package?\nTwo common cases for research code:\n\nCode that goes with a research article\n\nmainly used to reproduce the results\nAKA a (computational) project or a research compendium\n\nA generalized tool or library that other researchers can use"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#packaging-code-for-a-paper",
+    "href": "package_structure-revealjs.html#packaging-code-for-a-paper",
+    "title": "(re)introducing Python packaging",
+    "section": "Packaging code for a paper",
+    "text": "Packaging code for a paper\n\nYou have multiple scripts that use the same function\nSo you want to be able to import that function\nIt’s sufficient for you to make an “import package” you use in scripts (e.g., in a Jupyter notebook)"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#to-share-a-generalized-tool",
+    "href": "package_structure-revealjs.html#to-share-a-generalized-tool",
+    "title": "(re)introducing Python packaging",
+    "section": "To share a generalized tool",
+    "text": "To share a generalized tool\nThis is what we’re here (mostly) to learn about!\nThis is when we want to make a “distribution package” too!\n\nYou want people to be able to pip install awesometool"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#how-do-i-turn-my-code-into-a-python-package-i-can-import",
+    "href": "package_structure-revealjs.html#how-do-i-turn-my-code-into-a-python-package-i-can-import",
+    "title": "(re)introducing Python packaging",
+    "section": "How do I turn my code into a Python package I can import?",
+    "text": "How do I turn my code into a Python package I can import?"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#the-structure-of-a-python-package",
+    "href": "package_structure-revealjs.html#the-structure-of-a-python-package",
+    "title": "(re)introducing Python packaging",
+    "section": "The structure of a Python package",
+    "text": "The structure of a Python package\nThe simplest possible Python package\n\nA directory with a single file in it named __init__.py\n\nThe file can be empty\n\nThe __init__.py file tells Python that “this directory is a package"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#how-can-i-import-my-own-code",
+    "href": "package_structure-revealjs.html#how-can-i-import-my-own-code",
+    "title": "(re)introducing Python packaging",
+    "section": "How can I import my own code?",
+    "text": "How can I import my own code?\nThis is enough for me to be able to import the package\nas long as I’m in the right directory\n\nThe same is true for any module:\n(by which we mean a file that ends in .py)\nI can import it if I’m in the right directory"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#how-do-i-make-it-so-i-can-import-a-module",
+    "href": "package_structure-revealjs.html#how-do-i-make-it-so-i-can-import-a-module",
+    "title": "(re)introducing Python packaging",
+    "section": "How do I make it so I can import a module?",
+    "text": "How do I make it so I can import a module?\nThis is the bare minimum pyproject.toml file for our simple module"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#what-is-a-toml-file",
+    "href": "package_structure-revealjs.html#what-is-a-toml-file",
+    "title": "(re)introducing Python packaging",
+    "section": "What is a TOML file?",
+    "text": "What is a TOML file?\n\n\n“Tom’s Obvious Minimal Language”: https://toml.io/en/\n\n“A [configuration] file format for humans”\n\nUsed in other ecosystems\nNice because parsers map to native type"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#anatomy-of-a-toml-file",
+    "href": "package_structure-revealjs.html#anatomy-of-a-toml-file",
+    "title": "(re)introducing Python packaging",
+    "section": "Anatomy of a TOML file",
+    "text": "Anatomy of a TOML file\n\n\n\nthe spec: https://toml.io/en/v1.0.0"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#ok-i-have-a-pyproject.toml-file-now-what",
+    "href": "package_structure-revealjs.html#ok-i-have-a-pyproject.toml-file-now-what",
+    "title": "(re)introducing Python packaging",
+    "section": "Ok, I have a pyproject.toml file, now what?",
+    "text": "Ok, I have a pyproject.toml file, now what?\nNow just\n\nnavigate to the directory where your module lives\nactivate your virtual environment\ntype pip install .\nnow you can import it!"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#a-slightly-more-complicated-python-package",
+    "href": "package_structure-revealjs.html#a-slightly-more-complicated-python-package",
+    "title": "(re)introducing Python packaging",
+    "section": "A (slightly) more complicated Python package",
+    "text": "A (slightly) more complicated Python package\n\nScenario: Samspon is a computational dog scientist.\nSampson has a set of functions they are using across all their projects, so they wrap them up in a package, dogpy\n\n\n\nwww.rexspecs.com/blogs/news/sampson-the-lab-dog-tests-the-boundaries-of-science"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#why-src",
+    "href": "package_structure-revealjs.html#why-src",
+    "title": "(re)introducing Python packaging",
+    "section": "Why src?",
+    "text": "Why src?\n\nSo you don’t accidentally import the local package when you want to run tests on the distribution package\nAesthetics: it looks better to have “src”, “docs”, “tests”"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#the-package-itself",
+    "href": "package_structure-revealjs.html#the-package-itself",
+    "title": "(re)introducing Python packaging",
+    "section": "The package itself",
+    "text": "The package itself\n\nWe have the dogpy dir\nIt contains one module (by which I mean a .py file): bark.py\nIt also contains another directory! The elusive sub-package. Namely, fetch.\nThe fetch sub-package contains two other modules: ball.py and bone.py"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#why-__init__.py-anyways",
+    "href": "package_structure-revealjs.html#why-__init__.py-anyways",
+    "title": "(re)introducing Python packaging",
+    "section": "Why __init__.py anyways?",
+    "text": "Why __init__.py anyways?\n\nIt initializes your module\nYou import modules, functions, etc., here\nso that your users can get what they need from your package’s namespace"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#how-should-i-structure-my-python-package",
+    "href": "package_structure-revealjs.html#how-should-i-structure-my-python-package",
+    "title": "(re)introducing Python packaging",
+    "section": "How should I structure my Python package?",
+    "text": "How should I structure my Python package?\n\nShort version: “flat is better than nested”\n\nYour users want to write package.function, not package.subpackage.subsubpackage.subsubsubpackage.function\nBut having one level of sub-packages can help with readability\nMost scientific Python packages have a set of sub-packages, each containing functions:\n\nnumpy.random.default_rng\nsklearn.model_selection.test_train_split\n\nYour package’s code ≠ your package’s namespace! You control the namespace with imports!\n\nLong version:\n\nhttps://benhoyt.com/writings/python-api-design/\nhttp://blog.nicholdav.info/four-tips-structuring-research-python/"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#how-do-i-publish-my-package-so-others-can-pip-install-it",
+    "href": "package_structure-revealjs.html#how-do-i-publish-my-package-so-others-can-pip-install-it",
+    "title": "(re)introducing Python packaging",
+    "section": "How do I publish my package so others can pip install it?",
+    "text": "How do I publish my package so others can pip install it?"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#how-do-i-publish-my-package",
+    "href": "package_structure-revealjs.html#how-do-i-publish-my-package",
+    "title": "(re)introducing Python packaging",
+    "section": "How do I publish my package?",
+    "text": "How do I publish my package?\nNow we need a distribution package.\nWe also need to define some more terms so that the rest of this make sense."
+  },
+  {
+    "objectID": "package_structure-revealjs.html#what-about-setup.py",
+    "href": "package_structure-revealjs.html#what-about-setup.py",
+    "title": "(re)introducing Python packaging",
+    "section": "What about setup.py?",
+    "text": "What about setup.py?\n\nIt used to be the case that all distributions were built with a setup.py file\nThere was only one tool that did this: setuptools\nNow: pure Python projects don’t need a setup.py file It’s better\n\n\nThe long version:\nhttps://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#distribution-packages-frontends-and-backends",
+    "href": "package_structure-revealjs.html#distribution-packages-frontends-and-backends",
+    "title": "(re)introducing Python packaging",
+    "section": "Distribution packages: frontends and backends",
+    "text": "Distribution packages: frontends and backends\nTo move away from setup.py and setuptools, PEP 517 introduced the idea of “front-ends” and “back-ends”\nhttps://peps.python.org/pep-0517/\nMostly you shouldn’t have to think about this.\nBut in your pyproject.toml file you will specify a “build backend”.\nThat’s the tool that knows how to take your “source tree” and make a distribution package."
+  },
+  {
+    "objectID": "package_structure-revealjs.html#distribution-packages-formats",
+    "href": "package_structure-revealjs.html#distribution-packages-formats",
+    "title": "(re)introducing Python packaging",
+    "section": "Distribution packages: formats",
+    "text": "Distribution packages: formats\n“Build backends” (always) make two types of distribution packages:\na source distribution (“sdist”), and wheels\nhttps://packaging.python.org/en/latest/discussions/package-formats/"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#how-do-i-publish-my-package-1",
+    "href": "package_structure-revealjs.html#how-do-i-publish-my-package-1",
+    "title": "(re)introducing Python packaging",
+    "section": "How do I publish my package?",
+    "text": "How do I publish my package?\nTo-do list:\n\nAdd metadata to our pyproject.toml file\n\nBuild backend\nThe metadata that will show up on PyPI\n\nBuild your distribution package\nPublish the distribution package to PyPI"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#python-packaging-feels-like-a-lot-of-work",
+    "href": "package_structure-revealjs.html#python-packaging-feels-like-a-lot-of-work",
+    "title": "(re)introducing Python packaging",
+    "section": "Python packaging feels like a lot of work!",
+    "text": "Python packaging feels like a lot of work!\n“I have to write this pyproject.toml file by hand, make and virtual environments, and I don’t even know how much work it will take to build a distribution package yet…”\nGood news!\nThere are packaging tools that will do a lot of this work for you!"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#python-packaging-feels-like-a-lot-of-work-1",
+    "href": "package_structure-revealjs.html#python-packaging-feels-like-a-lot-of-work-1",
+    "title": "(re)introducing Python packaging",
+    "section": "Python packaging feels like a lot of work!",
+    "text": "Python packaging feels like a lot of work!\nThe not so good news: there are many different tools\nhttps://pradyunsg.me/blog/2023/01/21/thoughts-on-python-packaging/\nHere’s two options:\n\nLightweight: flit– https://flit.pypa.io/en/stable/\nSwiss army knife: hatch – https://hatch.pypa.io/"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#pyproject.toml-metadata-build-system",
+    "href": "package_structure-revealjs.html#pyproject.toml-metadata-build-system",
+    "title": "(re)introducing Python packaging",
+    "section": "pyproject.toml metadata: [build-system]",
+    "text": "pyproject.toml metadata: [build-system]\nTo build our distribution package, we need a build system.\nWe declare this in a build-system table."
+  },
+  {
+    "objectID": "package_structure-revealjs.html#pyproject.toml-project-metadata",
+    "href": "package_structure-revealjs.html#pyproject.toml-project-metadata",
+    "title": "(re)introducing Python packaging",
+    "section": "pyproject.toml project metadata",
+    "text": "pyproject.toml project metadata\n\n\nGood explainer in flit docs:\nhttps://flit.pypa.io/en/latest/ pyproject_toml.html#new-style-metadata"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#aside-python-requires-and-dependencies",
+    "href": "package_structure-revealjs.html#aside-python-requires-and-dependencies",
+    "title": "(re)introducing Python packaging",
+    "section": "Aside: python-requires and dependencies",
+    "text": "Aside: python-requires and dependencies\n\nYou should know about SPEC0, that specifies what versions of Python the core scientific packages work with: https://scientific-python.org/specs/spec-0000/\nUsually you don’t want to put upper bounds (&gt;3.6, &lt;4.0) on Python or your dependencies: https://iscinumpy.dev/post/bound-version-constraints/"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#building-distribution-packages",
+    "href": "package_structure-revealjs.html#building-distribution-packages",
+    "title": "(re)introducing Python packaging",
+    "section": "Building distribution packages",
+    "text": "Building distribution packages\nMost packaging tools have some sort of build command"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#publishing-to-pypi",
+    "href": "package_structure-revealjs.html#publishing-to-pypi",
+    "title": "(re)introducing Python packaging",
+    "section": "Publishing to PyPI",
+    "text": "Publishing to PyPI\nMost packaging tools have some sort of publish command"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#what-do-i-need-to-develop-and-maintain-a-python-package-besides-code",
+    "href": "package_structure-revealjs.html#what-do-i-need-to-develop-and-maintain-a-python-package-besides-code",
+    "title": "(re)introducing Python packaging",
+    "section": "What do I need to develop and maintain a Python package, besides code?",
+    "text": "What do I need to develop and maintain a Python package, besides code?"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#what-else-do-i-need-besides-code",
+    "href": "package_structure-revealjs.html#what-else-do-i-need-besides-code",
+    "title": "(re)introducing Python packaging",
+    "section": "What else do I need besides code?",
+    "text": "What else do I need besides code?\nInfrastructure:\nAll the other stuff besides code that makes it easier for\n\nyou to develop and maintain your package\nothers to use your package, give you feedback, and contribute"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#readme",
+    "href": "package_structure-revealjs.html#readme",
+    "title": "(re)introducing Python packaging",
+    "section": "README",
+    "text": "README\n\n\n\nOften the first thing people see\nGitHub shows this by default -www.makeareadme.com/"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#license",
+    "href": "package_structure-revealjs.html#license",
+    "title": "(re)introducing Python packaging",
+    "section": "LICENSE",
+    "text": "LICENSE\nYou are giving other people permission to use your code\n\nhttps://choosealicense.com/\nMIT and BSD are common for open source scientific software\nMore on this later!"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#code-of-conduct",
+    "href": "package_structure-revealjs.html#code-of-conduct",
+    "title": "(re)introducing Python packaging",
+    "section": "Code of conduct",
+    "text": "Code of conduct\n\nEstablishes expectations for behavior\nHelps create inclusive community\nhttps://opensource.guide/code-of-conduct/\nHighly suggest looking at other scientific Python projects: https://docs.scipy.org/doc/scipy/dev/conduct/ code_of_conduct.html#endnotes"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#changelog",
+    "href": "package_structure-revealjs.html#changelog",
+    "title": "(re)introducing Python packaging",
+    "section": "CHANGELOG",
+    "text": "CHANGELOG\nHuman-readable record of changes to your project\nhttps://keepachangelog.com/en/1.1.0/"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#issue-tracker",
+    "href": "package_structure-revealjs.html#issue-tracker",
+    "title": "(re)introducing Python packaging",
+    "section": "Issue tracker",
+    "text": "Issue tracker"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#continuous-integration",
+    "href": "package_structure-revealjs.html#continuous-integration",
+    "title": "(re)introducing Python packaging",
+    "section": "Continuous integration",
+    "text": "Continuous integration"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#docs-tests-etc.",
+    "href": "package_structure-revealjs.html#docs-tests-etc.",
+    "title": "(re)introducing Python packaging",
+    "section": "Docs, tests, etc.,",
+    "text": "Docs, tests, etc.,\nTo be discussed in later modules"
+  },
+  {
+    "objectID": "package_structure-revealjs.html#python-packaging-questions-comments",
+    "href": "package_structure-revealjs.html#python-packaging-questions-comments",
+    "title": "(re)introducing Python packaging",
+    "section": "Python packaging: Questions & Comments",
+    "text": "Python packaging: Questions & Comments"
   },
   {
     "objectID": "index.html",
