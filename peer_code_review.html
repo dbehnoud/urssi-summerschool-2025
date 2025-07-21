@@ -149,23 +149,26 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#peer-code-review" id="toc-peer-code-review" class="nav-link active" data-scroll-target="#peer-code-review">Peer code review</a>
+  <li><a href="#lesson-objectives" id="toc-lesson-objectives" class="nav-link active" data-scroll-target="#lesson-objectives">Lesson Objectives</a></li>
+  <li><a href="#code-review-best-practices" id="toc-code-review-best-practices" class="nav-link" data-scroll-target="#code-review-best-practices">Code review best practices</a>
   <ul class="collapse">
-  <li><a href="#lesson-objectives" id="toc-lesson-objectives" class="nav-link" data-scroll-target="#lesson-objectives">Lesson Objectives</a></li>
-  <li><a href="#code-review-best-practices" id="toc-code-review-best-practices" class="nav-link" data-scroll-target="#code-review-best-practices">Code review best practices</a></li>
   <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"></a></li>
   <li><a href="#what-is-code-review" id="toc-what-is-code-review" class="nav-link" data-scroll-target="#what-is-code-review">What is code review?</a></li>
   <li><a href="#code-review-as-a-reviewer" id="toc-code-review-as-a-reviewer" class="nav-link" data-scroll-target="#code-review-as-a-reviewer">Code review as a reviewer</a></li>
-  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"></a></li>
+  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2"></a></li>
   <li><a href="#other-considerations" id="toc-other-considerations" class="nav-link" data-scroll-target="#other-considerations">Other considerations</a></li>
   <li><a href="#dos-in-code-review" id="toc-dos-in-code-review" class="nav-link" data-scroll-target="#dos-in-code-review">Dos in code review</a></li>
   <li><a href="#donts-in-code-review" id="toc-donts-in-code-review" class="nav-link" data-scroll-target="#donts-in-code-review">Don’ts in code review</a></li>
   <li><a href="#tips-for-smoother-code-reviews-and-development-in-your-project" id="toc-tips-for-smoother-code-reviews-and-development-in-your-project" class="nav-link" data-scroll-target="#tips-for-smoother-code-reviews-and-development-in-your-project">Tips for smoother code reviews (and development!) in your project</a></li>
-  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2"></a></li>
+  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3"></a></li>
   <li><a href="#a-few-more-things" id="toc-a-few-more-things" class="nav-link" data-scroll-target="#a-few-more-things">A few more things</a></li>
   <li><a href="#code-review-as-a-contributordeveloper" id="toc-code-review-as-a-contributordeveloper" class="nav-link" data-scroll-target="#code-review-as-a-contributordeveloper">Code review as a contributor/developer</a></li>
   <li><a href="#my-approach" id="toc-my-approach" class="nav-link" data-scroll-target="#my-approach">My approach:</a></li>
-  <li><a href="#more-resources" id="toc-more-resources" class="nav-link" data-scroll-target="#more-resources">More Resources:</a></li>
+  </ul></li>
+  <li><a href="#more-resources" id="toc-more-resources" class="nav-link" data-scroll-target="#more-resources">More Resources:</a>
+  <ul class="collapse">
+  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4"></a></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="peer-code-review-revealjs.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
@@ -205,21 +208,21 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="peer-code-review" class="level1">
-<h1>Peer code review</h1>
-<section id="lesson-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="lesson-objectives">Lesson Objectives</h2>
+<section id="lesson-objectives" class="level1">
+<h1>Lesson Objectives</h1>
 <p>Summarize code review best practices</p>
 <p>Demonstrate code review on a pull request</p>
 </section>
-<section id="code-review-best-practices" class="level2">
-<h2 class="anchored" data-anchor-id="code-review-best-practices">Code review best practices</h2>
+<section id="code-review-best-practices" class="level1">
+<h1>Code review best practices</h1>
+<section id="section" class="level2 center">
+<h2 class="center anchored" data-anchor-id="section"></h2>
 <p>Code review, like peer review, enhances the quality of the work being submitted. All involved parties are collaborating to enhance the final product of the pull request.</p>
 <p>When performing code review, you are using your expertise to weigh in on a contribution. You aren’t going to have expertise on everything, but your experience in the code and using it is important and relevant to the reivew.</p>
 <p>As a person getting code reviewed, appreciate the reviewer taking time to give you feedback on your work! They are both/either invested and interested in the work you’re contributing.</p>
 </section>
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section"></h2>
+<section id="section-1" class="level2">
+<h2 class="anchored" data-anchor-id="section-1"></h2>
 <p>I’m going to be talking about a few different perspectives this morning. Let’s define them.</p>
 <p><strong>maintainer</strong> – a person who keeps things running in a software project. Sometimes maintainers aren’t focused on new features but instead focus on overall project infrastructure and usability.</p>
 <p><strong>contributor</strong> – a person submitting a PR, issue, or feedback to a project. They may have never interacted with the project, or maybe they do so frequently.</p>
@@ -237,8 +240,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Look through the code. Do I follow the logic of what’s being done? I ask questions if I don’t.</p>
 <p>Check the tests. Have tests been added for any new features? Do they cover the scope of the new feature? Do they help me understand the code in any way?</p>
 </section>
-<section id="section-1" class="level2 smaller center">
-<h2 class="smaller center anchored" data-anchor-id="section-1"></h2>
+<section id="section-2" class="level2 smaller center">
+<h2 class="smaller center anchored" data-anchor-id="section-2"></h2>
 <p>Consider the user. Is the API of the code changing from what already exists? Will it impact users significantly?</p>
 <p>Look through the code. Suggest constructive improvements. Do I see a lot of functionality that’s repeated that can be put into a single function? Do I see a place where a design pattern could be used? I try to add suggestions for improvement as code snippets.</p>
 <p>Try to use the feature. I don’t always do this, but for new features I do. Do I run into any errors when I use it? Does it make sense in my workflow?</p>
@@ -277,8 +280,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Having good test coverage and CI mean that the a new contributor gets automatic feedback on how their code fits into your project.</p>
 <p>This also allows for code reviewers to focus on code readability and applicability rather than helping the author debug.</p>
 </section>
-<section id="section-2" class="level2 smaller center">
-<h2 class="smaller center anchored" data-anchor-id="section-2"></h2>
+<section id="section-3" class="level2 smaller center">
+<h2 class="smaller center anchored" data-anchor-id="section-3"></h2>
 <p>Having good developer documentation (what linter and formatter do your code use? What is your docs style) helps make the contributor experience a bit less iterative.</p>
 <p>Having your issue tracker with clearly described issues helps people other than you understand what’s going on in the project.</p>
 <p>Labeling issues with things like good first issue and what type of fix the issue is (e.g.&nbsp;documentation, testing, or something feature-specific means that potential contributors can more easily choose a contribution they are comfortable with. This also ensures that the contribution somebody addresses from the issue tracker is relevant to the project.</p>
@@ -303,8 +306,11 @@ ul.task-list li input[type="checkbox"] {
 <li>Notify the reviewer once I’ve addressed all comments and all open discussions have been resolved.</li>
 </ul>
 </section>
-<section id="more-resources" class="level2">
-<h2 class="anchored" data-anchor-id="more-resources">More Resources:</h2>
+</section>
+<section id="more-resources" class="level1">
+<h1>More Resources:</h1>
+<section id="section-4" class="level2">
+<h2 class="anchored" data-anchor-id="section-4"></h2>
 <ul>
 <li><p><a href="https://google.github.io/eng-practices/review/reviewer/">https://google.github.io/eng-practices/review/reviewer/</a></p></li>
 <li><p><a href="https://stackoverflow.blog/2019/09/30/how-to-make-good-code-reviews-better/">https://stackoverflow.blog/2019/09/30/how-to-make-good-code-reviews-better/</a></p></li>

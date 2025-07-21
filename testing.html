@@ -184,28 +184,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#testing-and-continuous-integration" id="toc-testing-and-continuous-integration" class="nav-link active" data-scroll-target="#testing-and-continuous-integration">Testing and Continuous Integration</a>
+  <li><a href="#testing" id="toc-testing" class="nav-link active" data-scroll-target="#testing">Testing</a>
   <ul class="collapse">
-  <li><a href="#testing" id="toc-testing" class="nav-link" data-scroll-target="#testing">Testing</a></li>
   <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
   <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"></a></li>
-  <li><a href="#formatting" id="toc-formatting" class="nav-link" data-scroll-target="#formatting">Formatting</a></li>
+  </ul></li>
+  <li><a href="#formatting" id="toc-formatting" class="nav-link" data-scroll-target="#formatting">Formatting</a>
+  <ul class="collapse">
   <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2"></a></li>
-  <li><a href="#linting" id="toc-linting" class="nav-link" data-scroll-target="#linting">Linting</a></li>
+  </ul></li>
+  <li><a href="#linting" id="toc-linting" class="nav-link" data-scroll-target="#linting">Linting</a>
+  <ul class="collapse">
   <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3"></a></li>
   <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4"></a></li>
   <li><a href="#section-5" id="toc-section-5" class="nav-link" data-scroll-target="#section-5"></a></li>
-  <li><a href="#type-checking" id="toc-type-checking" class="nav-link" data-scroll-target="#type-checking">Type Checking</a></li>
+  </ul></li>
+  <li><a href="#type-checking" id="toc-type-checking" class="nav-link" data-scroll-target="#type-checking">Type Checking</a>
+  <ul class="collapse">
   <li><a href="#section-6" id="toc-section-6" class="nav-link" data-scroll-target="#section-6"></a></li>
   <li><a href="#section-7" id="toc-section-7" class="nav-link" data-scroll-target="#section-7"></a></li>
+  <li><a href="#section-8" id="toc-section-8" class="nav-link" data-scroll-target="#section-8"></a></li>
   </ul></li>
-  <li><a href="#section-8" id="toc-section-8" class="nav-link" data-scroll-target="#section-8"></a>
+  <li><a href="#section-9" id="toc-section-9" class="nav-link" data-scroll-target="#section-9"></a>
   <ul class="collapse">
-  <li><a href="#section-9" id="toc-section-9" class="nav-link" data-scroll-target="#section-9"></a></li>
-  <li><a href="#continuous-integration" id="toc-continuous-integration" class="nav-link" data-scroll-target="#continuous-integration">Continuous Integration</a></li>
   <li><a href="#section-10" id="toc-section-10" class="nav-link" data-scroll-target="#section-10"></a></li>
+  </ul></li>
+  <li><a href="#continuous-integration" id="toc-continuous-integration" class="nav-link" data-scroll-target="#continuous-integration">Continuous Integration</a>
+  <ul class="collapse">
   <li><a href="#section-11" id="toc-section-11" class="nav-link" data-scroll-target="#section-11"></a></li>
-  <li><a href="#everything-at-once" id="toc-everything-at-once" class="nav-link" data-scroll-target="#everything-at-once">Everything At Once</a></li>
+  <li><a href="#section-12" id="toc-section-12" class="nav-link" data-scroll-target="#section-12"></a></li>
+  </ul></li>
+  <li><a href="#everything-at-once" id="toc-everything-at-once" class="nav-link" data-scroll-target="#everything-at-once">Everything At Once</a>
+  <ul class="collapse">
   <li><a href="#credit" id="toc-credit" class="nav-link" data-scroll-target="#credit">Credit</a></li>
   </ul></li>
   </ul>
@@ -239,10 +249,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="testing-and-continuous-integration" class="level1">
-<h1>Testing and Continuous Integration</h1>
-<section id="testing" class="level2">
-<h2 class="anchored" data-anchor-id="testing">Testing</h2>
+<section id="testing" class="level1">
+<h1>Testing</h1>
 <p>Testing consist in writing small functions that test:</p>
 <ul>
 <li><p>whether small units of your code function as expected</p></li>
@@ -253,7 +261,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="fragment">
 <p>Running your tests allow checking that new changes to the code base did not break anything in your code (at least what your are testing for!).</p>
 </div>
-</section>
 <section id="section" class="level2 center">
 <h2 class="center anchored" data-anchor-id="section"></h2>
 <p><strong>As you write tests, you get to experience what it takes to use your library and this might lead you to refactor parts of your code; refactoring is an important part of a software life-cycle!</strong></p>
@@ -264,8 +271,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><a href="https://github.com/evamaxfield/winter-school-lectures/pull/2">testing-pr on repo</a></p>
 <p>Eva reminder to set local branch to: <code>just-testing</code></p>
 </section>
-<section id="formatting" class="level2">
-<h2 class="anchored" data-anchor-id="formatting">Formatting</h2>
+</section>
+<section id="formatting" class="level1">
+<h1>Formatting</h1>
 <p>Formatting does two things:</p>
 <ol type="1">
 <li>Stops all the arguments about: tabs vs spaces, new lines in the middle of operations, etc. NO MORE STUPID ARGUMENTS!</li>
@@ -276,21 +284,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol start="2" type="1">
 <li>Keeps a consistent style across the whole project. Whether you wrote the code or someone else, it will look the same.</li>
 </ol>
-</section>
 <section id="section-2" class="level2 center">
 <h2 class="center anchored" data-anchor-id="section-2"></h2>
 <p>How to format your code:</p>
 <p><a href="https://github.com/evamaxfield/winter-school-lectures/pull/3">formatting-pr on repo</a></p>
 <p>Eva reminder to set local branch to: <code>just-formating</code></p>
 </section>
-<section id="linting" class="level2 center">
-<h2 class="center anchored" data-anchor-id="linting">Linting</h2>
+</section>
+<section id="linting" class="level1 center">
+<h1 class="center">Linting</h1>
 <p>Formatting focuses on directly changing the code to some “standard” style. Linting looks for common problems in the code, common bugs for example.</p>
 <p>A nice example of the difference is that formatting won’t change the following:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> package_a <span class="im">import</span> foo</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> package_b <span class="im">import</span> bar</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> package_a <span class="im">import</span> foo, baz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
 <section id="section-3" class="level2 center">
 <h2 class="center anchored" data-anchor-id="section-3"></h2>
 <p>But linting should inform you (if not automatically fix) that foo from package_a is imported twice and a nicer import block should look like:</p>
@@ -309,14 +316,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><a href="https://github.com/evamaxfield/winter-school-lectures/pull/4">linting-pr on repo</a></p>
 <p>Eva reminder to set local branch to <code>just-linting</code></p>
 </section>
-<section id="type-checking" class="level2">
-<h2 class="anchored" data-anchor-id="type-checking">Type Checking</h2>
+</section>
+<section id="type-checking" class="level1">
+<h1>Type Checking</h1>
+<section id="section-6" class="level2">
+<h2 class="anchored" data-anchor-id="section-6"></h2>
 <p>Type checking is the most thorough analysis of your code you can do before you even run it.</p>
 <p>Python added <strong>optional</strong> types in version 3.5. At first they were simply for analysis of the code prior to running to check for even more bugs and possible error cases but in the latest versions of Python, they are now being used to speed up your programs.</p>
 <p>They can be annoying to add and work with. Very annoying, because they are optional in the language so there is a lot of hacky ways they can be manipulated, but in my opinion they are entirely worth it.</p>
 </section>
-<section id="section-6" class="level2 center">
-<h2 class="center anchored" data-anchor-id="section-6"></h2>
+<section id="section-7" class="level2 center">
+<h2 class="center anchored" data-anchor-id="section-7"></h2>
 <p>Typing is handled by decorations in the code i.e.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> example(a):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Hello </span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">"</span>)</span>
@@ -374,8 +384,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_localizer_initialized(lang: <span class="bu">str</span>) <span class="op">-&gt;</span> Localizer:</span>
 <span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> localizers[lang]()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="section-7" class="level2">
-<h2 class="anchored" data-anchor-id="section-7"></h2>
+<section id="section-8" class="level2">
+<h2 class="anchored" data-anchor-id="section-8"></h2>
 <p>Some tips / don’t worry too much…</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> dataclasses <span class="im">import</span> dataclass</span>
@@ -405,7 +415,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>PersonDetails(name<span class="op">=</span><span class="st">'Eva Maxfield Brown'</span>, age<span class="op">=</span><span class="dv">28</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="section-8" class="level1 center">
+<section id="section-9" class="level1 center">
 <h1 class="center"></h1>
 <p>It is hard to learn but do practice using it. It will make writing code easier the more you do it as it will check a lot of assumptions for you.</p>
 <p>Some resources to continue learning / lookup in the future:</p>
@@ -413,34 +423,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="https://docs.python.org/3.11/library/typing.html">standard library docs</a></li>
 <li><a href="https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html">typing cheatsheet from mypy</a></li>
 </ul>
-<section id="section-9" class="level2 center">
-<h2 class="center anchored" data-anchor-id="section-9"></h2>
+<section id="section-10" class="level2 center">
+<h2 class="center anchored" data-anchor-id="section-10"></h2>
 <p>How to type check your code:</p>
 <p><a href="https://github.com/evamaxfield/winter-school-lectures/pull/5">type-checking-pr on repo</a></p>
 <p>Eva reminder to set local branch to <code>just-type-checking</code></p>
 </section>
-<section id="continuous-integration" class="level2">
-<h2 class="anchored" data-anchor-id="continuous-integration">Continuous Integration</h2>
+</section>
+<section id="continuous-integration" class="level1">
+<h1>Continuous Integration</h1>
 <p>Continuous Integration (CI) is meant to reduce or remove bugs entering code over time. Whether the code base is changing (new features, bug fixes, etc.) or upstream dependencies are changing (new releases).</p>
 <p>The main idea is that by checking your tests, formatting, linting, and types for each commit / PR you we know that nothing is breaking.</p>
 <p>If something does break, you know the exact commit / PR which broke something.</p>
-</section>
-<section id="section-10" class="level2 center">
-<h2 class="center anchored" data-anchor-id="section-10"></h2>
+<section id="section-11" class="level2 center">
+<h2 class="center anchored" data-anchor-id="section-11"></h2>
 <p>Further, it allows you to test on more machine setups than your own. For example, I have a MacOS laptop and a Linux desktop and I use Python 3.11 on both. But I have users who use Windows and Python 3.9.</p>
 <p>CI systems (GitHub Actions, GitLab CI/CD, Azure Pipelines, etc.) allow you to run the same suite of tests across all of these machines setups.</p>
 <p>Fortunately, once you have testing, formatting, linting, and type-checking setup locally, it is pretty easy to add CI to your repo!</p>
 </section>
-<section id="section-11" class="level2 center">
-<h2 class="center anchored" data-anchor-id="section-11"></h2>
+<section id="section-12" class="level2 center">
+<h2 class="center anchored" data-anchor-id="section-12"></h2>
 <p>How to add CI to your repo:</p>
 <p><a href="https://github.com/evamaxfield/winter-school-lectures/pull/6">ci-pr on repo</a></p>
 <p>Eva reminder to set local branch to <code>just-ci</code></p>
 </section>
-<section id="everything-at-once" class="level2 center">
-<h2 class="center anchored" data-anchor-id="everything-at-once">Everything At Once</h2>
-<p>A pull request (PR) which has everything we just talked about together: <a href="https://github.com/evamaxfield/winter-school-lectures/pull/1">https://github.com/evamaxfield/winter-school-lectures/pull/1</a></p>
 </section>
+<section id="everything-at-once" class="level1 center">
+<h1 class="center">Everything At Once</h1>
+<p>A pull request (PR) which has everything we just talked about together: <a href="https://github.com/evamaxfield/winter-school-lectures/pull/1">https://github.com/evamaxfield/winter-school-lectures/pull/1</a></p>
 <section id="credit" class="level2 center">
 <h2 class="center anchored" data-anchor-id="credit">Credit</h2>
 <p>Much of the written content came directly from <a href="https://pydev-guide.github.io/">https://pydev-guide.github.io/</a>.</p>

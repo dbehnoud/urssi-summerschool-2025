@@ -205,8 +205,8 @@ Ana Trišović
 
 </section>
 <section>
-<section id="testing-and-continuous-integration" class="title-slide slide level1 center">
-<h1>Testing and Continuous Integration</h1>
+<section id="intro" class="title-slide slide level1 center">
+<h1>Intro</h1>
 
 </section>
 <section id="structure" class="slide level2">
@@ -220,9 +220,10 @@ Ana Trišović
 <p>This is somewhat ‘expected knowledge’ for software devs but not typically for scientists. If you understand testing and continuous integration (CI) configuration well enough, it will increase your salary offers in industry.</p>
 <p>Regardless of industry or academia, CI systems can be used for tons of different tasks including whole processing pipelines (for free***)</p>
 <p><em>please don’t abuse CI systems, i am trying to get a job at GitHub research and I don’t want them to be angry at me</em></p>
-</section>
-<section id="testing" class="slide level2">
-<h2>Testing</h2>
+</section></section>
+<section>
+<section id="testing" class="title-slide slide level1 center">
+<h1>Testing</h1>
 <p>Testing consist in writing small functions that test:</p>
 <ul>
 <li class="fragment"><p>whether small units of your code function as expected</p></li>
@@ -243,9 +244,10 @@ Ana Trišović
 <p>How to write tests!</p>
 <p><a href="https://github.com/evamaxfield/winter-school-lectures/pull/2">testing-pr on repo</a></p>
 <p>Eva reminder to set local branch to: <code>just-testing</code></p>
-</section>
-<section id="formatting" class="slide level2">
-<h2>Formatting</h2>
+</section></section>
+<section>
+<section id="formatting" class="title-slide slide level1 center">
+<h1>Formatting</h1>
 <p>Formatting does two things:</p>
 <ol type="1">
 <li class="fragment">Stops all the arguments about: tabs vs spaces, new lines in the middle of operations, etc. NO MORE STUPID ARGUMENTS!</li>
@@ -262,9 +264,10 @@ Ana Trišović
 <p>How to format your code:</p>
 <p><a href="https://github.com/evamaxfield/winter-school-lectures/pull/3">formatting-pr on repo</a></p>
 <p>Eva reminder to set local branch to: <code>just-formating</code></p>
-</section>
-<section id="linting" class="slide level2 center">
-<h2>Linting</h2>
+</section></section>
+<section>
+<section id="linting" class="title-slide slide level1 center">
+<h1>Linting</h1>
 <p>Formatting focuses on directly changing the code to some “standard” style. Linting looks for common problems in the code, common bugs for example.</p>
 <p>A nice example of the difference is that formatting won’t change the following:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> package_a <span class="im">import</span> foo</span>
@@ -288,14 +291,19 @@ Ana Trišović
 <p>How to lint your code:</p>
 <p><a href="https://github.com/evamaxfield/winter-school-lectures/pull/4">linting-pr on repo</a></p>
 <p>Eva reminder to set local branch to <code>just-linting</code></p>
+</section></section>
+<section>
+<section id="type-checking" class="title-slide slide level1 center">
+<h1>Type Checking</h1>
+
 </section>
-<section id="type-checking" class="slide level2">
-<h2>Type Checking</h2>
+<section id="section-6" class="slide level2">
+<h2></h2>
 <p>Type checking is the most thorough analysis of your code you can do before you even run it.</p>
 <p>Python added <strong>optional</strong> types in version 3.5. At first they were simply for analysis of the code prior to running to check for even more bugs and possible error cases but in the latest versions of Python, they are now being used to speed up your programs.</p>
 <p>They can be annoying to add and work with. Very annoying, because they are optional in the language so there is a lot of hacky ways they can be manipulated, but in my opinion they are entirely worth it.</p>
 </section>
-<section id="section-6" class="slide level2 center">
+<section id="section-7" class="slide level2 center">
 <h2></h2>
 <p>Typing is handled by decorations in the code i.e.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> example(a):</span>
@@ -358,7 +366,7 @@ Ana Trišović
 <span id="cb5-22"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_localizer_initialized(lang: <span class="bu">str</span>) <span class="op">-&gt;</span> Localizer:</span>
 <span id="cb5-23"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> localizers[lang]()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="section-7" class="slide level2">
+<section id="section-8" class="slide level2">
 <h2></h2>
 <p>Some tips / don’t worry too much…</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -389,7 +397,7 @@ Ana Trišović
 <span id="cb6-26"><a aria-hidden="true" tabindex="-1"></a>PersonDetails(name<span class="op">=</span><span class="st">'Eva Maxfield Brown'</span>, age<span class="op">=</span><span class="dv">28</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section>
 <section>
-<section id="section-8" class="title-slide slide level1 center">
+<section id="section-9" class="title-slide slide level1 center">
 <h1></h1>
 <p>It is hard to learn but do practice using it. It will make writing code easier the more you do it as it will check a lot of assumptions for you.</p>
 <p>Some resources to continue learning / lookup in the future:</p>
@@ -398,32 +406,34 @@ Ana Trišović
 <li class="fragment"><a href="https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html">typing cheatsheet from mypy</a></li>
 </ul>
 </section>
-<section id="section-9" class="slide level2 center">
+<section id="section-10" class="slide level2 center">
 <h2></h2>
 <p>How to type check your code:</p>
 <p><a href="https://github.com/evamaxfield/winter-school-lectures/pull/5">type-checking-pr on repo</a></p>
 <p>Eva reminder to set local branch to <code>just-type-checking</code></p>
-</section>
-<section id="continuous-integration" class="slide level2">
-<h2>Continuous Integration</h2>
+</section></section>
+<section>
+<section id="continuous-integration" class="title-slide slide level1 center">
+<h1>Continuous Integration</h1>
 <p>Continuous Integration (CI) is meant to reduce or remove bugs entering code over time. Whether the code base is changing (new features, bug fixes, etc.) or upstream dependencies are changing (new releases).</p>
 <p>The main idea is that by checking your tests, formatting, linting, and types for each commit / PR you we know that nothing is breaking.</p>
 <p>If something does break, you know the exact commit / PR which broke something.</p>
 </section>
-<section id="section-10" class="slide level2 center">
+<section id="section-11" class="slide level2 center">
 <h2></h2>
 <p>Further, it allows you to test on more machine setups than your own. For example, I have a MacOS laptop and a Linux desktop and I use Python 3.11 on both. But I have users who use Windows and Python 3.9.</p>
 <p>CI systems (GitHub Actions, GitLab CI/CD, Azure Pipelines, etc.) allow you to run the same suite of tests across all of these machines setups.</p>
 <p>Fortunately, once you have testing, formatting, linting, and type-checking setup locally, it is pretty easy to add CI to your repo!</p>
 </section>
-<section id="section-11" class="slide level2 center">
+<section id="section-12" class="slide level2 center">
 <h2></h2>
 <p>How to add CI to your repo:</p>
 <p><a href="https://github.com/evamaxfield/winter-school-lectures/pull/6">ci-pr on repo</a></p>
 <p>Eva reminder to set local branch to <code>just-ci</code></p>
-</section>
-<section id="everything-at-once" class="slide level2 center">
-<h2>Everything At Once</h2>
+</section></section>
+<section>
+<section id="everything-at-once" class="title-slide slide level1 center">
+<h1>Everything At Once</h1>
 <p>A pull request (PR) which has everything we just talked about together: <a href="https://github.com/evamaxfield/winter-school-lectures/pull/1">https://github.com/evamaxfield/winter-school-lectures/pull/1</a></p>
 </section>
 <section id="credit" class="slide level2 center">

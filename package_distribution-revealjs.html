@@ -208,8 +208,8 @@ Matthew Feickert
 
 </section>
 <section>
-<section id="package-distribution" class="title-slide slide level1 center">
-<h1>Package distribution</h1>
+<section id="reusable-science" class="title-slide slide level1 center">
+<h1>Reusable science</h1>
 
 </section>
 <section id="my-motivations-on-this-topic" class="slide level2">
@@ -292,9 +292,14 @@ examples/edit_sys_path
 <li class="fragment">But we can do much better!</li>
 </ul>
 </div>
+</section></section>
+<section>
+<section id="next-steps-packaging-your-code" class="title-slide slide level1 center">
+<h1>Next steps: Packaging your code</h1>
+
 </section>
-<section id="next-steps-packaging-your-code" class="slide level2">
-<h2>Next steps: Packaging your code</h2>
+<section id="section-1" class="slide level2">
+<h2></h2>
 <ul>
 <li class="fragment"><p>Real emphasis is just that your code is now installable</p>
 <ul>
@@ -307,7 +312,7 @@ examples/edit_sys_path
 <p><code>There should be one-- and preferably only one --obvious way to do it.</code> <code>Although that way may not be obvious at first unless you're Dutch.</code></p>
 </div>
 </section>
-<section id="section-1" class="slide level2 center">
+<section id="section-2" class="slide level2 center">
 <h2></h2>
 <p>Maybe not so much. :(</p>
 
@@ -370,7 +375,7 @@ examples/simple_packaging
 <p>“TOML aims to be a <strong>minimal configuration file format</strong> that’s easy to read due to obvious semantics. TOML is designed to map unambiguously to a hash table. TOML should be <strong>easy to parse into data structures</strong> in a wide variety of languages.” — https://toml.io/ (emphasis mine)</p>
 <p>In recent years TOML has seen a rise in popularity for configuration files and lock files. Things that need to be easy to read (humans) and easy to parse (machines).</p>
 </section>
-<section id="section-2" class="slide level2 center">
+<section id="section-3" class="slide level2 center">
 <h2></h2>
 <p>Defining how your project should get <strong>built</strong></p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>[build<span class="op">-</span>system]</span>
@@ -478,7 +483,7 @@ examples/compiled_packaging
 
 3 directories, 8 files</code></pre>
 </section>
-<section id="section-3" class="slide level2 center">
+<section id="section-4" class="slide level2 center">
 <h2></h2>
 <p><code>pyproject.toml:</code></p>
 <p>Swap build system to <a href="https://scikit-build-core.readthedocs.io/">scikit-build-core</a> + <a href="https://github.com/pybind/pybind11">pybind11</a></p>
@@ -490,7 +495,7 @@ examples/compiled_packaging
 <span id="cb14-6"><a aria-hidden="true" tabindex="-1"></a>build<span class="op">-</span>backend <span class="op">=</span> <span class="st">"scikit_build_core.build"</span></span>
 <span id="cb14-7"><a aria-hidden="true" tabindex="-1"></a>...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="section-4" class="slide level2 center">
+<section id="section-5" class="slide level2 center">
 <h2></h2>
 <p><a href="https://cliutils.gitlab.io/modern-cmake/">CMakeLists.txt</a>:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Specify CMake version and project language</span></span>
@@ -503,7 +508,7 @@ examples/compiled_packaging
 <span id="cb15-8"><a aria-hidden="true" tabindex="-1"></a>pybind11_add_module(basic_math MODULE src<span class="op">/</span>basic_math.cpp)</span>
 <span id="cb15-9"><a aria-hidden="true" tabindex="-1"></a>install(TARGETS basic_math DESTINATION ${SKBUILD_PROJECT_NAME})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="section-5" class="slide level2 center">
+<section id="section-6" class="slide level2 center">
 <h2></h2>
 <p><code>src/basic_math.cpp:</code></p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">#include &lt;pybind11/pybind11.h&gt;</span></span>
@@ -529,9 +534,14 @@ Successfully installed rosen-cpp-0.0.1</code></pre>
 <div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rosen_cpp <span class="im">import</span> basic_math</span>
 <span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a>basic_math.add(<span class="dv">1</span>, <span class="dv">2</span>)</span>
 <span id="cb18-3"><a aria-hidden="true" tabindex="-1"></a><span class="co"># 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section></section>
+<section>
+<section id="going-further-distributing-packages" class="title-slide slide level1 center">
+<h1>Going further: Distributing packages</h1>
+
 </section>
-<section id="going-further-distributing-packages" class="slide level2">
-<h2>Going further: Distributing packages</h2>
+<section id="section-7" class="slide level2">
+<h2></h2>
 <p>If your code is publicly available on the WWW in a Git repository, you’ve already done a version of distribution!</p>
 <pre class="code"><code># General pattern is:
 # python -m pip install "project @ git+https://example.com/repo/project.git@branch#subdirectory=path"
@@ -574,7 +584,7 @@ Successfully built rosen-0.0.1.tar.gz and rosen-0.0.1-py3-none-any.whl
 $ ls dist
 rosen-0.0.1-py3-none-any.whl  rosen-0.0.1.tar.gz</code></pre>
 </section>
-<section id="section-6" class="slide level2">
+<section id="section-8" class="slide level2">
 <h2></h2>
 <p>Can now securely upload the distributions under <code>./dist/</code> to <em>any</em> package index that understands how to use them.</p>
 <p>The most common is the Python Package Index (PyPI) which serves as the default package index for <code>pip</code>.</p>
@@ -641,6 +651,11 @@ rosen-0.0.1-py3-none-any.whl  rosen-0.0.1.tar.gz</code></pre>
 <li class="fragment"><a href="https://arxiv.org/abs/1010.2506">RECAST</a>(particle physics)</li>
 </ul></li>
 </ul>
+</section></section>
+<section>
+<section id="recommendations" class="title-slide slide level1 center">
+<h1>Recommendations</h1>
+
 </section>
 <section id="recommendations-tooling" class="slide level2">
 <h2>Recommendations: Tooling</h2>
@@ -668,7 +683,7 @@ $ cookiecutter gh:scientific-python/cookie
 <div class="fragment">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="./images/rse-page.png" class="img-fluid" style="width:40.0%" data-text-align="center"></p>
+<p><img data-src="./images/rse-page.png" class="img-fluid" style="width:40.0%"></p>
 <figcaption><a href="https://society-rse.org/">Society of Research Software Engineering</a></figcaption>
 </figure>
 </div>
@@ -688,17 +703,18 @@ $ cookiecutter gh:scientific-python/cookie
 </div><div class="column" style="width:50%;">
 <p><img data-src="./images/why_use_zenodo.png" class="absolute img-fluid" style="top: 150px; right: 100px; width: 350px; "></p>
 </div></div>
-</section>
-<section id="summary" class="slide level2">
-<h2>Summary</h2>
+</section></section>
+<section id="summary" class="title-slide slide level1 center">
+<h1>Summary</h1>
 <ul>
 <li class="fragment"><p>Whirlwind tour of lifting analysis code from version control, to packages, distributed binaries, and the rest of the world</p></li>
 <li class="fragment"><p>Not a hopeless bog of technical debt, but community infrastructure built by people who you can collaborate with</p></li>
 <li class="fragment"><p>Reusable code can be a nucleation point for communities</p></li>
 </ul>
 </section>
-<section id="references" class="slide level2">
-<h2>References</h2>
+
+<section id="references" class="title-slide slide level1 center">
+<h1>References</h1>
 <ul>
 <li class="fragment"><a href="https://henryiii.github.io/level-up-your-python/">Level Up Your Python</a>, Henry Schreiner</li>
 <li class="fragment"><a href="https://packaging.python.org/en/latest/tutorials/packaging-projects/">Python Packaging User Guide, Packaging Python Projects Tutorial</a>, The PyPA</li>
@@ -708,7 +724,7 @@ $ cookiecutter gh:scientific-python/cookie
 </ul>
 
 
-</section></section>
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

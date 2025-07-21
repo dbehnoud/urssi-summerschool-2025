@@ -142,12 +142,8 @@ Danika MacDonell
 
 </section>
 <section>
-<section id="collaboration-with-git-and-github" class="title-slide slide level1 center">
-<h1>Collaboration with Git and Github</h1>
-
-</section>
-<section id="lesson-objectives" class="slide level2">
-<h2>Lesson Objectives</h2>
+<section id="lesson-objectives" class="title-slide slide level1 center">
+<h1>Lesson Objectives</h1>
 <ul>
 <li class="fragment">Review git commands</li>
 <li class="fragment">Describe individual and collaborative workflows with git</li>
@@ -161,9 +157,14 @@ Danika MacDonell
 <p>This material is heavily influenced by the previous works of <a href="https://munkm.github.io/2024-winterschool/git-collaboration.slides.html#/">Madicken Munk</a>, <a href="https://inundata.org/talks/git-collaboration/#/">Karthik Ram</a> and <a href="https://jameshowison.github.io/peer_production_course/docs/additional_git_exercises.html">James Howison</a> from the previous summer and winter schools.</p>
 <p>Other helpful/fun resources for git</p>
 <p><a href="https://git-school.github.io/visualizing-git/">https://git-school.github.io/visualizing-git/</a> <a href="https://pcottle.github.io/learnGitBranching/?NODEMO">https://pcottle.github.io/learnGitBranching/?NODEMO</a> <a href="https://allisonhorst.com/git-github">https://allisonhorst.com/git-github</a> <a href="https://jvns.ca/blog/2023/11/23/branches-intuition-reality/">https://jvns.ca/blog/2023/11/23/branches-intuition-reality/</a> <a href="https://git-scm.com/docs">https://git-scm.com/docs</a> <a href="https://swcarpentry.github.io/git-novice/">https://swcarpentry.github.io/git-novice/</a></p>
+</section></section>
+<section>
+<section id="workflows-with-git-individual" class="title-slide slide level1 center">
+<h1>Workflows with Git: Individual</h1>
+
 </section>
-<section id="workflows-with-git-an-individual-workflow-without-a-remote" class="slide level2">
-<h2>Workflows with Git: An Individual Workflow (without a remote)</h2>
+<section id="an-individual-workflow-without-a-remote" class="slide level2">
+<h2>An Individual Workflow (without a remote)</h2>
 <p>commit, commit, commit …..</p>
 <pre class="code"><code>danikamacdonell@computer: ~/Git$ mkdir research-code ; cd research-code
 danikamacdonell@computer: ~/Git/research-code$ git init
@@ -195,9 +196,11 @@ To github.com:danikam/research-code.git
 branch 'main' set up to track 'origin/main'.</code></pre>
 <p>With your code on a remote (like GitHub, GitLab, or an internal server for your lab), your work is easily accessed by peers!</p>
 <p>💡GitLab and other Git platforms will have slightly different interfaces and features from GitHub, but the basic actions are generally pretty similar.</p>
-</section>
-<section id="but-what-about-working-with-others" class="slide level2 center">
-<h2>… But what about working with others?</h2>
+</section></section>
+<section>
+<section id="but-what-about-working-with-others" class="title-slide slide level1 center">
+<h1>… But what about working with others?</h1>
+
 </section>
 <section id="centralized-workflow" class="slide level2 center">
 <h2>Centralized Workflow</h2>
@@ -277,9 +280,10 @@ branch 'main' set up to track 'origin/main'.</code></pre>
 </ul></li>
 <li class="fragment"><p>Make a pull request!</p></li>
 </ol>
-</section>
-<section id="forking-workflow" class="slide level2 center">
-<h2>Forking Workflow</h2>
+</section></section>
+<section>
+<section id="forking-workflow" class="title-slide slide level1 center">
+<h1>Forking Workflow</h1>
 <p>In this workflow each collaborator “forks” a copy of the centralized repository. These forks represent individual remote repositories for each collaborator. Collaborators submit pull requests from their forks to the centralized repository.</p>
 <div class="fragment">
 <p><strong>When do I need to fork?</strong></p>
@@ -316,9 +320,10 @@ danikamacdonell@computer: ~/Git$ git remote add upstream git@github.com:mcsc-imp
 danikamacdonell@computer: ~/Git$ git checkout -b personalize-message</code></pre>
 <p>Add your new file(s), push and <em>open a pull request</em></p>
 </div>
-</section>
-<section id="more-useful-git-commands" class="slide level2">
-<h2>More useful git commands</h2>
+</section></section>
+<section>
+<section id="more-useful-git-commands" class="title-slide slide level1 center">
+<h1>More useful git commands</h1>
 <p>Rebasing</p>
 <p>Rebasing lets you pull new commits from the parent branch or upstream repo (if you’re on a fork).</p>
 <p>From parent branch:</p>
@@ -379,9 +384,9 @@ git rebase upstream/&lt;parent-branch&gt;</code></pre>
 <li class="fragment"><p>How to undo almost anything with git <a href="https://github.blog/2015-06-08-how-to-undo-almost-anything-with-git/">link</a></p></li>
 <li class="fragment"><p>Remove sensitive data (like private keys) from a repository <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository">link</a></p></li>
 </ul>
-</section>
-<section id="exercises" class="slide level2 smaller center">
-<h2>Exercises</h2>
+</section></section>
+<section id="exercises" class="title-slide slide level1 smaller center">
+<h1>Exercises</h1>
 <p>Choose one of the following:</p>
 <ul>
 <li class="fragment">If you brought a project to work on: open an issue on your repository for something you’d like to improve that’s a beginner friendly issue. Describe the issue thoroughly. Then, working in groups at your tables, have a partner fork your project and submit a pull request fixing that issue. Do not merge the pull request today.</li>
@@ -389,7 +394,7 @@ git rebase upstream/&lt;parent-branch&gt;</code></pre>
 </ul>
 
 
-</section></section>
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

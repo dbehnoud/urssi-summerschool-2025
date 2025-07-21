@@ -149,13 +149,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#collaboration-with-git-and-github" id="toc-collaboration-with-git-and-github" class="nav-link active" data-scroll-target="#collaboration-with-git-and-github">Collaboration with Git and Github</a>
+  <li><a href="#lesson-objectives" id="toc-lesson-objectives" class="nav-link active" data-scroll-target="#lesson-objectives">Lesson Objectives</a>
   <ul class="collapse">
-  <li><a href="#lesson-objectives" id="toc-lesson-objectives" class="nav-link" data-scroll-target="#lesson-objectives">Lesson Objectives</a></li>
   <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
-  <li><a href="#workflows-with-git-an-individual-workflow-without-a-remote" id="toc-workflows-with-git-an-individual-workflow-without-a-remote" class="nav-link" data-scroll-target="#workflows-with-git-an-individual-workflow-without-a-remote">Workflows with Git: An Individual Workflow (without a remote)</a></li>
+  </ul></li>
+  <li><a href="#workflows-with-git-individual" id="toc-workflows-with-git-individual" class="nav-link" data-scroll-target="#workflows-with-git-individual">Workflows with Git: Individual</a>
+  <ul class="collapse">
+  <li><a href="#an-individual-workflow-without-a-remote" id="toc-an-individual-workflow-without-a-remote" class="nav-link" data-scroll-target="#an-individual-workflow-without-a-remote">An Individual Workflow (without a remote)</a></li>
   <li><a href="#an-individual-workflow-with-a-remote" id="toc-an-individual-workflow-with-a-remote" class="nav-link" data-scroll-target="#an-individual-workflow-with-a-remote">An Individual Workflow (with a remote)</a></li>
-  <li><a href="#but-what-about-working-with-others" id="toc-but-what-about-working-with-others" class="nav-link" data-scroll-target="#but-what-about-working-with-others">… But what about working with others?</a></li>
+  </ul></li>
+  <li><a href="#but-what-about-working-with-others" id="toc-but-what-about-working-with-others" class="nav-link" data-scroll-target="#but-what-about-working-with-others">… But what about working with others?</a>
+  <ul class="collapse">
   <li><a href="#centralized-workflow" id="toc-centralized-workflow" class="nav-link" data-scroll-target="#centralized-workflow">Centralized Workflow</a></li>
   <li><a href="#feature-branching-workflow" id="toc-feature-branching-workflow" class="nav-link" data-scroll-target="#feature-branching-workflow">Feature Branching Workflow</a></li>
   <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
@@ -165,11 +169,15 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#pull-request-tip" id="toc-pull-request-tip" class="nav-link" data-scroll-target="#pull-request-tip">Pull request tip:</a></li>
   <li><a href="#demo-update-summerschool-july2024-link-to-issue" id="toc-demo-update-summerschool-july2024-link-to-issue" class="nav-link" data-scroll-target="#demo-update-summerschool-july2024-link-to-issue">Demo: Update summerschool-July2024 (link to issue)</a></li>
   <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
-  <li><a href="#forking-workflow" id="toc-forking-workflow" class="nav-link" data-scroll-target="#forking-workflow">Forking Workflow</a></li>
+  </ul></li>
+  <li><a href="#forking-workflow" id="toc-forking-workflow" class="nav-link" data-scroll-target="#forking-workflow">Forking Workflow</a>
+  <ul class="collapse">
   <li><a href="#forking-workflow-guidelines" id="toc-forking-workflow-guidelines" class="nav-link" data-scroll-target="#forking-workflow-guidelines">Forking Workflow Guidelines</a></li>
   <li><a href="#extra-tips" id="toc-extra-tips" class="nav-link" data-scroll-target="#extra-tips">Extra Tips:</a></li>
   <li><a href="#practice-1" id="toc-practice-1" class="nav-link" data-scroll-target="#practice-1">Practice</a></li>
-  <li><a href="#more-useful-git-commands" id="toc-more-useful-git-commands" class="nav-link" data-scroll-target="#more-useful-git-commands">More useful git commands</a></li>
+  </ul></li>
+  <li><a href="#more-useful-git-commands" id="toc-more-useful-git-commands" class="nav-link" data-scroll-target="#more-useful-git-commands">More useful git commands</a>
+  <ul class="collapse">
   <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2"></a></li>
   <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3"></a></li>
   <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4"></a></li>
@@ -177,8 +185,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#section-6" id="toc-section-6" class="nav-link" data-scroll-target="#section-6"></a></li>
   <li><a href="#section-7" id="toc-section-7" class="nav-link" data-scroll-target="#section-7"></a></li>
   <li><a href="#more-resources" id="toc-more-resources" class="nav-link" data-scroll-target="#more-resources">More resources</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
   </ul></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="collaboration-revealjs.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
@@ -217,10 +225,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="collaboration-with-git-and-github" class="level1">
-<h1>Collaboration with Git and Github</h1>
-<section id="lesson-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="lesson-objectives">Lesson Objectives</h2>
+<section id="lesson-objectives" class="level1">
+<h1>Lesson Objectives</h1>
 <ul>
 <li>Review git commands</li>
 <li>Describe individual and collaborative workflows with git</li>
@@ -228,15 +234,17 @@ ul.task-list li input[type="checkbox"] {
 <li>Demo of collaborative workflows in practice</li>
 <li>See additional useful git tips/tricks</li>
 </ul>
-</section>
 <section id="acknowledgements" class="level2">
 <h2 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
 <p>This material is heavily influenced by the previous works of <a href="https://munkm.github.io/2024-winterschool/git-collaboration.slides.html#/">Madicken Munk</a>, <a href="https://inundata.org/talks/git-collaboration/#/">Karthik Ram</a> and <a href="https://jameshowison.github.io/peer_production_course/docs/additional_git_exercises.html">James Howison</a> from the previous summer and winter schools.</p>
 <p>Other helpful/fun resources for git</p>
 <p><a href="https://git-school.github.io/visualizing-git/">https://git-school.github.io/visualizing-git/</a> <a href="https://pcottle.github.io/learnGitBranching/?NODEMO">https://pcottle.github.io/learnGitBranching/?NODEMO</a> <a href="https://allisonhorst.com/git-github">https://allisonhorst.com/git-github</a> <a href="https://jvns.ca/blog/2023/11/23/branches-intuition-reality/">https://jvns.ca/blog/2023/11/23/branches-intuition-reality/</a> <a href="https://git-scm.com/docs">https://git-scm.com/docs</a> <a href="https://swcarpentry.github.io/git-novice/">https://swcarpentry.github.io/git-novice/</a></p>
 </section>
-<section id="workflows-with-git-an-individual-workflow-without-a-remote" class="level2">
-<h2 class="anchored" data-anchor-id="workflows-with-git-an-individual-workflow-without-a-remote">Workflows with Git: An Individual Workflow (without a remote)</h2>
+</section>
+<section id="workflows-with-git-individual" class="level1">
+<h1>Workflows with Git: Individual</h1>
+<section id="an-individual-workflow-without-a-remote" class="level2">
+<h2 class="anchored" data-anchor-id="an-individual-workflow-without-a-remote">An Individual Workflow (without a remote)</h2>
 <p>commit, commit, commit …..</p>
 <pre class="code"><code>danikamacdonell@computer: ~/Git$ mkdir research-code ; cd research-code
 danikamacdonell@computer: ~/Git/research-code$ git init
@@ -267,9 +275,9 @@ branch 'main' set up to track 'origin/main'.</code></pre>
 <p>With your code on a remote (like GitHub, GitLab, or an internal server for your lab), your work is easily accessed by peers!</p>
 <p>💡GitLab and other Git platforms will have slightly different interfaces and features from GitHub, but the basic actions are generally pretty similar.</p>
 </section>
-<section id="but-what-about-working-with-others" class="level2 center">
-<h2 class="center anchored" data-anchor-id="but-what-about-working-with-others">… But what about working with others?</h2>
 </section>
+<section id="but-what-about-working-with-others" class="level1 center">
+<h1 class="center">… But what about working with others?</h1>
 <section id="centralized-workflow" class="level2 center">
 <h2 class="center anchored" data-anchor-id="centralized-workflow">Centralized Workflow</h2>
 <p>All members work on the same repository</p>
@@ -349,8 +357,9 @@ branch 'main' set up to track 'origin/main'.</code></pre>
 <li><p>Make a pull request!</p></li>
 </ol>
 </section>
-<section id="forking-workflow" class="level2 center">
-<h2 class="center anchored" data-anchor-id="forking-workflow">Forking Workflow</h2>
+</section>
+<section id="forking-workflow" class="level1 center">
+<h1 class="center">Forking Workflow</h1>
 <p>In this workflow each collaborator “forks” a copy of the centralized repository. These forks represent individual remote repositories for each collaborator. Collaborators submit pull requests from their forks to the centralized repository.</p>
 <div class="fragment">
 <p><strong>When do I need to fork?</strong></p>
@@ -359,7 +368,6 @@ branch 'main' set up to track 'origin/main'.</code></pre>
 <li>If you don’t have write access and want to suggest changes, forking makes sense.</li>
 <li>If you’re an active project collaborator with write access, use the branching workflow.</li>
 </ul>
-</section>
 <section id="forking-workflow-guidelines" class="level2 center">
 <h2 class="center anchored" data-anchor-id="forking-workflow-guidelines">Forking Workflow Guidelines</h2>
 <p>Everyone has a fork of a “central” repository</p>
@@ -388,8 +396,9 @@ danikamacdonell@computer: ~/Git$ git checkout -b personalize-message</code></pre
 <p>Add your new file(s), push and <em>open a pull request</em></p>
 </div>
 </section>
-<section id="more-useful-git-commands" class="level2">
-<h2 class="anchored" data-anchor-id="more-useful-git-commands">More useful git commands</h2>
+</section>
+<section id="more-useful-git-commands" class="level1">
+<h1>More useful git commands</h1>
 <p>Rebasing</p>
 <p>Rebasing lets you pull new commits from the parent branch or upstream repo (if you’re on a fork).</p>
 <p>From parent branch:</p>
@@ -399,7 +408,6 @@ git rebase origin/&lt;parent-branch&gt;</code></pre>
 <pre class="code"><code>git remote add upstream https://github.com/original-owner/repo.git
 git fetch upstream
 git rebase upstream/&lt;parent-branch&gt;</code></pre>
-</section>
 <section id="section-2" class="level2 center smaller">
 <h2 class="center smaller anchored" data-anchor-id="section-2"></h2>
 <p><a href="https://git-scm.com/book/en/v2/Git-Basics-Tagging">tagging commits</a></p>
@@ -451,8 +459,9 @@ git rebase upstream/&lt;parent-branch&gt;</code></pre>
 <li><p>Remove sensitive data (like private keys) from a repository <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository">link</a></p></li>
 </ul>
 </section>
-<section id="exercises" class="level2 smaller center">
-<h2 class="smaller center anchored" data-anchor-id="exercises">Exercises</h2>
+</section>
+<section id="exercises" class="level1 smaller center">
+<h1 class="smaller center">Exercises</h1>
 <p>Choose one of the following:</p>
 <ul>
 <li>If you brought a project to work on: open an issue on your repository for something you’d like to improve that’s a beginner friendly issue. Describe the issue thoroughly. Then, working in groups at your tables, have a partner fork your project and submit a pull request fixing that issue. Do not merge the pull request today.</li>
@@ -460,7 +469,6 @@ git rebase upstream/&lt;parent-branch&gt;</code></pre>
 </ul>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
