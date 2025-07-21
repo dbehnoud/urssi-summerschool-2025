@@ -18,7 +18,12 @@ website:
       - about.qmd
       - software_design.ipynb
       - package_structure.ipynb
+      - package_distribution.ipynb
+      - collaboration.ipynb
+      - testing.ipynb
+      - peer_code_review.ipynb
       - documentation.ipynb
+      - open-science.ipynb
 
 format:
   html:
