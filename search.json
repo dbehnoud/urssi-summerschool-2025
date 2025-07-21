@@ -228,231 +228,330 @@
     "href": "open-science.html",
     "title": "Open Practices and Software Citation",
     "section": "",
-    "text": "Licensing and copyright\nOpen science practices\nsoftware citation\nreproducibility\npublishing your software"
+    "text": "Licensing and copyright\nOpen science practices\nsoftware citation\nreproducibility\npublishing your software",
+    "crumbs": [
+      "Open Practices and Software Citation"
+    ]
   },
   {
     "objectID": "open-science.html#copyright",
     "href": "open-science.html#copyright",
     "title": "Open Practices and Software Citation",
     "section": "Copyright",
-    "text": "Copyright\n\nFacts and ideas are not copyrightable.\n\n\nExpressions of ideas are copyrightable"
+    "text": "Copyright\n\nFacts and ideas are not copyrightable.\n\n\nExpressions of ideas are copyrightable",
+    "crumbs": [
+      "Open Practices and Software Citation"
+    ]
   },
   {
     "objectID": "open-science.html#copyright-examples",
     "href": "open-science.html#copyright-examples",
     "title": "Open Practices and Software Citation",
     "section": "Copyright Examples",
-    "text": "Copyright Examples\n\nGame rules are not copyrightable (chess, Go, football, Dungeons & Dragons).\n\n\nExpressions of game rules are copyrightable."
+    "text": "Copyright Examples\n\nGame rules are not copyrightable (chess, Go, football, Dungeons & Dragons).\n\n\nExpressions of game rules are copyrightable.",
+    "crumbs": [
+      "Open Practices and Software Citation"
+    ]
   },
   {
     "objectID": "open-science.html#copyright-examples-2",
     "href": "open-science.html#copyright-examples-2",
     "title": "Open Practices and Software Citation",
     "section": "Copyright Examples 2",
-    "text": "Copyright Examples 2\n\nA function that computes standard deviation of values: name choices and concept of the function are not copyrightable.\n\n\nThe std() code actually computes the standard deviation is copyrightable."
+    "text": "Copyright Examples 2\n\nA function that computes standard deviation of values: name choices and concept of the function are not copyrightable.\n\n\nThe std() code actually computes the standard deviation is copyrightable.",
+    "crumbs": [
+      "Open Practices and Software Citation"
+    ]
   },
   {
     "objectID": "open-science.html#basic-copyright",
     "href": "open-science.html#basic-copyright",
     "title": "Open Practices and Software Citation",
     "section": "Basic Copyright",
-    "text": "Basic Copyright\n\n“Right of First Publication”: copyright automatically goes to the first creator of any creative work\n\n\n(Even if not explicitly specified)\n\n\nConsequence: if you post software to GitHub without an explicit license, then you own the copyright—even if openly and publicly visible.\n\n\nBy default, no one else is legally allowed to use or modify your work."
+    "text": "Basic Copyright\n\n“Right of First Publication”: copyright automatically goes to the first creator of any creative work\n\n\n(Even if not explicitly specified)\n\n\nConsequence: if you post software to GitHub without an explicit license, then you own the copyright—even if openly and publicly visible.\n\n\nBy default, no one else is legally allowed to use or modify your work.",
+    "crumbs": [
+      "Open Practices and Software Citation"
+    ]
   },
   {
     "objectID": "open-science.html#software-licenses",
     "href": "open-science.html#software-licenses",
     "title": "Open Practices and Software Citation",
     "section": "Software Licenses",
-    "text": "Software Licenses\nAll software codes you make publicly available should be accompanied by a software license describing the terms by which others may use and/or modify your code."
+    "text": "Software Licenses\nAll software codes you make publicly available should be accompanied by a software license describing the terms by which others may use and/or modify your code.",
+    "crumbs": [
+      "Open Practices and Software Citation"
+    ]
   },
   {
     "objectID": "open-science.html#public-domain",
     "href": "open-science.html#public-domain",
     "title": "Open Practices and Software Citation",
     "section": "Public Domain",
-    "text": "Public Domain\n\nAlternatively, you can put work into the public domain: “This work has been placed in the public domain.”\n\n\nFree for anyone and everyone to use and modify.\n\n\nLiterature examples: Sherlock Holmes, Frankenstein\n\n\n(There are some tricky issues internationally, however.)"
+    "text": "Public Domain\n\nAlternatively, you can put work into the public domain: “This work has been placed in the public domain.”\n\n\nFree for anyone and everyone to use and modify.\n\n\nLiterature examples: Sherlock Holmes, Frankenstein\n\n\n(There are some tricky issues internationally, however.)",
+    "crumbs": [
+      "Open Practices and Software Citation"
+    ]
   },
   {
     "objectID": "open-science.html#software-licenses-1",
     "href": "open-science.html#software-licenses-1",
     "title": "Open Practices and Software Citation",
     "section": "Software Licenses",
-    "text": "Software Licenses\n\nKinds of software licenses: proprietary, and free/open source (FOSS, FLOSS, OSS)\n\n\nPick an existing license. Do not create your own."
+    "text": "Software Licenses\n\nKinds of software licenses: proprietary, and free/open source (FOSS, FLOSS, OSS)\n\n\nPick an existing license. Do not create your own.",
+    "crumbs": [
+      "Open Practices and Software Citation"
+    ]
   },
   {
     "objectID": "open-science.html#section",
     "href": "open-science.html#section",
     "title": "Open Practices and Software Citation",
     "section": "",
-    "text": "FOSS categories: permissive, and “copyleft”\n\nPermissive licenses: BSD 3-clause, MIT; allow further distribution under any license\n\n\nCopyleft licenses: GPL; require modifications to be shared under the same license (“viral”)"
+    "text": "FOSS categories: permissive, and “copyleft”\n\nPermissive licenses: BSD 3-clause, MIT; allow further distribution under any license\n\n\nCopyleft licenses: GPL; require modifications to be shared under the same license (“viral”)",
+    "crumbs": [
+      "Open Practices and Software Citation"
+    ]
   },
   {
     "objectID": "open-science.html#httpschoosealicense.com",
     "href": "open-science.html#httpschoosealicense.com",
     "title": "Open Practices and Software Citation",
     "section": "HTTPS://CHOOSEALICENSE.COM",
-    "text": "HTTPS://CHOOSEALICENSE.COM"
+    "text": "HTTPS://CHOOSEALICENSE.COM",
+    "crumbs": [
+      "Open Practices and Software Citation"
+    ]
   },
   {
     "objectID": "open-science.html#open-source-initiative-licenses",
     "href": "open-science.html#open-source-initiative-licenses",
     "title": "Open Practices and Software Citation",
     "section": "Open Source Initiative Licenses",
-    "text": "Open Source Initiative Licenses"
+    "text": "Open Source Initiative Licenses",
+    "crumbs": [
+      "Open Practices and Software Citation"
+    ]
   },
   {
     "objectID": "open-science.html#which-license-to-use",
     "href": "open-science.html#which-license-to-use",
     "title": "Open Practices and Software Citation",
     "section": "Which license to use?",
-    "text": "Which license to use?\nWhen in doubt, use a permissive license like the BSD 3-clause or MIT licenses."
+    "text": "Which license to use?\nWhen in doubt, use a permissive license like the BSD 3-clause or MIT licenses.",
+    "crumbs": [
+      "Open Practices and Software Citation"
+    ]
   },
   {
     "objectID": "open-science.html#copyrighting-other-creative-works-creative-commons",
     "href": "open-science.html#copyrighting-other-creative-works-creative-commons",
     "title": "Open Practices and Software Citation",
     "section": "Copyrighting other creative works: Creative Commons",
-    "text": "Copyrighting other creative works: Creative Commons\n\nBY: Attribution\nSA: ShareAlike\nND: NoDerivatives\nNC: NonCommercial\n\n\nLicenses: CC BY, CC BY-SA, CC BY-NC, CC BY-NC-NC\n\n\nChoose a license"
+    "text": "Copyrighting other creative works: Creative Commons\n\nBY: Attribution\nSA: ShareAlike\nND: NoDerivatives\nNC: NonCommercial\n\n\nLicenses: CC BY, CC BY-SA, CC BY-NC, CC BY-NC-NC\n\n\nChoose a license",
+    "crumbs": [
+      "Open Practices and Software Citation"
+    ]
   },
   {
     "objectID": "open-science.html#beyond-copyright-licenses",
     "href": "open-science.html#beyond-copyright-licenses",
     "title": "Open Practices and Software Citation",
     "section": "Beyond copyright & licenses",
-    "text": "Beyond copyright & licenses\n\nPatents: cover ideas and concepts; modern issues with “patent trolls”\n\n\nTrademarks: symbols that represent a business or organization\n\n\nExport control: government may forbid the transfer of source code (and data, ideas) to another country or foreign national without permission\n\n\nHIPAA compliance: software that deals with human patients must be anonymized"
+    "text": "Beyond copyright & licenses\n\nPatents: cover ideas and concepts; modern issues with “patent trolls”\n\n\nTrademarks: symbols that represent a business or organization\n\n\nExport control: government may forbid the transfer of source code (and data, ideas) to another country or foreign national without permission\n\n\nHIPAA compliance: software that deals with human patients must be anonymized",
+    "crumbs": [
+      "Open Practices and Software Citation"
+    ]
   },
   {
     "objectID": "open-science.html#section-1",
     "href": "open-science.html#section-1",
     "title": "Open Practices and Software Citation",
     "section": "",
-    "text": "Long story short: pick a license when creating a project, and put as LICENSE.txt in your repo."
+    "text": "Long story short: pick a license when creating a project, and put as LICENSE.txt in your repo.",
+    "crumbs": [
+      "Open Practices and Software Citation"
+    ]
   },
   {
     "objectID": "open-science.html#section-2",
     "href": "open-science.html#section-2",
     "title": "Open Practices and Software Citation",
     "section": "",
-    "text": "We’ve talked about best practices:\n\nVersion control / collaboration\nLicensing\nPackaging / distribution\nDocumentation\n\n\nIs that it?"
+    "text": "We’ve talked about best practices:\n\nVersion control / collaboration\nLicensing\nPackaging / distribution\nDocumentation\n\n\nIs that it?",
+    "crumbs": [
+      "Open Practices and Software Citation"
+    ]
   },
   {
     "objectID": "open-science.html#how-to-make-your-software-citable",
     "href": "open-science.html#how-to-make-your-software-citable",
     "title": "Open Practices and Software Citation",
     "section": "How to make your software citable?",
-    "text": "How to make your software citable?\nAdd a CITATION.cff file:\ncff-version: 1.2.0\nmessage: \"Please cite the following works when using this software.\"\ntype: software\ntitle: Title\nabstract: Title\nauthors:\n- family-names: ...\n  given-names: ...\n  orcid: ...\n  affiliation: ...\ndoi: ...\nrepository-code: ...\nurl: ...\nkeywords: ...\nlicense: ..."
+    "text": "How to make your software citable?\nAdd a CITATION.cff file:\ncff-version: 1.2.0\nmessage: \"Please cite the following works when using this software.\"\ntype: software\ntitle: Title\nabstract: Title\nauthors:\n- family-names: ...\n  given-names: ...\n  orcid: ...\n  affiliation: ...\ndoi: ...\nrepository-code: ...\nurl: ...\nkeywords: ...\nlicense: ...",
+    "crumbs": [
+      "Open Practices and Software Citation"
+    ]
   },
   {
     "objectID": "open-science.html#section-3",
     "href": "open-science.html#section-3",
     "title": "Open Practices and Software Citation",
     "section": "",
-    "text": "For research, need one more step: archiving software (or data)\n\n\nConsider: what if you use/cite software, and someone modifies it?"
+    "text": "For research, need one more step: archiving software (or data)\n\n\nConsider: what if you use/cite software, and someone modifies it?",
+    "crumbs": [
+      "Open Practices and Software Citation"
+    ]
   },
   {
     "objectID": "open-science.html#zenodo-github",
     "href": "open-science.html#zenodo-github",
     "title": "Open Practices and Software Citation",
     "section": "Zenodo + GitHub = ❤️",
-    "text": "Zenodo + GitHub = ❤️\nZenodo can be connected to GitHub, and set to automatically archive releases"
+    "text": "Zenodo + GitHub = ❤️\nZenodo can be connected to GitHub, and set to automatically archive releases",
+    "crumbs": [
+      "Open Practices and Software Citation"
+    ]
   },
   {
     "objectID": "open-science.html#section-5",
     "href": "open-science.html#section-5",
     "title": "Open Practices and Software Citation",
     "section": "",
-    "text": "Live demo time… connecting GitHub to Zenodo"
+    "text": "Live demo time… connecting GitHub to Zenodo",
+    "crumbs": [
+      "Open Practices and Software Citation"
+    ]
   },
   {
     "objectID": "open-science.html#recommended-workflow",
     "href": "open-science.html#recommended-workflow",
     "title": "Open Practices and Software Citation",
     "section": "Recommended workflow:",
-    "text": "Recommended workflow:\n\ngit tag -a v0.0.1 -m \"version 0.0.1\"\ngit push origin --tags\nGo to GitHub repo -&gt; Releases -&gt; v0.0.1\nCreate release from tag\nGrab the DOI from Zenodo!"
+    "text": "Recommended workflow:\n\ngit tag -a v0.0.1 -m \"version 0.0.1\"\ngit push origin --tags\nGo to GitHub repo -&gt; Releases -&gt; v0.0.1\nCreate release from tag\nGrab the DOI from Zenodo!",
+    "crumbs": [
+      "Open Practices and Software Citation"
+    ]
   },
   {
     "objectID": "open-science.html#citing-software-data-is-important.",
     "href": "open-science.html#citing-software-data-is-important.",
     "title": "Open Practices and Software Citation",
     "section": "Citing software & data is important.",
-    "text": "Citing software & data is important.\n\nOur research results depend on software and data—different versions of software and data change our answers.\n\n\nWithout proper citations, your work is not reproducible.\n\n\nAlso, academia relies on citations for credit. (for better or worse)"
+    "text": "Citing software & data is important.\n\nOur research results depend on software and data—different versions of software and data change our answers.\n\n\nWithout proper citations, your work is not reproducible.\n\n\nAlso, academia relies on citations for credit. (for better or worse)",
+    "crumbs": [
+      "Open Practices and Software Citation"
+    ]
   },
   {
     "objectID": "open-science.html#software-citation-principles",
     "href": "open-science.html#software-citation-principles",
     "title": "Open Practices and Software Citation",
     "section": "Software citation principles",
-    "text": "Software citation principles\n\nSmith AM, Katz DS, Niemeyer KE, FORCE11 Software Citation Working Group. (2016) Software citation principles. PeerJ Computer Science 2:e86 https://doi.org/10.7717/peerj-cs.86."
+    "text": "Software citation principles\n\nSmith AM, Katz DS, Niemeyer KE, FORCE11 Software Citation Working Group. (2016) Software citation principles. PeerJ Computer Science 2:e86 https://doi.org/10.7717/peerj-cs.86.",
+    "crumbs": [
+      "Open Practices and Software Citation"
+    ]
   },
   {
     "objectID": "open-science.html#how-to-cite",
     "href": "open-science.html#how-to-cite",
     "title": "Open Practices and Software Citation",
     "section": "How to cite?",
-    "text": "How to cite?\nName/description\n\nAuthor(s)/developer(s)\n\n\nDOI or other persistent identifier\n\n\nVersion number/commit hash\n\n\nLocation (e.g., GitHub repo)\n\n\n(If there’s a paper describing it, cite that too)"
+    "text": "How to cite?\nName/description\n\nAuthor(s)/developer(s)\n\n\nDOI or other persistent identifier\n\n\nVersion number/commit hash\n\n\nLocation (e.g., GitHub repo)\n\n\n(If there’s a paper describing it, cite that too)",
+    "crumbs": [
+      "Open Practices and Software Citation"
+    ]
   },
   {
     "objectID": "open-science.html#where-to-cite",
     "href": "open-science.html#where-to-cite",
     "title": "Open Practices and Software Citation",
     "section": "Where to cite?",
-    "text": "Where to cite?\nIn the text with the references/bibliography.\n\nKE Niemeyer, NJ Curtis, & CJ Sung. “pyJac: analytical Jacobian generator for chemical kinetics” (2017) Computer Physics Communications, 215:188–203. https://doi.org/10.1016/j.cpc.2017.02.004"
+    "text": "Where to cite?\nIn the text with the references/bibliography.\n\nKE Niemeyer, NJ Curtis, & CJ Sung. “pyJac: analytical Jacobian generator for chemical kinetics” (2017) Computer Physics Communications, 215:188–203. https://doi.org/10.1016/j.cpc.2017.02.004",
+    "crumbs": [
+      "Open Practices and Software Citation"
+    ]
   },
   {
     "objectID": "open-science.html#repro-packs",
     "href": "open-science.html#repro-packs",
     "title": "Open Practices and Software Citation",
     "section": "Repro-packs",
-    "text": "Repro-packs\nLorena Barba describes “reproducibility packages” associated with papers, with figures shared under CC-BY license:\n\n“For every figure that presents some result, we bundle the files needed to reproduce it — input or configuration files used to run the simulation(s) behind the result; code to process raw data into derived data; and scripts to create output graphs — and deposit them together with the figure into an open-data repository, such as Figshare. Figshare assigns the bundle a DOI, which we then include in the figure caption so readers can easily find the data and re-create the result.”"
+    "text": "Repro-packs\nLorena Barba describes “reproducibility packages” associated with papers, with figures shared under CC-BY license:\n\n“For every figure that presents some result, we bundle the files needed to reproduce it — input or configuration files used to run the simulation(s) behind the result; code to process raw data into derived data; and scripts to create output graphs — and deposit them together with the figure into an open-data repository, such as Figshare. Figshare assigns the bundle a DOI, which we then include in the figure caption so readers can easily find the data and re-create the result.”",
+    "crumbs": [
+      "Open Practices and Software Citation"
+    ]
   },
   {
     "objectID": "open-science.html#my-practice",
     "href": "open-science.html#my-practice",
     "title": "Open Practices and Software Citation",
     "section": "My practice:",
-    "text": "My practice:\n\nProduce a single repro-pack for an entire paper, which contains:\n\n\nPython plotting scripts and associated results data\nFigures (PDFs for plots, always)\nAny other relevant data: input files, configuration files, etc.\n\n\nUpload to Figshare/Zenodo under CC-BY license\nCite using the resulting DOI in the associated paper(s)"
+    "text": "My practice:\n\nProduce a single repro-pack for an entire paper, which contains:\n\n\nPython plotting scripts and associated results data\nFigures (PDFs for plots, always)\nAny other relevant data: input files, configuration files, etc.\n\n\nUpload to Figshare/Zenodo under CC-BY license\nCite using the resulting DOI in the associated paper(s)",
+    "crumbs": [
+      "Open Practices and Software Citation"
+    ]
   },
   {
     "objectID": "open-science.html#benefits",
     "href": "open-science.html#benefits",
     "title": "Open Practices and Software Citation",
     "section": "Benefits",
-    "text": "Benefits\n\nImproving reproducibility and impact of your work\n\n\nReviewers will love you with this one great trick!\n\n\nIt also lets you reuse your figures without violating the journal copyright. (Yes, when published, the journal owns the paper and everything in it that isn’t licensed from somewhere else.)"
+    "text": "Benefits\n\nImproving reproducibility and impact of your work\n\n\nReviewers will love you with this one great trick!\n\n\nIt also lets you reuse your figures without violating the journal copyright. (Yes, when published, the journal owns the paper and everything in it that isn’t licensed from somewhere else.)",
+    "crumbs": [
+      "Open Practices and Software Citation"
+    ]
   },
   {
     "objectID": "open-science.html#joss-journal-of-open-source-software",
     "href": "open-science.html#joss-journal-of-open-source-software",
     "title": "Open Practices and Software Citation",
     "section": "JOSS: Journal of Open Source Software",
-    "text": "JOSS: Journal of Open Source Software\n\n\n\n\n\n\n\n\nDeveloper-friendly journal for research software packages\n\n\nAffiliate of Open Source Initiative\n\n\nOpen access & no fees"
+    "text": "JOSS: Journal of Open Source Software\n\n\n\n\n\n\n\n\nDeveloper-friendly journal for research software packages\n\n\nAffiliate of Open Source Initiative\n\n\nOpen access & no fees",
+    "crumbs": [
+      "Open Practices and Software Citation"
+    ]
   },
   {
     "objectID": "open-science.html#section-8",
     "href": "open-science.html#section-8",
     "title": "Open Practices and Software Citation",
     "section": "",
-    "text": "If you’ve already licensed your code and have good documentation then we expect that it should take less than an hour to prepare and submit your paper to JOSS."
+    "text": "If you’ve already licensed your code and have good documentation then we expect that it should take less than an hour to prepare and submit your paper to JOSS.",
+    "crumbs": [
+      "Open Practices and Software Citation"
+    ]
   },
   {
     "objectID": "open-science.html#joss-paper-submission",
     "href": "open-science.html#joss-paper-submission",
     "title": "Open Practices and Software Citation",
     "section": "JOSS paper submission",
-    "text": "JOSS paper submission"
+    "text": "JOSS paper submission",
+    "crumbs": [
+      "Open Practices and Software Citation"
+    ]
   },
   {
     "objectID": "open-science.html#joss-reviews",
     "href": "open-science.html#joss-reviews",
     "title": "Open Practices and Software Citation",
     "section": "JOSS reviews",
-    "text": "JOSS reviews"
+    "text": "JOSS reviews",
+    "crumbs": [
+      "Open Practices and Software Citation"
+    ]
   },
   {
     "objectID": "open-science.html#also-consider-submitting-a-talkpaper-to-scipy",
     "href": "open-science.html#also-consider-submitting-a-talkpaper-to-scipy",
     "title": "Open Practices and Software Citation",
     "section": "Also consider submitting a talk/paper to SciPy!",
-    "text": "Also consider submitting a talk/paper to SciPy!\nTentative tracks:\n\nMachine Learning, Data Science, and Generative AI\nPlaying Nice: Scientific Computing Across Languages\nGeneral\nEarth/Ocean/Geo\nSocial Science/Humanities/Economics/Human Systems\nMaterials science/Chemistry\nData Vis and Image Processing"
+    "text": "Also consider submitting a talk/paper to SciPy!\nTentative tracks:\n\nMachine Learning, Data Science, and Generative AI\nPlaying Nice: Scientific Computing Across Languages\nGeneral\nEarth/Ocean/Geo\nSocial Science/Humanities/Economics/Human Systems\nMaterials science/Chemistry\nData Vis and Image Processing",
+    "crumbs": [
+      "Open Practices and Software Citation"
+    ]
   },
   {
     "objectID": "software-revealjs.html#section",
@@ -912,161 +1011,230 @@
     "href": "collaboration.html",
     "title": "Collaboration with Git and Github",
     "section": "",
-    "text": "Review git commands\nDescribe individual and collaborative workflows with git\nIntroduce git commands for collaborative workflows\nDemo of collaborative workflows in practice\nSee additional useful git tips/tricks\n\n\n\nThis material is heavily influenced by the previous works of Madicken Munk, Karthik Ram and James Howison from the previous summer and winter schools.\nOther helpful/fun resources for git\nhttps://git-school.github.io/visualizing-git/ https://pcottle.github.io/learnGitBranching/?NODEMO https://allisonhorst.com/git-github https://jvns.ca/blog/2023/11/23/branches-intuition-reality/ https://git-scm.com/docs https://swcarpentry.github.io/git-novice/"
+    "text": "Review git commands\nDescribe individual and collaborative workflows with git\nIntroduce git commands for collaborative workflows\nDemo of collaborative workflows in practice\nSee additional useful git tips/tricks\n\n\n\nThis material is heavily influenced by the previous works of Madicken Munk, Karthik Ram and James Howison from the previous summer and winter schools.\nOther helpful/fun resources for git\nhttps://git-school.github.io/visualizing-git/ https://pcottle.github.io/learnGitBranching/?NODEMO https://allisonhorst.com/git-github https://jvns.ca/blog/2023/11/23/branches-intuition-reality/ https://git-scm.com/docs https://swcarpentry.github.io/git-novice/",
+    "crumbs": [
+      "Collaboration with Git and Github"
+    ]
   },
   {
     "objectID": "collaboration.html#acknowledgements",
     "href": "collaboration.html#acknowledgements",
     "title": "Collaboration with Git and Github",
     "section": "",
-    "text": "This material is heavily influenced by the previous works of Madicken Munk, Karthik Ram and James Howison from the previous summer and winter schools.\nOther helpful/fun resources for git\nhttps://git-school.github.io/visualizing-git/ https://pcottle.github.io/learnGitBranching/?NODEMO https://allisonhorst.com/git-github https://jvns.ca/blog/2023/11/23/branches-intuition-reality/ https://git-scm.com/docs https://swcarpentry.github.io/git-novice/"
+    "text": "This material is heavily influenced by the previous works of Madicken Munk, Karthik Ram and James Howison from the previous summer and winter schools.\nOther helpful/fun resources for git\nhttps://git-school.github.io/visualizing-git/ https://pcottle.github.io/learnGitBranching/?NODEMO https://allisonhorst.com/git-github https://jvns.ca/blog/2023/11/23/branches-intuition-reality/ https://git-scm.com/docs https://swcarpentry.github.io/git-novice/",
+    "crumbs": [
+      "Collaboration with Git and Github"
+    ]
   },
   {
     "objectID": "collaboration.html#an-individual-workflow-without-a-remote",
     "href": "collaboration.html#an-individual-workflow-without-a-remote",
     "title": "Collaboration with Git and Github",
     "section": "An Individual Workflow (without a remote)",
-    "text": "An Individual Workflow (without a remote)\ncommit, commit, commit …..\ndanikamacdonell@computer: ~/Git$ mkdir research-code ; cd research-code\ndanikamacdonell@computer: ~/Git/research-code$ git init\nInitialized empty Git repository in /Users/danikamacdonell/Git/research-code/.git/\ndanikamacdonell@computer: ~/Git/research-code$ git branch -M main\ndanikamacdonell@computer: ~/Git/research-code$ touch README.md ; open README.md\ndanikamacdonell@computer: ~/Git/research-code$ git add README.md\ndanikamacdonell@computer: ~/Git/research-code$ git commit -m 'add README with code description'\n[main (root-commit) 49c9e77] add README with code description\n 1 file changed, 0 insertions(+), 0 deletions(-)\n     create mode 100644 README.md\ndanikamacdonell@computer: ~/Git/research-code$ git log\nAuthor: Danika MacDonell &lt;danikamacdonell@computer&gt;\n    Add a README with code description"
+    "text": "An Individual Workflow (without a remote)\ncommit, commit, commit …..\ndanikamacdonell@computer: ~/Git$ mkdir research-code ; cd research-code\ndanikamacdonell@computer: ~/Git/research-code$ git init\nInitialized empty Git repository in /Users/danikamacdonell/Git/research-code/.git/\ndanikamacdonell@computer: ~/Git/research-code$ git branch -M main\ndanikamacdonell@computer: ~/Git/research-code$ touch README.md ; open README.md\ndanikamacdonell@computer: ~/Git/research-code$ git add README.md\ndanikamacdonell@computer: ~/Git/research-code$ git commit -m 'add README with code description'\n[main (root-commit) 49c9e77] add README with code description\n 1 file changed, 0 insertions(+), 0 deletions(-)\n     create mode 100644 README.md\ndanikamacdonell@computer: ~/Git/research-code$ git log\nAuthor: Danika MacDonell &lt;danikamacdonell@computer&gt;\n    Add a README with code description",
+    "crumbs": [
+      "Collaboration with Git and Github"
+    ]
   },
   {
     "objectID": "collaboration.html#an-individual-workflow-with-a-remote",
     "href": "collaboration.html#an-individual-workflow-with-a-remote",
     "title": "Collaboration with Git and Github",
     "section": "An Individual Workflow (with a remote)",
-    "text": "An Individual Workflow (with a remote)\n\n\ncommit push, commit commit push, commit push …..\ndanikamacdonell@computer: ~/Git/research-code$ git remote add origin git@github.com:danikam/research-code.git\ndanikamacdonell@computer: ~/Git/research-code$ git push -u origin main\nEnumerating objects: 3, done.\n[...]\nTo github.com:danikam/research-code.git\n * [new branch]      main -&gt; main\nbranch 'main' set up to track 'origin/main'.\nWith your code on a remote (like GitHub, GitLab, or an internal server for your lab), your work is easily accessed by peers!\n💡GitLab and other Git platforms will have slightly different interfaces and features from GitHub, but the basic actions are generally pretty similar."
+    "text": "An Individual Workflow (with a remote)\n\n\ncommit push, commit commit push, commit push …..\ndanikamacdonell@computer: ~/Git/research-code$ git remote add origin git@github.com:danikam/research-code.git\ndanikamacdonell@computer: ~/Git/research-code$ git push -u origin main\nEnumerating objects: 3, done.\n[...]\nTo github.com:danikam/research-code.git\n * [new branch]      main -&gt; main\nbranch 'main' set up to track 'origin/main'.\nWith your code on a remote (like GitHub, GitLab, or an internal server for your lab), your work is easily accessed by peers!\n💡GitLab and other Git platforms will have slightly different interfaces and features from GitHub, but the basic actions are generally pretty similar.",
+    "crumbs": [
+      "Collaboration with Git and Github"
+    ]
   },
   {
     "objectID": "collaboration.html#centralized-workflow",
     "href": "collaboration.html#centralized-workflow",
     "title": "Collaboration with Git and Github",
     "section": "Centralized Workflow",
-    "text": "Centralized Workflow\nAll members work on the same repository\ngit pull before starting work\nEveryone commits to main\ngit push\nIf there is no merge conflict, 🙌\nOtherwise fix merge conflict, then push"
+    "text": "Centralized Workflow\nAll members work on the same repository\ngit pull before starting work\nEveryone commits to main\ngit push\nIf there is no merge conflict, 🙌\nOtherwise fix merge conflict, then push",
+    "crumbs": [
+      "Collaboration with Git and Github"
+    ]
   },
   {
     "objectID": "collaboration.html#feature-branching-workflow",
     "href": "collaboration.html#feature-branching-workflow",
     "title": "Collaboration with Git and Github",
     "section": "Feature Branching Workflow",
-    "text": "Feature Branching Workflow\nMembers work on the same repository but use individual branches to do feature development"
+    "text": "Feature Branching Workflow\nMembers work on the same repository but use individual branches to do feature development",
+    "crumbs": [
+      "Collaboration with Git and Github"
+    ]
   },
   {
     "objectID": "collaboration.html#section",
     "href": "collaboration.html#section",
     "title": "Collaboration with Git and Github",
     "section": "",
-    "text": "Create and switch to a branch\nAdd commits\nPush feature branch to GitHub\nStart a pull request\nDiscuss, add more commits, merge"
+    "text": "Create and switch to a branch\nAdd commits\nPush feature branch to GitHub\nStart a pull request\nDiscuss, add more commits, merge",
+    "crumbs": [
+      "Collaboration with Git and Github"
+    ]
   },
   {
     "objectID": "collaboration.html#section-1",
     "href": "collaboration.html#section-1",
     "title": "Collaboration with Git and Github",
     "section": "",
-    "text": "Some important commands for this workflow:\n\ngit branch\ngit checkout -b &lt;branchname&gt;\ngit push -u origin &lt;branchname&gt;\n\n\n.. add some more commits, then git push and open a pull request"
+    "text": "Some important commands for this workflow:\n\ngit branch\ngit checkout -b &lt;branchname&gt;\ngit push -u origin &lt;branchname&gt;\n\n\n.. add some more commits, then git push and open a pull request",
+    "crumbs": [
+      "Collaboration with Git and Github"
+    ]
   },
   {
     "objectID": "collaboration.html#pull-requests",
     "href": "collaboration.html#pull-requests",
     "title": "Collaboration with Git and Github",
     "section": "Pull Requests",
-    "text": "Pull Requests\nPull requests are an excellent tool for fostering code review. If you’re using Github for team projects,you should be using these extensively."
+    "text": "Pull Requests\nPull requests are an excellent tool for fostering code review. If you’re using Github for team projects,you should be using these extensively.",
+    "crumbs": [
+      "Collaboration with Git and Github"
+    ]
   },
   {
     "objectID": "collaboration.html#pull-request-best-practices",
     "href": "collaboration.html#pull-request-best-practices",
     "title": "Collaboration with Git and Github",
     "section": "Pull request best practices:",
-    "text": "Pull request best practices:\n\nTry to make frequent, targeted pull requests that add a specific feature or set of features\n\n✅ “Adds a new click feature for area layers in the geospatial mapping tool”\n❌ “Adds the last 3 years of my thesis work”\n\nItemize each major addition.\n\n\nA good practice is for someone else to merge your code into main, after being approved by at least one colleague. Sometimes a reviewer may not have merge rights; in these cases the requirement may be an approving review must be given before the feature is merged."
+    "text": "Pull request best practices:\n\nTry to make frequent, targeted pull requests that add a specific feature or set of features\n\n✅ “Adds a new click feature for area layers in the geospatial mapping tool”\n❌ “Adds the last 3 years of my thesis work”\n\nItemize each major addition.\n\n\nA good practice is for someone else to merge your code into main, after being approved by at least one colleague. Sometimes a reviewer may not have merge rights; in these cases the requirement may be an approving review must be given before the feature is merged.",
+    "crumbs": [
+      "Collaboration with Git and Github"
+    ]
   },
   {
     "objectID": "collaboration.html#pull-request-tip",
     "href": "collaboration.html#pull-request-tip",
     "title": "Collaboration with Git and Github",
     "section": "Pull request tip:",
-    "text": "Pull request tip:\nUsing the github interface, you can change the target of a pull request. The default is to the main branch, but it could be another feature branch. This can be used if you want to help develop a feature branch outside of main with a collaborator.\n⛔️ Never send a large pull request without notice 🙅"
+    "text": "Pull request tip:\nUsing the github interface, you can change the target of a pull request. The default is to the main branch, but it could be another feature branch. This can be used if you want to help develop a feature branch outside of main with a collaborator.\n⛔️ Never send a large pull request without notice 🙅",
+    "crumbs": [
+      "Collaboration with Git and Github"
+    ]
   },
   {
     "objectID": "collaboration.html#demo-update-summerschool-july2024-link-to-issue",
     "href": "collaboration.html#demo-update-summerschool-july2024-link-to-issue",
     "title": "Collaboration with Git and Github",
     "section": "Demo: Update summerschool-July2024 (link to issue)",
-    "text": "Demo: Update summerschool-July2024 (link to issue)\n[...]: ~/Git/research-code$ cd ../summerschool-July2024\n[...]: ~/Git/summerschool-July2024$ git checkout -b update-git-lesson\n[...]: ~/Git/summerschool-July2024$ open README.md\n[...]: ~/Git/summerschool-July2024$ git add README.md\n[...]: ~/Git/summerschool-July2024$ git commit -m \"Updating the Git/GitHub lesson.\"\n[...]: ~/Git/summerschool-July2024$ git push -u origin add-git-lesson\nClose the issue!"
+    "text": "Demo: Update summerschool-July2024 (link to issue)\n[...]: ~/Git/research-code$ cd ../summerschool-July2024\n[...]: ~/Git/summerschool-July2024$ git checkout -b update-git-lesson\n[...]: ~/Git/summerschool-July2024$ open README.md\n[...]: ~/Git/summerschool-July2024$ git add README.md\n[...]: ~/Git/summerschool-July2024$ git commit -m \"Updating the Git/GitHub lesson.\"\n[...]: ~/Git/summerschool-July2024$ git push -u origin add-git-lesson\nClose the issue!",
+    "crumbs": [
+      "Collaboration with Git and Github"
+    ]
   },
   {
     "objectID": "collaboration.html#practice",
     "href": "collaboration.html#practice",
     "title": "Collaboration with Git and Github",
     "section": "Practice",
-    "text": "Practice\ncd ../research-code\nUsing the feature branching workflow:\n\nUse at least two commits to:\n\nCreate a python script in the source directory called PrintMessage.py that prints a simple message.\nAdd a new section to the README to document the new script.\n\nMake a pull request!"
+    "text": "Practice\ncd ../research-code\nUsing the feature branching workflow:\n\nUse at least two commits to:\n\nCreate a python script in the source directory called PrintMessage.py that prints a simple message.\nAdd a new section to the README to document the new script.\n\nMake a pull request!",
+    "crumbs": [
+      "Collaboration with Git and Github"
+    ]
   },
   {
     "objectID": "collaboration.html#forking-workflow-guidelines",
     "href": "collaboration.html#forking-workflow-guidelines",
     "title": "Collaboration with Git and Github",
     "section": "Forking Workflow Guidelines",
-    "text": "Forking Workflow Guidelines\nEveryone has a fork of a “central” repository\nAdd commits to feature branches\nPush feature branches to individual forks\nSend pull-request from feature branch on fork to central repository"
+    "text": "Forking Workflow Guidelines\nEveryone has a fork of a “central” repository\nAdd commits to feature branches\nPush feature branches to individual forks\nSend pull-request from feature branch on fork to central repository",
+    "crumbs": [
+      "Collaboration with Git and Github"
+    ]
   },
   {
     "objectID": "collaboration.html#extra-tips",
     "href": "collaboration.html#extra-tips",
     "title": "Collaboration with Git and Github",
     "section": "Extra Tips:",
-    "text": "Extra Tips:\n\nTip #1: Always git pull before you start new work\nTip #2: Keep branch names descriptive\nTip #3: Generously use branches (but delete them when they’re merged or stale)\nTip #4: Use github command line tool (gh) to simplify your workflow"
+    "text": "Extra Tips:\n\nTip #1: Always git pull before you start new work\nTip #2: Keep branch names descriptive\nTip #3: Generously use branches (but delete them when they’re merged or stale)\nTip #4: Use github command line tool (gh) to simplify your workflow",
+    "crumbs": [
+      "Collaboration with Git and Github"
+    ]
   },
   {
     "objectID": "collaboration.html#practice-1",
     "href": "collaboration.html#practice-1",
     "title": "Collaboration with Git and Github",
     "section": "Practice",
-    "text": "Practice\nMake a fork of https://github.com/mcsc-impact-climate/urssi-research-code and Using the forking workflow, update the script source/PrintMessage.py to instead print out your name (or something similarly personalized).\n\ndanikamacdonell@computer: ~/Git/research-code$ cd ..\ndanikamacdonell@computer: ~/Git$ git clone git@github.com:danikam/urssi-research-code.git\ndanikamacdonell@computer: ~/Git$ cd urssi-research-code\ndanikamacdonell@computer: ~/Git$ git remote add upstream git@github.com:mcsc-impact-climate/urssi-research-code.git\ndanikamacdonell@computer: ~/Git$ git checkout -b personalize-message\nAdd your new file(s), push and open a pull request"
+    "text": "Practice\nMake a fork of https://github.com/mcsc-impact-climate/urssi-research-code and Using the forking workflow, update the script source/PrintMessage.py to instead print out your name (or something similarly personalized).\n\ndanikamacdonell@computer: ~/Git/research-code$ cd ..\ndanikamacdonell@computer: ~/Git$ git clone git@github.com:danikam/urssi-research-code.git\ndanikamacdonell@computer: ~/Git$ cd urssi-research-code\ndanikamacdonell@computer: ~/Git$ git remote add upstream git@github.com:mcsc-impact-climate/urssi-research-code.git\ndanikamacdonell@computer: ~/Git$ git checkout -b personalize-message\nAdd your new file(s), push and open a pull request",
+    "crumbs": [
+      "Collaboration with Git and Github"
+    ]
   },
   {
     "objectID": "collaboration.html#section-2",
     "href": "collaboration.html#section-2",
     "title": "Collaboration with Git and Github",
     "section": "",
-    "text": "tagging commits\nbranches are special labels that track a series of commits, but what if you want a special name for a particular commit (like when you released a new version of your code)? you can “tag” these\n\ngit tag -a &lt;tagname&gt; &lt;hash&gt; – useful for tagging a particular commit farther back in history\ngit tag -a &lt;tagname&gt; -m \"tag message\" – this should tag the current commit with a descriptive message\ngit push origin &lt;tagname&gt; – push a particular tag up to your remote\ngit push origin --tags – push all of your tags up to your remote"
+    "text": "tagging commits\nbranches are special labels that track a series of commits, but what if you want a special name for a particular commit (like when you released a new version of your code)? you can “tag” these\n\ngit tag -a &lt;tagname&gt; &lt;hash&gt; – useful for tagging a particular commit farther back in history\ngit tag -a &lt;tagname&gt; -m \"tag message\" – this should tag the current commit with a descriptive message\ngit push origin &lt;tagname&gt; – push a particular tag up to your remote\ngit push origin --tags – push all of your tags up to your remote",
+    "crumbs": [
+      "Collaboration with Git and Github"
+    ]
   },
   {
     "objectID": "collaboration.html#section-3",
     "href": "collaboration.html#section-3",
     "title": "Collaboration with Git and Github",
     "section": "",
-    "text": "amending a commit\nOh no! I made a typo in my commit message!\ngit commit --amend is useful for both fixing commit messages and for adding in files that were supposed to be committed and werent"
+    "text": "amending a commit\nOh no! I made a typo in my commit message!\ngit commit --amend is useful for both fixing commit messages and for adding in files that were supposed to be committed and werent",
+    "crumbs": [
+      "Collaboration with Git and Github"
+    ]
   },
   {
     "objectID": "collaboration.html#section-4",
     "href": "collaboration.html#section-4",
     "title": "Collaboration with Git and Github",
     "section": "",
-    "text": "cherry picking\nWhat if you have a commit that really belongs on a different branch? Or in development you fixed a bug that you think should be in its own PR? You can “cherry pick” that commit to a new branch.\ngit cherry-pick &lt;hash&gt;"
+    "text": "cherry picking\nWhat if you have a commit that really belongs on a different branch? Or in development you fixed a bug that you think should be in its own PR? You can “cherry pick” that commit to a new branch.\ngit cherry-pick &lt;hash&gt;",
+    "crumbs": [
+      "Collaboration with Git and Github"
+    ]
   },
   {
     "objectID": "collaboration.html#section-5",
     "href": "collaboration.html#section-5",
     "title": "Collaboration with Git and Github",
     "section": "",
-    "text": "undoing changes\nReverting vs. Restoring\ngit revert &lt;commit hash&gt;\ngit restore &lt;filename&gt;"
+    "text": "undoing changes\nReverting vs. Restoring\ngit revert &lt;commit hash&gt;\ngit restore &lt;filename&gt;",
+    "crumbs": [
+      "Collaboration with Git and Github"
+    ]
   },
   {
     "objectID": "collaboration.html#section-6",
     "href": "collaboration.html#section-6",
     "title": "Collaboration with Git and Github",
     "section": "",
-    "text": "stashing changes\noh no! I started making changes but I’m not on the feature branch I thought I was!\ngit stash can be used to hide the changes in your working tree and then bring them back out with git stash apply when you’re on the appropriate branch"
+    "text": "stashing changes\noh no! I started making changes but I’m not on the feature branch I thought I was!\ngit stash can be used to hide the changes in your working tree and then bring them back out with git stash apply when you’re on the appropriate branch",
+    "crumbs": [
+      "Collaboration with Git and Github"
+    ]
   },
   {
     "objectID": "collaboration.html#section-7",
     "href": "collaboration.html#section-7",
     "title": "Collaboration with Git and Github",
     "section": "",
-    "text": "co-authoring changes\nHave you pair programmed with a friend and come up with a solution together? How do you deal with attribution?\nCo-authored-by: NAME &lt;EMAIL&gt; can add multiple authors to a commit."
+    "text": "co-authoring changes\nHave you pair programmed with a friend and come up with a solution together? How do you deal with attribution?\nCo-authored-by: NAME &lt;EMAIL&gt; can add multiple authors to a commit.",
+    "crumbs": [
+      "Collaboration with Git and Github"
+    ]
   },
   {
     "objectID": "collaboration.html#more-resources",
     "href": "collaboration.html#more-resources",
     "title": "Collaboration with Git and Github",
     "section": "More resources",
-    "text": "More resources\n\nGitHub Issues help you share code issues or feature requests with collaborators\nDo you need to version control large files? git lfs and git annex are tools designed to help with this\nHow to undo almost anything with git link\nRemove sensitive data (like private keys) from a repository link"
+    "text": "More resources\n\nGitHub Issues help you share code issues or feature requests with collaborators\nDo you need to version control large files? git lfs and git annex are tools designed to help with this\nHow to undo almost anything with git link\nRemove sensitive data (like private keys) from a repository link",
+    "crumbs": [
+      "Collaboration with Git and Github"
+    ]
   },
   {
     "objectID": "index.html",
@@ -1828,105 +1996,150 @@
     "href": "peer_code_review.html",
     "title": "Peer Code Review",
     "section": "",
-    "text": "Summarize code review best practices\nDemonstrate code review on a pull request"
+    "text": "Summarize code review best practices\nDemonstrate code review on a pull request",
+    "crumbs": [
+      "Peer Code Review"
+    ]
   },
   {
     "objectID": "peer_code_review.html#section",
     "href": "peer_code_review.html#section",
     "title": "Peer Code Review",
     "section": "",
-    "text": "Code review, like peer review, enhances the quality of the work being submitted. All involved parties are collaborating to enhance the final product of the pull request.\nWhen performing code review, you are using your expertise to weigh in on a contribution. You aren’t going to have expertise on everything, but your experience in the code and using it is important and relevant to the reivew.\nAs a person getting code reviewed, appreciate the reviewer taking time to give you feedback on your work! They are both/either invested and interested in the work you’re contributing."
+    "text": "Code review, like peer review, enhances the quality of the work being submitted. All involved parties are collaborating to enhance the final product of the pull request.\nWhen performing code review, you are using your expertise to weigh in on a contribution. You aren’t going to have expertise on everything, but your experience in the code and using it is important and relevant to the reivew.\nAs a person getting code reviewed, appreciate the reviewer taking time to give you feedback on your work! They are both/either invested and interested in the work you’re contributing.",
+    "crumbs": [
+      "Peer Code Review"
+    ]
   },
   {
     "objectID": "peer_code_review.html#section-1",
     "href": "peer_code_review.html#section-1",
     "title": "Peer Code Review",
     "section": "",
-    "text": "I’m going to be talking about a few different perspectives this morning. Let’s define them.\nmaintainer – a person who keeps things running in a software project. Sometimes maintainers aren’t focused on new features but instead focus on overall project infrastructure and usability.\ncontributor – a person submitting a PR, issue, or feedback to a project. They may have never interacted with the project, or maybe they do so frequently.\nuser – people who use the code but don’t contribute upstream. I try to think about how changes in my code might affect these people since they’re often not weighing in in code review."
+    "text": "I’m going to be talking about a few different perspectives this morning. Let’s define them.\nmaintainer – a person who keeps things running in a software project. Sometimes maintainers aren’t focused on new features but instead focus on overall project infrastructure and usability.\ncontributor – a person submitting a PR, issue, or feedback to a project. They may have never interacted with the project, or maybe they do so frequently.\nuser – people who use the code but don’t contribute upstream. I try to think about how changes in my code might affect these people since they’re often not weighing in in code review.",
+    "crumbs": [
+      "Peer Code Review"
+    ]
   },
   {
     "objectID": "peer_code_review.html#what-is-code-review",
     "href": "peer_code_review.html#what-is-code-review",
     "title": "Peer Code Review",
     "section": "What is code review?",
-    "text": "What is code review?\nI like this description from gitlab."
+    "text": "What is code review?\nI like this description from gitlab.",
+    "crumbs": [
+      "Peer Code Review"
+    ]
   },
   {
     "objectID": "peer_code_review.html#code-review-as-a-reviewer",
     "href": "peer_code_review.html#code-review-as-a-reviewer",
     "title": "Peer Code Review",
     "section": "Code review as a reviewer",
-    "text": "Code review as a reviewer\nMy approach in a review:\nRead the PR description. What does the author want this code to do? Is it useful/applicable to the code it’s being submitted to (is it in scope)?\nRead the documentation submitted with the code. Do I understand how to use it now? Is there anything that’s ambiguous that coould be enhanced by clarification? Are there docs missing that need to be added?\nLook through the code. Do I follow the logic of what’s being done? I ask questions if I don’t.\nCheck the tests. Have tests been added for any new features? Do they cover the scope of the new feature? Do they help me understand the code in any way?"
+    "text": "Code review as a reviewer\nMy approach in a review:\nRead the PR description. What does the author want this code to do? Is it useful/applicable to the code it’s being submitted to (is it in scope)?\nRead the documentation submitted with the code. Do I understand how to use it now? Is there anything that’s ambiguous that coould be enhanced by clarification? Are there docs missing that need to be added?\nLook through the code. Do I follow the logic of what’s being done? I ask questions if I don’t.\nCheck the tests. Have tests been added for any new features? Do they cover the scope of the new feature? Do they help me understand the code in any way?",
+    "crumbs": [
+      "Peer Code Review"
+    ]
   },
   {
     "objectID": "peer_code_review.html#section-2",
     "href": "peer_code_review.html#section-2",
     "title": "Peer Code Review",
     "section": "",
-    "text": "Consider the user. Is the API of the code changing from what already exists? Will it impact users significantly?\nLook through the code. Suggest constructive improvements. Do I see a lot of functionality that’s repeated that can be put into a single function? Do I see a place where a design pattern could be used? I try to add suggestions for improvement as code snippets.\nTry to use the feature. I don’t always do this, but for new features I do. Do I run into any errors when I use it? Does it make sense in my workflow?\nI also like to use a good code review checklist so I don’t forget things. Here’s the one my group uses: https://arfc.github.io/manual/guides/pull_requests"
+    "text": "Consider the user. Is the API of the code changing from what already exists? Will it impact users significantly?\nLook through the code. Suggest constructive improvements. Do I see a lot of functionality that’s repeated that can be put into a single function? Do I see a place where a design pattern could be used? I try to add suggestions for improvement as code snippets.\nTry to use the feature. I don’t always do this, but for new features I do. Do I run into any errors when I use it? Does it make sense in my workflow?\nI also like to use a good code review checklist so I don’t forget things. Here’s the one my group uses: https://arfc.github.io/manual/guides/pull_requests",
+    "crumbs": [
+      "Peer Code Review"
+    ]
   },
   {
     "objectID": "peer_code_review.html#other-considerations",
     "href": "peer_code_review.html#other-considerations",
     "title": "Peer Code Review",
     "section": "Other considerations",
-    "text": "Other considerations\n\nWhen you accept the code, it’s possible the contributor will not return. If you’re the maintainer of the project, is this code you are comfortable maintaining moving forward?\nAdding dependencies should be done mindfully.\nIf you notice something that you’d like changed that isn’t directly related to the PR improvement, open an issue and suggest it as a later fix."
+    "text": "Other considerations\n\nWhen you accept the code, it’s possible the contributor will not return. If you’re the maintainer of the project, is this code you are comfortable maintaining moving forward?\nAdding dependencies should be done mindfully.\nIf you notice something that you’d like changed that isn’t directly related to the PR improvement, open an issue and suggest it as a later fix.",
+    "crumbs": [
+      "Peer Code Review"
+    ]
   },
   {
     "objectID": "peer_code_review.html#dos-in-code-review",
     "href": "peer_code_review.html#dos-in-code-review",
     "title": "Peer Code Review",
     "section": "Dos in code review",
-    "text": "Dos in code review\n\nThank the contributor for their contribution\nState what things you particularly like about what was submitted.\nBe positive whenever possible.\nAsk questions about things you’re confused about. You’re probably not the only one.\nIf doing multiple rounds of review, try to not let things stagnate.\nUse suggestions to show your thought process in code changes."
+    "text": "Dos in code review\n\nThank the contributor for their contribution\nState what things you particularly like about what was submitted.\nBe positive whenever possible.\nAsk questions about things you’re confused about. You’re probably not the only one.\nIf doing multiple rounds of review, try to not let things stagnate.\nUse suggestions to show your thought process in code changes.",
+    "crumbs": [
+      "Peer Code Review"
+    ]
   },
   {
     "objectID": "peer_code_review.html#donts-in-code-review",
     "href": "peer_code_review.html#donts-in-code-review",
     "title": "Peer Code Review",
     "section": "Don’ts in code review",
-    "text": "Don’ts in code review\n\nNitpicking can really set the tone of a review. Is this small thing really important to the code or is it personal preference?\nDon’t reject code for stylistic or small changes. This is very demotivating for a contributor"
+    "text": "Don’ts in code review\n\nNitpicking can really set the tone of a review. Is this small thing really important to the code or is it personal preference?\nDon’t reject code for stylistic or small changes. This is very demotivating for a contributor",
+    "crumbs": [
+      "Peer Code Review"
+    ]
   },
   {
     "objectID": "peer_code_review.html#tips-for-smoother-code-reviews-and-development-in-your-project",
     "href": "peer_code_review.html#tips-for-smoother-code-reviews-and-development-in-your-project",
     "title": "Peer Code Review",
     "section": "Tips for smoother code reviews (and development!) in your project",
-    "text": "Tips for smoother code reviews (and development!) in your project\nYour reivews are there to enhance the code that was submitted for other maintainers, developers, and users. You are collaaborating with the author.\nUsing a linter and formatter mean that reviews avoid style bikeshedding.\nHaving good test coverage and CI mean that the a new contributor gets automatic feedback on how their code fits into your project.\nThis also allows for code reviewers to focus on code readability and applicability rather than helping the author debug."
+    "text": "Tips for smoother code reviews (and development!) in your project\nYour reivews are there to enhance the code that was submitted for other maintainers, developers, and users. You are collaaborating with the author.\nUsing a linter and formatter mean that reviews avoid style bikeshedding.\nHaving good test coverage and CI mean that the a new contributor gets automatic feedback on how their code fits into your project.\nThis also allows for code reviewers to focus on code readability and applicability rather than helping the author debug.",
+    "crumbs": [
+      "Peer Code Review"
+    ]
   },
   {
     "objectID": "peer_code_review.html#section-3",
     "href": "peer_code_review.html#section-3",
     "title": "Peer Code Review",
     "section": "",
-    "text": "Having good developer documentation (what linter and formatter do your code use? What is your docs style) helps make the contributor experience a bit less iterative.\nHaving your issue tracker with clearly described issues helps people other than you understand what’s going on in the project.\nLabeling issues with things like good first issue and what type of fix the issue is (e.g. documentation, testing, or something feature-specific means that potential contributors can more easily choose a contribution they are comfortable with. This also ensures that the contribution somebody addresses from the issue tracker is relevant to the project.\nConsider having a project decription in your README. What is the purpose of your code? What is it? What is it not?"
+    "text": "Having good developer documentation (what linter and formatter do your code use? What is your docs style) helps make the contributor experience a bit less iterative.\nHaving your issue tracker with clearly described issues helps people other than you understand what’s going on in the project.\nLabeling issues with things like good first issue and what type of fix the issue is (e.g. documentation, testing, or something feature-specific means that potential contributors can more easily choose a contribution they are comfortable with. This also ensures that the contribution somebody addresses from the issue tracker is relevant to the project.\nConsider having a project decription in your README. What is the purpose of your code? What is it? What is it not?",
+    "crumbs": [
+      "Peer Code Review"
+    ]
   },
   {
     "objectID": "peer_code_review.html#a-few-more-things",
     "href": "peer_code_review.html#a-few-more-things",
     "title": "Peer Code Review",
     "section": "A few more things",
-    "text": "A few more things\nIf you know the contributor and you have done a few rounds of review, consider scheduling a call or sitting down with them to try to resolve things."
+    "text": "A few more things\nIf you know the contributor and you have done a few rounds of review, consider scheduling a call or sitting down with them to try to resolve things.",
+    "crumbs": [
+      "Peer Code Review"
+    ]
   },
   {
     "objectID": "peer_code_review.html#code-review-as-a-contributordeveloper",
     "href": "peer_code_review.html#code-review-as-a-contributordeveloper",
     "title": "Peer Code Review",
     "section": "Code review as a contributor/developer",
-    "text": "Code review as a contributor/developer\nGetting your own code reviewed can be exciting! But it can also be a little nervewracking.\nLet’s talk a bit about the process of responding to a code review."
+    "text": "Code review as a contributor/developer\nGetting your own code reviewed can be exciting! But it can also be a little nervewracking.\nLet’s talk a bit about the process of responding to a code review.",
+    "crumbs": [
+      "Peer Code Review"
+    ]
   },
   {
     "objectID": "peer_code_review.html#my-approach",
     "href": "peer_code_review.html#my-approach",
     "title": "Peer Code Review",
     "section": "My approach:",
-    "text": "My approach:\n\nRead through the reviewer’s comments. Consider their perspective as I read the comments. If I don’t understand a comment, I ask a question as a reply to the review comment.\nAnswer reviewer questions, if there are any.\nIncorporate any code suggestions the reveiwer made that I like through the github interface. This helps preserve authorship of their contributions.\nMake code changes locally and push them to my feature branch. - Address review comments in seperate commits to help split things up.\nNotify the reviewer once I’ve addressed all comments and all open discussions have been resolved."
+    "text": "My approach:\n\nRead through the reviewer’s comments. Consider their perspective as I read the comments. If I don’t understand a comment, I ask a question as a reply to the review comment.\nAnswer reviewer questions, if there are any.\nIncorporate any code suggestions the reveiwer made that I like through the github interface. This helps preserve authorship of their contributions.\nMake code changes locally and push them to my feature branch. - Address review comments in seperate commits to help split things up.\nNotify the reviewer once I’ve addressed all comments and all open discussions have been resolved.",
+    "crumbs": [
+      "Peer Code Review"
+    ]
   },
   {
     "objectID": "peer_code_review.html#section-4",
     "href": "peer_code_review.html#section-4",
     "title": "Peer Code Review",
     "section": "",
-    "text": "https://google.github.io/eng-practices/review/reviewer/\nhttps://stackoverflow.blog/2019/09/30/how-to-make-good-code-reviews-better/\nhttps://mtlynch.io/human-code-reviews-1/\nhttps://mtlynch.io/code-review-love/\nhttps://developers.redhat.com/blog/2019/07/08/10-tips-for-reviewing-code-you-dont-like#code_review_strategies\nhttps://kickstarter.engineering/a-guide-to-mindful-communication-in-code-reviews-48aab5282e5e"
+    "text": "https://google.github.io/eng-practices/review/reviewer/\nhttps://stackoverflow.blog/2019/09/30/how-to-make-good-code-reviews-better/\nhttps://mtlynch.io/human-code-reviews-1/\nhttps://mtlynch.io/code-review-love/\nhttps://developers.redhat.com/blog/2019/07/08/10-tips-for-reviewing-code-you-dont-like#code_review_strategies\nhttps://kickstarter.engineering/a-guide-to-mindful-communication-in-code-reviews-48aab5282e5e",
+    "crumbs": [
+      "Peer Code Review"
+    ]
   },
   {
     "objectID": "peer-code-review-revealjs.html#section",
@@ -2432,98 +2645,140 @@
     "href": "testing.html",
     "title": "Testing, Formatting, Linting, Type-Checking, and Continuous Integration",
     "section": "",
-    "text": "Testing consist in writing small functions that test:\n\nwhether small units of your code function as expected\nwhether these small units integrate well together\nwhether your code takes care of edge cases\nwhether your code’s inputs and outputs are correctly treated\n\n\nRunning your tests allow checking that new changes to the code base did not break anything in your code (at least what your are testing for!).\n\n\n\nAs you write tests, you get to experience what it takes to use your library and this might lead you to refactor parts of your code; refactoring is an important part of a software life-cycle!\n\n\n\nHow to write tests!\ntesting-pr on repo\nEva reminder to set local branch to: just-testing"
+    "text": "Testing consist in writing small functions that test:\n\nwhether small units of your code function as expected\nwhether these small units integrate well together\nwhether your code takes care of edge cases\nwhether your code’s inputs and outputs are correctly treated\n\n\nRunning your tests allow checking that new changes to the code base did not break anything in your code (at least what your are testing for!).\n\n\n\nAs you write tests, you get to experience what it takes to use your library and this might lead you to refactor parts of your code; refactoring is an important part of a software life-cycle!\n\n\n\nHow to write tests!\ntesting-pr on repo\nEva reminder to set local branch to: just-testing",
+    "crumbs": [
+      "Testing, Formatting, Linting, Type-Checking, and Continuous Integration"
+    ]
   },
   {
     "objectID": "testing.html#section",
     "href": "testing.html#section",
     "title": "Testing, Formatting, Linting, Type-Checking, and Continuous Integration",
     "section": "",
-    "text": "As you write tests, you get to experience what it takes to use your library and this might lead you to refactor parts of your code; refactoring is an important part of a software life-cycle!"
+    "text": "As you write tests, you get to experience what it takes to use your library and this might lead you to refactor parts of your code; refactoring is an important part of a software life-cycle!",
+    "crumbs": [
+      "Testing, Formatting, Linting, Type-Checking, and Continuous Integration"
+    ]
   },
   {
     "objectID": "testing.html#section-1",
     "href": "testing.html#section-1",
     "title": "Testing, Formatting, Linting, Type-Checking, and Continuous Integration",
     "section": "",
-    "text": "How to write tests!\ntesting-pr on repo\nEva reminder to set local branch to: just-testing"
+    "text": "How to write tests!\ntesting-pr on repo\nEva reminder to set local branch to: just-testing",
+    "crumbs": [
+      "Testing, Formatting, Linting, Type-Checking, and Continuous Integration"
+    ]
   },
   {
     "objectID": "testing.html#section-2",
     "href": "testing.html#section-2",
     "title": "Testing, Formatting, Linting, Type-Checking, and Continuous Integration",
     "section": "",
-    "text": "How to format your code:\nformatting-pr on repo\nEva reminder to set local branch to: just-formating"
+    "text": "How to format your code:\nformatting-pr on repo\nEva reminder to set local branch to: just-formating",
+    "crumbs": [
+      "Testing, Formatting, Linting, Type-Checking, and Continuous Integration"
+    ]
   },
   {
     "objectID": "testing.html#section-3",
     "href": "testing.html#section-3",
     "title": "Testing, Formatting, Linting, Type-Checking, and Continuous Integration",
     "section": "",
-    "text": "But linting should inform you (if not automatically fix) that foo from package_a is imported twice and a nicer import block should look like:\nfrom package_a import baz, foo  # alphabetical\nfrom package_b import bar"
+    "text": "But linting should inform you (if not automatically fix) that foo from package_a is imported twice and a nicer import block should look like:\nfrom package_a import baz, foo  # alphabetical\nfrom package_b import bar",
+    "crumbs": [
+      "Testing, Formatting, Linting, Type-Checking, and Continuous Integration"
+    ]
   },
   {
     "objectID": "testing.html#section-4",
     "href": "testing.html#section-4",
     "title": "Testing, Formatting, Linting, Type-Checking, and Continuous Integration",
     "section": "",
-    "text": "It will also alert you of unused variables that you may have forgot to use or accidentially left from debugging etc.\nIt will remind you about function and module documentation standards.\nIt will help you fix code which is doing extra bits of work (i.e. accidental double looping / possible standard library replacements). I won’t list all of the rules it checks against but there are A LOT."
+    "text": "It will also alert you of unused variables that you may have forgot to use or accidentially left from debugging etc.\nIt will remind you about function and module documentation standards.\nIt will help you fix code which is doing extra bits of work (i.e. accidental double looping / possible standard library replacements). I won’t list all of the rules it checks against but there are A LOT.",
+    "crumbs": [
+      "Testing, Formatting, Linting, Type-Checking, and Continuous Integration"
+    ]
   },
   {
     "objectID": "testing.html#section-5",
     "href": "testing.html#section-5",
     "title": "Testing, Formatting, Linting, Type-Checking, and Continuous Integration",
     "section": "",
-    "text": "How to lint your code:\nlinting-pr on repo\nEva reminder to set local branch to just-linting"
+    "text": "How to lint your code:\nlinting-pr on repo\nEva reminder to set local branch to just-linting",
+    "crumbs": [
+      "Testing, Formatting, Linting, Type-Checking, and Continuous Integration"
+    ]
   },
   {
     "objectID": "testing.html#section-6",
     "href": "testing.html#section-6",
     "title": "Testing, Formatting, Linting, Type-Checking, and Continuous Integration",
     "section": "",
-    "text": "Type checking is the most thorough analysis of your code you can do before you even run it.\nPython added optional types in version 3.5. At first they were simply for analysis of the code prior to running to check for even more bugs and possible error cases but in the latest versions of Python, they are now being used to speed up your programs.\nThey can be annoying to add and work with. Very annoying, because they are optional in the language so there is a lot of hacky ways they can be manipulated, but in my opinion they are entirely worth it."
+    "text": "Type checking is the most thorough analysis of your code you can do before you even run it.\nPython added optional types in version 3.5. At first they were simply for analysis of the code prior to running to check for even more bugs and possible error cases but in the latest versions of Python, they are now being used to speed up your programs.\nThey can be annoying to add and work with. Very annoying, because they are optional in the language so there is a lot of hacky ways they can be manipulated, but in my opinion they are entirely worth it.",
+    "crumbs": [
+      "Testing, Formatting, Linting, Type-Checking, and Continuous Integration"
+    ]
   },
   {
     "objectID": "testing.html#section-7",
     "href": "testing.html#section-7",
     "title": "Testing, Formatting, Linting, Type-Checking, and Continuous Integration",
     "section": "",
-    "text": "Typing is handled by decorations in the code i.e.\ndef example(a):\n    print(f\"Hello {a}\")\n\ndef example_typed(a: str) -&gt; None:\n    print(f\"Hello {a}\")\n\nAnd they can get complicated…\nimport random\n\n# yay only a single value\nvar_int: int = 5\nvar_float: float = 0.5\nvar_bool: bool = False\nvar_string: str = \"wow!\"\n\n# oh no multiple values\nlist_of_strings: list[str] = [\"hello\", \"world\"]\nlist_of_mixed: list[str | int | bool] = [\"hello\", 3, True]\n\n# lists don't have any constraints on size but tuples do\ntuple_of_two_values: tuple[str, int] = (\"number\", 10)\ntuple_of_n_values: tuple[str, ...] = tuple([\"python why did you add this\" for i in range(random.randint(1, 5))])\nprint(tuple_of_n_values)\n\n# sub-objects\ndict_of_dicts: dict[str, dict[str, str | int]] = {\n    \"eva\": {\"name\": \"eva maxfield brown\", \"age\": 28},\n    \"bob\": {\"name\": \"Bob Boberson\"},\n}\n('python why did you add this',)\n\nAn example with our favourite pattern, the factory:\nfrom abc import ABC, abstractmethod\nfrom typing import Type\n\nclass Localizer(ABC):\n\n    @abstractmethod\n    def localize(self, text: str) -&gt; str:\n        raise NotImplementedError()\n\nclass EnglishLocalizer(Localizer):\n\n    def localize(self, text: str) -&gt; str:\n        return \"Hello world\"\n\nlocalizers = {\n    \"en\": EnglishLocalizer,\n}\n\ndef get_localizer_not_initialized(lang: str) -&gt; Type[Localizer]:\n    return localizers[lang]\n\ndef get_localizer_initialized(lang: str) -&gt; Localizer:\n    return localizers[lang]()"
+    "text": "Typing is handled by decorations in the code i.e.\ndef example(a):\n    print(f\"Hello {a}\")\n\ndef example_typed(a: str) -&gt; None:\n    print(f\"Hello {a}\")\n\nAnd they can get complicated…\nimport random\n\n# yay only a single value\nvar_int: int = 5\nvar_float: float = 0.5\nvar_bool: bool = False\nvar_string: str = \"wow!\"\n\n# oh no multiple values\nlist_of_strings: list[str] = [\"hello\", \"world\"]\nlist_of_mixed: list[str | int | bool] = [\"hello\", 3, True]\n\n# lists don't have any constraints on size but tuples do\ntuple_of_two_values: tuple[str, int] = (\"number\", 10)\ntuple_of_n_values: tuple[str, ...] = tuple([\"python why did you add this\" for i in range(random.randint(1, 5))])\nprint(tuple_of_n_values)\n\n# sub-objects\ndict_of_dicts: dict[str, dict[str, str | int]] = {\n    \"eva\": {\"name\": \"eva maxfield brown\", \"age\": 28},\n    \"bob\": {\"name\": \"Bob Boberson\"},\n}\n('python why did you add this',)\n\nAn example with our favourite pattern, the factory:\nfrom abc import ABC, abstractmethod\nfrom typing import Type\n\nclass Localizer(ABC):\n\n    @abstractmethod\n    def localize(self, text: str) -&gt; str:\n        raise NotImplementedError()\n\nclass EnglishLocalizer(Localizer):\n\n    def localize(self, text: str) -&gt; str:\n        return \"Hello world\"\n\nlocalizers = {\n    \"en\": EnglishLocalizer,\n}\n\ndef get_localizer_not_initialized(lang: str) -&gt; Type[Localizer]:\n    return localizers[lang]\n\ndef get_localizer_initialized(lang: str) -&gt; Localizer:\n    return localizers[lang]()",
+    "crumbs": [
+      "Testing, Formatting, Linting, Type-Checking, and Continuous Integration"
+    ]
   },
   {
     "objectID": "testing.html#section-8",
     "href": "testing.html#section-8",
     "title": "Testing, Formatting, Linting, Type-Checking, and Continuous Integration",
     "section": "",
-    "text": "Some tips / don’t worry too much…\nimport numpy as np\nfrom dataclasses import dataclass\n\n# numpy has types, pandas has types, etc.\nvar_array: np.ndarray = np.random.random((3, 2))\n\n# list of dict of list etc etc can get hard...\n# instead of...\ndict_of_dicts: dict[str, dict[str, str | int]] = {\n    \"eva\": {\"name\": \"eva maxfield brown\", \"age\": 28},\n    \"bob\": {\"name\": \"Bob Boberson\"},\n}\n\n# use `dataclass`\n@dataclass\nclass PersonDetails:\n    name: str\n    age: int | None = None\n\n# easier to follow typing because sub-objects are separately defined\ndict_of_person_details: dict[str, PersonDetails] = {\n    \"eva\": PersonDetails(name=\"Eva Maxfield Brown\", age=28),\n    \"bob\": PersonDetails(name=\"Bob Boberson\")\n}\ndict_of_person_details[\"eva\"]\nPersonDetails(name='Eva Maxfield Brown', age=28)"
+    "text": "Some tips / don’t worry too much…\nimport numpy as np\nfrom dataclasses import dataclass\n\n# numpy has types, pandas has types, etc.\nvar_array: np.ndarray = np.random.random((3, 2))\n\n# list of dict of list etc etc can get hard...\n# instead of...\ndict_of_dicts: dict[str, dict[str, str | int]] = {\n    \"eva\": {\"name\": \"eva maxfield brown\", \"age\": 28},\n    \"bob\": {\"name\": \"Bob Boberson\"},\n}\n\n# use `dataclass`\n@dataclass\nclass PersonDetails:\n    name: str\n    age: int | None = None\n\n# easier to follow typing because sub-objects are separately defined\ndict_of_person_details: dict[str, PersonDetails] = {\n    \"eva\": PersonDetails(name=\"Eva Maxfield Brown\", age=28),\n    \"bob\": PersonDetails(name=\"Bob Boberson\")\n}\ndict_of_person_details[\"eva\"]\nPersonDetails(name='Eva Maxfield Brown', age=28)",
+    "crumbs": [
+      "Testing, Formatting, Linting, Type-Checking, and Continuous Integration"
+    ]
   },
   {
     "objectID": "testing.html#section-10",
     "href": "testing.html#section-10",
     "title": "Testing, Formatting, Linting, Type-Checking, and Continuous Integration",
     "section": "",
-    "text": "How to type check your code:\ntype-checking-pr on repo\nEva reminder to set local branch to just-type-checking"
+    "text": "How to type check your code:\ntype-checking-pr on repo\nEva reminder to set local branch to just-type-checking",
+    "crumbs": [
+      "Testing, Formatting, Linting, Type-Checking, and Continuous Integration"
+    ]
   },
   {
     "objectID": "testing.html#section-11",
     "href": "testing.html#section-11",
     "title": "Testing, Formatting, Linting, Type-Checking, and Continuous Integration",
     "section": "",
-    "text": "Further, it allows you to test on more machine setups than your own. For example, I have a MacOS laptop and a Linux desktop and I use Python 3.11 on both. But I have users who use Windows and Python 3.9.\nCI systems (GitHub Actions, GitLab CI/CD, Azure Pipelines, etc.) allow you to run the same suite of tests across all of these machines setups.\nFortunately, once you have testing, formatting, linting, and type-checking setup locally, it is pretty easy to add CI to your repo!"
+    "text": "Further, it allows you to test on more machine setups than your own. For example, I have a MacOS laptop and a Linux desktop and I use Python 3.11 on both. But I have users who use Windows and Python 3.9.\nCI systems (GitHub Actions, GitLab CI/CD, Azure Pipelines, etc.) allow you to run the same suite of tests across all of these machines setups.\nFortunately, once you have testing, formatting, linting, and type-checking setup locally, it is pretty easy to add CI to your repo!",
+    "crumbs": [
+      "Testing, Formatting, Linting, Type-Checking, and Continuous Integration"
+    ]
   },
   {
     "objectID": "testing.html#section-12",
     "href": "testing.html#section-12",
     "title": "Testing, Formatting, Linting, Type-Checking, and Continuous Integration",
     "section": "",
-    "text": "How to add CI to your repo:\nci-pr on repo\nEva reminder to set local branch to just-ci"
+    "text": "How to add CI to your repo:\nci-pr on repo\nEva reminder to set local branch to just-ci",
+    "crumbs": [
+      "Testing, Formatting, Linting, Type-Checking, and Continuous Integration"
+    ]
   },
   {
     "objectID": "testing.html#credit",
     "href": "testing.html#credit",
     "title": "Testing, Formatting, Linting, Type-Checking, and Continuous Integration",
     "section": "Credit",
-    "text": "Credit\nMuch of the written content came directly from https://pydev-guide.github.io/.\nIt is still under development but some tutorials are already available. I highly recommend starring it / checking back to it every few months."
+    "text": "Credit\nMuch of the written content came directly from https://pydev-guide.github.io/.\nIt is still under development but some tutorials are already available. I highly recommend starring it / checking back to it every few months.",
+    "crumbs": [
+      "Testing, Formatting, Linting, Type-Checking, and Continuous Integration"
+    ]
   },
   {
     "objectID": "testing-revealjs.html#structure",
@@ -2635,189 +2890,270 @@
     "href": "package_distribution.html",
     "title": "Distributing your Science: Turning analyses into scientific tools",
     "section": "",
-    "text": "Work on idea for paper with collaborators\nDo exploratory analysis in scripts and Jupyter ecosystem\nAs research progresses need to write more complicated functions and workflows\nCode begins to sprawl across multiple directories\nSoftware dependencies begin to become more complicated\nThe code “works on my machine”, but what about your collaborators?\n\n\nPeople heroically press forward, but this is painful, and not reusable\n\n\n\n\nIn this first scenario, you will probably see a lot of sys.path manipulation and utils.py\n$ tree examples/edit_sys_path\nexamples/edit_sys_path\n├── code\n│   └── utils.py  # helper functions rosen, rosen_der\n├── example.py  # want to import rosen, rosen_der\n└── jupytext.toml\n\n1 directory, 3 files\n\n\n\n# example.py\nimport sys\nfrom pathlib import Path\n# Make ./code/utils.py visible to sys.path\n# sys.path[1] should be after cwd and before virtual environment\nsys.path.insert(1, str(Path(__file__).parent / \"code\"))\nfrom utils import rosen, rosen_der\nx0 = np.array([1.3, 0.7, 0.8, 1.9, 1.2])\nresult = minimize(rosen, x0, method=\"BFGS\",\n                  jac=rosen_der, options={\"disp\": True})\noptimized_params = result.x\n# array([1.00000004, 1.0000001 , 1.00000021, 1.00000044, 1.00000092])\n\n\nThis is already better than having everything in a single massive file\nHowever, now things are tied to this relative path on your computer\n\n# Make ./code/utils.py visible to sys.path\nsys.path.insert(1, str(Path(__file__).parent / \"code\"))\nfrom utils import rosen, rosen_der\n\nand are brittle to refactoring and change\n\nBut we can do much better!"
+    "text": "Work on idea for paper with collaborators\nDo exploratory analysis in scripts and Jupyter ecosystem\nAs research progresses need to write more complicated functions and workflows\nCode begins to sprawl across multiple directories\nSoftware dependencies begin to become more complicated\nThe code “works on my machine”, but what about your collaborators?\n\n\nPeople heroically press forward, but this is painful, and not reusable\n\n\n\n\nIn this first scenario, you will probably see a lot of sys.path manipulation and utils.py\n$ tree examples/edit_sys_path\nexamples/edit_sys_path\n├── code\n│   └── utils.py  # helper functions rosen, rosen_der\n├── example.py  # want to import rosen, rosen_der\n└── jupytext.toml\n\n1 directory, 3 files\n\n\n\n# example.py\nimport sys\nfrom pathlib import Path\n# Make ./code/utils.py visible to sys.path\n# sys.path[1] should be after cwd and before virtual environment\nsys.path.insert(1, str(Path(__file__).parent / \"code\"))\nfrom utils import rosen, rosen_der\nx0 = np.array([1.3, 0.7, 0.8, 1.9, 1.2])\nresult = minimize(rosen, x0, method=\"BFGS\",\n                  jac=rosen_der, options={\"disp\": True})\noptimized_params = result.x\n# array([1.00000004, 1.0000001 , 1.00000021, 1.00000044, 1.00000092])\n\n\nThis is already better than having everything in a single massive file\nHowever, now things are tied to this relative path on your computer\n\n# Make ./code/utils.py visible to sys.path\nsys.path.insert(1, str(Path(__file__).parent / \"code\"))\nfrom utils import rosen, rosen_der\n\nand are brittle to refactoring and change\n\nBut we can do much better!",
+    "crumbs": [
+      "Distributing your Science: Turning analyses into scientific tools"
+    ]
   },
   {
     "objectID": "package_distribution.html#hypothetical-workflow-for-the-typical-scientist",
     "href": "package_distribution.html#hypothetical-workflow-for-the-typical-scientist",
     "title": "Distributing your Science: Turning analyses into scientific tools",
     "section": "",
-    "text": "Work on idea for paper with collaborators\nDo exploratory analysis in scripts and Jupyter ecosystem\nAs research progresses need to write more complicated functions and workflows\nCode begins to sprawl across multiple directories\nSoftware dependencies begin to become more complicated\nThe code “works on my machine”, but what about your collaborators?\n\n\nPeople heroically press forward, but this is painful, and not reusable"
+    "text": "Work on idea for paper with collaborators\nDo exploratory analysis in scripts and Jupyter ecosystem\nAs research progresses need to write more complicated functions and workflows\nCode begins to sprawl across multiple directories\nSoftware dependencies begin to become more complicated\nThe code “works on my machine”, but what about your collaborators?\n\n\nPeople heroically press forward, but this is painful, and not reusable",
+    "crumbs": [
+      "Distributing your Science: Turning analyses into scientific tools"
+    ]
   },
   {
     "objectID": "package_distribution.html#reusable-science-step-by-step",
     "href": "package_distribution.html#reusable-science-step-by-step",
     "title": "Distributing your Science: Turning analyses into scientific tools",
     "section": "",
-    "text": "In this first scenario, you will probably see a lot of sys.path manipulation and utils.py\n$ tree examples/edit_sys_path\nexamples/edit_sys_path\n├── code\n│   └── utils.py  # helper functions rosen, rosen_der\n├── example.py  # want to import rosen, rosen_der\n└── jupytext.toml\n\n1 directory, 3 files"
+    "text": "In this first scenario, you will probably see a lot of sys.path manipulation and utils.py\n$ tree examples/edit_sys_path\nexamples/edit_sys_path\n├── code\n│   └── utils.py  # helper functions rosen, rosen_der\n├── example.py  # want to import rosen, rosen_der\n└── jupytext.toml\n\n1 directory, 3 files",
+    "crumbs": [
+      "Distributing your Science: Turning analyses into scientific tools"
+    ]
   },
   {
     "objectID": "package_distribution.html#section",
     "href": "package_distribution.html#section",
     "title": "Distributing your Science: Turning analyses into scientific tools",
     "section": "",
-    "text": "# example.py\nimport sys\nfrom pathlib import Path\n# Make ./code/utils.py visible to sys.path\n# sys.path[1] should be after cwd and before virtual environment\nsys.path.insert(1, str(Path(__file__).parent / \"code\"))\nfrom utils import rosen, rosen_der\nx0 = np.array([1.3, 0.7, 0.8, 1.9, 1.2])\nresult = minimize(rosen, x0, method=\"BFGS\",\n                  jac=rosen_der, options={\"disp\": True})\noptimized_params = result.x\n# array([1.00000004, 1.0000001 , 1.00000021, 1.00000044, 1.00000092])\n\n\nThis is already better than having everything in a single massive file\nHowever, now things are tied to this relative path on your computer\n\n# Make ./code/utils.py visible to sys.path\nsys.path.insert(1, str(Path(__file__).parent / \"code\"))\nfrom utils import rosen, rosen_der\n\nand are brittle to refactoring and change\n\nBut we can do much better!"
+    "text": "# example.py\nimport sys\nfrom pathlib import Path\n# Make ./code/utils.py visible to sys.path\n# sys.path[1] should be after cwd and before virtual environment\nsys.path.insert(1, str(Path(__file__).parent / \"code\"))\nfrom utils import rosen, rosen_der\nx0 = np.array([1.3, 0.7, 0.8, 1.9, 1.2])\nresult = minimize(rosen, x0, method=\"BFGS\",\n                  jac=rosen_der, options={\"disp\": True})\noptimized_params = result.x\n# array([1.00000004, 1.0000001 , 1.00000021, 1.00000044, 1.00000092])\n\n\nThis is already better than having everything in a single massive file\nHowever, now things are tied to this relative path on your computer\n\n# Make ./code/utils.py visible to sys.path\nsys.path.insert(1, str(Path(__file__).parent / \"code\"))\nfrom utils import rosen, rosen_der\n\nand are brittle to refactoring and change\n\nBut we can do much better!",
+    "crumbs": [
+      "Distributing your Science: Turning analyses into scientific tools"
+    ]
   },
   {
     "objectID": "package_distribution.html#section-1",
     "href": "package_distribution.html#section-1",
     "title": "Distributing your Science: Turning analyses into scientific tools",
     "section": "",
-    "text": "Real emphasis is just that your code is now installable\n\nAnywhere your Python virtual environment is active you can use your code\n\nSo following The Zen of Python this should be very straightforward?\n\n\n$ python -c 'import this' | grep obvious\nThere should be one-- and preferably only one --obvious way to do it. Although that way may not be obvious at first unless you're Dutch."
+    "text": "Real emphasis is just that your code is now installable\n\nAnywhere your Python virtual environment is active you can use your code\n\nSo following The Zen of Python this should be very straightforward?\n\n\n$ python -c 'import this' | grep obvious\nThere should be one-- and preferably only one --obvious way to do it. Although that way may not be obvious at first unless you're Dutch.",
+    "crumbs": [
+      "Distributing your Science: Turning analyses into scientific tools"
+    ]
   },
   {
     "objectID": "package_distribution.html#section-2",
     "href": "package_distribution.html#section-2",
     "title": "Distributing your Science: Turning analyses into scientific tools",
     "section": "",
-    "text": "Maybe not so much. :(\n\n\n\n\n\n\nYou might be asking: Why is there more than one thing?\n\nThe good news: Python packaging has improved dramatically in the last 5 years\n- It has never been easier to just point your package manager to some code locally, or on the internet, and get working Python code installed and running on your machine regardless of operating system or architecture\n\n- This is a small miracle\nThe bad news: Python packaging has expanded dramatically in the last 5 years\n- By creating standards the PyPA allowed for an ecosystem of packaging backends to be created to tackle various problems (this is good!)\n\n- This means that our The Zen of Python expectations are violated and we need to make design choices (hard for beginners)\n\nThe okay news: You can probably default to the simplest thing\npure Python: Probably hatch compiled extensions: Probably setuptools + pybind11 or scikit-build-core + pybind11\n\n\n\n\n\nPython Packaging User Guide, Packaging Python Projects Tutorial\n\n\n\n\n\n\nScientific Python Library Development Guide"
+    "text": "Maybe not so much. :(\n\n\n\n\n\n\nYou might be asking: Why is there more than one thing?\n\nThe good news: Python packaging has improved dramatically in the last 5 years\n- It has never been easier to just point your package manager to some code locally, or on the internet, and get working Python code installed and running on your machine regardless of operating system or architecture\n\n- This is a small miracle\nThe bad news: Python packaging has expanded dramatically in the last 5 years\n- By creating standards the PyPA allowed for an ecosystem of packaging backends to be created to tackle various problems (this is good!)\n\n- This means that our The Zen of Python expectations are violated and we need to make design choices (hard for beginners)\n\nThe okay news: You can probably default to the simplest thing\npure Python: Probably hatch compiled extensions: Probably setuptools + pybind11 or scikit-build-core + pybind11\n\n\n\n\n\nPython Packaging User Guide, Packaging Python Projects Tutorial\n\n\n\n\n\n\nScientific Python Library Development Guide",
+    "crumbs": [
+      "Distributing your Science: Turning analyses into scientific tools"
+    ]
   },
   {
     "objectID": "package_distribution.html#simple-packaging-example",
     "href": "package_distribution.html#simple-packaging-example",
     "title": "Distributing your Science: Turning analyses into scientific tools",
     "section": "Simple packaging example",
-    "text": "Simple packaging example\nModern PEP 518 compliant build backends just need a single file: pyproject.toml\n$ tree examples/simple_packaging\nexamples/simple_packaging\n\n├── LICENSE\n├── pyproject.toml  # controls packaging and interactions with tools\n├── README.md\n├── src\n│   └── rosen\n│       ├── example.py\n│       ├── __init__.py\n│       └── _version.py\n└── tests\n    └── test_example.py\n\n3 directories, 7 files"
+    "text": "Simple packaging example\nModern PEP 518 compliant build backends just need a single file: pyproject.toml\n$ tree examples/simple_packaging\nexamples/simple_packaging\n\n├── LICENSE\n├── pyproject.toml  # controls packaging and interactions with tools\n├── README.md\n├── src\n│   └── rosen\n│       ├── example.py\n│       ├── __init__.py\n│       └── _version.py\n└── tests\n    └── test_example.py\n\n3 directories, 7 files",
+    "crumbs": [
+      "Distributing your Science: Turning analyses into scientific tools"
+    ]
   },
   {
     "objectID": "package_distribution.html#simple-packaging-example-pyproject.toml",
     "href": "package_distribution.html#simple-packaging-example-pyproject.toml",
     "title": "Distributing your Science: Turning analyses into scientific tools",
     "section": "Simple packaging example: pyproject.toml",
-    "text": "Simple packaging example: pyproject.toml\nWhat is .toml?\n“TOML aims to be a minimal configuration file format that’s easy to read due to obvious semantics. TOML is designed to map unambiguously to a hash table. TOML should be easy to parse into data structures in a wide variety of languages.” — https://toml.io/ (emphasis mine)\nIn recent years TOML has seen a rise in popularity for configuration files and lock files. Things that need to be easy to read (humans) and easy to parse (machines)."
+    "text": "Simple packaging example: pyproject.toml\nWhat is .toml?\n“TOML aims to be a minimal configuration file format that’s easy to read due to obvious semantics. TOML is designed to map unambiguously to a hash table. TOML should be easy to parse into data structures in a wide variety of languages.” — https://toml.io/ (emphasis mine)\nIn recent years TOML has seen a rise in popularity for configuration files and lock files. Things that need to be easy to read (humans) and easy to parse (machines).",
+    "crumbs": [
+      "Distributing your Science: Turning analyses into scientific tools"
+    ]
   },
   {
     "objectID": "package_distribution.html#section-3",
     "href": "package_distribution.html#section-3",
     "title": "Distributing your Science: Turning analyses into scientific tools",
     "section": "",
-    "text": "Defining how your project should get built\n[build-system]\nrequires = [\n    \"hatchling&gt;=1.13.0\",\n    \"hatch-vcs&gt;=0.3.0\",\n]\nbuild-backend = \"hatchling.build\"\n...\n\nDefining project metadata and requirements\n[project]\nname = \"rosen\"\ndynamic = [\"version\"]\ndescription = \"Example package for demonstration\"\nreadme = \"README.md\"\nlicense = { text = \"MIT\" }  # SPDX short identifier\nauthors = [\n  { name = \"Matthew Feickert\", email = \"matthew.feickert@cern.ch\" },\n]\nrequires-python = \"&gt;=3.8\"\ndependencies = [\n    \"scipy&gt;=1.6.0\",\n    \"numpy\",  # compatible versions controlled through scipy\n]\n...\n\nConfiguring tooling options and interactions with other tools\n[tool.hatch.version]\nsource = \"vcs\"\n[tool.hatch.version.raw-options]\nlocal_scheme = \"no-local-version\"\n# Need to give root as we aren't at the same level as the git repo\nroot = \"../..\"\n[tool.hatch.build.hooks.vcs]\nversion-file = \"src/rosen/_version.py\"\n..."
+    "text": "Defining how your project should get built\n[build-system]\nrequires = [\n    \"hatchling&gt;=1.13.0\",\n    \"hatch-vcs&gt;=0.3.0\",\n]\nbuild-backend = \"hatchling.build\"\n...\n\nDefining project metadata and requirements\n[project]\nname = \"rosen\"\ndynamic = [\"version\"]\ndescription = \"Example package for demonstration\"\nreadme = \"README.md\"\nlicense = { text = \"MIT\" }  # SPDX short identifier\nauthors = [\n  { name = \"Matthew Feickert\", email = \"matthew.feickert@cern.ch\" },\n]\nrequires-python = \"&gt;=3.8\"\ndependencies = [\n    \"scipy&gt;=1.6.0\",\n    \"numpy\",  # compatible versions controlled through scipy\n]\n...\n\nConfiguring tooling options and interactions with other tools\n[tool.hatch.version]\nsource = \"vcs\"\n[tool.hatch.version.raw-options]\nlocal_scheme = \"no-local-version\"\n# Need to give root as we aren't at the same level as the git repo\nroot = \"../..\"\n[tool.hatch.build.hooks.vcs]\nversion-file = \"src/rosen/_version.py\"\n...",
+    "crumbs": [
+      "Distributing your Science: Turning analyses into scientific tools"
+    ]
   },
   {
     "objectID": "package_distribution.html#simple-packaging-example-installing-your-code",
     "href": "package_distribution.html#simple-packaging-example-installing-your-code",
     "title": "Distributing your Science: Turning analyses into scientific tools",
     "section": "Simple packaging example: Installing your code",
-    "text": "Simple packaging example: Installing your code\nYou can now locally install your package into your Python virtual environment\n$ cd examples/simple_packaging\n$ python -m pip install --upgrade pip wheel\n$ python -m pip install .\nSuccessfully built rosen\nInstalling collected packages: rosen\nSuccessfully installed rosen-0.0.1\n$ python -m pip show rosen\nName: rosen\nVersion: 0.0.1\nSummary: Example package for demonstration\nHome-page:\nAuthor:\nAuthor-email: Matthew Feickert &lt;matthew.feickert@cern.ch&gt;\nLicense: MIT\nLocation: ***/lib/python3.12/site-packages\nRequires: numpy, scipy\nRequired-by:\n\nand use it anywhere\n# example.py\nimport numpy as np\nfrom scipy.optimize import minimize\n# We can now import our code\nfrom rosen.example import rosen, rosen_der\nx0 = np.array([1.3, 0.7, 0.8, 1.9, 1.2])\nresult = minimize(rosen, x0, method=\"BFGS\",\n                  jac=rosen_der, options={\"disp\": True})\noptimized_params = result.x\n# array([1.00000004, 1.0000001 , 1.00000021, 1.00000044, 1.00000092])"
+    "text": "Simple packaging example: Installing your code\nYou can now locally install your package into your Python virtual environment\n$ cd examples/simple_packaging\n$ python -m pip install --upgrade pip wheel\n$ python -m pip install .\nSuccessfully built rosen\nInstalling collected packages: rosen\nSuccessfully installed rosen-0.0.1\n$ python -m pip show rosen\nName: rosen\nVersion: 0.0.1\nSummary: Example package for demonstration\nHome-page:\nAuthor:\nAuthor-email: Matthew Feickert &lt;matthew.feickert@cern.ch&gt;\nLicense: MIT\nLocation: ***/lib/python3.12/site-packages\nRequires: numpy, scipy\nRequired-by:\n\nand use it anywhere\n# example.py\nimport numpy as np\nfrom scipy.optimize import minimize\n# We can now import our code\nfrom rosen.example import rosen, rosen_der\nx0 = np.array([1.3, 0.7, 0.8, 1.9, 1.2])\nresult = minimize(rosen, x0, method=\"BFGS\",\n                  jac=rosen_der, options={\"disp\": True})\noptimized_params = result.x\n# array([1.00000004, 1.0000001 , 1.00000021, 1.00000044, 1.00000092])",
+    "crumbs": [
+      "Distributing your Science: Turning analyses into scientific tools"
+    ]
   },
   {
     "objectID": "package_distribution.html#packaging-doesnt-slow-down-development",
     "href": "package_distribution.html#packaging-doesnt-slow-down-development",
     "title": "Distributing your Science: Turning analyses into scientific tools",
     "section": "Packaging doesn’t slow down development",
-    "text": "Packaging doesn’t slow down development\nPEP 518 compliant build backends allow for “editable installs”\n$ python -m pip install --upgrade --editable .\n$ python -m pip show rosen | grep --ignore-case 'location'\nLocation: ***/lib/python3.12/site-packages\nEditable project location: ***/examples/simple_packaging\nEditable installs add the files in the development directory to Python’s import path. (Only need to re-installation if you change the project metadata.)\nCan develop your code under src/ and have immediate access to it"
+    "text": "Packaging doesn’t slow down development\nPEP 518 compliant build backends allow for “editable installs”\n$ python -m pip install --upgrade --editable .\n$ python -m pip show rosen | grep --ignore-case 'location'\nLocation: ***/lib/python3.12/site-packages\nEditable project location: ***/examples/simple_packaging\nEditable installs add the files in the development directory to Python’s import path. (Only need to re-installation if you change the project metadata.)\nCan develop your code under src/ and have immediate access to it",
+    "crumbs": [
+      "Distributing your Science: Turning analyses into scientific tools"
+    ]
   },
   {
     "objectID": "package_distribution.html#packaging-compiled-extensions",
     "href": "package_distribution.html#packaging-compiled-extensions",
     "title": "Distributing your Science: Turning analyses into scientific tools",
     "section": "Packaging compiled extensions",
-    "text": "Packaging compiled extensions\nWith modern packaging infrastructure, packaging compiled extensions requires small extra work\n$ tree examples/compiled_packaging\n\nexamples/compiled_packaging\n├── CMakeLists.txt  # Addition of CMake\n├── LICENSE\n├── pyproject.toml  # build backend change\n├── README.md\n├── src\n│   ├── basic_math.cpp  # C++ extension\n│   └── rosen_cpp\n│       ├── example.py\n│       └── __init__.py\n└── tests\n    └── test_example.py\n\n3 directories, 8 files"
+    "text": "Packaging compiled extensions\nWith modern packaging infrastructure, packaging compiled extensions requires small extra work\n$ tree examples/compiled_packaging\n\nexamples/compiled_packaging\n├── CMakeLists.txt  # Addition of CMake\n├── LICENSE\n├── pyproject.toml  # build backend change\n├── README.md\n├── src\n│   ├── basic_math.cpp  # C++ extension\n│   └── rosen_cpp\n│       ├── example.py\n│       └── __init__.py\n└── tests\n    └── test_example.py\n\n3 directories, 8 files",
+    "crumbs": [
+      "Distributing your Science: Turning analyses into scientific tools"
+    ]
   },
   {
     "objectID": "package_distribution.html#section-4",
     "href": "package_distribution.html#section-4",
     "title": "Distributing your Science: Turning analyses into scientific tools",
     "section": "",
-    "text": "pyproject.toml:\nSwap build system to scikit-build-core + pybind11\n[build-system]\nrequires = [\n  \"scikit-build-core\",\n  \"pybind11\"\n  ]\nbuild-backend = \"scikit_build_core.build\"\n..."
+    "text": "pyproject.toml:\nSwap build system to scikit-build-core + pybind11\n[build-system]\nrequires = [\n  \"scikit-build-core\",\n  \"pybind11\"\n  ]\nbuild-backend = \"scikit_build_core.build\"\n...",
+    "crumbs": [
+      "Distributing your Science: Turning analyses into scientific tools"
+    ]
   },
   {
     "objectID": "package_distribution.html#section-5",
     "href": "package_distribution.html#section-5",
     "title": "Distributing your Science: Turning analyses into scientific tools",
     "section": "",
-    "text": "CMakeLists.txt:\n# Specify CMake version and project language\ncmake_minimum_required(VERSION 3.15...3.30)\nproject(${SKBUILD_PROJECT_NAME} LANGUAGES CXX)\n# Setup pybind11\nset(PYBIND11_FINDPYTHON ON)\nfind_package(pybind11 CONFIG REQUIRED)\n# Add the pybind11 module to build targets\npybind11_add_module(basic_math MODULE src/basic_math.cpp)\ninstall(TARGETS basic_math DESTINATION ${SKBUILD_PROJECT_NAME})"
+    "text": "CMakeLists.txt:\n# Specify CMake version and project language\ncmake_minimum_required(VERSION 3.15...3.30)\nproject(${SKBUILD_PROJECT_NAME} LANGUAGES CXX)\n# Setup pybind11\nset(PYBIND11_FINDPYTHON ON)\nfind_package(pybind11 CONFIG REQUIRED)\n# Add the pybind11 module to build targets\npybind11_add_module(basic_math MODULE src/basic_math.cpp)\ninstall(TARGETS basic_math DESTINATION ${SKBUILD_PROJECT_NAME})",
+    "crumbs": [
+      "Distributing your Science: Turning analyses into scientific tools"
+    ]
   },
   {
     "objectID": "package_distribution.html#section-6",
     "href": "package_distribution.html#section-6",
     "title": "Distributing your Science: Turning analyses into scientific tools",
     "section": "",
-    "text": "src/basic_math.cpp:\n#include &lt;pybind11/pybind11.h&gt;\nint add(int i, int j) { return i + j; }\nnamespace py = pybind11;\nPYBIND11_MODULE(basic_math, m) {\n  m.def(\"add\", &add, R\"pbdoc(\n      Add two numbers\n  )pbdoc\");\n...\n}"
+    "text": "src/basic_math.cpp:\n#include &lt;pybind11/pybind11.h&gt;\nint add(int i, int j) { return i + j; }\nnamespace py = pybind11;\nPYBIND11_MODULE(basic_math, m) {\n  m.def(\"add\", &add, R\"pbdoc(\n      Add two numbers\n  )pbdoc\");\n...\n}",
+    "crumbs": [
+      "Distributing your Science: Turning analyses into scientific tools"
+    ]
   },
   {
     "objectID": "package_distribution.html#packaging-compiled-extensions-installing",
     "href": "package_distribution.html#packaging-compiled-extensions-installing",
     "title": "Distributing your Science: Turning analyses into scientific tools",
     "section": "Packaging compiled extensions: Installing",
-    "text": "Packaging compiled extensions: Installing\nInstalling locally is the same as for the pure-Python example:\n$ cd examples/simple_packaging\n$ python -m pip install --upgrade pip wheel\n$ python -m pip install .\nSuccessfully built rosen-cpp\nInstalling collected packages: rosen-cpp\nSuccessfully installed rosen-cpp-0.0.1\nModule name is that given in C++:\nfrom rosen_cpp import basic_math\nbasic_math.add(1, 2)\n# 3"
+    "text": "Packaging compiled extensions: Installing\nInstalling locally is the same as for the pure-Python example:\n$ cd examples/simple_packaging\n$ python -m pip install --upgrade pip wheel\n$ python -m pip install .\nSuccessfully built rosen-cpp\nInstalling collected packages: rosen-cpp\nSuccessfully installed rosen-cpp-0.0.1\nModule name is that given in C++:\nfrom rosen_cpp import basic_math\nbasic_math.add(1, 2)\n# 3",
+    "crumbs": [
+      "Distributing your Science: Turning analyses into scientific tools"
+    ]
   },
   {
     "objectID": "package_distribution.html#section-7",
     "href": "package_distribution.html#section-7",
     "title": "Distributing your Science: Turning analyses into scientific tools",
     "section": "",
-    "text": "If your code is publicly available on the WWW in a Git repository, you’ve already done a version of distribution!\n# General pattern is:\n# python -m pip install \"project @ git+https://example.com/repo/project.git@branch#subdirectory=path\"\n$ python -m pip install \\\n  \"git+https://github.com/matthewfeickert-talks/talk-urssi-summer-school-2024.git#subdirectory=examples/simple_packaging\"\n(more reasonable font size, and more common, example)\n# Works for pure-Python packages\n$ python -m pip install --upgrade \"git+https://github.com/scikit-hep/pyhf.git\"\n# as well as packages with compiled extensions\n$ python -m pip install --upgrade \"git+https://github.com/scikit-hep/iminuit.git\"\n\nIdeally we’d prefer a more organized approach: distribution through a package index\nFirst we need to create distributions of our packaged code.\nDistributions that pip can install:\n\nsource distribution (sdist): A tarfile (.tar.gz) of the source files of our package (subset of all the files in the repository)\nwheel: A zipfile (.whl) of the file system structure and package metadata with any dependencies prebuilt\n\nNo arbitrary code execution, only decompressing and copying of files\n\n\n\nTo create these distributions from source code, rely on our package build backend (e.g. hatchling) and build frontend tool like build\n$ python -m pip install --upgrade build\n$ python -m build .\n* Creating venv isolated environment...\n* Installing packages in isolated environment... (hatch-vcs&gt;=0.3.0, hatchling&gt;=1.13.0)\n* Getting build dependencies for sdist...\n* Building sdist...\n* Building wheel from sdist\n* Creating venv isolated environment...\n* Installing packages in isolated environment... (hatch-vcs&gt;=0.3.0, hatchling&gt;=1.13.0)\n* Getting build dependencies for wheel...\n* Building wheel...\nSuccessfully built rosen-0.0.1.tar.gz and rosen-0.0.1-py3-none-any.whl\n$ ls dist\nrosen-0.0.1-py3-none-any.whl  rosen-0.0.1.tar.gz"
+    "text": "If your code is publicly available on the WWW in a Git repository, you’ve already done a version of distribution!\n# General pattern is:\n# python -m pip install \"project @ git+https://example.com/repo/project.git@branch#subdirectory=path\"\n$ python -m pip install \\\n  \"git+https://github.com/matthewfeickert-talks/talk-urssi-summer-school-2024.git#subdirectory=examples/simple_packaging\"\n(more reasonable font size, and more common, example)\n# Works for pure-Python packages\n$ python -m pip install --upgrade \"git+https://github.com/scikit-hep/pyhf.git\"\n# as well as packages with compiled extensions\n$ python -m pip install --upgrade \"git+https://github.com/scikit-hep/iminuit.git\"\n\nIdeally we’d prefer a more organized approach: distribution through a package index\nFirst we need to create distributions of our packaged code.\nDistributions that pip can install:\n\nsource distribution (sdist): A tarfile (.tar.gz) of the source files of our package (subset of all the files in the repository)\nwheel: A zipfile (.whl) of the file system structure and package metadata with any dependencies prebuilt\n\nNo arbitrary code execution, only decompressing and copying of files\n\n\n\nTo create these distributions from source code, rely on our package build backend (e.g. hatchling) and build frontend tool like build\n$ python -m pip install --upgrade build\n$ python -m build .\n* Creating venv isolated environment...\n* Installing packages in isolated environment... (hatch-vcs&gt;=0.3.0, hatchling&gt;=1.13.0)\n* Getting build dependencies for sdist...\n* Building sdist...\n* Building wheel from sdist\n* Creating venv isolated environment...\n* Installing packages in isolated environment... (hatch-vcs&gt;=0.3.0, hatchling&gt;=1.13.0)\n* Getting build dependencies for wheel...\n* Building wheel...\nSuccessfully built rosen-0.0.1.tar.gz and rosen-0.0.1-py3-none-any.whl\n$ ls dist\nrosen-0.0.1-py3-none-any.whl  rosen-0.0.1.tar.gz",
+    "crumbs": [
+      "Distributing your Science: Turning analyses into scientific tools"
+    ]
   },
   {
     "objectID": "package_distribution.html#section-8",
     "href": "package_distribution.html#section-8",
     "title": "Distributing your Science: Turning analyses into scientific tools",
     "section": "",
-    "text": "Can now securely upload the distributions under ./dist/ to any package index that understands how to use them.\nThe most common is the Python Package Index (PyPI) which serves as the default package index for pip."
+    "text": "Can now securely upload the distributions under ./dist/ to any package index that understands how to use them.\nThe most common is the Python Package Index (PyPI) which serves as the default package index for pip.",
+    "crumbs": [
+      "Distributing your Science: Turning analyses into scientific tools"
+    ]
   },
   {
     "objectID": "package_distribution.html#distributing-packages-conda-forge",
     "href": "package_distribution.html#distributing-packages-conda-forge",
     "title": "Distributing your Science: Turning analyses into scientific tools",
     "section": "Distributing packages: conda-forge",
-    "text": "Distributing packages: conda-forge\nThe conda family of package managers (conda, mamba, micromamba, pixi) take an alternative approach from pip.\nInstead of installing Python packages, they act as general purpose package managers and install all dependencies (including Python) as OS and architecture specific built binaries (.conda files — zipfile containing compressed tar files) hosted on conda-forge.\nAllows an additional level of runtime environment specification not possible with just pip, though getting environment solves right can become more complicated.\n\nPopular in scientific computing as arbitrary binaries can be hosted, including compilers (e.g. gcc, Fortran) and even the full NVIDIA CUDA stack!\nWith the change to full binaries only this also requires that specification of the environment being installed is important.\nWith sdists and wheels, if there is no compatible wheel available, pip will automatically fall back to trying to locally build from the sidst. Can’t do that if there is no matching .conda binary!"
+    "text": "Distributing packages: conda-forge\nThe conda family of package managers (conda, mamba, micromamba, pixi) take an alternative approach from pip.\nInstead of installing Python packages, they act as general purpose package managers and install all dependencies (including Python) as OS and architecture specific built binaries (.conda files — zipfile containing compressed tar files) hosted on conda-forge.\nAllows an additional level of runtime environment specification not possible with just pip, though getting environment solves right can become more complicated.\n\nPopular in scientific computing as arbitrary binaries can be hosted, including compilers (e.g. gcc, Fortran) and even the full NVIDIA CUDA stack!\nWith the change to full binaries only this also requires that specification of the environment being installed is important.\nWith sdists and wheels, if there is no compatible wheel available, pip will automatically fall back to trying to locally build from the sidst. Can’t do that if there is no matching .conda binary!",
+    "crumbs": [
+      "Distributing your Science: Turning analyses into scientific tools"
+    ]
   },
   {
     "objectID": "package_distribution.html#defining-the-environment-application-vs.-library",
     "href": "package_distribution.html#defining-the-environment-application-vs.-library",
     "title": "Distributing your Science: Turning analyses into scientific tools",
     "section": "Defining the environment: Application vs. Library",
-    "text": "Defining the environment: Application vs. Library\nHave been reasonably assuming that packaged code can be used in arbitrary environments with other code that is compatible (library-like).\nFor distributing code, this is probably the correct view, but your analysis is not a library. Your analysis is an application (a hand crafted implementation of code from libraries).\nWhile your analysis might run with arbitrary configurations of the defined libraries and runtimes (reusable) want to also have a hash-level specified version for reproduciblity: a lock file"
+    "text": "Defining the environment: Application vs. Library\nHave been reasonably assuming that packaged code can be used in arbitrary environments with other code that is compatible (library-like).\nFor distributing code, this is probably the correct view, but your analysis is not a library. Your analysis is an application (a hand crafted implementation of code from libraries).\nWhile your analysis might run with arbitrary configurations of the defined libraries and runtimes (reusable) want to also have a hash-level specified version for reproduciblity: a lock file",
+    "crumbs": [
+      "Distributing your Science: Turning analyses into scientific tools"
+    ]
   },
   {
     "objectID": "package_distribution.html#defining-the-environment-lock-file",
     "href": "package_distribution.html#defining-the-environment-lock-file",
     "title": "Distributing your Science: Turning analyses into scientific tools",
     "section": "Defining the environment: Lock file",
-    "text": "Defining the environment: Lock file\nLock files are simple: A hash level record of every dependency in the environment.\nAllow for reproducibility by simply being an list of every file to download from the internet.\nShould be programmatically generated from a high level requirements file and maintained in version control with your analysis.\n\nFor pip: pip-tools, pdm, pipenv, poetry\nFor conda family: conda-lock, pixi"
+    "text": "Defining the environment: Lock file\nLock files are simple: A hash level record of every dependency in the environment.\nAllow for reproducibility by simply being an list of every file to download from the internet.\nShould be programmatically generated from a high level requirements file and maintained in version control with your analysis.\n\nFor pip: pip-tools, pdm, pipenv, poetry\nFor conda family: conda-lock, pixi",
+    "crumbs": [
+      "Distributing your Science: Turning analyses into scientific tools"
+    ]
   },
   {
     "objectID": "package_distribution.html#defining-the-environment-comparing-to-julia",
     "href": "package_distribution.html#defining-the-environment-comparing-to-julia",
     "title": "Distributing your Science: Turning analyses into scientific tools",
     "section": "Defining the environment: Comparing to Julia",
-    "text": "Defining the environment: Comparing to Julia\nThe approach of pixi is similar to Julia.\n\nProject.toml: describes the project on a high level\nManifest.toml: absolute record of the state of the packages in the environment (a lock file)\n\n\nJulia’s package manager Pkg.jl provides users a high level interface to edit Project.toml and then automatically updates Manifest.toml in response. Reproducibility of environment by default!\n\n\nLibrary: Project.toml in version control\nApplication: Project.toml and Manifest.toml in version control"
+    "text": "Defining the environment: Comparing to Julia\nThe approach of pixi is similar to Julia.\n\nProject.toml: describes the project on a high level\nManifest.toml: absolute record of the state of the packages in the environment (a lock file)\n\n\nJulia’s package manager Pkg.jl provides users a high level interface to edit Project.toml and then automatically updates Manifest.toml in response. Reproducibility of environment by default!\n\n\nLibrary: Project.toml in version control\nApplication: Project.toml and Manifest.toml in version control",
+    "crumbs": [
+      "Distributing your Science: Turning analyses into scientific tools"
+    ]
   },
   {
     "objectID": "package_distribution.html#areas-still-to-discuss-another-time",
     "href": "package_distribution.html#areas-still-to-discuss-another-time",
     "title": "Distributing your Science: Turning analyses into scientific tools",
     "section": "Areas still to discuss another time",
-    "text": "Areas still to discuss another time\n\nFull environment specification with Linux (Open Container Initiative (OCI)) container images (Docker, Apptainer, Podman)\nOrchestration of multiple environments inside of an analysis\n\nUsing workflow languages\n\nThe difficult realities of long term preservation\n\nAssumptions of present technologies don’t translate forever into the future, infrastructure goes away\nHow to store files that aren’t “code” (e.g. images, training data, database files) — c.f. Zenodo\n\nWhat analysis reuse looks like\n\nRECAST(particle physics)"
+    "text": "Areas still to discuss another time\n\nFull environment specification with Linux (Open Container Initiative (OCI)) container images (Docker, Apptainer, Podman)\nOrchestration of multiple environments inside of an analysis\n\nUsing workflow languages\n\nThe difficult realities of long term preservation\n\nAssumptions of present technologies don’t translate forever into the future, infrastructure goes away\nHow to store files that aren’t “code” (e.g. images, training data, database files) — c.f. Zenodo\n\nWhat analysis reuse looks like\n\nRECAST(particle physics)",
+    "crumbs": [
+      "Distributing your Science: Turning analyses into scientific tools"
+    ]
   },
   {
     "objectID": "package_distribution.html#recommendations-tooling",
     "href": "package_distribution.html#recommendations-tooling",
     "title": "Distributing your Science: Turning analyses into scientific tools",
     "section": "Recommendations: Tooling",
-    "text": "Recommendations: Tooling\nDon’t start your next Python project from scratch! Use the Scientific Python library development Cookiecutter: cookie\n$ pipx install cookiecutter\n$ cookiecutter gh:scientific-python/cookie\n#  [1/14] The name of your project (package):\n# ...\ncookie will setup your repository for you with templated layouts for 11 different build backends and adheres to packaging and development best practices."
+    "text": "Recommendations: Tooling\nDon’t start your next Python project from scratch! Use the Scientific Python library development Cookiecutter: cookie\n$ pipx install cookiecutter\n$ cookiecutter gh:scientific-python/cookie\n#  [1/14] The name of your project (package):\n# ...\ncookie will setup your repository for you with templated layouts for 11 different build backends and adheres to packaging and development best practices.",
+    "crumbs": [
+      "Distributing your Science: Turning analyses into scientific tools"
+    ]
   },
   {
     "objectID": "package_distribution.html#recommendations-community-guides",
     "href": "package_distribution.html#recommendations-community-guides",
     "title": "Distributing your Science: Turning analyses into scientific tools",
     "section": "Recommendations: Community Guides",
-    "text": "Recommendations: Community Guides\nPackaging standards and best practices continue to change and get better. Instead of trying to maintain your own resources follow and engage with community resources created by the teams that are building the tools and infrastructure.\n\n\n\nScientific Python Library Development Guide"
+    "text": "Recommendations: Community Guides\nPackaging standards and best practices continue to change and get better. Instead of trying to maintain your own resources follow and engage with community resources created by the teams that are building the tools and infrastructure.\n\n\n\nScientific Python Library Development Guide",
+    "crumbs": [
+      "Distributing your Science: Turning analyses into scientific tools"
+    ]
   },
   {
     "objectID": "package_distribution.html#recommendations-collaboration",
     "href": "package_distribution.html#recommendations-collaboration",
     "title": "Distributing your Science: Turning analyses into scientific tools",
     "section": "Recommendations: Collaboration",
-    "text": "Recommendations: Collaboration\nFind and start working with Research Software Engineers (RSE).\n\nI don’t think that most scientists care/get excited about learning packaging tools. We just want things to work. RSEs can make that easier and are SUPER knowledgeable!\n\nI’m among the “not excited”. I care about packaging because I care about reusable tools for science.\n\n\n\n\n\n\nSociety of Research Software Engineering"
+    "text": "Recommendations: Collaboration\nFind and start working with Research Software Engineers (RSE).\n\nI don’t think that most scientists care/get excited about learning packaging tools. We just want things to work. RSEs can make that easier and are SUPER knowledgeable!\n\nI’m among the “not excited”. I care about packaging because I care about reusable tools for science.\n\n\n\n\n\n\nSociety of Research Software Engineering",
+    "crumbs": [
+      "Distributing your Science: Turning analyses into scientific tools"
+    ]
   },
   {
     "objectID": "package_distribution.html#recommendations-zenodo",
     "href": "package_distribution.html#recommendations-zenodo",
     "title": "Distributing your Science: Turning analyses into scientific tools",
     "section": "Recommendations: Zenodo",
-    "text": "Recommendations: Zenodo\nVersioned archive of everything: code, documents, data products, data sets\n\n\n\n\n\nDOI for project and each version"
+    "text": "Recommendations: Zenodo\nVersioned archive of everything: code, documents, data products, data sets\n\n\n\n\n\nDOI for project and each version",
+    "crumbs": [
+      "Distributing your Science: Turning analyses into scientific tools"
+    ]
   },
   {
     "objectID": "package_distribution-revealjs.html#my-motivations-on-this-topic",
